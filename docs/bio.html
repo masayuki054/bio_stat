@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-10-26 火 21:39 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgcdd98ef">1. 生物統計学１</a>
+<ul>
+<li><a href="#org086c8bc">1.1. 要約統計量</a></li>
+<li><a href="#org52c7926">1.2. データの図示</a>
+<ul>
+<li><a href="#org0ba6ef5">1.2.1. ダイズ地上部乾物重データ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcdd98ef" class="outline-2">
+<h2 id="orgcdd98ef"><span class="section-number-2">1</span> <a href="https://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html">生物統計学１</a></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org086c8bc" class="outline-3">
+<h3 id="org086c8bc"><span class="section-number-3">1.1</span> 要約統計量</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-R">## 
+#英語の得点の記述統計
+
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-R">## 
+#英語の得点の記述統計
+
+eigo &lt;- c(	
+36,70,56,68,76,60,50,63,62,42,64,60,50,68,71,67,	
+50,65,67,57,72,64,61,66,46,80,46,51,59,32,55,65,	
+65,52,57,64,23,57,53,54,38,71,57,69,77,61,51,64,	
+63,43,65,61,51,69,72,68,53,66,68,58,73,65,62,67,	
+47,81,47,52,59,33,56,66,67,52,58,65,24,58,54,55)
+
+length(eigo)	     	#データ数　
+mean(eigo)	     	# 標本平均　
+var(eigo)	     	# 標本分散　
+sd(eigo)	     	# 標本標準偏差　
+
+summary(eigo)		# データの要約統計量
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 80
+[1] 58.625
+[1] 134.3892
+[1] 11.59264
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   52.00   60.50   58.62   66.25   81.00
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org52c7926" class="outline-3">
+<h3 id="org52c7926"><span class="section-number-3">1.2</span> データの図示</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-R">##
+## データの図示
+
+## 箱ヒゲ図
+## png(file="bio/graph/eigo-box.png")
+boxplot(eigo, main="英語得点の箱ヒゲ図") #箱ひげ図
+boxplot.stats(eigo)	     	         #箱ひげ図用統計量　
+
+</pre>
+</div>
+
+
+<div id="org2cc05bb" class="figure">
+<p><img src="bio/graph/eigo-box.png" alt="eigo-box.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">## 英語のヒストグラム
+## png("bio/graph/eigo-hist.png")
+hist(eigo, breaks=seq(0, 100, by=5), xlab="英語得点", ylab="頻度", main="")
+title(main = "英語得点のヒストグラム")	   #グラフタイトル
+stem(eigo, scale=2)	     	           #幹葉表示
+
+</pre>
+</div>
+
+
+<div id="org3f476d4" class="figure">
+<p><img src="bio/graph/eigo-box.png" alt="eigo-box.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">
+
+
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org0ba6ef5" class="outline-4">
+<h4 id="org0ba6ef5"><span class="section-number-4">1.2.1</span> ダイズ地上部乾物重データ</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+   ダイズの植物体に圃場環境の不均一性がどのように現れるかの実験
+    1971年に、長野県塩尻市 にある中信試験場（現在は，長野県野菜・花卉試験
+場）で実施された。一枚の圃場（南北約 8m、東西約 18m）で、畝は南北に作
+り、畝間は約75cm、株間は約15cmの間隔に作られた植穴に2粒ずつ播種し、間
+引きと補植で1本仕立てにした。各個体は、根際で切断され、地上部を乾燥し
+た後、
+</p>
+
+<p>
+地上部全重(g)、粒重(g)、主茎長(cm)、分枝数(本)の4形質が測定された。
+</p>
+
+<p>
+今回使用するデータは、その北西部分にあたる12畝、25株の地上部全重デー
+タをそれらの位置に対応して並べたものである。すなわち、データ行 列
+の左側と上側は道路に面しているが、右側と下側は他のダイズ個体に面し
+ていた。
+</p>
+
+<p>
+データダウンロード <a href="./bio/data/daizu.csv">./bio/data/daizu.csv</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">##
+##ダイズデータ読み込み
+daizu.df &lt;- read.csv("bio/data/daizu.csv")     # daizu.csv ファイル読み込み
+dim(daizu.df)                # データの大きさ
+head(daizu.df)               # 最初の一部の行のみを表示
+</pre>
+</div>
+
+<pre class="example" id="orga44ed7e">
+[1] 25 12
+  ridge1 ridge2 ridge3 ridge4 ridge5 ridge6 ridge7 ridge8 ridge9 ridge10
+1    176    171    173    194     NA    130    168    143    100     167
+2    119     75     83    154    140    125     99    106    109      85
+3    101    107     69     77    103    107     76     70     73      74
+4     77     90    103     46     85     62     75     83     68      68
+5     75     81     69     75     44     59     51     76     58      84
+6     77     70     62     10     40     58     66     28     62      71
+  ridge11 ridge12
+1     160     134
+2     110      44
+3      84      70
+4      53      71
+5      58      73
+6      62      48
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">##
+## daizu.dfはdata.frameなので行列に変換する。
+
+daizu.mat &lt;- as.matrix(daizu.df)
+
+# その後ベクトル化して1次元数値データにする。
+daizu &lt;- as.vector(daizu.mat)
+length(daizu)
+summary(daizu)
+
+## データに欠測値、NA(Not Avairable) が含まれていると計算してくれないので、
+## NA部分を除く(remove)という命令、na.rm=Tを付け加える必要がある。
+mean(daizu)
+mean(daizu, na.rm=T)
+sd(daizu, na.rm=T)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 300
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   1.00   54.00   65.00   67.68   75.00  194.00       2
+[1] NA
+[1] 67.68121
+[1] 26.1403
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+##
+## ダイズデータをグラフにする。
+boxplot(daizu)
+title(main="ダイズデータの箱ひげ図")
+
+</pre>
+</div>
+
+
+<div id="org0a2bc72" class="figure">
+<p><img src="bio/graph/daizu-box.png" alt="daizu-box.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">##
+##ダイズデータをグラフにする。
+hist(daizu, breaks=seq(0, 200, by=5), main="ダイズデータの頻度表")
+
+</pre>
+</div>
+
+
+<div id="org09f2c4f" class="figure">
+<p><img src="bio/graph/daizu-hist.png" alt="daizu-hist.png" />
+</p>
+</div>
+
+
+
+<p>
+ダイズデータの行平均や列平均を求る。
+</p>
+<ul class="org-ul">
+<li>これは、apply()関数を用いる。
+<ul class="org-ul">
+<li>mean の他に max, sum, sd, など色々な操作もできる。</li>
+<li>na.rm=T も忘れずに入れる。</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-R">##
+##
+rowmean &lt;- apply(daizu.df, 1, mean, na.rm=T); rowmean		# 行平均
+colmean &lt;- apply(daizu.df, 2, mean, na.rm=T); colmean		# 列平均
+
+</pre>
+</div>
+
+<pre class="example">
+ [1] 156.00000 104.08333  84.25000  73.41667  66.91667  54.50000  66.83333
+ [8]  57.91667  64.00000  60.75000  62.25000  60.54545  61.08333  61.00000
+[15]  61.83333  55.50000  60.08333  63.33333  62.16667  59.00000  58.66667
+[22]  55.33333  54.83333  64.83333  69.66667
+ ridge1  ridge2  ridge3  ridge4  ridge5  ridge6  ridge7  ridge8  ridge9 ridge10 
+ 78.360  76.720  71.200  68.120  64.000  67.640  66.160  62.040  62.640  65.625 
+ridge11 ridge12 
+ 67.520  61.920
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-R">##
+##
+plot(rowmean, type="b", col="blue", main="ダイズデータの行平均，列平均")
+par(new=T)
+plot(colmean, type="b", col="blue")
+</pre>
+</div>
+
+
+<div id="org5b00fa7" class="figure">
+<p><img src="bio/graph/daizu-mean.png" alt="daizu-mean.png" />
+</p>
+</div>
+
+<p>
+　左側ほど値が大きい、理由は後ほど考える。 
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-10-26 火 21:39</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
