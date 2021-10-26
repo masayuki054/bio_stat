@@ -3,7 +3,7 @@
 #+AUTHOR: 鈴木正幸，非常勤講師
 #+title: 初心者用 R 言語講座 (2)
 #+OPTIONS: tex:t 
-#+property: header-args:R :session *bioR* :results output :exports both 
+#+property: header-args:R :session *bioR* :results output varbatim :exports both 
 
 #+begin_src R :tangle R-intro/code/02.R
 #+end_src
