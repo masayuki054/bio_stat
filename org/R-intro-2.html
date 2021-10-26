@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-10-26 火 16:56 -->
+<!-- 2021-10-26 火 20:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>初心者用 R 言語講座 (2)</title>
@@ -235,18 +235,18 @@
 </pre>
 </div>
 
-<div id="outline-container-org34799a4" class="outline-2">
-<h2 id="org34799a4">初心者用 R 言語講座 の演習ノート</h2>
-<div class="outline-text-2" id="text-org34799a4">
+<div id="outline-container-orge3ce796" class="outline-2">
+<h2 id="orge3ce796">初心者用 R 言語講座 の演習ノート</h2>
+<div class="outline-text-2" id="text-orge3ce796">
 <p>
 <a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
 </p>
 </div>
 
 
-<div id="outline-container-org8ab5b44" class="outline-3">
-<h3 id="org8ab5b44">4. 簡単なベクトル演算</h3>
-<div class="outline-text-3" id="text-org8ab5b44">
+<div id="outline-container-orgac39648" class="outline-3">
+<h3 id="orgac39648">4. 簡単なベクトル演算</h3>
+<div class="outline-text-3" id="text-orgac39648">
 <div class="org-src-container">
 <pre class="src src-R">
  (x <span style="color: #e5786d;">&lt;-</span> c(2,4,6,8,10))    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#20316;&#25104;</span>
@@ -268,9 +268,9 @@
 </div>
 
 
-<div id="outline-container-orgbe5347f" class="outline-4">
-<h4 id="orgbe5347f">ベクトルの比較演算</h4>
-<div class="outline-text-4" id="text-orgbe5347f">
+<div id="outline-container-orgee5b654" class="outline-4">
+<h4 id="orgee5b654">ベクトルの比較演算</h4>
+<div class="outline-text-4" id="text-orgee5b654">
 <div class="org-src-container">
 <pre class="src src-R">
 x
@@ -297,9 +297,9 @@ x[x&gt;5]
 </div>
 </div>
 
-<div id="outline-container-org3933360" class="outline-4">
-<h4 id="org3933360">文字列のベクトル</h4>
-<div class="outline-text-4" id="text-org3933360">
+<div id="outline-container-orgf2689d2" class="outline-4">
+<h4 id="orgf2689d2">文字列のベクトル</h4>
+<div class="outline-text-4" id="text-orgf2689d2">
 <div class="org-src-container">
 <pre class="src src-R">
 x <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"Sunday"</span>, <span style="color: #95e454;">"Monday"</span>, <span style="color: #95e454;">"Tuesday"</span>, <span style="color: #95e454;">"Wednesday"</span>, <span style="color: #95e454;">"Thursday"</span>, <span style="color: #95e454;">"Friday"</span>, <span style="color: #95e454;">"Saturday"</span>)
@@ -319,9 +319,9 @@ grep(<span style="color: #95e454;">"sd"</span>, x)  <span style="color: #99968b;
 </div>
 </div>
 
-<div id="outline-container-org560bea7" class="outline-4">
-<h4 id="org560bea7">ベクトルの各要素の名前付け</h4>
-<div class="outline-text-4" id="text-org560bea7">
+<div id="outline-container-orga5ae8ec" class="outline-4">
+<h4 id="orga5ae8ec">ベクトルの各要素の名前付け</h4>
+<div class="outline-text-4" id="text-orga5ae8ec">
 <div class="org-src-container">
 <pre class="src src-R">x <span style="color: #e5786d;">&lt;-</span> c(2, 4, 6)
 names(x) <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"First"</span>, <span style="color: #95e454;">"Second"</span>, <span style="color: #95e454;">"Third"</span>)
@@ -337,9 +337,9 @@ x の names という <b>属性</b> に (“First”, “Second”, “Third”)
 </div>
 </div>
 
-<div id="outline-container-orgd3b6dd4" class="outline-4">
-<h4 id="orgd3b6dd4">数値ベクトルに対する様々な統計関数</h4>
-<div class="outline-text-4" id="text-orgd3b6dd4">
+<div id="outline-container-orga89a118" class="outline-4">
+<h4 id="orga89a118">数値ベクトルに対する様々な統計関数</h4>
+<div class="outline-text-4" id="text-orga89a118">
 <div class="org-src-container">
 <pre class="src src-R">
 
@@ -359,9 +359,9 @@ sum(x &gt; 5) <span style="color: #99968b;"># </span><span style="color: #99968b
 </div>
 </div>
 
-<div id="outline-container-org1e5140e" class="outline-4">
-<h4 id="org1e5140e">課題 4-1:</h4>
-<div class="outline-text-4" id="text-org1e5140e">
+<div id="outline-container-org12ffa75" class="outline-4">
+<h4 id="org12ffa75">課題 4-1:</h4>
+<div class="outline-text-4" id="text-org12ffa75">
 <p>
 ベクトル(3, 1, 4, 1, 5, 9, 2, 6, 5)の中で 5 より大きい要素からなるベクトルを作成 しましょう。
 </p>
@@ -375,9 +375,9 @@ sum(x &gt; 5) <span style="color: #99968b;"># </span><span style="color: #99968b
 </div>
 
 
-<div id="outline-container-orgd2aafc0" class="outline-4">
-<h4 id="orgd2aafc0">課題 4-2:</h4>
-<div class="outline-text-4" id="text-orgd2aafc0">
+<div id="outline-container-org94971b1" class="outline-4">
+<h4 id="org94971b1">課題 4-2:</h4>
+<div class="outline-text-4" id="text-org94971b1">
 <p>
 ベクトル(1,2,3,4,5,6,7,8,9,10,11,12)に(“Jan”, “Feb”, “Mar”,
 “Apr”, “May”, “Jun”, “Jul”, “Aug”, “Sep”, “Oct”,
@@ -388,9 +388,9 @@ sum(x &gt; 5) <span style="color: #99968b;"># </span><span style="color: #99968b
 </div>
 </div>
 
-<div id="outline-container-orgf0371fd" class="outline-3">
-<h3 id="orgf0371fd">5. 簡単な行列の作成と演算</h3>
-<div class="outline-text-3" id="text-orgf0371fd">
+<div id="outline-container-org6bbf129" class="outline-3">
+<h3 id="org6bbf129">5. 簡単な行列の作成と演算</h3>
+<div class="outline-text-3" id="text-org6bbf129">
 <p>
 ベクトルを集めて行列を作成する
 </p>
@@ -431,7 +431,7 @@ t(x) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#3657
 </pre>
 </div>
 
-<pre class="example" id="orgab8f5d6">
+<pre class="example" id="orgf13383e">
 	 [,1] [,2] [,3]
     [1,]    2    3    4
     [2,]    5    6    7
@@ -481,7 +481,7 @@ R では array(ベクトル、各次元の要素の個数)を使っ てさらに
 </pre>
 </div>
 
-<pre class="example" id="org456f134">
+<pre class="example" id="org02ce597">
     , , 1
 
 	 [,1] [,2] [,3] [,4]
@@ -507,9 +507,9 @@ R では array(ベクトル、各次元の要素の個数)を使っ てさらに
 </div>
 </div>
 
-<div id="outline-container-orgbdd17b2" class="outline-3">
-<h3 id="orgbdd17b2">6. 簡単なリストの作成</h3>
-<div class="outline-text-3" id="text-orgbdd17b2">
+<div id="outline-container-org7bdccc9" class="outline-3">
+<h3 id="org7bdccc9">6. 簡単なリストの作成</h3>
+<div class="outline-text-3" id="text-org7bdccc9">
 <p>
 リストは様々な型のデータをひとまとめにして管理できるデータ型です。
 </p>
@@ -525,7 +525,7 @@ x[[4]]
 </pre>
 </div>
 
-<pre class="example" id="orga5f9cae">
+<pre class="example" id="org6d693f8">
     [[1]]
     [1] "Oh"
 
@@ -560,7 +560,7 @@ x[[4]]
 </pre>
 </div>
 
-<pre class="example" id="org348077e">
+<pre class="example" id="org512bb99">
     $First
     [1] "Oh"
 
@@ -604,9 +604,9 @@ x$Home_Runs
 </div>
 </div>
 
-<div id="outline-container-org4764f2d" class="outline-3">
-<h3 id="org4764f2d">7. 簡単なデータフレームの作成</h3>
-<div class="outline-text-3" id="text-org4764f2d">
+<div id="outline-container-org17c669c" class="outline-3">
+<h3 id="org17c669c">7. 簡単なデータフレームの作成</h3>
+<div class="outline-text-3" id="text-org17c669c">
 <p>
 R にはデータフレームと呼ばれる型が存在します。
 </p>
@@ -703,9 +703,9 @@ class(x)
 
 
 
-<div id="outline-container-orgd358662" class="outline-4">
-<h4 id="orgd358662">課題 7-1:</h4>
-<div class="outline-text-4" id="text-orgd358662">
+<div id="outline-container-orgb5bdd96" class="outline-4">
+<h4 id="orgb5bdd96">課題 7-1:</h4>
+<div class="outline-text-4" id="text-orgb5bdd96">
 <p>
 下の表は G8 加盟国の国力の一部です。これをデータフレームとして変数にしま しょう5。
 </p>
@@ -734,9 +734,9 @@ Russia  17.1        141   2
 </div>
 </div>
 
-<div id="outline-container-org293535b" class="outline-4">
-<h4 id="org293535b">課題 7-2:</h4>
-<div class="outline-text-4" id="text-org293535b">
+<div id="outline-container-orgb711b08" class="outline-4">
+<h4 id="orgb711b08">課題 7-2:</h4>
+<div class="outline-text-4" id="text-orgb711b08">
 <p>
 上記で作成したデータフレームより G8 加盟国の国土面積、人口、GDP の
 平均を それぞれ求めましょう。
@@ -753,7 +753,7 @@ c(<span style="color: #95e454;">"mean(x$Area) = "</span>, mean(x$Area))
 </pre>
 </div>
 
-<pre class="example" id="org3bad9dc">
+<pre class="example" id="org5a8a3e8">
 	    Area Population GDP
     USA      9.4        315  14
     England  0.2         62   3
@@ -775,7 +775,7 @@ c(<span style="color: #95e454;">"mean(x$Area) = "</span>, mean(x$Area))
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-10-26 火 16:56</p>
+<p class="date">Created: 2021-10-26 火 20:02</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
