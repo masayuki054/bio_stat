@@ -3,12 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-10-26 火 21:42 -->
+<!-- 2021-10-26 火 21:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>初心者用 R 言語講座 (1)</title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -193,17 +192,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
-<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
-<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
@@ -229,216 +217,288 @@
 </head>
 <body>
 <div id="content">
-<h1 class="title">初心者用 R 言語講座 (1)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgcdd98ef">1. 生物統計学１</a>
+<ul>
+<li><a href="#org086c8bc">1.1. 要約統計量</a></li>
+<li><a href="#org52c7926">1.2. データの図示</a>
+<ul>
+<li><a href="#org0ba6ef5">1.2.1. ダイズ地上部乾物重データ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcdd98ef" class="outline-2">
+<h2 id="orgcdd98ef"><span class="section-number-2">1</span> <a href="http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html">生物統計学１</a></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org086c8bc" class="outline-3">
+<h3 id="org086c8bc"><span class="section-number-3">1.1</span> 要約統計量</h3>
+<div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
-<pre class="src src-R">
+<pre class="src src-R">## 
+#英語の得点の記述統計
+
 </pre>
 </div>
-
-<div id="outline-container-org282d74b" class="outline-2">
-<h2 id="org282d74b">初心者用 R 言語講座 の演習ノート</h2>
-<div class="outline-text-2" id="text-org282d74b">
-<p>
-<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
-</p>
-</div>
-
-<div id="outline-container-orgc4911ac" class="outline-3">
-<h3 id="orgc4911ac">1. R の起動と終了</h3>
-<div class="outline-text-3" id="text-orgc4911ac">
-<p>
-システムによって異なりますが、通常はコマンドラインで R と入力するか、
-R のアイコンをダブルクリックして起動します。R を終了させるときは、
-</p>
-
 <div class="org-src-container">
-<pre class="src src-R">
-q()
+<pre class="src src-R">## 
+#英語の得点の記述統計
 
-</pre>
-</div>
+eigo &lt;- c(	
+36,70,56,68,76,60,50,63,62,42,64,60,50,68,71,67,	
+50,65,67,57,72,64,61,66,46,80,46,51,59,32,55,65,	
+65,52,57,64,23,57,53,54,38,71,57,69,77,61,51,64,	
+63,43,65,61,51,69,72,68,53,66,68,58,73,65,62,67,	
+47,81,47,52,59,33,56,66,67,52,58,65,24,58,54,55)
 
+length(eigo)	     	#データ数　
+mean(eigo)	     	# 標本平均　
+var(eigo)	     	# 標本分散　
+sd(eigo)	     	# 標本標準偏差　
 
-<p>
-と入力します。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org5aff49c" class="outline-3">
-<h3 id="org5aff49c">2. 簡単な変数への代入</h3>
-<div class="outline-text-3" id="text-org5aff49c">
-<p>
-変数とは様々な値を格納する箱のような概念です。例えば今 x という変数を考え、そこ
-に 123 を代入したければ、
-</p>
-
-<div class="org-src-container">
-<pre class="src src-R">
-(x &lt;- 123)
+summary(eigo)		# データの要約統計量
 
 </pre>
 </div>
 
 <pre class="example">
-[1] 123
+[1] 80
+[1] 58.625
+[1] 134.3892
+[1] 11.59264
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  23.00   52.00   60.50   58.62   66.25   81.00
 </pre>
+</div>
+</div>
+
+<div id="outline-container-org52c7926" class="outline-3">
+<h3 id="org52c7926"><span class="section-number-3">1.2</span> データの図示</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-R">##
+## データの図示
+
+## 箱ヒゲ図
+## png(file="bio/graph/eigo-box.png")
+boxplot(eigo, main="英語得点の箱ヒゲ図") #箱ひげ図
+boxplot.stats(eigo)	     	         #箱ひげ図用統計量　
+
+</pre>
+</div>
 
 
-<p>
-とします。その後に x と打ち込むと、下記のように x の値が表示されます。
+<div id="org2cc05bb" class="figure">
+<p><img src="bio/graph/eigo-box.png" alt="eigo-box.png" />
 </p>
+</div>
 
-<p>
-実は R は単一の数値だけでなく、複数の数値をベクトルとして扱うことが
-得意です。例えばベクトル(1, 3, 5)を変数 y に代入したければ、c とい
-う記号を先頭に付けて、
+<div class="org-src-container">
+<pre class="src src-R">## 英語のヒストグラム
+## png("bio/graph/eigo-hist.png")
+hist(eigo, breaks=seq(0, 100, by=5), xlab="英語得点", ylab="頻度", main="")
+title(main = "英語得点のヒストグラム")	   #グラフタイトル
+stem(eigo, scale=2)	     	           #幹葉表示
+
+</pre>
+</div>
+
+
+<div id="org3f476d4" class="figure">
+<p><img src="bio/graph/eigo-box.png" alt="eigo-box.png" />
 </p>
+</div>
 
 <div class="org-src-container">
 <pre class="src src-R">
-(y &lt;- c(1, 3, 5))
+
+
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org0ba6ef5" class="outline-4">
+<h4 id="org0ba6ef5"><span class="section-number-4">1.2.1</span> ダイズ地上部乾物重データ</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+   ダイズの植物体に圃場環境の不均一性がどのように現れるかの実験
+    1971年に、長野県塩尻市 にある中信試験場（現在は，長野県野菜・花卉試験
+場）で実施された。一枚の圃場（南北約 8m、東西約 18m）で、畝は南北に作
+り、畝間は約75cm、株間は約15cmの間隔に作られた植穴に2粒ずつ播種し、間
+引きと補植で1本仕立てにした。各個体は、根際で切断され、地上部を乾燥し
+た後、
+</p>
+
+<p>
+地上部全重(g)、粒重(g)、主茎長(cm)、分枝数(本)の4形質が測定された。
+</p>
+
+<p>
+今回使用するデータは、その北西部分にあたる12畝、25株の地上部全重デー
+タをそれらの位置に対応して並べたものである。すなわち、データ行 列
+の左側と上側は道路に面しているが、右側と下側は他のダイズ個体に面し
+ていた。
+</p>
+
+<p>
+データダウンロード <a href="./bio/data/daizu.csv">./bio/data/daizu.csv</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">##
+##ダイズデータ読み込み
+daizu.df &lt;- read.csv("bio/data/daizu.csv")     # daizu.csv ファイル読み込み
+dim(daizu.df)                # データの大きさ
+head(daizu.df)               # 最初の一部の行のみを表示
+</pre>
+</div>
+
+<pre class="example" id="orga44ed7e">
+[1] 25 12
+  ridge1 ridge2 ridge3 ridge4 ridge5 ridge6 ridge7 ridge8 ridge9 ridge10
+1    176    171    173    194     NA    130    168    143    100     167
+2    119     75     83    154    140    125     99    106    109      85
+3    101    107     69     77    103    107     76     70     73      74
+4     77     90    103     46     85     62     75     83     68      68
+5     75     81     69     75     44     59     51     76     58      84
+6     77     70     62     10     40     58     66     28     62      71
+  ridge11 ridge12
+1     160     134
+2     110      44
+3      84      70
+4      53      71
+5      58      73
+6      62      48
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">##
+## daizu.dfはdata.frameなので行列に変換する。
+
+daizu.mat &lt;- as.matrix(daizu.df)
+
+# その後ベクトル化して1次元数値データにする。
+daizu &lt;- as.vector(daizu.mat)
+length(daizu)
+summary(daizu)
+
+## データに欠測値、NA(Not Avairable) が含まれていると計算してくれないので、
+## NA部分を除く(remove)という命令、na.rm=Tを付け加える必要がある。
+mean(daizu)
+mean(daizu, na.rm=T)
+sd(daizu, na.rm=T)
 
 </pre>
 </div>
 
 <pre class="example">
-[1] 1 3 5
+[1] 300
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   1.00   54.00   65.00   67.68   75.00  194.00       2
+[1] NA
+[1] 67.68121
+[1] 26.1403
 </pre>
 
 
-<p>
-とします。
-</p>
-
-<p>
-2 から 5 までの整数を 含むベクトルを作成するには、
-</p>
-
 <div class="org-src-container">
 <pre class="src src-R">
-(y &lt;- c(2,3,4,5))
+##
+## ダイズデータをグラフにする。
+boxplot(daizu)
+title(main="ダイズデータの箱ひげ図")
 
-(y&lt;-2:5) # 簡略化
+</pre>
+</div>
+
+
+<div id="org0a2bc72" class="figure">
+<p><img src="bio/graph/daizu-box.png" alt="daizu-box.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">##
+##ダイズデータをグラフにする。
+hist(daizu, breaks=seq(0, 200, by=5), main="ダイズデータの頻度表")
+
+</pre>
+</div>
+
+
+<div id="org09f2c4f" class="figure">
+<p><img src="bio/graph/daizu-hist.png" alt="daizu-hist.png" />
+</p>
+</div>
+
+
+
+<p>
+ダイズデータの行平均や列平均を求る。
+</p>
+<ul class="org-ul">
+<li>これは、apply()関数を用いる。
+<ul class="org-ul">
+<li>mean の他に max, sum, sd, など色々な操作もできる。</li>
+<li>na.rm=T も忘れずに入れる。</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-R">##
+##
+rowmean &lt;- apply(daizu.df, 1, mean, na.rm=T); rowmean		# 行平均
+colmean &lt;- apply(daizu.df, 2, mean, na.rm=T); colmean		# 列平均
 
 </pre>
 </div>
 
 <pre class="example">
-[1] 2 3 4 5
-[1] 2 3 4 5
+ [1] 156.00000 104.08333  84.25000  73.41667  66.91667  54.50000  66.83333
+ [8]  57.91667  64.00000  60.75000  62.25000  60.54545  61.08333  61.00000
+[15]  61.83333  55.50000  60.08333  63.33333  62.16667  59.00000  58.66667
+[22]  55.33333  54.83333  64.83333  69.66667
+ ridge1  ridge2  ridge3  ridge4  ridge5  ridge6  ridge7  ridge8  ridge9 ridge10 
+ 78.360  76.720  71.200  68.120  64.000  67.640  66.160  62.040  62.640  65.625 
+ridge11 ridge12 
+ 67.520  61.920
 </pre>
-</div>
-</div>
 
-
-<div id="outline-container-orgf4f6725" class="outline-3">
-<h3 id="orgf4f6725">課題 2-1:</h3>
-<div class="outline-text-3" id="text-orgf4f6725">
-<p>
-変数 z にベクトル(10, 11, 12)を代入し、またそれを表示してみましょう。
-</p>
 
 <div class="org-src-container">
-<pre class="src src-R">
-(z &lt;- c(10, 11, 12))
-
+<pre class="src src-R">##
+##
+plot(rowmean, type="b", col="blue", main="ダイズデータの行平均，列平均")
+par(new=T)
+plot(colmean, type="b", col="blue")
 </pre>
+</div>
+
+
+<div id="org5b00fa7" class="figure">
+<p><img src="bio/graph/daizu-mean.png" alt="daizu-mean.png" />
+</p>
 </div>
 
 <p>
-1 単一の数値(スカラー)は実は一次元ベクトルとみなされると考えればよい。
+　左側ほど値が大きい、理由は後ほど考える。 
 </p>
-
-<div class="org-src-container">
-<pre class="src src-R">
-(x &lt;- 123 )
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgc79c95c" class="outline-3">
-<h3 id="orgc79c95c">3. 簡単な演算</h3>
-<div class="outline-text-3" id="text-orgc79c95c">
-<p>
-四則演算を含む様々な演算を行うことが可能です。
-</p>
-
-<div class="org-src-container">
-<pre class="src src-R">
-1+2 ## 入力すれば、
-
-</pre>
-</div>
-
-<pre class="example">
-[1] 3
-</pre>
-
-
-<p>
-ベクトルの演算も可能で
-</p>
-
-<div class="org-src-container">
-<pre class="src src-R">
-c(1, 2, 3) + c(4, 5, 6) # ベクトル+ベクトル
-c(1, 2, 3) * 2          # 全要素に2をかける
-
-(x &lt;- c(1, 2, 3))       # 変数へのベクトル値の代入
-(x &lt;- x * 2)            # x の保持するベクトル全要素に2をかける
-
-</pre>
-</div>
-
-<pre class="example">
-[1] 5 7 9
-[1] 2 4 6
-[1] 1 2 3
-[1] 2 4 6
-</pre>
-</div>
-
-<div id="outline-container-org4eb4c3b" class="outline-4">
-<h4 id="org4eb4c3b">課題 3-1:</h4>
-<div class="outline-text-4" id="text-org4eb4c3b">
-<p>
-変数 x にベクトル(1, 2, 3)、変数 y に 2 を代入し、x * y を計算して
-みましょう。 どんな答えが返ってきますか?
-</p>
-
-<div class="org-src-container">
-<pre class="src src-R">
-
-
-</pre>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org41a6c61" class="outline-4">
-<h4 id="org41a6c61">課題 3-2:</h4>
-<div class="outline-text-4" id="text-org41a6c61">
-<p>
-変数 x にベクトル(1, 2, 3)を代入し、さらにそれを 3 倍にした結果を
-x に格納しましょう。
-</p>
-
-<div class="org-src-container">
-<pre class="src src-R">
-
-</pre>
-</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-10-26 火 21:42</p>
+<p class="date">Created: 2021-10-26 火 21:39</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
