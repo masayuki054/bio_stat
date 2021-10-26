@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-10-26 火 16:56 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>初心者用 R 言語講座 (2)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">初心者用 R 言語講座 (2)</h1>
+<div class="org-src-container">
+<pre class="src src-R">
+</pre>
+</div>
+
+<div id="outline-container-org34799a4" class="outline-2">
+<h2 id="org34799a4">初心者用 R 言語講座 の演習ノート</h2>
+<div class="outline-text-2" id="text-org34799a4">
+<p>
+<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
+</p>
+</div>
+
+
+<div id="outline-container-org8ab5b44" class="outline-3">
+<h3 id="org8ab5b44">4. 簡単なベクトル演算</h3>
+<div class="outline-text-3" id="text-org8ab5b44">
+<div class="org-src-container">
+<pre class="src src-R">
+ (x <span style="color: #e5786d;">&lt;-</span> c(2,4,6,8,10))    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#20316;&#25104;</span>
+ length(x)               <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#27425;&#20803;&#25968;&#12289;&#12377;&#12394;&#12431;&#12385;&#12505;&#12463;&#12488;&#12523;&#20013;&#12398;&#25968;&#20516;&#12398;&#20491;&#25968;</span>
+ x[3]                    <span style="color: #99968b;"># </span><span style="color: #99968b;">3 &#30058;&#30446;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;&#12377;&#12427;</span>
+ x[c(2,4)]               <span style="color: #99968b;"># </span><span style="color: #99968b;">2&#30058;&#30446;&#12392; 4 &#30058;&#30446;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;</span>
+ x[2:4]                  <span style="color: #99968b;"># </span><span style="color: #99968b;">2 &#30058;&#30446;&#12363;&#12425; 4 &#30058;&#30446;&#12414;&#12391;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1]  2  4  6  8 10
+[1] 5
+[1] 6
+[1] 4 8
+[1] 4 6 8
+</pre>
+</div>
+
+
+<div id="outline-container-orgbe5347f" class="outline-4">
+<h4 id="orgbe5347f">ベクトルの比較演算</h4>
+<div class="outline-text-4" id="text-orgbe5347f">
+<div class="org-src-container">
+<pre class="src src-R">
+x
+x &gt; 5                    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#21508;&#35201;&#32032;&#12364; 5 &#12424;&#12426;&#22823;&#12365;&#12356;&#12363;&#12398;&#21028;&#23450;</span>
+which (x&gt;5)
+x[which(x&gt;5)]
+x[x&gt;5]
+</pre>
+</div>
+
+<pre class="example">
+[1]  2  4  6  8 10
+[1] FALSE FALSE  TRUE  TRUE  TRUE
+[1] 3 4 5
+[1]  6  8 10
+[1]  6  8 10
+</pre>
+
+
+<ul class="org-ul">
+<li>判定した結果が TRUE, FALSE のベクトルとして返ってきます。</li>
+<li>which を使うと、何番目が T なのかが返ってきます。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3933360" class="outline-4">
+<h4 id="org3933360">文字列のベクトル</h4>
+<div class="outline-text-4" id="text-org3933360">
+<div class="org-src-container">
+<pre class="src src-R">
+x <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"Sunday"</span>, <span style="color: #95e454;">"Monday"</span>, <span style="color: #95e454;">"Tuesday"</span>, <span style="color: #95e454;">"Wednesday"</span>, <span style="color: #95e454;">"Thursday"</span>, <span style="color: #95e454;">"Friday"</span>, <span style="color: #95e454;">"Saturday"</span>)
+
+x[c(2,4)]
+x[2:4]
+grep(<span style="color: #95e454;">"sd"</span>, x)  <span style="color: #99968b;"># </span><span style="color: #99968b;">"sd"&#12434;&#21547;&#12416;&#35201;&#32032;&#12434;&#25506;&#12377;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1] "Monday"    "Wednesday"
+[1] "Monday"    "Tuesday"   "Wednesday"
+[1] 3 4 5
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org560bea7" class="outline-4">
+<h4 id="org560bea7">ベクトルの各要素の名前付け</h4>
+<div class="outline-text-4" id="text-org560bea7">
+<div class="org-src-container">
+<pre class="src src-R">x <span style="color: #e5786d;">&lt;-</span> c(2, 4, 6)
+names(x) <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"First"</span>, <span style="color: #95e454;">"Second"</span>, <span style="color: #95e454;">"Third"</span>)
+x[[<span style="color: #95e454;">"Second"</span>]]
+
+</pre>
+</div>
+
+<p>
+x の names という <b>属性</b> に (“First”, “Second”, “Third”) が
+付けられる。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd3b6dd4" class="outline-4">
+<h4 id="orgd3b6dd4">数値ベクトルに対する様々な統計関数</h4>
+<div class="outline-text-4" id="text-orgd3b6dd4">
+<div class="org-src-container">
+<pre class="src src-R">
+
+sum(x)     <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#21512;&#35336;&#12289;</span>
+mean(x)    <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#24179;&#22343;</span>
+(x <span style="color: #e5786d;">&lt;-</span> c(2,4,6,8,10));
+sum(x &gt; 5) <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#20013;&#12398;TRUE&#12398;&#25968;&#12434;&#25968;&#12360;&#12427;</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] 30
+[1] 6
+[1]  2  4  6  8 10
+[1] 3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1e5140e" class="outline-4">
+<h4 id="org1e5140e">課題 4-1:</h4>
+<div class="outline-text-4" id="text-org1e5140e">
+<p>
+ベクトル(3, 1, 4, 1, 5, 9, 2, 6, 5)の中で 5 より大きい要素からなるベクトルを作成 しましょう。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd2aafc0" class="outline-4">
+<h4 id="orgd2aafc0">課題 4-2:</h4>
+<div class="outline-text-4" id="text-orgd2aafc0">
+<p>
+ベクトル(1,2,3,4,5,6,7,8,9,10,11,12)に(“Jan”, “Feb”, “Mar”,
+“Apr”, “May”, “Jun”, “Jul”, “Aug”, “Sep”, “Oct”,
+“Nov”, “Dec”)という名前を付け、”Mar”という文字列を使って 3
+番目の要素を取り出してみましょう。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf0371fd" class="outline-3">
+<h3 id="orgf0371fd">5. 簡単な行列の作成と演算</h3>
+<div class="outline-text-3" id="text-orgf0371fd">
+<p>
+ベクトルを集めて行列を作成する
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> rbind(c(1,2,3), c(4,5,6)))
+(x <span style="color: #e5786d;">&lt;-</span> matrix(c(1, 4, 2, 5, 3, 6), nrow=2, ncol=3)) <span style="color: #99968b;"># </span><span style="color: #99968b;">nrow:&#34892;&#25968;&#65292; ncol:&#21015;&#25968;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+x+1
+x*2
+
+y <span style="color: #e5786d;">&lt;-</span> rbind(c(2, 4, 6), c(8, 10, 12))
+
+x + y 
+x * y
+
+x[2,3]
+x[2,]
+x[,3]
+t(x) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#36578;&#32622;</span>
+
+</pre>
+</div>
+
+<pre class="example" id="orgab8f5d6">
+	 [,1] [,2] [,3]
+    [1,]    2    3    4
+    [2,]    5    6    7
+	 [,1] [,2] [,3]
+    [1,]    2    4    6
+    [2,]    8   10   12
+	 [,1] [,2] [,3]
+    [1,]    3    6    9
+    [2,]   12   15   18
+	 [,1] [,2] [,3]
+    [1,]    2    8   18
+    [2,]   32   50   72
+    [1] 6
+    [1] 4 5 6
+    [1] 3 6
+	 [,1] [,2]
+    [1,]    1    4
+    [2,]    2    5
+    [3,]    3    6
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">
+apply(x, 2, mean) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#34892;&#21644;&#65292;x&#12398;2&#27425;&#20803;&#30446;&#12398;&#21508;&#38917;&#12398;&#24179;&#22343;</span>
+apply(x, 1, mean) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#21015;&#21644;&#65292;x&#12398;1&#27425;&#20803;&#30446;&#12398;&#21508;&#38917;&#12398;&#24179;&#22343;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 2.5 3.5 4.5
+[1] 2 5
+</pre>
+
+
+
+<p>
+行列は 2 次元の数値の羅列ですが、
+R では array(ベクトル、各次元の要素の個数)を使っ てさらに n 次元に拡張された配列を扱うことができます。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> array(1:24, c(3,4,2))) <span style="color: #99968b;"># </span><span style="color: #99968b;">3&#215;4&#215;2 &#12398;&#22823;&#12365;&#12373;&#12398;3&#27425;&#20803;&#37197;&#21015;&#12434;&#20316;&#25104;</span>
+
+
+</pre>
+</div>
+
+<pre class="example" id="org456f134">
+    , , 1
+
+	 [,1] [,2] [,3] [,4]
+    [1,]    1    4    7   10
+    [2,]    2    5    8   11
+    [3,]    3    6    9   12
+
+    , , 2
+
+	 [,1] [,2] [,3] [,4]
+    [1,]   13   16   19   22
+    [2,]   14   17   20   23
+    [3,]   15   18   21   24
+</pre>
+
+<p>
+課題5-1: 
+</p>
+
+<p>
+課題5-2: 上記結果に対して行、列それぞれの平均を求めましょう。 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbdd17b2" class="outline-3">
+<h3 id="orgbdd17b2">6. 簡単なリストの作成</h3>
+<div class="outline-text-3" id="text-orgbdd17b2">
+<p>
+リストは様々な型のデータをひとまとめにして管理できるデータ型です。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> list(<span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Kadota"</span>))
+(x <span style="color: #e5786d;">&lt;-</span> list(<span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Kadota"</span>, c(868, 657, 567)))
+
+x[[2]]
+x[[4]]
+
+</pre>
+</div>
+
+<pre class="example" id="orga5f9cae">
+    [[1]]
+    [1] "Oh"
+
+    [[2]]
+    [1] "Nomura"
+
+    [[3]]
+    [1] "Kadota"
+    [[1]]
+    [1] "Oh"
+
+    [[2]]
+    [1] "Nomura"
+
+    [[3]]
+    [1] "Kadota"
+
+    [[4]]
+    [1] 868 657 567
+    [1] "Nomura"
+    [1] 868 657 567
+</pre>
+
+
+<p>
+各々の要素に名前を付けることも可能です。
+</p>
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> list(First=<span style="color: #95e454;">"Oh"</span>, Second=<span style="color: #95e454;">"Nomura"</span>, Third=<span style="color: #95e454;">"Kadota"</span>, Home_Runs=c(868, 657, 567)))
+
+</pre>
+</div>
+
+<pre class="example" id="org348077e">
+    $First
+    [1] "Oh"
+
+    $Second
+    [1] "Nomura"
+
+    $Third
+    [1] "Kadota"
+
+    $Home_Runs
+    [1] 868 657 567
+</pre>
+
+
+<p>
+として、各々の要素に First, Second, Third, Home_Runs という名前が
+付いていることを確認しましょう。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+x[[4]]
+x$Home_Runs
+
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 868 657 567
+[1] 868 657 567
+</pre>
+
+
+<p>
+課題 6-1: 名前が Yamagata のベクトル(“Tsuruoka”, “Sakata”,
+     “Yonezawa”)と名前が Niigata のベクトル(“Yuzawa”, “Niitsu”,
+     “Shibata”)を要素にしたようなリストを作成し、そ の中味を表示し
+     てみましょう。8
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4764f2d" class="outline-3">
+<h3 id="org4764f2d">7. 簡単なデータフレームの作成</h3>
+<div class="outline-text-3" id="text-org4764f2d">
+<p>
+R にはデータフレームと呼ばれる型が存在します。
+</p>
+<ul class="org-ul">
+<li>リストの一種で、行列と同じ二次元配列です。</li>
+</ul>
+
+<p>
+データフレームの各々の行は1つのサンプルに対する観測値、
+各列はサン プルに対する1つの項目とみなすことができます。
+これを使うと、表を簡単に表現するこ とができます。
+以下の表は日本プロ野球の5人の元選手の名前、在籍チーム名、通算打数、 安打数、本塁打数を表したものです。
+</p>
+
+<p>
+Home_Runs 2901 657 3085 504 2543 504 2786 868 2566 567
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> data.frame(
+ row.names = c(<span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Harimoto"</span>, <span style="color: #95e454;">"Kinugasa"</span>, <span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Kadota"</span>),
+ Team = c(<span style="color: #95e454;">"Hawks"</span>, <span style="color: #95e454;">"Flyers"</span>, <span style="color: #95e454;">"Carps"</span>, <span style="color: #95e454;">"Giants"</span>, <span style="color: #95e454;">"Hawks"</span>),
+ At_Bat = c(10472, 9666, 9404, 9250, 8868),
+ Hits = c(2901, 3085, 2543, 2786, 2566),
+ Home_Runs = c(657, 504, 504, 868, 567)
+))
+
+</pre>
+</div>
+
+<pre class="example">
+           Team At_Bat Hits Home_Runs
+Nomura    Hawks  10472 2901       657
+Harimoto Flyers   9666 3085       504
+Kinugasa  Carps   9404 2543       504
+Oh       Giants   9250 2786       868
+Kadota    Hawks   8868 2566       567
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+x$Hits
+x[ c(1,5), c(2,3,4) ] <span style="color: #99968b;"># </span><span style="color: #99968b;">1&#12289;5 &#34892;&#30446;&#12392; 2&#12289;3&#12289;4 &#21015;&#30446;&#12434;&#25277;&#20986;&#12377;&#12427;</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] 2901 3085 2543 2786 2566
+       At_Bat Hits Home_Runs
+Nomura  10472 2901       657
+Kadota   8868 2566       567
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+attributes(x)
+
+</pre>
+</div>
+
+<pre class="example">
+$names
+[1] "Team"      "At_Bat"    "Hits"      "Home_Runs"
+
+$class
+[1] "data.frame"
+
+$row.names
+[1] "Nomura"   "Harimoto" "Kinugasa" "Oh"       "Kadota"
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+names(x)
+row.names(x)
+class(x)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] "Team"      "At_Bat"    "Hits"      "Home_Runs"
+[1] "Nomura"   "Harimoto" "Kinugasa" "Oh"       "Kadota"
+[1] "data.frame"
+</pre>
+</div>
+
+
+
+
+<div id="outline-container-orgd358662" class="outline-4">
+<h4 id="orgd358662">課題 7-1:</h4>
+<div class="outline-text-4" id="text-orgd358662">
+<p>
+下の表は G8 加盟国の国力の一部です。これをデータフレームとして変数にしま しょう5。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">(x <span style="color: #e5786d;">&lt;-</span> data.frame(
+row.names = c(<span style="color: #95e454;">"USA"</span>, <span style="color: #95e454;">"England"</span>, <span style="color: #95e454;">"Italy"</span>, <span style="color: #95e454;">"Canada"</span>, <span style="color: #95e454;">"Germany"</span>, <span style="color: #95e454;">"Japan"</span>, <span style="color: #95e454;">"France"</span>, <span style="color: #95e454;">"Russia"</span>), 
+    Area = c(9.4, 0.2, 0.3, 10.0, 0.3, 0.3, 0.5, 17.1),
+    Population = c(315, 62, 60, 34, 82, 127, 62, 141),
+    GDP = c(14, 3, 2, 2, 4, 5, 3, 2)
+))
+</pre>
+</div>
+
+<pre class="example">
+        Area Population GDP
+USA      9.4        315  14
+England  0.2         62   3
+Italy    0.3         60   2
+Canada  10.0         34   2
+Germany  0.3         82   4
+Japan    0.3        127   5
+France   0.5         62   3
+Russia  17.1        141   2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org293535b" class="outline-4">
+<h4 id="org293535b">課題 7-2:</h4>
+<div class="outline-text-4" id="text-org293535b">
+<p>
+上記で作成したデータフレームより G8 加盟国の国土面積、人口、GDP の
+平均を それぞれ求めましょう。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+x
+mean(x$Area)
+mean(x[[<span style="color: #95e454;">"Population"</span>]])
+mean(x[,3])
+c(<span style="color: #95e454;">"mean(x$Area) = "</span>, mean(x$Area))
+
+</pre>
+</div>
+
+<pre class="example" id="org3bad9dc">
+	    Area Population GDP
+    USA      9.4        315  14
+    England  0.2         62   3
+    Italy    0.3         60   2
+    Canada  10.0         34   2
+    Germany  0.3         82   4
+    Japan    0.3        127   5
+    France   0.5         62   3
+    Russia  17.1        141   2
+    [1] 4.7625
+    [1] 110.375
+    [1] 4.375
+    [1] "mean(x$Area) = " "4.7625"
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
+<p class="date">Created: 2021-10-26 火 16:56</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

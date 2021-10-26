@@ -1,0 +1,432 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+title: 初心者用 R 言語講座 (2)
+#+OPTIONS: tex:t 
+#+property: header-args:R :session *bioR* :results output :exports both 
+
+#+begin_src R :tangle R-intro/code/02.R
+#+end_src
+
+* 初心者用 R 言語講座 の演習ノート
+  [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
+
+
+** 4. 簡単なベクトル演算
+
+   #+begin_src R :tangle R-intro/code/02.R 
+
+ (x <- c(2,4,6,8,10))    # ベクトルの作成
+ length(x)               # ベクトルの次元数、すなわちベクトル中の数値の個数
+ x[3]                    # 3 番目の数値を抽出する
+ x[c(2,4)]               # 2番目と 4 番目の数値を抽出
+ x[2:4]                  # 2 番目から 4 番目までの数値を抽出
+
+     #+end_src
+
+     #+RESULTS:
+     : [1]  2  4  6  8 10
+     : [1] 5
+     : [1] 6
+     : [1] 4 8
+     : [1] 4 6 8
+
+   
+*** ベクトルの比較演算
+
+     #+begin_src R :tangle R-intro/code/02.R 
+
+x
+x > 5                    # ベクトルの各要素が 5 より大きいかの判定
+which (x>5)
+x[which(x>5)]
+x[x>5]
+    #+end_src
+
+    #+RESULTS:
+    : [1]  2  4  6  8 10
+    : [1] FALSE FALSE  TRUE  TRUE  TRUE
+    : [1] 3 4 5
+    : [1]  6  8 10
+    : [1]  6  8 10
+
+    - 判定した結果が TRUE, FALSE のベクトルとして返ってきます。
+    - which を使うと、何番目が T なのかが返ってきます。
+
+*** 文字列のベクトル
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+x <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+x[c(2,4)]
+x[2:4]
+grep("sd", x)  # "sd"を含む要素を探す
+
+    #+end_src
+
+    #+RESULTS:
+    : [1] "Monday"    "Wednesday"
+    : [1] "Monday"    "Tuesday"   "Wednesday"
+    : [1] 3 4 5
+
+*** ベクトルの各要素の名前付け
+    #+begin_src R :tangle R-intro/code/02.R 
+x <- c(2, 4, 6)
+names(x) <- c("First", "Second", "Third")
+x[["Second"]]
+
+#+end_src
+
+#+RESULTS:
+
+    x の names という *属性* に (“First”, “Second”, “Third”) が
+    付けられる。
+
+*** 数値ベクトルに対する様々な統計関数
+    #+begin_src R :tangle R-intro/code/02.R 
+
+
+sum(x)     # x の合計、
+mean(x)    # x の平均
+(x <- c(2,4,6,8,10));
+sum(x > 5) # x の中のTRUEの数を数える
+#+end_src
+
+#+RESULTS:
+: [1] 30
+: [1] 6
+: [1]  2  4  6  8 10
+: [1] 3
+
+*** 課題 4-1:
+    ベクトル(3, 1, 4, 1, 5, 9, 2, 6, 5)の中で 5 より大きい要素からなるベクトルを作成 しましょう。
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+
+    #+end_src
+
+
+*** 課題 4-2: 
+
+    ベクトル(1,2,3,4,5,6,7,8,9,10,11,12)に(“Jan”, “Feb”, “Mar”,
+    “Apr”, “May”, “Jun”, “Jul”, “Aug”, “Sep”, “Oct”,
+    “Nov”, “Dec”)という名前を付け、”Mar”という文字列を使って 3
+    番目の要素を取り出してみましょう。
+
+** 5. 簡単な行列の作成と演算
+
+   ベクトルを集めて行列を作成する
+
+   #+begin_src R :tangle R-intro/code/02.R 
+
+(x <- rbind(c(1,2,3), c(4,5,6)))
+(x <- matrix(c(1, 4, 2, 5, 3, 6), nrow=2, ncol=3)) # nrow:行数， ncol:列数
+
+   #+end_src
+
+#+RESULTS:
+:      [,1] [,2] [,3]
+: [1,]    1    2    3
+: [2,]    4    5    6
+:      [,1] [,2] [,3]
+: [1,]    1    2    3
+: [2,]    4    5    6
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+x+1
+x*2
+
+y <- rbind(c(2, 4, 6), c(8, 10, 12))
+
+x + y 
+x * y
+
+x[2,3]
+x[2,]
+x[,3]
+t(x) # 転置
+
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+	 [,1] [,2] [,3]
+    [1,]    2    3    4
+    [2,]    5    6    7
+	 [,1] [,2] [,3]
+    [1,]    2    4    6
+    [2,]    8   10   12
+	 [,1] [,2] [,3]
+    [1,]    3    6    9
+    [2,]   12   15   18
+	 [,1] [,2] [,3]
+    [1,]    2    8   18
+    [2,]   32   50   72
+    [1] 6
+    [1] 4 5 6
+    [1] 3 6
+	 [,1] [,2]
+    [1,]    1    4
+    [2,]    2    5
+    [3,]    3    6
+    #+end_example
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+apply(x, 2, mean) # 行和，xの2次元目の各項の平均
+apply(x, 1, mean) # 列和，xの1次元目の各項の平均
+
+    #+end_src
+
+    #+RESULTS:
+    : [1] 2.5 3.5 4.5
+    : [1] 2 5
+
+
+    行列は 2 次元の数値の羅列ですが、
+    R では array(ベクトル、各次元の要素の個数)を使っ てさらに n 次元に拡張された配列を扱うことができます。
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+(x <- array(1:24, c(3,4,2))) # 3×4×2 の大きさの3次元配列を作成
+
+
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    , , 1
+
+	 [,1] [,2] [,3] [,4]
+    [1,]    1    4    7   10
+    [2,]    2    5    8   11
+    [3,]    3    6    9   12
+
+    , , 2
+
+	 [,1] [,2] [,3] [,4]
+    [1,]   13   16   19   22
+    [2,]   14   17   20   23
+    [3,]   15   18   21   24
+    #+end_example
+
+ 課題5-1: 
+
+ 課題5-2: 上記結果に対して行、列それぞれの平均を求めましょう。 
+
+** 6. 簡単なリストの作成
+   リストは様々な型のデータをひとまとめにして管理できるデータ型です。
+
+   #+begin_src R :tangle R-intro/code/02.R 
+
+(x <- list("Oh", "Nomura", "Kadota"))
+(x <- list("Oh", "Nomura", "Kadota", c(868, 657, 567)))
+
+x[[2]]
+x[[4]]
+
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    [[1]]
+    [1] "Oh"
+
+    [[2]]
+    [1] "Nomura"
+
+    [[3]]
+    [1] "Kadota"
+    [[1]]
+    [1] "Oh"
+
+    [[2]]
+    [1] "Nomura"
+
+    [[3]]
+    [1] "Kadota"
+
+    [[4]]
+    [1] 868 657 567
+    [1] "Nomura"
+    [1] 868 657 567
+    #+end_example
+
+
+    各々の要素に名前を付けることも可能です。
+    #+begin_src R :tangle R-intro/code/02.R 
+
+(x <- list(First="Oh", Second="Nomura", Third="Kadota", Home_Runs=c(868, 657, 567)))
+
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    $First
+    [1] "Oh"
+
+    $Second
+    [1] "Nomura"
+
+    $Third
+    [1] "Kadota"
+
+    $Home_Runs
+    [1] 868 657 567
+    #+end_example
+
+
+    として、各々の要素に First, Second, Third, Home_Runs という名前が
+    付いていることを確認しましょう。
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+x[[4]]
+x$Home_Runs
+
+
+    #+end_src
+
+    #+RESULTS:
+    : [1] 868 657 567
+    : [1] 868 657 567
+
+ 課題 6-1: 名前が Yamagata のベクトル(“Tsuruoka”, “Sakata”,
+      “Yonezawa”)と名前が Niigata のベクトル(“Yuzawa”, “Niitsu”,
+      “Shibata”)を要素にしたようなリストを作成し、そ の中味を表示し
+      てみましょう。8
+
+** 7. 簡単なデータフレームの作成
+   
+   R にはデータフレームと呼ばれる型が存在します。
+   - リストの一種で、行列と同じ二次元配列です。
+
+   データフレームの各々の行は1つのサンプルに対する観測値、
+   各列はサン プルに対する1つの項目とみなすことができます。
+   これを使うと、表を簡単に表現するこ とができます。
+   以下の表は日本プロ野球の5人の元選手の名前、在籍チーム名、通算打数、 安打数、本塁打数を表したものです。
+
+   Home_Runs 2901 657 3085 504 2543 504 2786 868 2566 567
+
+   #+begin_src R :tangle R-intro/code/02.R 
+
+(x <- data.frame(
+ row.names = c("Nomura", "Harimoto", "Kinugasa", "Oh", "Kadota"),
+ Team = c("Hawks", "Flyers", "Carps", "Giants", "Hawks"),
+ At_Bat = c(10472, 9666, 9404, 9250, 8868),
+ Hits = c(2901, 3085, 2543, 2786, 2566),
+ Home_Runs = c(657, 504, 504, 868, 567)
+))
+
+    #+end_src
+
+    #+RESULTS:
+    :            Team At_Bat Hits Home_Runs
+    : Nomura    Hawks  10472 2901       657
+    : Harimoto Flyers   9666 3085       504
+    : Kinugasa  Carps   9404 2543       504
+    : Oh       Giants   9250 2786       868
+    : Kadota    Hawks   8868 2566       567
+
+   
+    #+begin_src R :tangle R-intro/code/02.R 
+
+x$Hits
+x[ c(1,5), c(2,3,4) ] # 1、5 行目と 2、3、4 列目を抽出する
+    #+end_src
+
+    #+RESULTS:
+    : [1] 2901 3085 2543 2786 2566
+    :        At_Bat Hits Home_Runs
+    : Nomura  10472 2901       657
+    : Kadota   8868 2566       567
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+attributes(x)
+
+    #+end_src
+
+    #+RESULTS:
+    : $names
+    : [1] "Team"      "At_Bat"    "Hits"      "Home_Runs"
+    : 
+    : $class
+    : [1] "data.frame"
+    : 
+    : $row.names
+    : [1] "Nomura"   "Harimoto" "Kinugasa" "Oh"       "Kadota"
+
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+names(x)
+row.names(x)
+class(x)
+
+    #+end_src
+
+    #+RESULTS:
+    : [1] "Team"      "At_Bat"    "Hits"      "Home_Runs"
+    : [1] "Nomura"   "Harimoto" "Kinugasa" "Oh"       "Kadota"
+    : [1] "data.frame"
+
+ 
+
+
+*** 課題 7-1:
+    下の表は G8 加盟国の国力の一部です。これをデータフレームとして変数にしま しょう5。
+
+    #+begin_src R :tangle R-intro/code/02.R 
+(x <- data.frame(
+row.names = c("USA", "England", "Italy", "Canada", "Germany", "Japan", "France", "Russia"), 
+    Area = c(9.4, 0.2, 0.3, 10.0, 0.3, 0.3, 0.5, 17.1),
+    Population = c(315, 62, 60, 34, 82, 127, 62, 141),
+    GDP = c(14, 3, 2, 2, 4, 5, 3, 2)
+))
+    #+end_src    
+
+    #+RESULTS:
+    :         Area Population GDP
+    : USA      9.4        315  14
+    : England  0.2         62   3
+    : Italy    0.3         60   2
+    : Canada  10.0         34   2
+    : Germany  0.3         82   4
+    : Japan    0.3        127   5
+    : France   0.5         62   3
+    : Russia  17.1        141   2
+
+*** 課題 7-2:
+    上記で作成したデータフレームより G8 加盟国の国土面積、人口、GDP の
+    平均を それぞれ求めましょう。
+
+    #+begin_src R :tangle R-intro/code/02.R 
+
+x
+mean(x$Area)
+mean(x[["Population"]])
+mean(x[,3])
+c("mean(x$Area) = ", mean(x$Area))
+
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+	    Area Population GDP
+    USA      9.4        315  14
+    England  0.2         62   3
+    Italy    0.3         60   2
+    Canada  10.0         34   2
+    Germany  0.3         82   4
+    Japan    0.3        127   5
+    France   0.5         62   3
+    Russia  17.1        141   2
+    [1] 4.7625
+    [1] 110.375
+    [1] 4.375
+    [1] "mean(x$Area) = " "4.7625"
+    #+end_example

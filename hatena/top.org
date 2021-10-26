@@ -1,0 +1,32 @@
+* hatena masayuki054  生物統計 2021
+
+  [[https://masayuki054.hatenablog.com/entry/2021/03/11/103431][生物統計学 2021 - masayuki054's diary]]
+
+  - 岩手大学 理工学部 生命 2021
+
+* 講義資料
+
+  https://wiki.cis.iwate-u.ac.jp/~suzuki/biostat  とりあえず
+
+* 教科書
+  [[https://www.ohmsha.co.jp/book/9784274227387/][入門 統計学（第2版） | Ohmsha]], スライド，データのダウンロード
+
+  
+* 進行
+
+  [[https://masayuki054.hatenablog.com/entry/2021/10/06/103338?_ga=2.200886382.1369059129.1633482592-251679600.1592307203][進行 生物統計 2021 - masayuki054's diary]]
+
+* Rについて
+  [[https://masayuki054.hatenablog.com/entry/2021/10/06/101325?_ga=2.170599136.1369059129.1633482592-251679600.1592307203][R 生物統計学 2021 - masayuki054's diary]]
+  
+* links
+
+  - ブログ内[[https://masayuki054.hatenablog.com/entry/2021/03/11/103431][ top]] / [[https://masayuki054.hatenablog.com/entry/2021/10/06/101325?_ga=2.170599136.1369059129.1633482592-251679600.1592307203][R ]]/ [[https://masayuki054.hatenablog.com/entry/2021/10/06/103338?_ga=2.200886382.1369059129.1633482592-251679600.1592307203][進行]]
+  
+  - [[https://www.ohmsha.co.jp/book/9784274227387/][入門 統計学（第2版） 検定から多変量解析・実験計画法・ベイズ統計学まで | Ohmsha]]
+    - スライドとデータがあります。
+
+  - [[http://cse.naro.affrc.go.jp/takezawa/r-tips.pdf][R-Tips - r-tips.pdf]]
+  - [[http://www.okadajp.org/RWiki/][RjpWiki - RjpWiki]]
+   
+   
