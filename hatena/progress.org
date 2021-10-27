@@ -18,24 +18,26 @@
      - 簡単なリストの作成
      - 簡単なデータフレームの作成
      
-
 ** Rによる統計入門
-   
+   - スライドまたは PDF を手元に準備
+   - http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/org     
+     
 *** 入門統計学の1章
-   - Excel -> R で書き直し
    - スライドまたは PDF を手元に準備
 
-*** Rの演習
-    - [[http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html][生物統計学１]]
-      - 2. データの図示と基本統計量の計算 をやってみましょう
+**** Rの演習
+     - [[http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html][生物統計学１]]
+       - 2. データの図示と基本統計量の計算 をやってみましょう
 
-    今日の演習内容をファイルに保存しましょう。
-    - 自分のRの演習フォルダに
-    - 日付と項目がわかるように。
+     今日の演習内容をファイルに保存しましょう。
+     - 自分のRの演習フォルダに
+     - 日付と項目がわかるように。
 
-   - 参考サイト
-     - [[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]]
-     - http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/ 
+*** 入門統計学の2章
+
+**** Rの演習
+     - http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/R-text-02.html
+       - 2. データの図示と基本統計量の計算 をやってみましょう
 
 * 2nd 10/14
   

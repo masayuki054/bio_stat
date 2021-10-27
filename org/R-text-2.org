@@ -1,0 +1,197 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+Title: 入門統計学 (2)
+#+OPTIONS: tex:t 
+
+
+* script
+  
+ #+property: header-args:R :session *biot :results output :exports both
+
+ #+begin_src R :session t :results output :exports both :tangle R-text/code/02.R
+
+
+
+ #+end_src
+
+* 2章
+ 
+** 2.2 二項分布の例題
+    
+#+begin_src R ：tangle Codes/03.R 
+## 入門統計学2章1節
+
+## dbinom(x, size, prob)
+
+## 二項分布 nCx p^x の計算
+
+dbinom(c(0,1,2,3,4),3,1/3)
+
+plot(dbinom(c(0,1,2,3,4),3,1/3),type="h")
+ #+end_src
+
+  #+RESULTS:
+  : [1] 0.29629630 0.44444444 0.22222222 0.03703704 0.00000000
+  
+** 2.3 正規分布
+
+   例題：正規分布の確率計算
+   
+   #+begin_src R ：tangle Codes/03.R 
+
+## 入門統計学2章1節
+
+## dnorm(x, mean=, sd=) x での確率密度
+## norm(x, mean=, sd=)  0..x までの確率
+
+# dnorm
+dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3))
+
+plot(dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3)))
+
+# pnorm
+pnorm(44, mean=40, sd=2)
+
+ #+end_src
+
+ #+RESULTS:
+ : [1] 0.2307994842 0.4886025119 0.2307994842 0.0243260867 0.0005720947
+ : [1] 0.9772499
+
+** 2.4 標準化と偏差値 例題
+
+   例題: 胡瓜収穫量の標準化
+
+*** 胡瓜収穫量データの読み込み
+
+    http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/org/R-text/data/01-02.csv
+
+    上記のデータをダウンロードし，データの読み込み先を，自分の環境に
+    あわせてください
+     
+    #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+
+(csv.1.2 <- read.csv("R-text/data/01-02.csv"))
+# class(csv.1.2)
+# (csv.1.2[,1:2])
+# class(csv.1.2[,1:2])
+
+    #+end_src
+
+    #+RESULTS:
+     #+begin_example
+	 栽培法A 栽培法B
+      1     3063    3157
+      2     2275    2707
+      3     2089    3270
+      4     2855    3181
+      5     2836    3633
+      6     3219    3404
+      7     2817    2219
+      8     2136    2730
+      9     2540    3408
+      10    2263    3203
+      11    2140    2938
+      12    1757    3286
+      13    2499    2920
+      14    2093    3332
+      15    2073    3478
+      [1] "data.frame"
+	 栽培法A 栽培法B
+      1     3063    3157
+      2     2275    2707
+      3     2089    3270
+      4     2855    3181
+      5     2836    3633
+      6     3219    3404
+      7     2817    2219
+      8     2136    2730
+      9     2540    3408
+      10    2263    3203
+      11    2140    2938
+      12    1757    3286
+      13    2499    2920
+      14    2093    3332
+      15    2073    3478
+      [1] "data.frame"
+     #+end_example
+
+      
+**** 行列化
+      
+     #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+
+(mat.1.2 <- matrix(as.matrix(csv.1.2), nrow(csv.1.2), ncol(csv.1.2))) 
+class(mat.1.2)
+
+      #+end_src
+
+      #+RESULTS:
+      #+begin_example
+	     [,1] [,2]
+	[1,] 3063 3157
+	[2,] 2275 2707
+	[3,] 2089 3270
+	[4,] 2855 3181
+	[5,] 2836 3633
+	[6,] 3219 3404
+	[7,] 2817 2219
+	[8,] 2136 2730
+	[9,] 2540 3408
+       [10,] 2263 3203
+       [11,] 2140 2938
+       [12,] 1757 3286
+       [13,] 2499 2920
+       [14,] 2093 3332
+       [15,] 2073 3478
+       [1] "matrix"
+      #+end_example
+
+      #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+
+(z1 <- (mat.1.2[,1] - mean(mat.1.2[,1]))/sqrt(var(mat.1.2[,1])))
+(z2 <- (mat.1.2[,2] - mean(mat.1.2[,2]))/sqrt(var(mat.1.2[,2])))
+
+      #+end_src
+
+      #+RESULTS:
+      :  [1]  1.4468709 -0.3940348 -0.8285633  0.9609465  0.9165592  1.8113141
+      :  [7]  0.8721719 -0.7187631  0.2250515 -0.4220689 -0.7094184 -1.6041733
+      : [13]  0.1292683 -0.8192186 -0.8659421
+      :  [1]  0.08921788 -1.14231733  0.39847006  0.15489976  1.39190846  0.76519388
+      :  [7] -2.47784884 -1.07937219  0.77614086  0.21510815 -0.51012925  0.44225798
+      : [13] -0.55939066  0.56814824  0.96771300
+
+      #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+
+c("z1 (mean, var,sd): ", mean(z1), var(z1), sqrt(var(z1)))
+c("z2 (mean, var,sd): ", mean(z2), var(z2), sqrt(var(z2)))
+
+      #+end_src
+
+      #+RESULTS:
+      : [1] "z1 (mean, var,sd): "  "3.49727480771408e-16" "1"                   
+      : [4] "1"
+      : [1] "z2 (mean, var,sd): "   "-2.46084981096277e-16" "1"                    
+      : [4] "1"
+
+      
+** 2.5 ポアソン分布
+
+    #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+dev.new()
+x <- 0:10
+plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
+     main="ポアソン分布",
+     ylab="確率",
+     xlab="出現値",xaxt="n")
+for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
+  points(x, dpois(x, lamb), type="l")
+}
+
+    #+end_src
+
+    #+RESULTS:
+
+
