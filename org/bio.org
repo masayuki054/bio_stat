@@ -1,4 +1,4 @@
-#+property: header-args:R :session *bio* :results output :exports both
+#+property: header-args:R :session *bioR* :results output :exports both
 
 * [[http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html][生物統計学１]]
 

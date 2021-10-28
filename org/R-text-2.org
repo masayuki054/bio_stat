@@ -7,10 +7,9 @@
 
 * script
   
- #+property: header-args:R :session *biot :results output :exports both
+ #+property: header-args:R :session *bioR :results output :exports both
 
- #+begin_src R :session t :results output :exports both :tangle R-text/code/02.R
-
+ #+begin_src R :session *bioR :results output :exports both :tangle R-text/code/02.R
 
 
  #+end_src
@@ -70,7 +69,7 @@ pnorm(44, mean=40, sd=2)
     上記のデータをダウンロードし，データの読み込み先を，自分の環境に
     あわせてください
      
-    #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+    #+begin_src R :session *bioR :results output :exports both :tangle R-text/code/02.R
 
 (csv.1.2 <- read.csv("R-text/data/01-02.csv"))
 # class(csv.1.2)
@@ -120,7 +119,7 @@ pnorm(44, mean=40, sd=2)
       
 **** 行列化
       
-     #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+     #+begin_src R :session *bioR :results output :exports both :tangle R-text/code/02.R
 
 (mat.1.2 <- matrix(as.matrix(csv.1.2), nrow(csv.1.2), ncol(csv.1.2))) 
 class(mat.1.2)
@@ -148,7 +147,7 @@ class(mat.1.2)
        [1] "matrix"
       #+end_example
 
-      #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+      #+begin_src R :session *bioR :results output :exports both :tangle R-text/code/02.R
 
 (z1 <- (mat.1.2[,1] - mean(mat.1.2[,1]))/sqrt(var(mat.1.2[,1])))
 (z2 <- (mat.1.2[,2] - mean(mat.1.2[,2]))/sqrt(var(mat.1.2[,2])))
@@ -163,7 +162,7 @@ class(mat.1.2)
       :  [7] -2.47784884 -1.07937219  0.77614086  0.21510815 -0.51012925  0.44225798
       : [13] -0.55939066  0.56814824  0.96771300
 
-      #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+      #+begin_src R :session *bioR :results output :exports both :tangle R-text/code/02.R
 
 c("z1 (mean, var,sd): ", mean(z1), var(z1), sqrt(var(z1)))
 c("z2 (mean, var,sd): ", mean(z2), var(z2), sqrt(var(z2)))
@@ -179,7 +178,7 @@ c("z2 (mean, var,sd): ", mean(z2), var(z2), sqrt(var(z2)))
       
 ** 2.5 ポアソン分布
 
-    #+begin_src R :session *biot :results output :exports both :tangle R-text/code/02.R
+    #+begin_src R :session *bioR :results output :exports both :tangle R-text/code/02.R
 dev.new()
 x <- 0:10
 plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
