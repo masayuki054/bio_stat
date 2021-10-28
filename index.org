@@ -5,9 +5,12 @@
 
 * 今日の講義の関連サイト
 
-  http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/
-  http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/
-  http://giyhub.com/masayuki054/masayuki054/bio_stat/
+  - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/
+    講義内容
+  - http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/
+    スライド，データ，など
+  - http://giyhub.com/masayuki054/masayuki054/bio_stat/
+    講義保存場所
 
 * 3rd 10/28
 
