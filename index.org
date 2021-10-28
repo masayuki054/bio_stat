@@ -1,8 +1,13 @@
-[[https://masayuki054.hatenablog.com/entry/2021/03/11/103431][top]] / [[https://masayuki054.hatenablog.com/entry/2021/10/06/101325?_ga=2.170599136.1369059129.1633482592-251679600.1592307203][R ]]/ [[https://masayuki054.hatenablog.com/entry/2021/10/06/103338?_ga=2.200886382.1369059129.1633482592-251679600.1592307203][進行]]
+#+setupfile: org/info/index-bigblow-header.setup
+#+include: org/info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+title: 10/28 bio_stat
 
-* 今日の講義のサイト
+* 今日の講義の関連サイト
 
   http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/
+  http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/
+  http://giyhub.com/masayuki054/masayuki054/bio_stat/
 
 * 3rd 10/28
 
@@ -42,7 +47,7 @@
    
 **** 統計分布 (スライド)
 **** Rの演習
-     - [[./org/R-text-02.org]]
+    - [[./org/R-text-2.org]]
        - 2. データの図示と基本統計量の計算 をやってみましょう
 
 * 2nd 10/14
