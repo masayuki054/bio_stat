@@ -14,13 +14,14 @@
 
 ** R 入門
    - [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]，
+   - 先生の演習ノート [[https://github.com/masayuki054/bio_stat/blob/main/org/R-intro-2.org][bio_stat/R-intro-2.org at main · masayuki054/bio_stat]] 
      - 簡単な行列の作成と演算
      - 簡単なリストの作成
      - 簡単なデータフレームの作成
      
 ** Rによる統計入門
    - スライドまたは PDF を手元に準備
-   - http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/org     
+   - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org     
      
 *** 入門統計学の1章
    - スライドまたは PDF を手元に準備

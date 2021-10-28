@@ -38,7 +38,7 @@ plot(dbinom(c(0,1,2,3,4),3,1/3),type="h")
 
    例題：正規分布の確率計算
    
-   #+begin_src R ：tangle Codes/03.R 
+   #+begin_src R ：tangle Codes/03.R
 
 ## 入門統計学2章1節
 
