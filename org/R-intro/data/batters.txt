@@ -1,0 +1,6 @@
+	Team	At_Bat	Hits	Home_Runs
+Nomura	Hawks	10472	2901	657
+Harimoto	Flyers	9666	3085	504
+Kinugasa	Carps	9404	2543	504
+Oh	Giants	9250	2786	868
+Kadota	Hawks	8868	2566	567

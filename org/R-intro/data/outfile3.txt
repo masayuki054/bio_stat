@@ -1,0 +1,6 @@
+""=	"Hits"=	"Home_Runs"
+"Nomura"=	2901=	657
+"Harimoto"=	3085=	504
+"Kinugasa"=	2543=	504
+"Oh"=	2786=	868
+"Kadota"=	2566=	567

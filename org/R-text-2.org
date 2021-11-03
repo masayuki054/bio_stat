@@ -3,23 +3,13 @@
 #+AUTHOR: 鈴木正幸，非常勤講師
 #+Title: 入門統計学 (2)
 #+OPTIONS: tex:t 
-
-
-* script
-  
- #+property: header-args:R :session *biot :results output :exports both
-
- #+begin_src R :session t :results output :exports both :tangle R-text/code/02.R
-
-
-
- #+end_src
+#+property: header-args:R :session *biot* :results output :exports both
 
 * 2章
- 
+  
 ** 2.2 二項分布の例題
     
-#+begin_src R ：tangle Codes/03.R 
+#+begin_src R :tangle R-text/code/02.R 
 ## 入門統計学2章1節
 
 ## dbinom(x, size, prob)
@@ -38,7 +28,7 @@ plot(dbinom(c(0,1,2,3,4),3,1/3),type="h")
 
    例題：正規分布の確率計算
    
-   #+begin_src R ：tangle Codes/03.R
+   #+begin_src R :tangle R-text/code/02.R 
 
 ## 入門統計学2章1節
 
@@ -65,7 +55,7 @@ pnorm(44, mean=40, sd=2)
 
 *** 胡瓜収穫量データの読み込み
 
-    http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/org/R-text/data/01-02.csv
+    http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text/data/01-02.csv
 
     上記のデータをダウンロードし，データの読み込み先を，自分の環境に
     あわせてください
@@ -80,42 +70,24 @@ pnorm(44, mean=40, sd=2)
     #+end_src
 
     #+RESULTS:
-     #+begin_example
-	 栽培法A 栽培法B
-      1     3063    3157
-      2     2275    2707
-      3     2089    3270
-      4     2855    3181
-      5     2836    3633
-      6     3219    3404
-      7     2817    2219
-      8     2136    2730
-      9     2540    3408
-      10    2263    3203
-      11    2140    2938
-      12    1757    3286
-      13    2499    2920
-      14    2093    3332
-      15    2073    3478
-      [1] "data.frame"
-	 栽培法A 栽培法B
-      1     3063    3157
-      2     2275    2707
-      3     2089    3270
-      4     2855    3181
-      5     2836    3633
-      6     3219    3404
-      7     2817    2219
-      8     2136    2730
-      9     2540    3408
-      10    2263    3203
-      11    2140    2938
-      12    1757    3286
-      13    2499    2920
-      14    2093    3332
-      15    2073    3478
-      [1] "data.frame"
-     #+end_example
+    #+begin_example
+       栽培法A 栽培法B
+    1     3063    3157
+    2     2275    2707
+    3     2089    3270
+    4     2855    3181
+    5     2836    3633
+    6     3219    3404
+    7     2817    2219
+    8     2136    2730
+    9     2540    3408
+    10    2263    3203
+    11    2140    2938
+    12    1757    3286
+    13    2499    2920
+    14    2093    3332
+    15    2073    3478
+    #+end_example
 
       
 **** 行列化
@@ -194,4 +166,14 @@ for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
 
     #+RESULTS:
 
+** R-script
 
+   
+
+ #+begin_src R :session t :results output :exports both :tangle R-text/code/02.R
+
+
+ #+end_src
+
+
+  #+include: R-text/code/02.R

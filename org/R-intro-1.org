@@ -5,8 +5,8 @@
 #+OPTIONS: tex:t 
 #+property: header-args:R :session *bioR* :results output :exports both
 
-#+begin_src R :tangle R-intro/code/0403.R
-#+end_src
+  #+begin_src R :tangle R-intro/code/0403.R
+  #+end_src
 
 * 初心者用 R 言語講座 の演習ノート
   [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
