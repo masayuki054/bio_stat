@@ -3,11 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-10-26 火 21:39 -->
+<!-- 2021-10-28 木 13:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>農工大 生物統計1</title>
 <meta name="generator" content="Org mode" />
+<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -39,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -51,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -160,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -192,79 +180,98 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 </head>
 <body>
 <div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgcdd98ef">1. 生物統計学１</a>
-<ul>
-<li><a href="#org086c8bc">1.1. 要約統計量</a></li>
-<li><a href="#org52c7926">1.2. データの図示</a>
-<ul>
-<li><a href="#org0ba6ef5">1.2.1. ダイズ地上部乾物重データ</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+<h1 class="title">農工大 生物統計1</h1>
 
-<div id="outline-container-orgcdd98ef" class="outline-2">
-<h2 id="orgcdd98ef"><span class="section-number-2">1</span> <a href="http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html">生物統計学１</a></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org312a3a0" class="outline-2">
+<h2 id="org312a3a0"><a href="http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html">生物統計学１</a></h2>
+<div class="outline-text-2" id="text-org312a3a0">
 </div>
-<div id="outline-container-org086c8bc" class="outline-3">
-<h3 id="org086c8bc"><span class="section-number-3">1.1</span> 要約統計量</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org641b79c" class="outline-3">
+<h3 id="org641b79c">要約統計量</h3>
+<div class="outline-text-3" id="text-org641b79c">
 <div class="org-src-container">
-<pre class="src src-R">## 
-#英語の得点の記述統計
+<pre class="src src-R"><span style="color: #99968b;">## </span>
+<span style="color: #99968b;">#</span><span style="color: #99968b;">&#33521;&#35486;&#12398;&#24471;&#28857;&#12398;&#35352;&#36848;&#32113;&#35336;</span>
 
 </pre>
 </div>
 <div class="org-src-container">
-<pre class="src src-R">## 
-#英語の得点の記述統計
+<pre class="src src-R"><span style="color: #99968b;">## </span>
+<span style="color: #99968b;">#</span><span style="color: #99968b;">&#33521;&#35486;&#12398;&#24471;&#28857;&#12398;&#35352;&#36848;&#32113;&#35336;</span>
 
-eigo &lt;- c(	
-36,70,56,68,76,60,50,63,62,42,64,60,50,68,71,67,	
-50,65,67,57,72,64,61,66,46,80,46,51,59,32,55,65,	
-65,52,57,64,23,57,53,54,38,71,57,69,77,61,51,64,	
-63,43,65,61,51,69,72,68,53,66,68,58,73,65,62,67,	
+eigo <span style="color: #e5786d;">&lt;-</span> c(      
+36,70,56,68,76,60,50,63,62,42,64,60,50,68,71,67,        
+50,65,67,57,72,64,61,66,46,80,46,51,59,32,55,65,        
+65,52,57,64,23,57,53,54,38,71,57,69,77,61,51,64,        
+63,43,65,61,51,69,72,68,53,66,68,58,73,65,62,67,        
 47,81,47,52,59,33,56,66,67,52,58,65,24,58,54,55)
 
-length(eigo)	     	#データ数　
-mean(eigo)	     	# 標本平均　
-var(eigo)	     	# 標本分散　
-sd(eigo)	     	# 標本標準偏差　
+length(eigo)            <span style="color: #99968b;">#</span><span style="color: #99968b;">&#12487;&#12540;&#12479;&#25968;&#12288;</span>
+mean(eigo)              <span style="color: #99968b;"># </span><span style="color: #99968b;">&#27161;&#26412;&#24179;&#22343;&#12288;</span>
+var(eigo)               <span style="color: #99968b;"># </span><span style="color: #99968b;">&#27161;&#26412;&#20998;&#25955;&#12288;</span>
+sd(eigo)                <span style="color: #99968b;"># </span><span style="color: #99968b;">&#27161;&#26412;&#27161;&#28310;&#20559;&#24046;&#12288;</span>
 
-summary(eigo)		# データの要約統計量
+summary(eigo)           <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12487;&#12540;&#12479;&#12398;&#35201;&#32004;&#32113;&#35336;&#37327;</span>
 
 </pre>
 </div>
@@ -276,43 +283,44 @@ summary(eigo)		# データの要約統計量
 [1] 11.59264
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   23.00   52.00   60.50   58.62   66.25   81.00
+
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org52c7926" class="outline-3">
-<h3 id="org52c7926"><span class="section-number-3">1.2</span> データの図示</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org090f52f" class="outline-3">
+<h3 id="org090f52f">データの図示</h3>
+<div class="outline-text-3" id="text-org090f52f">
 <div class="org-src-container">
-<pre class="src src-R">##
-## データの図示
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#12487;&#12540;&#12479;&#12398;&#22259;&#31034;</span>
 
-## 箱ヒゲ図
-## png(file="bio/graph/eigo-box.png")
-boxplot(eigo, main="英語得点の箱ヒゲ図") #箱ひげ図
-boxplot.stats(eigo)	     	         #箱ひげ図用統計量　
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#31665;&#12498;&#12466;&#22259;</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">png(file="bio/graph/eigo-box.png")</span>
+boxplot(eigo, main=<span style="color: #95e454;">"&#33521;&#35486;&#24471;&#28857;&#12398;&#31665;&#12498;&#12466;&#22259;"</span>) <span style="color: #99968b;">#</span><span style="color: #99968b;">&#31665;&#12402;&#12370;&#22259;</span>
+boxplot.stats(eigo)                      <span style="color: #99968b;">#</span><span style="color: #99968b;">&#31665;&#12402;&#12370;&#22259;&#29992;&#32113;&#35336;&#37327;&#12288;</span>
 
 </pre>
 </div>
 
 
-<div id="org2cc05bb" class="figure">
+<div class="figure">
 <p><img src="bio/graph/eigo-box.png" alt="eigo-box.png" />
 </p>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-R">## 英語のヒストグラム
-## png("bio/graph/eigo-hist.png")
-hist(eigo, breaks=seq(0, 100, by=5), xlab="英語得点", ylab="頻度", main="")
-title(main = "英語得点のヒストグラム")	   #グラフタイトル
-stem(eigo, scale=2)	     	           #幹葉表示
+<pre class="src src-R"><span style="color: #99968b;">## </span><span style="color: #99968b;">&#33521;&#35486;&#12398;&#12498;&#12473;&#12488;&#12464;&#12521;&#12512;</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">png("bio/graph/eigo-hist.png")</span>
+hist(eigo, breaks=seq(0, 100, by=5), xlab=<span style="color: #95e454;">"&#33521;&#35486;&#24471;&#28857;"</span>, ylab=<span style="color: #95e454;">"&#38971;&#24230;"</span>, main=<span style="color: #95e454;">""</span>)
+title(main = <span style="color: #95e454;">"&#33521;&#35486;&#24471;&#28857;&#12398;&#12498;&#12473;&#12488;&#12464;&#12521;&#12512;"</span>)     <span style="color: #99968b;">#</span><span style="color: #99968b;">&#12464;&#12521;&#12501;&#12479;&#12452;&#12488;&#12523;</span>
+stem(eigo, scale=2)                        <span style="color: #99968b;">#</span><span style="color: #99968b;">&#24185;&#33865;&#34920;&#31034;</span>
 
 </pre>
 </div>
 
 
-<div id="org3f476d4" class="figure">
+<div class="figure">
 <p><img src="bio/graph/eigo-box.png" alt="eigo-box.png" />
 </p>
 </div>
@@ -326,9 +334,9 @@ stem(eigo, scale=2)	     	           #幹葉表示
 </div>
 
 
-<div id="outline-container-org0ba6ef5" class="outline-4">
-<h4 id="org0ba6ef5"><span class="section-number-4">1.2.1</span> ダイズ地上部乾物重データ</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-org1cb273d" class="outline-4">
+<h4 id="org1cb273d">ダイズ地上部乾物重データ</h4>
+<div class="outline-text-4" id="text-org1cb273d">
 <p>
    ダイズの植物体に圃場環境の不均一性がどのように現れるかの実験
     1971年に、長野県塩尻市 にある中信試験場（現在は，長野県野菜・花卉試験
@@ -354,45 +362,45 @@ stem(eigo, scale=2)	     	           #幹葉表示
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">##
-##ダイズデータ読み込み
-daizu.df &lt;- read.csv("bio/data/daizu.csv")     # daizu.csv ファイル読み込み
-dim(daizu.df)                # データの大きさ
-head(daizu.df)               # 最初の一部の行のみを表示
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">##</span><span style="color: #99968b;">&#12480;&#12452;&#12474;&#12487;&#12540;&#12479;&#35501;&#12415;&#36796;&#12415;</span>
+daizu.df <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"bio/data/daizu.csv"</span>)     <span style="color: #99968b;"># </span><span style="color: #99968b;">daizu.csv &#12501;&#12449;&#12452;&#12523;&#35501;&#12415;&#36796;&#12415;</span>
+dim(daizu.df)                <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12487;&#12540;&#12479;&#12398;&#22823;&#12365;&#12373;</span>
+head(daizu.df)               <span style="color: #99968b;"># </span><span style="color: #99968b;">&#26368;&#21021;&#12398;&#19968;&#37096;&#12398;&#34892;&#12398;&#12415;&#12434;&#34920;&#31034;</span>
 </pre>
 </div>
 
-<pre class="example" id="orga44ed7e">
-[1] 25 12
-  ridge1 ridge2 ridge3 ridge4 ridge5 ridge6 ridge7 ridge8 ridge9 ridge10
-1    176    171    173    194     NA    130    168    143    100     167
-2    119     75     83    154    140    125     99    106    109      85
-3    101    107     69     77    103    107     76     70     73      74
-4     77     90    103     46     85     62     75     83     68      68
-5     75     81     69     75     44     59     51     76     58      84
-6     77     70     62     10     40     58     66     28     62      71
-  ridge11 ridge12
-1     160     134
-2     110      44
-3      84      70
-4      53      71
-5      58      73
-6      62      48
+<pre class="example">
+     [1] 25 12
+       ridge1 ridge2 ridge3 ridge4 ridge5 ridge6 ridge7 ridge8 ridge9 ridge10
+     1    176    171    173    194     NA    130    168    143    100     167
+     2    119     75     83    154    140    125     99    106    109      85
+     3    101    107     69     77    103    107     76     70     73      74
+     4     77     90    103     46     85     62     75     83     68      68
+     5     75     81     69     75     44     59     51     76     58      84
+     6     77     70     62     10     40     58     66     28     62      71
+       ridge11 ridge12
+     1     160     134
+     2     110      44
+     3      84      70
+     4      53      71
+     5      58      73
+     6      62      48
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-R">##
-## daizu.dfはdata.frameなので行列に変換する。
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">daizu.df&#12399;data.frame&#12394;&#12398;&#12391;&#34892;&#21015;&#12395;&#22793;&#25563;&#12377;&#12427;&#12290;</span>
 
-daizu.mat &lt;- as.matrix(daizu.df)
-
-# その後ベクトル化して1次元数値データにする。
-daizu &lt;- as.vector(daizu.mat)
+daizu.mat <span style="color: #e5786d;">&lt;-</span> as.matrix(daizu.df)
+     
+<span style="color: #99968b;"># </span><span style="color: #99968b;">&#12381;&#12398;&#24460;&#12505;&#12463;&#12488;&#12523;&#21270;&#12375;&#12390;1&#27425;&#20803;&#25968;&#20516;&#12487;&#12540;&#12479;&#12395;&#12377;&#12427;&#12290;</span>
+daizu <span style="color: #e5786d;">&lt;-</span> as.vector(daizu.mat)
 length(daizu)
 summary(daizu)
 
-## データに欠測値、NA(Not Avairable) が含まれていると計算してくれないので、
-## NA部分を除く(remove)という命令、na.rm=Tを付け加える必要がある。
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#12487;&#12540;&#12479;&#12395;&#27424;&#28204;&#20516;&#12289;NA(Not Avairable) &#12364;&#21547;&#12414;&#12428;&#12390;&#12356;&#12427;&#12392;&#35336;&#31639;&#12375;&#12390;&#12367;&#12428;&#12394;&#12356;&#12398;&#12391;&#12289;</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">NA&#37096;&#20998;&#12434;&#38500;&#12367;(remove)&#12392;&#12356;&#12358;&#21629;&#20196;&#12289;na.rm=T&#12434;&#20184;&#12369;&#21152;&#12360;&#12427;&#24517;&#35201;&#12364;&#12354;&#12427;&#12290;</span>
 mean(daizu)
 mean(daizu, na.rm=T)
 sd(daizu, na.rm=T)
@@ -407,35 +415,35 @@ sd(daizu, na.rm=T)
 [1] NA
 [1] 67.68121
 [1] 26.1403
-</pre>
 
+</pre>
 
 <div class="org-src-container">
 <pre class="src src-R">
-##
-## ダイズデータをグラフにする。
+<span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#12480;&#12452;&#12474;&#12487;&#12540;&#12479;&#12434;&#12464;&#12521;&#12501;&#12395;&#12377;&#12427;&#12290;</span>
 boxplot(daizu)
-title(main="ダイズデータの箱ひげ図")
+title(main=<span style="color: #95e454;">"&#12480;&#12452;&#12474;&#12487;&#12540;&#12479;&#12398;&#31665;&#12402;&#12370;&#22259;"</span>)
 
 </pre>
 </div>
 
 
-<div id="org0a2bc72" class="figure">
+<div class="figure">
 <p><img src="bio/graph/daizu-box.png" alt="daizu-box.png" />
 </p>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-R">##
-##ダイズデータをグラフにする。
-hist(daizu, breaks=seq(0, 200, by=5), main="ダイズデータの頻度表")
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">##</span><span style="color: #99968b;">&#12480;&#12452;&#12474;&#12487;&#12540;&#12479;&#12434;&#12464;&#12521;&#12501;&#12395;&#12377;&#12427;&#12290;</span>
+hist(daizu, breaks=seq(0, 200, by=5), main=<span style="color: #95e454;">"&#12480;&#12452;&#12474;&#12487;&#12540;&#12479;&#12398;&#38971;&#24230;&#34920;"</span>)
 
 </pre>
 </div>
 
 
-<div id="org09f2c4f" class="figure">
+<div class="figure">
 <p><img src="bio/graph/daizu-hist.png" alt="daizu-hist.png" />
 </p>
 </div>
@@ -454,10 +462,10 @@ hist(daizu, breaks=seq(0, 200, by=5), main="ダイズデータの頻度表")
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-R">##
-##
-rowmean &lt;- apply(daizu.df, 1, mean, na.rm=T); rowmean		# 行平均
-colmean &lt;- apply(daizu.df, 2, mean, na.rm=T); colmean		# 列平均
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">##</span>
+rowmean <span style="color: #e5786d;">&lt;-</span> apply(daizu.df, 1, mean, na.rm=T); rowmean           <span style="color: #99968b;"># </span><span style="color: #99968b;">&#34892;&#24179;&#22343;</span>
+colmean <span style="color: #e5786d;">&lt;-</span> apply(daizu.df, 2, mean, na.rm=T); colmean           <span style="color: #99968b;"># </span><span style="color: #99968b;">&#21015;&#24179;&#22343;</span>
 
 </pre>
 </div>
@@ -471,20 +479,20 @@ colmean &lt;- apply(daizu.df, 2, mean, na.rm=T); colmean		# 列平均
  78.360  76.720  71.200  68.120  64.000  67.640  66.160  62.040  62.640  65.625 
 ridge11 ridge12 
  67.520  61.920
+
 </pre>
 
-
 <div class="org-src-container">
-<pre class="src src-R">##
-##
-plot(rowmean, type="b", col="blue", main="ダイズデータの行平均，列平均")
-par(new=T)
-plot(colmean, type="b", col="blue")
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">##</span>
+plot(rowmean, type=<span style="color: #95e454;">"b"</span>, col=<span style="color: #95e454;">"blue"</span>, main=<span style="color: #95e454;">"&#12480;&#12452;&#12474;&#12487;&#12540;&#12479;&#12398;&#34892;&#24179;&#22343;&#65292;&#21015;&#24179;&#22343;"</span>)
+<span style="color: #e5786d;">par</span>(new=T)
+plot(colmean, type=<span style="color: #95e454;">"b"</span>, col=<span style="color: #95e454;">"blue"</span>)
 </pre>
 </div>
 
 
-<div id="org5b00fa7" class="figure">
+<div class="figure">
 <p><img src="bio/graph/daizu-mean.png" alt="daizu-mean.png" />
 </p>
 </div>
@@ -498,8 +506,9 @@ plot(colmean, type="b", col="blue")
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2021-10-26 火 21:39</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
+<p class="date">Created: 2021-10-28 木 13:45</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
