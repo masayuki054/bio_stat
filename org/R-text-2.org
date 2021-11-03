@@ -9,7 +9,9 @@
   
 ** 2.2 二項分布の例題
     
-#+begin_src R :tangle R-text/code/02.R 
+#+begin_src R :tangle R-text/code/02.R
+,#+begin_src R 
+
 ## 入門統計学2章1節
 
 ## dbinom(x, size, prob)
@@ -166,14 +168,14 @@ for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
 
     #+RESULTS:
 
-** R-script
+* R-script
 
    
 
- #+begin_src R :session t :results output :exports both :tangle R-text/code/02.R
+#+begin_src R :session t :results output :exports both :tangle R-text/code/02.R
+,#+end_src
 
-
- #+end_src
+#+end_src
 
 
   #+include: R-text/code/02.R

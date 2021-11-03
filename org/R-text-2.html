@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-03 水 20:29 -->
+<!-- 2021-11-03 水 20:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>入門統計学 (2)</title>
@@ -231,15 +231,17 @@
 <div id="content">
 <h1 class="title">入門統計学 (2)</h1>
 
-<div id="outline-container-orgd8f4ad6" class="outline-2">
-<h2 id="orgd8f4ad6">2章</h2>
-<div class="outline-text-2" id="text-orgd8f4ad6">
+<div id="outline-container-org4a03a1a" class="outline-2">
+<h2 id="org4a03a1a">2章</h2>
+<div class="outline-text-2" id="text-org4a03a1a">
 </div>
-<div id="outline-container-org325d608" class="outline-3">
-<h3 id="org325d608">2.2 二項分布の例題</h3>
-<div class="outline-text-3" id="text-org325d608">
+<div id="outline-container-orga1c6b07" class="outline-3">
+<h3 id="orga1c6b07">2.2 二項分布の例題</h3>
+<div class="outline-text-3" id="text-orga1c6b07">
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
+<pre class="src src-R"><span style="color: #99968b;">#</span><span style="color: #99968b;">+begin_src R </span>
+
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
 
 <span style="color: #99968b;">## </span><span style="color: #99968b;">dbinom(x, size, prob)</span>
 
@@ -257,9 +259,9 @@ plot(dbinom(c(0,1,2,3,4),3,1/3),type=<span style="color: #95e454;">"h"</span>)
 </div>
 </div>
 
-<div id="outline-container-org80a0aa9" class="outline-3">
-<h3 id="org80a0aa9">2.3 正規分布</h3>
-<div class="outline-text-3" id="text-org80a0aa9">
+<div id="outline-container-org33bd530" class="outline-3">
+<h3 id="org33bd530">2.3 正規分布</h3>
+<div class="outline-text-3" id="text-org33bd530">
 <p>
 例題：正規分布の確率計算
 </p>
@@ -289,17 +291,17 @@ pnorm(44, mean=40, sd=2)
 </div>
 </div>
 
-<div id="outline-container-org25b7f92" class="outline-3">
-<h3 id="org25b7f92">2.4 標準化と偏差値 例題</h3>
-<div class="outline-text-3" id="text-org25b7f92">
+<div id="outline-container-org38f17f0" class="outline-3">
+<h3 id="org38f17f0">2.4 標準化と偏差値 例題</h3>
+<div class="outline-text-3" id="text-org38f17f0">
 <p>
 例題: 胡瓜収穫量の標準化
 </p>
 </div>
 
-<div id="outline-container-orgaf2d7f3" class="outline-4">
-<h4 id="orgaf2d7f3">胡瓜収穫量データの読み込み</h4>
-<div class="outline-text-4" id="text-orgaf2d7f3">
+<div id="outline-container-orgf5907d2" class="outline-4">
+<h4 id="orgf5907d2">胡瓜収穫量データの読み込み</h4>
+<div class="outline-text-4" id="text-orgf5907d2">
 <p>
 <a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text/data/01-02.csv">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text/data/01-02.csv</a>
 </p>
@@ -319,7 +321,7 @@ pnorm(44, mean=40, sd=2)
 </pre>
 </div>
 
-<pre class="example" id="orgc59a0c2">
+<pre class="example" id="org57c4eda">
        栽培法A 栽培法B
     1     3063    3157
     2     2275    2707
@@ -340,9 +342,9 @@ pnorm(44, mean=40, sd=2)
 </div>
 
 
-<div id="outline-container-orgf612a41" class="outline-5">
-<h5 id="orgf612a41">行列化</h5>
-<div class="outline-text-5" id="text-orgf612a41">
+<div id="outline-container-org791e987" class="outline-5">
+<h5 id="org791e987">行列化</h5>
+<div class="outline-text-5" id="text-org791e987">
 <div class="org-src-container">
 <pre class="src src-R">
 (mat.1.2 <span style="color: #e5786d;">&lt;-</span> matrix(as.matrix(csv.1.2), nrow(csv.1.2), ncol(csv.1.2))) 
@@ -351,7 +353,7 @@ class(mat.1.2)
 </pre>
 </div>
 
-<pre class="example" id="org04aa95b">
+<pre class="example" id="org08a26d9">
 	     [,1] [,2]
 	[1,] 3063 3157
 	[2,] 2275 2707
@@ -409,9 +411,9 @@ c(<span style="color: #95e454;">"z2 (mean, var,sd): "</span>, mean(z2), var(z2),
 </div>
 
 
-<div id="outline-container-org9f3894b" class="outline-3">
-<h3 id="org9f3894b">2.5 ポアソン分布</h3>
-<div class="outline-text-3" id="text-org9f3894b">
+<div id="outline-container-orgcf6577f" class="outline-3">
+<h3 id="orgcf6577f">2.5 ポアソン分布</h3>
+<div class="outline-text-3" id="text-orgcf6577f">
 <div class="org-src-container">
 <pre class="src src-R">dev.new()
 x <span style="color: #e5786d;">&lt;-</span> 0:10
@@ -427,80 +429,68 @@ plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</s
 </div>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org05b6128" class="outline-3">
-<h3 id="org05b6128">R-script</h3>
-<div class="outline-text-3" id="text-org05b6128">
+<div id="outline-container-org0c49042" class="outline-2">
+<h2 id="org0c49042">R-script</h2>
+<div class="outline-text-2" id="text-org0c49042">
 <div class="org-src-container">
-<pre class="src src-R">
+<pre class="src src-R"><span style="color: #99968b;">#</span><span style="color: #99968b;">+end_src</span>
 
 </pre>
 </div>
 
 
-<p>
-## 入門統計学2章1節
-</p>
-
-<p>
-## dbinom(x, size, prob)
-</p>
-
-<p>
-## 二項分布 nCx p^x の計算
-</p>
-
-<p>
-dbinom(c(0,1,2,3,4),3,1/3)
-</p>
-
-<p>
-plot(dbinom(c(0,1,2,3,4),3,1/3),type="h")
-## 入門統計学2章1節
-</p>
-
-<p>
-## dnorm(x, mean=, sd=) x での確率密度
-## norm(x, mean=, sd=)  0..x までの確率
-</p>
-
-<p>
-dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3))
-</p>
-
-<p>
-plot(dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3)))
-</p>
-
-<p>
-pnorm(44, mean=40, sd=2)
-(csv.1.2 &lt;- read.csv("R-text/data/01-02.csv"))
-</p>
-
-<p>
-(mat.1.2 &lt;- matrix(as.matrix(csv.1.2), nrow(csv.1.2), ncol(csv.1.2))) 
-class(mat.1.2)
-(z1 &lt;- (mat.1.2[,1] - mean(mat.1.2[,1]))/sqrt(var(mat.1.2[,1])))
-(z2 &lt;- (mat.1.2[,2] - mean(mat.1.2[,2]))/sqrt(var(mat.1.2[,2])))
-c("z1 (mean, var,sd): ", mean(z1), var(z1), sqrt(var(z1)))
-c("z2 (mean, var,sd): ", mean(z2), var(z2), sqrt(var(z2)))
-dev.new()
-x &lt;- 0:10
-plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
-     main="ポアソン分布",
-     ylab="確率",
-     xlab="出現値",xaxt="n")
-for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
-  points(x, dpois(x, lamb), type="l")
-}
-</p>
+<div class="org-src-container">
+<pre class="src src-R">  
+  <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
+  
+  <span style="color: #99968b;">## </span><span style="color: #99968b;">dbinom(x, size, prob)</span>
+  
+  <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20108;&#38917;&#20998;&#24067; nCx p^x &#12398;&#35336;&#31639;</span>
+  
+  dbinom(c(0,1,2,3,4),3,1/3)
+  
+  plot(dbinom(c(0,1,2,3,4),3,1/3),type=<span style="color: #95e454;">"h"</span>)
+  <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
+  
+  <span style="color: #99968b;">## </span><span style="color: #99968b;">dnorm(x, mean=, sd=) x &#12391;&#12398;&#30906;&#29575;&#23494;&#24230;</span>
+  <span style="color: #99968b;">## </span><span style="color: #99968b;">norm(x, mean=, sd=)  0..x &#12414;&#12391;&#12398;&#30906;&#29575;</span>
+  
+  <span style="color: #99968b;"># </span><span style="color: #99968b;">dnorm</span>
+  dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3))
+  
+  plot(dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3)))
+  
+  <span style="color: #99968b;"># </span><span style="color: #99968b;">pnorm</span>
+  pnorm(44, mean=40, sd=2)
+  (csv.1.2 <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"R-text/data/01-02.csv"</span>))
+  <span style="color: #99968b;"># </span><span style="color: #99968b;">class(csv.1.2)</span>
+  <span style="color: #99968b;"># </span><span style="color: #99968b;">(csv.1.2[,1:2])</span>
+  <span style="color: #99968b;"># </span><span style="color: #99968b;">class(csv.1.2[,1:2])</span>
+  (mat.1.2 <span style="color: #e5786d;">&lt;-</span> matrix(as.matrix(csv.1.2), nrow(csv.1.2), ncol(csv.1.2))) 
+  class(mat.1.2)
+  (z1 <span style="color: #e5786d;">&lt;-</span> (mat.1.2[,1] - mean(mat.1.2[,1]))/sqrt(var(mat.1.2[,1])))
+  (z2 <span style="color: #e5786d;">&lt;-</span> (mat.1.2[,2] - mean(mat.1.2[,2]))/sqrt(var(mat.1.2[,2])))
+  c(<span style="color: #95e454;">"z1 (mean, var,sd): "</span>, mean(z1), var(z1), sqrt(var(z1)))
+  c(<span style="color: #95e454;">"z2 (mean, var,sd): "</span>, mean(z2), var(z2), sqrt(var(z2)))
+  dev.new()
+  x <span style="color: #e5786d;">&lt;-</span> 0:10
+  plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</span>,
+       main=<span style="color: #95e454;">"&#12509;&#12450;&#12477;&#12531;&#20998;&#24067;"</span>,
+       ylab=<span style="color: #95e454;">"&#30906;&#29575;"</span>,
+       xlab=<span style="color: #95e454;">"&#20986;&#29694;&#20516;"</span>,xaxt=<span style="color: #95e454;">"n"</span>)
+  <span style="color: #8ac6f2; font-weight: bold;">for</span> (lamb <span style="color: #8ac6f2; font-weight: bold;">in</span> c(1,2,3,4,5,6,7,8,9,10)) {
+    points(x, dpois(x, lamb), type=<span style="color: #95e454;">"l"</span>)
+  }
+</pre>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-03 水 20:29</p>
+<p class="date">Created: 2021-11-03 水 20:36</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

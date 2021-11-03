@@ -1,3 +1,5 @@
+#+begin_src R 
+
 ## 入門統計学2章1節
 
 ## dbinom(x, size, prob)
@@ -38,4 +40,4 @@ plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
 for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
   points(x, dpois(x, lamb), type="l")
 }
-
+#+end_src
