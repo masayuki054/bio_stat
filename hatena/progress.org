@@ -1,4 +1,12 @@
+#+setupfile: ../org/info/index-bigblow-header.setup
+#+include: ../org/info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+Title: 生物統計学 進行
+#+OPTIONS: tex:t 
+#+property: header-args:R :session *biot* :results output :exports both
+
 [[https://masayuki054.hatenablog.com/entry/2021/03/11/103431][top]] / [[https://masayuki054.hatenablog.com/entry/2021/10/06/101325?_ga=2.170599136.1369059129.1633482592-251679600.1592307203][R ]]/ [[https://masayuki054.hatenablog.com/entry/2021/10/06/103338?_ga=2.200886382.1369059129.1633482592-251679600.1592307203][進行]]
+
 * 4th 11/07
 
   先週は休講にしてすみませんでした。
@@ -13,29 +21,23 @@
    - プロジェクトの作成
 
 ** R 入門
-   - [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]，
-   - 先生の演習ノート [[https://github.com/masayuki054/bio_stat/blob/main/org/R-intro-2.org][bio_stat/R-intro-2.org at main · masayuki054/bio_stat]] 
-     - 簡単な行列の作成と演算
-     - 簡単なリストの作成
-     - 簡単なデータフレームの作成
+   [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][
+   初心者用 - R_Stats2.pdf]] の8，9，10，11章
+   - 先生の演習ノート [[https://github.com/masayuki054/bio_stat/blob/main/org/R-intro-3.org][bio_stat/R-intro-3.org at main · masayuki054/bio_stat]] 
+     - ファイルの読み書き
+     - スクリプトの実行
+     - 関数を作る
      
 ** Rによる統計入門
    - スライドまたは PDF を手元に準備
    - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org     
      
-*** 入門統計学の1章
-   - スライドまたは PDF を手元に準備
-
-**** Rの演習
-     - [[http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html][生物統計学１]]
-       - 2. データの図示と基本統計量の計算 をやってみましょう
-
-     今日の演習内容をファイルに保存しましょう。
-     - 自分のRの演習フォルダに
-     - 日付と項目がわかるように。
-
 *** 入門統計学の2章
-
+**** 確率分布
+     - 確率変数と確率分布
+     - 期待値と分散
+     - 標準化と偏差
+     - 二項分布，ポアソン分布，正規分布
 **** Rの演習
      - http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/R-text-02.html
        - 2. データの図示と基本統計量の計算 をやってみましょう

@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-11-03 水 20:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>生物統計学 進行</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">生物統計学 進行</h1>
+<p>
+<a href="https://masayuki054.hatenablog.com/entry/2021/03/11/103431">top</a> / <a href="https://masayuki054.hatenablog.com/entry/2021/10/06/101325?_ga=2.170599136.1369059129.1633482592-251679600.1592307203">R </a>/ <a href="https://masayuki054.hatenablog.com/entry/2021/10/06/103338?_ga=2.200886382.1369059129.1633482592-251679600.1592307203">進行</a>
+</p>
+
+<div id="outline-container-orga23cbdf" class="outline-2">
+<h2 id="orga23cbdf">4th 11/07</h2>
+<div class="outline-text-2" id="text-orga23cbdf">
+<p>
+先週は休講にしてすみませんでした。
+</p>
+</div>
+
+<div id="outline-container-orgf73fd7a" class="outline-3">
+<h3 id="orgf73fd7a">RStudio を使いましょう</h3>
+<div class="outline-text-3" id="text-orgf73fd7a">
+<ul class="org-ul">
+<li>生物統計用のプロジェクトを作ろう</li>
+<li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga2ac9fc" class="outline-3">
+<h3 id="orga2ac9fc"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
+<div class="outline-text-3" id="text-orga2ac9fc">
+<ul class="org-ul">
+<li>RStudioの概要</li>
+<li>プロジェクトの作成</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7e06df7" class="outline-3">
+<h3 id="org7e06df7">R 入門</h3>
+<div class="outline-text-3" id="text-org7e06df7">
+<p>
+<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">
+初心者用 - R_Stats2.pdf</a> の8，9，10，11章
+</p>
+<ul class="org-ul">
+<li>先生の演習ノート <a href="https://github.com/masayuki054/bio_stat/blob/main/org/R-intro-3.org">bio_stat/R-intro-3.org at main · masayuki054/bio_stat</a> 
+<ul class="org-ul">
+<li>ファイルの読み書き</li>
+<li>スクリプトの実行</li>
+<li>関数を作る</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgecaee05" class="outline-3">
+<h3 id="orgecaee05">Rによる統計入門</h3>
+<div class="outline-text-3" id="text-orgecaee05">
+<ul class="org-ul">
+<li>スライドまたは PDF を手元に準備</li>
+<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
+</ul>
+</div>
+
+<div id="outline-container-orgd1f8315" class="outline-4">
+<h4 id="orgd1f8315">入門統計学の2章</h4>
+<div class="outline-text-4" id="text-orgd1f8315">
+</div>
+<div id="outline-container-org2afa934" class="outline-5">
+<h5 id="org2afa934">確率分布</h5>
+<div class="outline-text-5" id="text-org2afa934">
+<ul class="org-ul">
+<li>確率変数と確率分布</li>
+<li>期待値と分散</li>
+<li>標準化と偏差</li>
+<li>二項分布，ポアソン分布，正規分布</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org34f89c8" class="outline-5">
+<h5 id="org34f89c8">Rの演習</h5>
+<div class="outline-text-5" id="text-org34f89c8">
+<ul class="org-ul">
+<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/R-text-02.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/R-text-02.html</a>
+<ul class="org-ul">
+<li>2. データの図示と基本統計量の計算 をやってみましょう</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8f89b71" class="outline-2">
+<h2 id="org8f89b71">3rd 10/28</h2>
+<div class="outline-text-2" id="text-org8f89b71">
+<p>
+先週は休講にしてすみませんでした。
+</p>
+</div>
+
+<div id="outline-container-orgbf9ea3c" class="outline-3">
+<h3 id="orgbf9ea3c">RStudio を使いましょう</h3>
+<div class="outline-text-3" id="text-orgbf9ea3c">
+<ul class="org-ul">
+<li>生物統計用のプロジェクトを作ろう</li>
+<li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgde30c3f" class="outline-3">
+<h3 id="orgde30c3f"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
+<div class="outline-text-3" id="text-orgde30c3f">
+<ul class="org-ul">
+<li>RStudioの概要</li>
+<li>プロジェクトの作成</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org63bb26e" class="outline-3">
+<h3 id="org63bb26e">R 入門</h3>
+<div class="outline-text-3" id="text-org63bb26e">
+<ul class="org-ul">
+<li><a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>，</li>
+<li>先生の演習ノート <a href="https://github.com/masayuki054/bio_stat/blob/main/org/R-intro-2.org">bio_stat/R-intro-2.org at main · masayuki054/bio_stat</a> 
+<ul class="org-ul">
+<li>簡単な行列の作成と演算</li>
+<li>簡単なリストの作成</li>
+<li>簡単なデータフレームの作成</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge2af8b6" class="outline-3">
+<h3 id="orge2af8b6">Rによる統計入門</h3>
+<div class="outline-text-3" id="text-orge2af8b6">
+<ul class="org-ul">
+<li>スライドまたは PDF を手元に準備</li>
+<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
+</ul>
+</div>
+
+<div id="outline-container-orga3f8cdc" class="outline-4">
+<h4 id="orga3f8cdc">入門統計学の1章</h4>
+<div class="outline-text-4" id="text-orga3f8cdc">
+<ul class="org-ul">
+<li>スライドまたは PDF を手元に準備</li>
+</ul>
+</div>
+
+<div id="outline-container-orgff0a96a" class="outline-5">
+<h5 id="orgff0a96a">Rの演習</h5>
+<div class="outline-text-5" id="text-orgff0a96a">
+<ul class="org-ul">
+<li><a href="http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html">生物統計学１</a>
+<ul class="org-ul">
+<li>2. データの図示と基本統計量の計算 をやってみましょう</li>
+</ul></li>
+</ul>
+
+<p>
+今日の演習内容をファイルに保存しましょう。
+</p>
+<ul class="org-ul">
+<li>自分のRの演習フォルダに</li>
+<li>日付と項目がわかるように。</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcbf9f9e" class="outline-4">
+<h4 id="orgcbf9f9e">入門統計学の2章</h4>
+<div class="outline-text-4" id="text-orgcbf9f9e">
+</div>
+<div id="outline-container-org7eb0a48" class="outline-5">
+<h5 id="org7eb0a48">Rの演習</h5>
+<div class="outline-text-5" id="text-org7eb0a48">
+<ul class="org-ul">
+<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/R-text-02.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/R-text-02.html</a>
+<ul class="org-ul">
+<li>2. データの図示と基本統計量の計算 をやってみましょう</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org731c173" class="outline-2">
+<h2 id="org731c173">2nd 10/14</h2>
+<div class="outline-text-2" id="text-org731c173">
+</div>
+<div id="outline-container-org0fa28f2" class="outline-3">
+<h3 id="org0fa28f2">講義について</h3>
+<div class="outline-text-3" id="text-org0fa28f2">
+<ul class="org-ul">
+<li>お昼休みサッカー (再度)
+<ul class="org-ul">
+<li>12:30 ~ グラウンド， 2~10名でのミニゲーム，素人多数，先生，職
+員，学生</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf27cf5f" class="outline-3">
+<h3 id="orgf27cf5f"><span class="done Done">Done</span> スライドとデータの準備</h3>
+<div class="outline-text-3" id="text-orgf27cf5f">
+<ul class="org-ul">
+<li>確認 全員 office 有り</li>
+<li><p>
+ファイル，フォルダ操作の慣れ
+</p>
+
+<pre class="example">
+c:/Users/名前/Onedrive/Documents/R (/は円記号かもしれない)
+</pre></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org498251e" class="outline-3">
+<h3 id="org498251e"><span class="done Done">Done</span> R のインストール</h3>
+<div class="outline-text-3" id="text-org498251e">
+</div>
+</div>
+
+<div id="outline-container-orgdfed734" class="outline-3">
+<h3 id="orgdfed734">Rcmdr か RStudio を使いましょう</h3>
+<div class="outline-text-3" id="text-orgdfed734">
+<ul class="org-ul">
+<li><p>
+Rcmdr の起動       
+</p>
+<pre class="example">
+library(Rcmdr)
+</pre></li>
+
+<li>Rcmdr を自動的に起動する方法
+<ul class="org-ul">
+<li><a href="http://plaza.umin.ac.jp/~takeshou/R/Rcmdrfirst.html">Rコマンダーの簡単な使い方</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org70c4a3a" class="outline-3">
+<h3 id="org70c4a3a"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
+<div class="outline-text-3" id="text-org70c4a3a">
+<ul class="org-ul">
+<li>RStudioの概要</li>
+<li>help</li>
+<li>終了</li>
+<li>ワーキング・ディレクトリ(フォルダ)， .Rhistory, .RData, ~/.Rprofile</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0c460f8" class="outline-3">
+<h3 id="org0c460f8">R 入門</h3>
+<div class="outline-text-3" id="text-org0c460f8">
+<ul class="org-ul">
+<li><p>
+<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
+</p>
+
+<p>
+これを何回かかけてやりましょう
+</p>
+<ul class="org-ul">
+<li>起動と終了</li>
+<li>変数への代入</li>
+<li>簡単な演算</li>
+<li>簡単なベクトル演算</li>
+<li>簡単な行列の作成と演算</li>
+<li>簡単なリストの作成</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org409e317" class="outline-3">
+<h3 id="org409e317">Rによる統計入門</h3>
+<div class="outline-text-3" id="text-org409e317">
+</div>
+<div id="outline-container-org624f009" class="outline-4">
+<h4 id="org624f009">入門統計学の1章</h4>
+<div class="outline-text-4" id="text-org624f009">
+<ul class="org-ul">
+<li>Excel -&gt; R で書き直し</li>
+<li>スライドまたは PDF を手元に準備</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org59d9650" class="outline-4">
+<h4 id="org59d9650">Rの演習</h4>
+<div class="outline-text-4" id="text-org59d9650">
+<ul class="org-ul">
+<li><a href="http://whitewell.sakura.ne.jp/R/Rstatistics-01.html">Rで統計学を学ぶ(1)</a></li>
+<li><a href="http://whitewell.sakura.ne.jp/R/Rstatistics-02.html">Rで統計学を学ぶ(2)</a></li>
+</ul>
+
+<p>
+今日の演習内容をファイルに保存しましょう。
+</p>
+<ul class="org-ul">
+<li>自分のRの演習フォルダに</li>
+<li>日付と項目がわかるように。</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>参考サイト
+<ul class="org-ul">
+<li><a href="http://whitewell.sakura.ne.jp/R/">Webpage for Probability Theory and Statistics (B)</a></li>
+<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge0cc75e" class="outline-2">
+<h2 id="orge0cc75e">1st 10/07</h2>
+<div class="outline-text-2" id="text-orge0cc75e">
+</div>
+<div id="outline-container-org785c6f9" class="outline-3">
+<h3 id="org785c6f9">講義について</h3>
+<div class="outline-text-3" id="text-org785c6f9">
+<ul class="org-ul">
+<li>シラバス
+
+<ul class="org-ul">
+<li>引き継いだだけの状態，要相談</li>
+</ul></li>
+
+<li>講師の自己紹介
+
+<ul class="org-ul">
+<li>生物，生命に関し，まったくの素人</li>
+
+<li>数学としての確率・統計を教えている</li>
+
+<li>お昼休みサッカー
+
+<ul class="org-ul">
+<li>12:30 ~ グラウンド， 2~10名でのミニゲーム，素人多数，先生，職
+員，学生</li>
+</ul></li>
+</ul></li>
+
+<li>講義内容</li>
+
+<li>講義方法</li>
+<li>講義に関する相談
+<ul class="org-ul">
+<li>統計に関する既習のことの確認</li>
+<li>パソコンの知識</li>
+<li>確率統計に関する確認事項</li>
+<li>Rの習得法</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org9f7a3d3" class="outline-3">
+<h3 id="org9f7a3d3">スライドとデータの準備</h3>
+<div class="outline-text-3" id="text-org9f7a3d3">
+<ul class="org-ul">
+<li>ダウンロード</li>
+<li>解凍</li>
+<li>確認
+<ul class="org-ul">
+<li>office 有無</li>
+<li>ファイル，フォルダ操作の慣れ</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc5faab0" class="outline-3">
+<h3 id="orgc5faab0">前期の確率統計の内容確認</h3>
+<div class="outline-text-3" id="text-orgc5faab0">
+<ul class="org-ul">
+<li>確率
+<ul class="org-ul">
+<li>事前確率，事後確率，ベイズの定理</li>
+</ul></li>
+<li>記述統計
+<ul class="org-ul">
+<li>平均，分散，共分散，相関</li>
+</ul></li>
+<li>確率分布
+<ul class="org-ul">
+<li>確率変数</li>
+<li>確率密度関数</li>
+<li>期待値</li>
+</ul></li>
+<li>ベルヌーイ試行，二項分布，多項分布</li>
+<li>一様分布，正規分布，2次元正規分布</li>
+<li>カイ二乗分布，t-分布，F-分布</li>
+<li>母集団と標本
+<ul class="org-ul">
+<li>大数の法則，中心極限定理</li>
+<li>標本平均が従がう分布の平均と分散</li>
+</ul></li>
+<li>推定
+<ul class="org-ul">
+<li>最尤推定</li>
+<li>母平均値の区間推定</li>
+<li>母分散の区間推定</li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li>仮説検定</li>
+</ul>
+
+<p>
+復習しながら学んでいきましょう。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5059565" class="outline-3">
+<h3 id="org5059565">R のインストール</h3>
+<div class="outline-text-3" id="text-org5059565">
+<p>
+スライド 00 (解凍したスライドの00章)
+</p>
+<ul class="org-ul">
+<li>R とは</li>
+<li>R のインストール
+<ul class="org-ul">
+<li>ダウンロード <a href="http://www.okadajp.org/RWiki/?CRAN%E5%9B%BD%E5%86%85%E3%83%9F%E3%83%A9%E3%83%BC%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">CRAN国内ミラーの使い方 - RjpWiki</a></li>
+<li>インストーラの実行</li>
+<li>確認</li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li>Rコマンダーのインストール
+<ul class="org-ul">
+<li>R の起動</li>
+<li><p>
+R のパッケージインストール
+</p>
+<pre class="example">
+install.packages("Rcmdr")
+</pre></li>
+<li><p>
+Rcmdr の起動       
+</p>
+<pre class="example">
+library(Rcmdr)
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
+<p class="date">Created: 2021-11-03 水 20:28</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

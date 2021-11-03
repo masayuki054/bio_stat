@@ -3,20 +3,7 @@
 #+AUTHOR: 鈴木正幸，非常勤講師
 #+Title: 入門統計学 (2)
 #+OPTIONS: tex:t 
-<<<<<<< HEAD
 #+property: header-args:R :session *biot* :results output :exports both
-=======
-
-
-* script
-  
- #+property: header-args:R :session *bioR :results output :exports both
-
- #+begin_src R :session *bioR :results output :exports both :tangle R-text/code/02.R
-
-
- #+end_src
->>>>>>> 63d34d2d9125fc94edb94e975d63517e4c737f13
 
 * 2章
   
