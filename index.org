@@ -42,7 +42,7 @@
      - 標準化と偏差
      - 二項分布，ポアソン分布，正規分布
 **** Rの演習
-     - http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/R-text-02.html
+     - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html
        - 2. データの図示と基本統計量の計算 をやってみましょう
 
 
