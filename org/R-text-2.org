@@ -6,11 +6,31 @@
 #+property: header-args:R :session *biot* :results output :exports both
 
 * 2章
-  
+
+** 2.1 サイコロ と 一様分布
+   
+
+#+begin_src R :tangle R-text/code/02.R
+,#+begin_src R 
+## 入門統計学2章1節
+(dice <- dunif(1:6, min=1,max=7))
+dice2 <- rep(0,12)
+for (i in 1:6) {
+  for (j in 1:6) {
+    dice2[i+j] <- dice2[i+j] + dice[i]*dice[j]
+  }
+}
+dice2
+#+end_src
+
+ #+RESULTS:
+ : [1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667
+ :  [1] 0.00000000 0.02777778 0.05555556 0.08333333 0.11111111 0.13888889
+ :  [7] 0.16666667 0.13888889 0.11111111 0.08333333 0.05555556 0.02777778
+
 ** 2.2 二項分布の例題
     
 #+begin_src R :tangle R-text/code/02.R
-,#+begin_src R 
 
 ## 入門統計学2章1節
 
