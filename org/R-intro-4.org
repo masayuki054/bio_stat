@@ -1,23 +1,70 @@
-**  12. グラフの作成
- R では簡単にグラフを作成する関数が用意されています。plot 関数は二次元プロットを
- 作成することができます。例えば以下のように x 座標と y 座標の値をそれぞれベクトルと して与えると、(1,2), (3,4), (5,9), (7,7), (9,8)の点にプロットを作成できます。
- x <- c(1,3,5,7,9)
- y <- c(2,4,9,7,8)
- plot(x, y, xlab="X Value", ylab="Y Value")
- 8 サブルーチンという呼び方がより正確。
- 9 f(x=10, y=20)のようにどの引数のどの値を渡すかを明示してもよい。 10 追加引数...の中味は list(...)でリストとして閲覧することが可能。
-	15
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+title: 初心者用 R 言語講座 の演習ノート (4)
+#+OPTIONS: tex:t 
+#+PROPERTY: header-args:R :session *bioR* :results output :exports both
 
- xlab, ylabでそれぞれx軸、y軸のラベルを指定しています。
-    2468 X Value
- 作成されたプロット
- barplot を使うと、棒グラフを作成することができます。以下の例では、各棒の高さに対 応させるベクトルおよびそのラベルを変数 x に与え、barplot(x)を呼び出しています。
- x <- c(1,2,3,2,10,1)
- names(x) <- c("A", "B", "C", "D", "E", "F")
- barplot(x)
-      A B C D E F
- 作成された棒グラフ
- hist はベクトルで与えられた数値群のヒストグラムを作成する関数です。
+
+*  12. グラフの作成
+   :properties:
+   :header-args: :tangle R-text/code/12.R
+   :end
+   
+  R では簡単にグラフを作成する関数が用意されています。
+
+   
+** plot 関数
+    
+   二次元プロットを作成することができます。
+
+   例えば以下のように x 座標と y 座標の値をそれぞれベクトルとして与
+   えると、(1,2), (3,4), (5,9), (7,7), (9,8)の点にプロットを作成でき
+   ます。
+
+   #+begin_src R :tangle R-intro/code/12.R :results output graphics :file R-intro/graph/12-1.png
+##
+## 12. グラフの作成
+##
+
+x <- c(1,3,5,7,9)
+y <- c(2,4,9,7,8)
+plot(x, y, xlab="X Value", ylab="Y Value")
+
+   #+end_src
+
+   #+RESULTS:
+
+   [[./R-intro/graph/12-1.png]]
+
+
+   追加引数の中味: xlab, ylabでそれぞれx軸、y軸のラベルを指定しています。
+
+
+** barplot
+   棒グラフを作成することができます。
+
+   以下の例では、各棒の高さに対 応させるベクトルおよびそのラベルを変数
+   x に与え、barplot(x)を呼び出しています。
+
+   #+begin_src R :tangle R-intro/code/12.R :results graphics :file R-intro/graph/12-2.png
+##
+## 12. グラフの作成
+##
+
+x <- c(1,2,3,2,10,1)
+nam
+es(x) <- c("A", "B", "C", "D", "E", "F")
+barplot(x)
+
+   #+end_src
+
+   #+RESULTS:
+
+   
+** hist
+   ベクトルで与えられた数値群のヒストグラムを作成する関数です。
+   
  x <- c(3.2, 1.2, 4.2, 2.3, 3.4, 5.9, 5.2, 5.3, 4.1, 5.2, 3.2, 1.4) hist(x, xlab = "Test Value", main = "Test Histogram")
  main によってヒストグラムのタイトルを指定しています。 16
    0 2 4 6 8 10
@@ -112,32 +159,4 @@
  13 実は for 文を使わなくても、x <- (1:5)**2 で同じことができる。
  14 x <- c(x, i**2)でも良い。c はベクトルの連結にも使うことができる。
        20
-
-**  14. その他のコマンドや関数
- R でよく使う関数をいくつか挙げておきましょう。
-
-***  14.1 使い方
-  ・ help(関数)で関数の詳しい使い方が表示されます。
-
-***   14.2 変数と属性
-  ・ ls()または objects()で現在定義されている変数が表示されます。
-  ・ class(変数)または mode(変数)でオブジェクトの型(例えば変数が数値なのか、文字なの
-  か、リストなのか、行列かなど)を知ることができます。
-  ・ attributes(変数)で定義されている属性がリストで返ってきます。
-
-***   14.3 apply 系関数
-  ・ apply を使うと、行列の各行または各列に対して同じ処理を繰り返し、結果をベクトル
-  で受け取ることができます(5. 簡単な行列の作成と演算参照)。
-  ・ sapply を使うと、ベクトルの要素 1 つ 1 つを与えられた関数に入力し、出力結果を 1
-  つ 1 つ含んだベクトルとして得ることができます
-  func1_sub <- function(elm){ # スカラーelem に対する関数の定義 if(-1 <= elm & elm <= 1){ return (1) } else { return (0) }
-  }
-  func1 <- function(x){ # ベクトル x を入力とする関数
-  return(sapply(x, func1_sub)) }
-
-***   14.4 図の作成
-  ・curve 関数で関数のグラフを作成できます。詳しくは help を参照して下さい。 例:
-  curve(dnorm, -7, +7) # 正規分布の描画
-  curve(cos(x)+cos(2*x), -2*pi, 2*pi, 1000) # 1000はプロット数 curve(func1, -3, 3) # 14.3apply系関数で定義した関数
-
 
