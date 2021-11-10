@@ -1,13 +1,10 @@
-#+setupfile: info/index-bigblow-header.setup
-#+include: info/common-header.org
-#+AUTHOR: 鈴木正幸，非常勤講師
-#+title: 初心者用 R 言語講座 の演習ノート (3)
+#+include: R-intro-common.org
 #+OPTIONS: tex:t 
 #+property: header-args:R :session *bioR* :results output :exports both
 
 [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
 
-*  8. ファイルからの読み込み
+* 8. ファイルからの読み込み
 
 ** データファイルとフォルダ
    

@@ -1,0 +1,1823 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-11-10 水 17:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>初心者用 R 言語講座演習ノート 初心者用 R 言語講座 (1) 初心者用 R 言語講座演習ノート 初心者用 R 言語講座 の演習ノート (3) 初心者用 R 言語講座演習ノート 初心者用 R 言語講座 の演習ノート (構文)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">初心者用 R 言語講座演習ノート 初心者用 R 言語講座 (1) 初心者用 R 言語講座演習ノート 初心者用 R 言語講座 の演習ノート (3) 初心者用 R 言語講座演習ノート 初心者用 R 言語講座 の演習ノート (構文)</h1>
+<div class="org-src-container">
+<pre class="src src-R">
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">
+</pre>
+</div>
+
+<div id="outline-container-org32214a4" class="outline-2">
+<h2 id="org32214a4">初心者用 R 言語講座 の演習ノート</h2>
+<div class="outline-text-2" id="text-org32214a4">
+<p>
+<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
+</p>
+</div>
+
+<div id="outline-container-org771e6de" class="outline-3">
+<h3 id="org771e6de">1. R の起動と終了</h3>
+<div class="outline-text-3" id="text-org771e6de">
+<p>
+システムによって異なりますが、通常はコマンドラインで R と入力するか、
+R のアイコンをダブルクリックして起動します。R を終了させるときは、
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+   q()
+
+</pre>
+</div>
+
+
+<p>
+と入力します。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb1b876" class="outline-3">
+<h3 id="orgfb1b876">2. 簡単な変数への代入</h3>
+<div class="outline-text-3" id="text-orgfb1b876">
+<p>
+変数とは様々な値を格納する箱のような概念です。例えば今 x という変数を考え、そこ
+に 123 を代入したければ、
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+   (x <span style="color: #e5786d;">&lt;-</span> 123)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 123
+</pre>
+
+
+<p>
+とします。その後に x と打ち込むと、下記のように x の値が表示されます。
+</p>
+
+<p>
+実は R は単一の数値だけでなく、複数の数値をベクトルとして扱うことが
+得意です。例えばベクトル(1, 3, 5)を変数 y に代入したければ、c とい
+う記号を先頭に付けて、
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(y <span style="color: #e5786d;">&lt;-</span> c(1, 3, 5))
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 1 3 5
+</pre>
+
+
+<p>
+とします。
+</p>
+
+<p>
+2 から 5 までの整数を 含むベクトルを作成するには、
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(y <span style="color: #e5786d;">&lt;-</span> c(2,3,4,5))
+
+(y<span style="color: #e5786d;">&lt;-</span>2:5) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#31777;&#30053;&#21270;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 2 3 4 5
+[1] 2 3 4 5
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orgb966354" class="outline-3">
+<h3 id="orgb966354">課題 2-1:</h3>
+<div class="outline-text-3" id="text-orgb966354">
+<p>
+変数 z にベクトル(10, 11, 12)を代入し、またそれを表示してみましょう。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(z <span style="color: #e5786d;">&lt;-</span> c(10, 11, 12))
+
+</pre>
+</div>
+
+<p>
+1 単一の数値(スカラー)は実は一次元ベクトルとみなされると考えればよい。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> 123 )
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org313b436" class="outline-3">
+<h3 id="org313b436">3. 簡単な演算</h3>
+<div class="outline-text-3" id="text-org313b436">
+<p>
+四則演算を含む様々な演算を行うことが可能です。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+1+2 <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#21147;&#12377;&#12428;&#12400;&#12289;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 3
+</pre>
+
+
+<p>
+ベクトルの演算も可能で
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+c(1, 2, 3) + c(4, 5, 6) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;+&#12505;&#12463;&#12488;&#12523;</span>
+c(1, 2, 3) * 2          <span style="color: #99968b;"># </span><span style="color: #99968b;">&#20840;&#35201;&#32032;&#12395;2&#12434;&#12363;&#12369;&#12427;</span>
+
+(x <span style="color: #e5786d;">&lt;-</span> c(1, 2, 3))       <span style="color: #99968b;"># </span><span style="color: #99968b;">&#22793;&#25968;&#12408;&#12398;&#12505;&#12463;&#12488;&#12523;&#20516;&#12398;&#20195;&#20837;</span>
+(x <span style="color: #e5786d;">&lt;-</span> x * 2)            <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#20445;&#25345;&#12377;&#12427;&#12505;&#12463;&#12488;&#12523;&#20840;&#35201;&#32032;&#12395;2&#12434;&#12363;&#12369;&#12427;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 5 7 9
+[1] 2 4 6
+[1] 1 2 3
+[1] 2 4 6
+</pre>
+</div>
+
+<div id="outline-container-orgccb0b6f" class="outline-4">
+<h4 id="orgccb0b6f">課題 3-1:</h4>
+<div class="outline-text-4" id="text-orgccb0b6f">
+<p>
+変数 x にベクトル(1, 2, 3)、変数 y に 2 を代入し、x * y を計算して
+みましょう。 どんな答えが返ってきますか?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgaf59da2" class="outline-4">
+<h4 id="orgaf59da2">課題 3-2:</h4>
+<div class="outline-text-4" id="text-orgaf59da2">
+<p>
+変数 x にベクトル(1, 2, 3)を代入し、さらにそれを 3 倍にした結果を
+x に格納しましょう。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-R">
+</pre>
+</div>
+
+<p>
+<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org256870e" class="outline-2">
+<h2 id="org256870e">4. 簡単なベクトル演算</h2>
+<div class="outline-text-2" id="text-org256870e">
+<div class="org-src-container">
+<pre class="src src-R">
+ (x <span style="color: #e5786d;">&lt;-</span> c(2,4,6,8,10))    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#20316;&#25104;</span>
+ length(x)               <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#27425;&#20803;&#25968;&#12289;&#12377;&#12394;&#12431;&#12385;&#12505;&#12463;&#12488;&#12523;&#20013;&#12398;&#25968;&#20516;&#12398;&#20491;&#25968;</span>
+ x[3]                    <span style="color: #99968b;"># </span><span style="color: #99968b;">3 &#30058;&#30446;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;&#12377;&#12427;</span>
+ x[c(2,4)]               <span style="color: #99968b;"># </span><span style="color: #99968b;">2&#30058;&#30446;&#12392; 4 &#30058;&#30446;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;</span>
+ x[2:4]                  <span style="color: #99968b;"># </span><span style="color: #99968b;">2 &#30058;&#30446;&#12363;&#12425; 4 &#30058;&#30446;&#12414;&#12391;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1]  2  4  6  8 10
+[1] 5
+[1] 6
+[1] 4 8
+[1] 4 6 8
+</pre>
+</div>
+
+
+<div id="outline-container-org751dd62" class="outline-3">
+<h3 id="org751dd62">ベクトルの比較演算</h3>
+<div class="outline-text-3" id="text-org751dd62">
+<div class="org-src-container">
+<pre class="src src-R">
+x
+x &gt; 5                    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#21508;&#35201;&#32032;&#12364; 5 &#12424;&#12426;&#22823;&#12365;&#12356;&#12363;&#12398;&#21028;&#23450;</span>
+which (x&gt;5)
+x[which(x&gt;5)]
+x[x&gt;5]
+</pre>
+</div>
+
+<pre class="example">
+[1]  2  4  6  8 10
+[1] FALSE FALSE  TRUE  TRUE  TRUE
+[1] 3 4 5
+[1]  6  8 10
+[1]  6  8 10
+</pre>
+
+
+<ul class="org-ul">
+<li>判定した結果が TRUE, FALSE のベクトルとして返ってきます。</li>
+<li>which を使うと、何番目が T なのかが返ってきます。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbc48d3c" class="outline-3">
+<h3 id="orgbc48d3c">文字列のベクトル</h3>
+<div class="outline-text-3" id="text-orgbc48d3c">
+<div class="org-src-container">
+<pre class="src src-R">
+x <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"Sunday"</span>, <span style="color: #95e454;">"Monday"</span>, <span style="color: #95e454;">"Tuesday"</span>, <span style="color: #95e454;">"Wednesday"</span>, <span style="color: #95e454;">"Thursday"</span>, <span style="color: #95e454;">"Friday"</span>, <span style="color: #95e454;">"Saturday"</span>)
+
+x[c(2,4)]
+x[2:4]
+grep(<span style="color: #95e454;">"sd"</span>, x)  <span style="color: #99968b;"># </span><span style="color: #99968b;">"sd"&#12434;&#21547;&#12416;&#35201;&#32032;&#12434;&#25506;&#12377;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1] "Monday"    "Wednesday"
+[1] "Monday"    "Tuesday"   "Wednesday"
+[1] 3 4 5
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6b22d74" class="outline-3">
+<h3 id="org6b22d74">ベクトルの各要素の名前付け</h3>
+<div class="outline-text-3" id="text-org6b22d74">
+<div class="org-src-container">
+<pre class="src src-R">x <span style="color: #e5786d;">&lt;-</span> c(2, 4, 6)
+names(x) <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"First"</span>, <span style="color: #95e454;">"Second"</span>, <span style="color: #95e454;">"Third"</span>)
+x[[<span style="color: #95e454;">"Second"</span>]]
+
+</pre>
+</div>
+
+<p>
+x の names という <b>属性</b> に (“First”, “Second”, “Third”) が
+付けられる。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org178e47f" class="outline-3">
+<h3 id="org178e47f">数値ベクトルに対する様々な統計関数</h3>
+<div class="outline-text-3" id="text-org178e47f">
+<div class="org-src-container">
+<pre class="src src-R">
+
+sum(x)     <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#21512;&#35336;&#12289;</span>
+mean(x)    <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#24179;&#22343;</span>
+(x <span style="color: #e5786d;">&lt;-</span> c(2,4,6,8,10));
+sum(x &gt; 5) <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#20013;&#12398;TRUE&#12398;&#25968;&#12434;&#25968;&#12360;&#12427;</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] 30
+[1] 6
+[1]  2  4  6  8 10
+[1] 3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb717072" class="outline-3">
+<h3 id="orgb717072">課題 4-1:</h3>
+<div class="outline-text-3" id="text-orgb717072">
+<p>
+ベクトル(3, 1, 4, 1, 5, 9, 2, 6, 5)の中で 5 より大きい要素からなるベクトルを作成 しましょう。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge1c875d" class="outline-3">
+<h3 id="orge1c875d">課題 4-2:</h3>
+<div class="outline-text-3" id="text-orge1c875d">
+<p>
+ベクトル(1,2,3,4,5,6,7,8,9,10,11,12)に(“Jan”, “Feb”, “Mar”,
+“Apr”, “May”, “Jun”, “Jul”, “Aug”, “Sep”, “Oct”,
+“Nov”, “Dec”)という名前を付け、”Mar”という文字列を使って 3
+番目の要素を取り出してみましょう。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgae85f31" class="outline-2">
+<h2 id="orgae85f31">5. 簡単な行列の作成と演算</h2>
+<div class="outline-text-2" id="text-orgae85f31">
+<p>
+ベクトルを集めて行列を作成する
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> rbind(c(1,2,3), c(4,5,6)))
+(x <span style="color: #e5786d;">&lt;-</span> matrix(c(1, 4, 2, 5, 3, 6), nrow=2, ncol=3)) <span style="color: #99968b;"># </span><span style="color: #99968b;">nrow:&#34892;&#25968;&#65292; ncol:&#21015;&#25968;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+x+1
+x*2
+
+y <span style="color: #e5786d;">&lt;-</span> rbind(c(2, 4, 6), c(8, 10, 12))
+
+x + y 
+x * y
+
+x[2,3]
+x[2,]
+x[,3]
+t(x) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#36578;&#32622;</span>
+
+</pre>
+</div>
+
+<pre class="example" id="org2e8dcfb">
+	 [,1] [,2] [,3]
+    [1,]    2    3    4
+    [2,]    5    6    7
+	 [,1] [,2] [,3]
+    [1,]    2    4    6
+    [2,]    8   10   12
+	 [,1] [,2] [,3]
+    [1,]    3    6    9
+    [2,]   12   15   18
+	 [,1] [,2] [,3]
+    [1,]    2    8   18
+    [2,]   32   50   72
+    [1] 6
+    [1] 4 5 6
+    [1] 3 6
+	 [,1] [,2]
+    [1,]    1    4
+    [2,]    2    5
+    [3,]    3    6
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">
+apply(x, 2, mean) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#34892;&#21644;&#65292;x&#12398;2&#27425;&#20803;&#30446;&#12398;&#21508;&#38917;&#12398;&#24179;&#22343;</span>
+apply(x, 1, mean) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#21015;&#21644;&#65292;x&#12398;1&#27425;&#20803;&#30446;&#12398;&#21508;&#38917;&#12398;&#24179;&#22343;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 2.5 3.5 4.5
+[1] 2 5
+</pre>
+
+
+
+<p>
+行列は 2 次元の数値の羅列ですが、
+R では array(ベクトル、各次元の要素の個数)を使っ てさらに n 次元に拡張された配列を扱うことができます。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> array(1:24, c(3,4,2))) <span style="color: #99968b;"># </span><span style="color: #99968b;">3&#215;4&#215;2 &#12398;&#22823;&#12365;&#12373;&#12398;3&#27425;&#20803;&#37197;&#21015;&#12434;&#20316;&#25104;</span>
+
+
+</pre>
+</div>
+
+<pre class="example" id="org996f47e">
+    , , 1
+
+	 [,1] [,2] [,3] [,4]
+    [1,]    1    4    7   10
+    [2,]    2    5    8   11
+    [3,]    3    6    9   12
+
+    , , 2
+
+	 [,1] [,2] [,3] [,4]
+    [1,]   13   16   19   22
+    [2,]   14   17   20   23
+    [3,]   15   18   21   24
+</pre>
+
+<p>
+課題5-1: 
+</p>
+
+<p>
+課題5-2: 上記結果に対して行、列それぞれの平均を求めましょう。 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0ea1b4d" class="outline-2">
+<h2 id="org0ea1b4d">6. 簡単なリストの作成</h2>
+<div class="outline-text-2" id="text-org0ea1b4d">
+<p>
+リストは様々な型のデータをひとまとめにして管理できるデータ型です。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> list(<span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Kadota"</span>))
+(x <span style="color: #e5786d;">&lt;-</span> list(<span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Kadota"</span>, c(868, 657, 567)))
+
+x[[2]]
+x[[4]]
+
+</pre>
+</div>
+
+<pre class="example" id="orgc75f6fc">
+    [[1]]
+    [1] "Oh"
+
+    [[2]]
+    [1] "Nomura"
+
+    [[3]]
+    [1] "Kadota"
+    [[1]]
+    [1] "Oh"
+
+    [[2]]
+    [1] "Nomura"
+
+    [[3]]
+    [1] "Kadota"
+
+    [[4]]
+    [1] 868 657 567
+    [1] "Nomura"
+    [1] 868 657 567
+</pre>
+
+
+<p>
+各々の要素に名前を付けることも可能です。
+</p>
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> list(First=<span style="color: #95e454;">"Oh"</span>, Second=<span style="color: #95e454;">"Nomura"</span>, Third=<span style="color: #95e454;">"Kadota"</span>, Home_Runs=c(868, 657, 567)))
+
+</pre>
+</div>
+
+<pre class="example" id="org543ed81">
+    $First
+    [1] "Oh"
+
+    $Second
+    [1] "Nomura"
+
+    $Third
+    [1] "Kadota"
+
+    $Home_Runs
+    [1] 868 657 567
+</pre>
+
+
+<p>
+として、各々の要素に First, Second, Third, Home_Runs という名前が
+付いていることを確認しましょう。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+x[[4]]
+x$Home_Runs
+
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 868 657 567
+[1] 868 657 567
+</pre>
+
+
+<p>
+課題 6-1: 名前が Yamagata のベクトル(“Tsuruoka”, “Sakata”,
+     “Yonezawa”)と名前が Niigata のベクトル(“Yuzawa”, “Niitsu”,
+     “Shibata”)を要素にしたようなリストを作成し、そ の中味を表示し
+     てみましょう。8
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7a3aad7" class="outline-2">
+<h2 id="org7a3aad7">7. 簡単なデータフレームの作成</h2>
+<div class="outline-text-2" id="text-org7a3aad7">
+<p>
+R にはデータフレームと呼ばれる型が存在します。
+</p>
+<ul class="org-ul">
+<li>リストの一種で、行列と同じ二次元配列です。</li>
+</ul>
+
+<p>
+データフレームの各々の行は1つのサンプルに対する観測値、
+各列はサン プルに対する1つの項目とみなすことができます。
+これを使うと、表を簡単に表現するこ とができます。
+以下の表は日本プロ野球の5人の元選手の名前、在籍チーム名、通算打数、 安打数、本塁打数を表したものです。
+</p>
+
+<p>
+Home_Runs 2901 657 3085 504 2543 504 2786 868 2566 567
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> data.frame(
+ row.names = c(<span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Harimoto"</span>, <span style="color: #95e454;">"Kinugasa"</span>, <span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Kadota"</span>),
+ Team = c(<span style="color: #95e454;">"Hawks"</span>, <span style="color: #95e454;">"Flyers"</span>, <span style="color: #95e454;">"Carps"</span>, <span style="color: #95e454;">"Giants"</span>, <span style="color: #95e454;">"Hawks"</span>),
+ At_Bat = c(10472, 9666, 9404, 9250, 8868),
+ Hits = c(2901, 3085, 2543, 2786, 2566),
+ Home_Runs = c(657, 504, 504, 868, 567)
+))
+
+</pre>
+</div>
+
+<pre class="example">
+           Team At_Bat Hits Home_Runs
+Nomura    Hawks  10472 2901       657
+Harimoto Flyers   9666 3085       504
+Kinugasa  Carps   9404 2543       504
+Oh       Giants   9250 2786       868
+Kadota    Hawks   8868 2566       567
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+x$Hits
+x[ c(1,5), c(2,3,4) ] <span style="color: #99968b;"># </span><span style="color: #99968b;">1&#12289;5 &#34892;&#30446;&#12392; 2&#12289;3&#12289;4 &#21015;&#30446;&#12434;&#25277;&#20986;&#12377;&#12427;</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] 2901 3085 2543 2786 2566
+       At_Bat Hits Home_Runs
+Nomura  10472 2901       657
+Kadota   8868 2566       567
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+attributes(x)
+
+</pre>
+</div>
+
+<pre class="example">
+$names
+[1] "Team"      "At_Bat"    "Hits"      "Home_Runs"
+
+$class
+[1] "data.frame"
+
+$row.names
+[1] "Nomura"   "Harimoto" "Kinugasa" "Oh"       "Kadota"
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+names(x)
+row.names(x)
+class(x)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] "Team"      "At_Bat"    "Hits"      "Home_Runs"
+[1] "Nomura"   "Harimoto" "Kinugasa" "Oh"       "Kadota"
+[1] "data.frame"
+</pre>
+</div>
+
+
+
+
+<div id="outline-container-org839fcc4" class="outline-3">
+<h3 id="org839fcc4">課題 7-1:</h3>
+<div class="outline-text-3" id="text-org839fcc4">
+<p>
+下の表は G8 加盟国の国力の一部です。これをデータフレームとして変数にしま しょう5。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">(x <span style="color: #e5786d;">&lt;-</span> data.frame(
+row.names = c(<span style="color: #95e454;">"USA"</span>, <span style="color: #95e454;">"England"</span>, <span style="color: #95e454;">"Italy"</span>, <span style="color: #95e454;">"Canada"</span>, <span style="color: #95e454;">"Germany"</span>, <span style="color: #95e454;">"Japan"</span>, <span style="color: #95e454;">"France"</span>, <span style="color: #95e454;">"Russia"</span>), 
+    Area = c(9.4, 0.2, 0.3, 10.0, 0.3, 0.3, 0.5, 17.1),
+    Population = c(315, 62, 60, 34, 82, 127, 62, 141),
+    GDP = c(14, 3, 2, 2, 4, 5, 3, 2)
+))
+</pre>
+</div>
+
+<pre class="example">
+        Area Population GDP
+USA      9.4        315  14
+England  0.2         62   3
+Italy    0.3         60   2
+Canada  10.0         34   2
+Germany  0.3         82   4
+Japan    0.3        127   5
+France   0.5         62   3
+Russia  17.1        141   2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6bb31e3" class="outline-3">
+<h3 id="org6bb31e3">課題 7-2:</h3>
+<div class="outline-text-3" id="text-org6bb31e3">
+<p>
+上記で作成したデータフレームより G8 加盟国の国土面積、人口、GDP の
+平均を それぞれ求めましょう。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+x
+mean(x$Area)
+mean(x[[<span style="color: #95e454;">"Population"</span>]])
+mean(x[,3])
+c(<span style="color: #95e454;">"mean(x$Area) = "</span>, mean(x$Area))
+
+</pre>
+</div>
+
+<pre class="example" id="org834cc26">
+	    Area Population GDP
+    USA      9.4        315  14
+    England  0.2         62   3
+    Italy    0.3         60   2
+    Canada  10.0         34   2
+    Germany  0.3         82   4
+    Japan    0.3        127   5
+    France   0.5         62   3
+    Russia  17.1        141   2
+    [1] 4.7625
+    [1] 110.375
+    [1] 4.375
+    [1] "mean(x$Area) = " "4.7625"
+</pre>
+<p>
+<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org37e148f" class="outline-2">
+<h2 id="org37e148f">8. ファイルからの読み込み</h2>
+<div class="outline-text-2" id="text-org37e148f">
+</div>
+<div id="outline-container-org37b8e0c" class="outline-3">
+<h3 id="org37b8e0c">データファイルとフォルダ</h3>
+<div class="outline-text-3" id="text-org37b8e0c">
+<p>
+まず、以下のような数値データが書かれたファイルを用意しましょう。
+</p>
+
+<ul class="org-ul">
+<li>仮にこのファイル 名を testdata.txt、</li>
+<li>ディレクトリの位置を /Users/saito/R/data とします。</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-R"> 14
+ 14
+ 21
+ 35
+ 6
+</pre>
+</div>
+
+<p>
+まず setwd によって作業ディレクトリを/Users/saito/TMP にします。
+</p>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #e5786d;">setwd</span>(<span style="color: #95e454;">"/Users/saito/TMP"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7e129f1" class="outline-3">
+<h3 id="org7e129f1">数値列を読み込む scan 関数</h3>
+<div class="outline-text-3" id="text-org7e129f1">
+<p>
+次に scan コマンドを使って、データを変数 x に読み込みます。
+</p>
+<div class="org-src-container">
+<pre class="src src-R">
+(x <span style="color: #e5786d;">&lt;-</span> scan(<span style="color: #95e454;">"R-intro/data/08-01.txt"</span>))
+
+</pre>
+</div>
+
+<pre class="example">
+Read 5 items
+[1] 14 14 21 35  6
+</pre>
+
+
+<p>
+x にファイルの数値が <b>ベクトル</b> として読み込まれています。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc630183" class="outline-3">
+<h3 id="orgc630183">表の読み込みを行う関数 read.table</h3>
+<div class="outline-text-3" id="text-orgc630183">
+<p>
+以下のようなタブ区切 りのファイル batters.txt があったとします。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+        Team    At_Bat  Hits    Home_Runs
+Nomura  Hawks   10472   2901    657
+Harimoto        Flyers  9666    3085    504
+Kinugasa        Carps   9404    2543    504
+Oh      Giants  9250    2786    868
+Kadota  Hawks   8868    2566    567
+
+</pre>
+</div>
+
+<p>
+read.table により データ・フレームとして読み込む:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(batters <span style="color: #e5786d;">&lt;-</span> read.table(<span style="color: #95e454;">"R-intro/data/batters.txt"</span>, header=T, sep=<span style="color: #95e454;">"\t"</span>, row.names=1))
+
+</pre>
+</div>
+
+<pre class="example">
+           Team At_Bat Hits Home_Runs
+Nomura    Hawks  10472 2901       657
+Harimoto Flyers   9666 3085       504
+Kinugasa  Carps   9404 2543       504
+Oh       Giants   9250 2786       868
+Kadota    Hawks   8868 2566       567
+</pre>
+
+
+<p>
+x$Hits などで安打数を得ることができます。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+x$Team
+x$Hits
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 3085
+[1] Hawks  Flyers Carps  Giants Hawks 
+Levels: Carps Flyers Giants Hawks
+[1] 2901 3085 2543 2786 2566
+</pre>
+
+
+<p>
+read.table の引数の意味 :
+</p>
+
+<dl class="org-dl">
+<dt>"batters.txt"</dt><dd>ファイル名</dd>
+<dt>header = T</dt><dd>Team, At_Bat など のヘッダーがあることを示す</dd>
+<dt>sep = "\t"</dt><dd>タブ区切りであることを示し</dd>
+<dt>row.names = 1 </dt><dd>行の名前が1列分あることを指定</dd>
+</dl>
+
+<p>
+read.table の引数のオプション
+</p>
+
+<dl class="org-dl">
+<dt>quote=""</dt><dd>引用符""の処理をしない。</dd>
+<dt>check.names=F</dt><dd>列ラベル名の自動変換が抑制される。</dd>
+<dt>omment.char=""</dt><dd>コメント記号("#")を無効にできる。</dd>
+</dl>
+
+<p>
+課題 8: 課題 7-1 の表をタブ区切りファイルとして保存し、データフレー
+ムとして読み込んでみましょう。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a86634" class="outline-2">
+<h2 id="org6a86634">9. ファイルへの書き出し (データの保存)</h2>
+<div class="outline-text-2" id="text-org6a86634">
+<p>
+ファイル出力を行なう関数
+</p>
+</div>
+
+<div id="outline-container-org0dc04aa" class="outline-3">
+<h3 id="org0dc04aa">write関数</h3>
+<div class="outline-text-3" id="text-org0dc04aa">
+<ul class="org-ul">
+<li>一番簡単なのが write 関数でしょう。</li>
+<li>変数に格納された数値をファイルに書き出すことができます。</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-R">
+x <span style="color: #e5786d;">&lt;-</span> c(10, 12, 15, 19, 21, 34)
+write(x, <span style="color: #95e454;">"R-intro/data/outfile1.txt"</span>, ncolumns = 1)
+
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>x の内容が R-intro/data/outfile1.txtというファイルに書き込まれます。</li>
+<li>ncolumns = 1 は数 値を1 列で出力することを指定しています。</li>
+</ul>
+
+<p>
+行列データもファイルに書き出すことが可能で す。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+x <span style="color: #e5786d;">&lt;-</span> matrix(c(1,2,3,4,5,6), nrow=2, ncol=3, byrow=T)
+write(t(x), <span style="color: #95e454;">"R-intro/data/outfile2.txt"</span>, ncolumns=ncol(x), sep=<span style="color: #95e454;">"\t"</span>) 
+
+</pre>
+</div>
+
+<dl class="org-dl">
+<dt>t(x) </dt><dd>行列 x を転置しないと、出力されるファイル中の行列が転置
+されたものになってしまうので、注意が必要です。</dd>
+<dt>ncolumns=ncol(x)</dt><dd>で出力される列数を行列 x の列数に揃え、</dd>
+<dt>sep = “\t”</dt><dd>でタブ区切りファイルにすることを指定しています。</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org9b3115b" class="outline-3">
+<h3 id="org9b3115b">write.table関数</h3>
+<div class="outline-text-3" id="text-org9b3115b">
+<p>
+データフレームをファイルに出力する関数
+</p>
+<div class="org-src-container">
+<pre class="src src-R">
+batters[,c(3,4)]
+write.table(batters[,c(3,4)], <span style="color: #95e454;">"R-intro/data/outfile3.txt"</span>, sep=<span style="color: #95e454;">"=\t"</span>, row.names=T, col.names=<span style="color: #92a65e; font-weight: bold;">NA</span>)
+
+</pre>
+</div>
+
+<pre class="example">
+         Hits Home_Runs
+Nomura   2901       657
+Harimoto 3085       504
+Kinugasa 2543       504
+Oh       2786       868
+Kadota   2566       567
+</pre>
+
+
+<dl class="org-dl">
+<dt>row.names=T</dt><dd>行名(先頭に空白を挿入)を入れます。</dd>
+<dt>col.names=NA</dt><dd>でそれぞれ行名、列名(先頭に空白を挿入)を入れます。</dd>
+<dt>quote=F</dt><dd>指定すると、二重引用符を除いた出力になります。</dd>
+</dl>
+
+<p>
+  課題 9: 上記データフレームで、各バッターに対して打率、すなわち Hits / At_Bat を計算
+し、その結果を”outfile4.txt”に格納しましょう。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org72143d2" class="outline-2">
+<h2 id="org72143d2">10. プログラムの読み込み</h2>
+<div class="outline-text-2" id="text-org72143d2">
+<p>
+一連の手続きをファイルにしておいて、それを必要なときに実行すること
+が可能です。
+</p>
+
+<p>
+例えば、以下のような操作を記述したファイ ルを用意します。
+ファイル名を R-intro/code/substtest.R とします。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+x <span style="color: #e5786d;">&lt;-</span> c(1,2,3,4,5)
+y <span style="color: #e5786d;">&lt;-</span> c(2,4,6,8,10)
+z <span style="color: #e5786d;">&lt;-</span> x + y
+
+</pre>
+</div>
+
+<p>
+これを以下のように source(“substtest.R”)とすると、substtest.R 中に
+記述された手続きを 実行することができます。結果として x, y, z それぞ
+れに値が代入されます。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #e5786d;">source</span>(<span style="color: #95e454;">"R-intro/code/substtest.R"</span>)
+c(x,y,z)
+</pre>
+</div>
+
+<pre class="example">
+[1]  1  2  3  4  5  2  4  6  8 10  3  6  9 12 15
+</pre>
+
+
+<p>
+課題 10: 課題 8 の手続きを dframetest.R というファイルに書き込み、
+source を使ってその 手続きを実行してみましょう。14
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org7485fa2" class="outline-2">
+<h2 id="org7485fa2">11. 関数の定義</h2>
+<div class="outline-text-2" id="text-org7485fa2">
+<p>
+関数は数学的にはある入力に対応した出力を返すものです。
+</p>
+
+<p>
+コンピュータプログラミングでは、まとまった処理の単位を表します8。
+</p>
+
+<p>
+例えば今、二つの数を足して 2 で割る関数 plus を考えます。
+</p>
+
+<p>
+これは数学では plus(x, y) = (x + y) / 2 などと記述できます。
+</p>
+</div>
+
+<div id="outline-container-orgc44f545" class="outline-3">
+<h3 id="orgc44f545">function(引数リスト) { 関数本体 }</h3>
+<div class="outline-text-3" id="text-orgc44f545">
+<p>
+R では以下のよう に function を使って以下のように記述します。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #cae682;">plus</span> <span style="color: #e5786d;">&lt;-</span> <span style="color: #8ac6f2; font-weight: bold;">function</span>(x, y) {
+  <span style="color: #8ac6f2; font-weight: bold;">return</span> ((x + y) / 2)
+}
+plus
+plus(10,20)
+</pre>
+</div>
+
+<pre class="example">
+function(x, y) {
+  return ((x + y) / 2)
+}
+[1] 15
+</pre>
+
+
+<ul class="org-ul">
+<li>これによって x と y を入力(引数)とする関数 plus が定義されます。
+出力(返り値)が(x + y) / 2 となる。</li>
+<li>その後、  plus(10, 20) とすれば、
+<ul class="org-ul">
+<li>x に 10、y に 20 が代入され、</li>
+<li>関数plusが実行され，</li>
+<li>return は最終的な返り値を決め,</li>
+<li>計算結果の 15 という答えが返ってくる。
+関数のより一般的な定義の仕方は、</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org33d5440" class="outline-3">
+<h3 id="org33d5440">関数の一般的な定義の</h3>
+<div class="outline-text-3" id="text-org33d5440">
+<div class="org-src-container">
+<pre class="src src-R">
+
+  <span style="color: #cae682;">&#38306;&#25968;&#21517;</span> <span style="color: #e5786d;">&lt;-</span> <span style="color: #8ac6f2; font-weight: bold;">function</span> (&#24341;&#25968; 1, &#24341;&#25968; 2, &#183;&#183;&#183;, ...) {
+    &#24341;&#25968;&#12434;&#20351;&#12387;&#12383;&#27096;&#12293;&#12394;&#20966;&#29702;
+    <span style="color: #8ac6f2; font-weight: bold;">return</span>(&#36820;&#12426;&#20516;)
+  } 
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgcc6e3c0" class="outline-4">
+<h4 id="orgcc6e3c0">課題 11:</h4>
+<div class="outline-text-4" id="text-orgcc6e3c0">
+<p>
+f(x, a, b, c) = ax2 + bx + c を R の関数として実装しましょう。
+f(4, 3, 2, 1)はいくつ になりますか。
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b90ea5" class="outline-2">
+<h2 id="org1b90ea5">12.グラフの作成</h2>
+<div class="outline-text-2" id="text-org1b90ea5">
+<p>
+R では簡単にグラフを作成する関数が用意されています。
+</p>
+</div>
+
+<div id="outline-container-org26e83d5" class="outline-3">
+<h3 id="org26e83d5">plot 関数</h3>
+<div class="outline-text-3" id="text-org26e83d5">
+<p>
+二次元プロットを作成することができます。
+</p>
+
+<p>
+例えば以下のように x 座標と y 座標の値をそれぞれベクトルとして与
+えると、(1,2), (3,4), (5,9), (7,7), (9,8)の点にプロットを作成でき
+ます。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">12. &#12464;&#12521;&#12501;&#12398;&#20316;&#25104;</span>
+<span style="color: #99968b;">##</span>
+
+x <span style="color: #e5786d;">&lt;-</span> c(1,3,5,7,9)
+y <span style="color: #e5786d;">&lt;-</span> c(2,4,9,7,8)
+plot(x, y, xlab=<span style="color: #95e454;">"X Value"</span>, ylab=<span style="color: #95e454;">"Y Value"</span>)
+
+</pre>
+</div>
+
+
+<div id="org7e08c6c" class="figure">
+<p><img src="./R-intro/graph/12-1.png" alt="12-1.png" />
+</p>
+</div>
+
+
+<p>
+追加引数の中味: xlab, ylabでそれぞれx軸、y軸のラベルを指定しています。
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org57e1604" class="outline-3">
+<h3 id="org57e1604">barplot</h3>
+<div class="outline-text-3" id="text-org57e1604">
+<p>
+棒グラフを作成することができます。
+</p>
+
+<p>
+以下の例では、各棒の高さに対 応させるベクトルおよびそのラベルを変数
+x に与え、barplot(x)を呼び出しています。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">12. &#12464;&#12521;&#12501;&#12398;&#20316;&#25104;</span>
+<span style="color: #99968b;">##</span>
+
+x <span style="color: #e5786d;">&lt;-</span> c(1,2,3,2,10,1)
+nam
+es(x) <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"A"</span>, <span style="color: #95e454;">"B"</span>, <span style="color: #95e454;">"C"</span>, <span style="color: #95e454;">"D"</span>, <span style="color: #95e454;">"E"</span>, <span style="color: #95e454;">"F"</span>)
+barplot(x)
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2c4bd7c" class="outline-3">
+<h3 id="org2c4bd7c">hist</h3>
+<div class="outline-text-3" id="text-org2c4bd7c">
+<p>
+ベクトルで与えられた数値群のヒストグラムを作成する関数です。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">12.3 &#12498;&#12473;&#12488;&#12464;&#12521;&#12512;</span>
+<span style="color: #99968b;">##</span>
+   
+x <span style="color: #e5786d;">&lt;-</span> c(3.2, 1.2, 4.2, 2.3, 3.4, 5.9, 5.2, 5.3, 4.1, 5.2, 3.2, 1.4)
+hist(x, xlab = <span style="color: #95e454;">"Test Value"</span>, main = <span style="color: #95e454;">"Test Histogram"</span>)
+
+</pre>
+</div>
+
+
+<div id="org8116892" class="figure">
+<p><img src="./R-intro/graph/12-2.png" alt="12-2.png" />
+</p>
+</div>
+
+<p>
+main によってヒストグラムのタイトルを指定しています。 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaba6eab" class="outline-3">
+<h3 id="orgaba6eab">boxplot</h3>
+<div class="outline-text-3" id="text-orgaba6eab">
+<p>
+は複数のベクトル中に含まれる値の分布を表す箱ひげ図を作成します。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">12.4 &#31665;&#12498;&#12466;&#22259;</span>
+<span style="color: #99968b;">##</span>
+
+x1 <span style="color: #e5786d;">&lt;-</span> c(11,12,11,10,11,11,12,13,15,12,11,10,12,13)
+x2 <span style="color: #e5786d;">&lt;-</span> c(20,21,27,9,12,23,23,12,11,9,21,15,7,12,12,9,23,15)
+boxplot(x1, x2, names=c(<span style="color: #95e454;">"Data 1"</span>, <span style="color: #95e454;">"Data 2"</span>))
+
+</pre>
+</div>
+
+
+<div id="orgc0c2cad" class="figure">
+<p><img src="./R-intro/graph/12-4.png" alt="12-4.png" />
+</p>
+</div>
+
+<p>
+中央値
+外れ値
+外れ値を除く上位25%
+この範囲に50%の データが分布する
+外れ値を除く下位25%
+    作成された箱ひげ図
+課題 12: 課題 7-1 で与えられた表に関して、国土面積と人口の関係をプロットしてみまし ょう。
+17
+Frequency
+01234
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7e98c0f" class="outline-2">
+<h2 id="org7e98c0f">13. 基本的なプログラミングの構文</h2>
+<div class="outline-text-2" id="text-org7e98c0f">
+<p>
+基本的なプログラミングの構文について, かいつまんで簡単に説明します。
+</p>
+</div>
+
+<div id="outline-container-orgcf0b912" class="outline-3">
+<h3 id="orgcf0b912">13.1 if 文</h3>
+<div class="outline-text-3" id="text-orgcf0b912">
+<p>
+if 文は与えられた条件11が成立するときのみ、与えられた手続きを実行す
+る構文です。
+</p>
+
+<p>
+例えば x &gt; 0 のときに y を 1 にする、それ以外は y を 0 にするとい
+う手続きは
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">x <span style="color: #e5786d;">&lt;-</span> 5
+
+<span style="color: #8ac6f2; font-weight: bold;">if</span> (x &gt; 0)  {
+
+  y <span style="color: #e5786d;">&lt;-</span> 1
+
+} <span style="color: #8ac6f2; font-weight: bold;">else</span> {
+
+  y <span style="color: #e5786d;">&lt;-</span> 0
+
+}
+
+list(<span style="color: #95e454;">"result = "</span>, y)
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">result =</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+とします。x = -5 にした後上記を実行し、y の値を調べてみましょう。
+次に x = 3 にした後 上記を実行し、y の値を調べましょう。
+</p>
+
+<p>
+if 文のより一般的な形式は以下の通りです。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">   
+<span style="color: #8ac6f2; font-weight: bold;">if</span> (&#26465;&#20214; 1) {
+
+    &#26465;&#20214; 1 &#12364;&#25104;&#31435;&#12375;&#12383;&#12392;&#12365;&#12398;&#25163;&#32154;&#12365;
+
+} <span style="color: #8ac6f2; font-weight: bold;">else</span> <span style="color: #8ac6f2; font-weight: bold;">if</span> (&#26465;&#20214; 2) {
+
+    &#26465;&#20214; 1 &#12364;&#19981;&#25104;&#31435;&#12289;&#26465;&#20214; 2 &#12364;&#25104;&#31435;&#12375;&#12383;&#12392;&#12365;&#12398;&#25163;&#32154;&#12365;
+    
+} <span style="color: #8ac6f2; font-weight: bold;">else</span> <span style="color: #8ac6f2; font-weight: bold;">if</span> (&#26465;&#20214; 3) {
+  
+    &#26465;&#20214; 2 &#12414;&#12391;&#12364;&#19981;&#25104;&#31435;&#12289;&#26465;&#20214; 3 &#12364;&#25104;&#31435;&#12375;&#12383;&#12392;&#12365;&#12398;&#25163;&#32154;&#12365;
+    
+} <span style="color: #8ac6f2; font-weight: bold;">else</span> if ...
+  :
+} <span style="color: #8ac6f2; font-weight: bold;">else</span> {
+  
+   &#19978;&#35352;&#12393;&#12398;&#26465;&#20214;&#12418;&#25104;&#31435;&#12375;&#12394;&#12363;&#12387;&#12383;&#12392;&#12365;&#12398;&#25163;&#32154;&#12365;
+
+}
+</pre>
+</div>
+
+<p>
+課題 13-1: 入力が 0 のときに 1、それ以外では 0 を返す関数 d を定義しましょう。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga2a1258" class="outline-3">
+<h3 id="orga2a1258">13.2 while 文</h3>
+<div class="outline-text-3" id="text-orga2a1258">
+<p>
+while 文は与えられた条件が成立している間、与えられた手続きを繰り返
+す構文です。
+</p>
+</div>
+
+<div id="outline-container-orgc0d7d73" class="outline-4">
+<h4 id="orgc0d7d73">while 文の形式</h4>
+<div class="outline-text-4" id="text-orgc0d7d73">
+<p>
+条件文には&amp;(論理積)や|(論理和)などの論理演算子が使えます。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #8ac6f2; font-weight: bold;">while</span> (&#26465;&#20214;) {
+
+    &#26465;&#20214;&#12364;&#25104;&#31435;&#12375;&#12390;&#12356;&#12427;&#12392;&#12365;&#12289;&#23455;&#34892;&#12377;&#12427;&#25163;&#32154;&#12365;
+
+}
+</pre>
+</div>
+
+<p>
+です12。
+</p>
+
+<p>
+   例えば x &lt;- 1 とした後、while (x &lt;= 3){ print(x); x &lt;- x + 1 }とすれば、1 から 3 ま
+でが出力されます。
+プログラムとしてファイルに記述するときは、次のように一行一文にした方が見やすい でしょう。
+  x &lt;- 1
+  while (x &lt;= 3){
+print(x)
+x &lt;- x + 1 }
+・ 最初に while 文に入ったとき、x は 1 なので、while 文の中の手続きである print(x)(x の値を表示する)が実行され、1 が表示されるとともに x &lt;- x + 1 (x の値を 1 つ増やす)が 実行されます。while 文の最後で x の値は 2 になっています。
+・ 次の while 文の条件判定において、x は 2 で 3 以下なので、while 文の中の手続きであ る print(x)が実行され、2 が表示されるとともに x &lt;- x + 1 (x の値を 1 つ増やす)が実行さ れます。while 文の最後で x の値は 3 になっています。
+・ その次の while 文の条件判定において、x は 3 で 3 以下なので、while 文の中の手続き である print(x)が実行され、今回は 3 が表示されるとともに x &lt;- x + 1 (x の値を 1 つ増や
+12 while 文の次の繰り返しを強制的に行う next、while 文から強制的に抜ける break 文な ども用意されている。
+  &gt; x &lt;- 1
+ &gt; while (x &lt;= 3){ print(x); x &lt;- x + 1 } [1] 1
+[1] 2
+[1] 3
+&gt;
+      19
+</p>
+
+<p>
+す)が実行されます。while 文の最後で x の値は 4 になっています。
+・ その次の while 文の条件判定で x は 4 で 3 以下ではないので、条件に合わず、while 文
+から抜けます。
+課題 13-2: while 文を使って、1,3,5,7,9,11 を1行ずつ表示しましょう。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2ca3e85" class="outline-3">
+<h3 id="org2ca3e85">13.3 for 文</h3>
+<div class="outline-text-3" id="text-org2ca3e85">
+<p>
+for 文も while 文と同じ繰り返しですが、for 文では与えられた要素群の中の要素1つ1
+つを変数に1回ずつ代入しながら繰り返し処理を行います。その形式は、
+for(変数 in 要素群){ 手続き
+}
+です。例えば、for (i in c(1,3,5)){ print(i) }で、1,3,5 が手続き中で使われている変数 i に毎
+回代入され、それが出力されます。for (i in 1:5)){ print(i) }なら、1 から 5 までが変数 i に代
+入され、それが出力されるでしょう。また以下の例は、1 から 5 までの二乗をベクトルにし ます13。
+x &lt;- NULL
+for (i in 1:5){
+   x &lt;- append(x, i**2)
+}
+・ x &lt;- NULL で空のベクトルを x に代入します。NULL は空を意味します。
+・ for 文で i に 1 から 5 までが順次代入され、代入の度に for 文の中が実行されます。
+・ for 文の中で i の二乗(i**2)がベクトル x に追加されます。append(x, i)はベクトル x に i
+を追加する関数です14。
+課題 13-3: 課題 12-2 を for 文を使って書き直しましょう。
+13 実は for 文を使わなくても、x &lt;- (1:5)**2 で同じことができる。
+14 x &lt;- c(x, i**2)でも良い。c はベクトルの連結にも使うことができる。
+      20
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1269ecd" class="outline-2">
+<h2 id="org1269ecd">14. その他のコマンドや関数</h2>
+<div class="outline-text-2" id="text-org1269ecd">
+<p>
+R でよく使う関数をいくつか挙げておきましょう。
+</p>
+</div>
+
+<div id="outline-container-orgcf220a6" class="outline-3">
+<h3 id="orgcf220a6">14.1 使い方</h3>
+<div class="outline-text-3" id="text-orgcf220a6">
+<p>
+・ help(関数)で関数の詳しい使い方が表示されます。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgba67b47" class="outline-3">
+<h3 id="orgba67b47">14.2 変数と属性</h3>
+<div class="outline-text-3" id="text-orgba67b47">
+<p>
+・ ls()または objects()で現在定義されている変数が表示されます。
+・ class(変数)または mode(変数)でオブジェクトの型(例えば変数が数値なのか、文字なの
+か、リストなのか、行列かなど)を知ることができます。
+・ attributes(変数)で定義されている属性がリストで返ってきます。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7b451e4" class="outline-3">
+<h3 id="org7b451e4">14.3 apply 系関数</h3>
+<div class="outline-text-3" id="text-org7b451e4">
+<p>
+・ apply を使うと、行列の各行または各列に対して同じ処理を繰り返し、結果をベクトル
+で受け取ることができます(5. 簡単な行列の作成と演算参照)。
+・ sapply を使うと、ベクトルの要素 1 つ 1 つを与えられた関数に入力し、出力結果を 1
+つ 1 つ含んだベクトルとして得ることができます
+func1_sub &lt;- function(elm){ # スカラーelem に対する関数の定義 if(-1 &lt;= elm &amp; elm &lt;= 1){ return (1) } else { return (0) }
+}
+func1 &lt;- function(x){ # ベクトル x を入力とする関数
+return(sapply(x, func1_sub)) }
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc937b44" class="outline-3">
+<h3 id="orgc937b44">14.4 図の作成</h3>
+<div class="outline-text-3" id="text-orgc937b44">
+<p>
+・curve 関数で関数のグラフを作成できます。詳しくは help を参照して下さい。 例:
+curve(dnorm, -7, +7) # 正規分布の描画
+curve(cos(x)+cos(2*x), -2*pi, 2*pi, 1000) # 1000はプロット数 curve(func1, -3, 3) # 14.3apply系関数で定義した関数
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
+<p class="date">Created: 2021-11-10 水 17:52</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

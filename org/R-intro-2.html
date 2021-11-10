@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-10-26 火 21:42 -->
+<!-- 2021-11-11 木 07:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>初心者用 R 言語講座 (2)</title>
+<title>初心者用 R 言語講座演習ノート</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
 <style type="text/css">
@@ -229,31 +229,25 @@
 </head>
 <body>
 <div id="content">
-<h1 class="title">初心者用 R 言語講座 (2)</h1>
+<h1 class="title">初心者用 R 言語講座演習ノート</h1>
 <div class="org-src-container">
 <pre class="src src-R">
 </pre>
 </div>
-
-<div id="outline-container-orgc927367" class="outline-2">
-<h2 id="orgc927367">初心者用 R 言語講座 の演習ノート</h2>
-<div class="outline-text-2" id="text-orgc927367">
 <p>
 <a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
 </p>
-</div>
 
-
-<div id="outline-container-orgb881f2e" class="outline-3">
-<h3 id="orgb881f2e">4. 簡単なベクトル演算</h3>
-<div class="outline-text-3" id="text-orgb881f2e">
+<div id="outline-container-org53f8c6c" class="outline-2">
+<h2 id="org53f8c6c">4. 簡単なベクトル演算</h2>
+<div class="outline-text-2" id="text-org53f8c6c">
 <div class="org-src-container">
 <pre class="src src-R">
-(x &lt;- c(2,4,6,8,10))    # ベクトルの作成
-length(x)               # ベクトルの次元数、すなわちベクトル中の数値の個数
-x[3]                    # 3 番目の数値を抽出する
-x[c(2,4)]               # 2番目と 4 番目の数値を抽出
-x[2:4]                  # 2 番目から 4 番目までの数値を抽出
+ (x <span style="color: #e5786d;">&lt;-</span> c(2,4,6,8,10))    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#20316;&#25104;</span>
+ length(x)               <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#27425;&#20803;&#25968;&#12289;&#12377;&#12394;&#12431;&#12385;&#12505;&#12463;&#12488;&#12523;&#20013;&#12398;&#25968;&#20516;&#12398;&#20491;&#25968;</span>
+ x[3]                    <span style="color: #99968b;"># </span><span style="color: #99968b;">3 &#30058;&#30446;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;&#12377;&#12427;</span>
+ x[c(2,4)]               <span style="color: #99968b;"># </span><span style="color: #99968b;">2&#30058;&#30446;&#12392; 4 &#30058;&#30446;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;</span>
+ x[2:4]                  <span style="color: #99968b;"># </span><span style="color: #99968b;">2 &#30058;&#30446;&#12363;&#12425; 4 &#30058;&#30446;&#12414;&#12391;&#12398;&#25968;&#20516;&#12434;&#25277;&#20986;</span>
 
 </pre>
 </div>
@@ -268,13 +262,13 @@ x[2:4]                  # 2 番目から 4 番目までの数値を抽出
 </div>
 
 
-<div id="outline-container-org0e81b00" class="outline-4">
-<h4 id="org0e81b00">ベクトルの比較演算</h4>
-<div class="outline-text-4" id="text-org0e81b00">
+<div id="outline-container-orgaad8828" class="outline-3">
+<h3 id="orgaad8828">ベクトルの比較演算</h3>
+<div class="outline-text-3" id="text-orgaad8828">
 <div class="org-src-container">
 <pre class="src src-R">
 x
-x &gt; 5                    # ベクトルの各要素が 5 より大きいかの判定
+x &gt; 5                    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12505;&#12463;&#12488;&#12523;&#12398;&#21508;&#35201;&#32032;&#12364; 5 &#12424;&#12426;&#22823;&#12365;&#12356;&#12363;&#12398;&#21028;&#23450;</span>
 which (x&gt;5)
 x[which(x&gt;5)]
 x[x&gt;5]
@@ -297,16 +291,16 @@ x[x&gt;5]
 </div>
 </div>
 
-<div id="outline-container-orgd799c1d" class="outline-4">
-<h4 id="orgd799c1d">文字列のベクトル</h4>
-<div class="outline-text-4" id="text-orgd799c1d">
+<div id="outline-container-orgdda19cb" class="outline-3">
+<h3 id="orgdda19cb">文字列のベクトル</h3>
+<div class="outline-text-3" id="text-orgdda19cb">
 <div class="org-src-container">
 <pre class="src src-R">
-x &lt;- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+x <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"Sunday"</span>, <span style="color: #95e454;">"Monday"</span>, <span style="color: #95e454;">"Tuesday"</span>, <span style="color: #95e454;">"Wednesday"</span>, <span style="color: #95e454;">"Thursday"</span>, <span style="color: #95e454;">"Friday"</span>, <span style="color: #95e454;">"Saturday"</span>)
 
 x[c(2,4)]
 x[2:4]
-grep("sd", x)  # "sd"を含む要素を探す
+grep(<span style="color: #95e454;">"sd"</span>, x)  <span style="color: #99968b;"># </span><span style="color: #99968b;">"sd"&#12434;&#21547;&#12416;&#35201;&#32032;&#12434;&#25506;&#12377;</span>
 
 </pre>
 </div>
@@ -319,13 +313,13 @@ grep("sd", x)  # "sd"を含む要素を探す
 </div>
 </div>
 
-<div id="outline-container-orgc4f49c2" class="outline-4">
-<h4 id="orgc4f49c2">ベクトルの各要素の名前付け</h4>
-<div class="outline-text-4" id="text-orgc4f49c2">
+<div id="outline-container-org81f1a01" class="outline-3">
+<h3 id="org81f1a01">ベクトルの各要素の名前付け</h3>
+<div class="outline-text-3" id="text-org81f1a01">
 <div class="org-src-container">
-<pre class="src src-R">x &lt;- c(2, 4, 6)
-names(x) &lt;- c("First", "Second", "Third")
-x[["Second"]]
+<pre class="src src-R">x <span style="color: #e5786d;">&lt;-</span> c(2, 4, 6)
+names(x) <span style="color: #e5786d;">&lt;-</span> c(<span style="color: #95e454;">"First"</span>, <span style="color: #95e454;">"Second"</span>, <span style="color: #95e454;">"Third"</span>)
+x[[<span style="color: #95e454;">"Second"</span>]]
 
 </pre>
 </div>
@@ -337,16 +331,16 @@ x の names という <b>属性</b> に (“First”, “Second”, “Third”)
 </div>
 </div>
 
-<div id="outline-container-org2473a87" class="outline-4">
-<h4 id="org2473a87">数値ベクトルに対する様々な統計関数</h4>
-<div class="outline-text-4" id="text-org2473a87">
+<div id="outline-container-org45b2a5e" class="outline-3">
+<h3 id="org45b2a5e">数値ベクトルに対する様々な統計関数</h3>
+<div class="outline-text-3" id="text-org45b2a5e">
 <div class="org-src-container">
 <pre class="src src-R">
 
-sum(x)     # x の合計、
-mean(x)    # x の平均
-(x &lt;- c(2,4,6,8,10));
-sum(x &gt; 5) # x の中のTRUEの数を数える
+sum(x)     <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#21512;&#35336;&#12289;</span>
+mean(x)    <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#24179;&#22343;</span>
+(x <span style="color: #e5786d;">&lt;-</span> c(2,4,6,8,10));
+sum(x &gt; 5) <span style="color: #99968b;"># </span><span style="color: #99968b;">x &#12398;&#20013;&#12398;TRUE&#12398;&#25968;&#12434;&#25968;&#12360;&#12427;</span>
 </pre>
 </div>
 
@@ -359,9 +353,9 @@ sum(x &gt; 5) # x の中のTRUEの数を数える
 </div>
 </div>
 
-<div id="outline-container-orgc93faf9" class="outline-4">
-<h4 id="orgc93faf9">課題 4-1:</h4>
-<div class="outline-text-4" id="text-orgc93faf9">
+<div id="outline-container-org0201008" class="outline-3">
+<h3 id="org0201008">課題 4-1:</h3>
+<div class="outline-text-3" id="text-org0201008">
 <p>
 ベクトル(3, 1, 4, 1, 5, 9, 2, 6, 5)の中で 5 より大きい要素からなるベクトルを作成 しましょう。
 </p>
@@ -375,9 +369,9 @@ sum(x &gt; 5) # x の中のTRUEの数を数える
 </div>
 
 
-<div id="outline-container-orgab7ff4b" class="outline-4">
-<h4 id="orgab7ff4b">課題 4-2:</h4>
-<div class="outline-text-4" id="text-orgab7ff4b">
+<div id="outline-container-org9fadd2c" class="outline-3">
+<h3 id="org9fadd2c">課題 4-2:</h3>
+<div class="outline-text-3" id="text-org9fadd2c">
 <p>
 ベクトル(1,2,3,4,5,6,7,8,9,10,11,12)に(“Jan”, “Feb”, “Mar”,
 “Apr”, “May”, “Jun”, “Jul”, “Aug”, “Sep”, “Oct”,
@@ -388,17 +382,17 @@ sum(x &gt; 5) # x の中のTRUEの数を数える
 </div>
 </div>
 
-<div id="outline-container-orge7ee0cc" class="outline-3">
-<h3 id="orge7ee0cc">5. 簡単な行列の作成と演算</h3>
-<div class="outline-text-3" id="text-orge7ee0cc">
+<div id="outline-container-org5e8f459" class="outline-2">
+<h2 id="org5e8f459">5. 簡単な行列の作成と演算</h2>
+<div class="outline-text-2" id="text-org5e8f459">
 <p>
 ベクトルを集めて行列を作成する
 </p>
 
 <div class="org-src-container">
 <pre class="src src-R">
-(x &lt;- rbind(c(1,2,3), c(4,5,6)))
-(x &lt;- matrix(c(1, 4, 2, 5, 3, 6), nrow=2, ncol=3)) # nrow:行数， ncol:列数
+(x <span style="color: #e5786d;">&lt;-</span> rbind(c(1,2,3), c(4,5,6)))
+(x <span style="color: #e5786d;">&lt;-</span> matrix(c(1, 4, 2, 5, 3, 6), nrow=2, ncol=3)) <span style="color: #99968b;"># </span><span style="color: #99968b;">nrow:&#34892;&#25968;&#65292; ncol:&#21015;&#25968;</span>
 
 </pre>
 </div>
@@ -418,7 +412,7 @@ sum(x &gt; 5) # x の中のTRUEの数を数える
 x+1
 x*2
 
-y &lt;- rbind(c(2, 4, 6), c(8, 10, 12))
+y <span style="color: #e5786d;">&lt;-</span> rbind(c(2, 4, 6), c(8, 10, 12))
 
 x + y 
 x * y
@@ -426,37 +420,37 @@ x * y
 x[2,3]
 x[2,]
 x[,3]
-t(x) # 転置
+t(x) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#36578;&#32622;</span>
 
 </pre>
 </div>
 
-<pre class="example" id="orgb280cff">
-     [,1] [,2] [,3]
-[1,]    2    3    4
-[2,]    5    6    7
-     [,1] [,2] [,3]
-[1,]    2    4    6
-[2,]    8   10   12
-     [,1] [,2] [,3]
-[1,]    3    6    9
-[2,]   12   15   18
-     [,1] [,2] [,3]
-[1,]    2    8   18
-[2,]   32   50   72
-[1] 6
-[1] 4 5 6
-[1] 3 6
-     [,1] [,2]
-[1,]    1    4
-[2,]    2    5
-[3,]    3    6
+<pre class="example" id="org7656663">
+	 [,1] [,2] [,3]
+    [1,]    2    3    4
+    [2,]    5    6    7
+	 [,1] [,2] [,3]
+    [1,]    2    4    6
+    [2,]    8   10   12
+	 [,1] [,2] [,3]
+    [1,]    3    6    9
+    [2,]   12   15   18
+	 [,1] [,2] [,3]
+    [1,]    2    8   18
+    [2,]   32   50   72
+    [1] 6
+    [1] 4 5 6
+    [1] 3 6
+	 [,1] [,2]
+    [1,]    1    4
+    [2,]    2    5
+    [3,]    3    6
 </pre>
 
 <div class="org-src-container">
 <pre class="src src-R">
-apply(x, 2, mean) # 行和，xの2次元目の各項の平均
-apply(x, 1, mean) # 列和，xの1次元目の各項の平均
+apply(x, 2, mean) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#34892;&#21644;&#65292;x&#12398;2&#27425;&#20803;&#30446;&#12398;&#21508;&#38917;&#12398;&#24179;&#22343;</span>
+apply(x, 1, mean) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#21015;&#21644;&#65292;x&#12398;1&#27425;&#20803;&#30446;&#12398;&#21508;&#38917;&#12398;&#24179;&#22343;</span>
 
 </pre>
 </div>
@@ -475,26 +469,26 @@ R では array(ベクトル、各次元の要素の個数)を使っ てさらに
 
 <div class="org-src-container">
 <pre class="src src-R">
-(x &lt;- array(1:24, c(3,4,2))) # 3×4×2 の大きさの3次元配列を作成
+(x <span style="color: #e5786d;">&lt;-</span> array(1:24, c(3,4,2))) <span style="color: #99968b;"># </span><span style="color: #99968b;">3&#215;4&#215;2 &#12398;&#22823;&#12365;&#12373;&#12398;3&#27425;&#20803;&#37197;&#21015;&#12434;&#20316;&#25104;</span>
 
 
 </pre>
 </div>
 
-<pre class="example" id="org6e44bfa">
-, , 1
+<pre class="example" id="org16a9515">
+    , , 1
 
-     [,1] [,2] [,3] [,4]
-[1,]    1    4    7   10
-[2,]    2    5    8   11
-[3,]    3    6    9   12
+	 [,1] [,2] [,3] [,4]
+    [1,]    1    4    7   10
+    [2,]    2    5    8   11
+    [3,]    3    6    9   12
 
-, , 2
+    , , 2
 
-     [,1] [,2] [,3] [,4]
-[1,]   13   16   19   22
-[2,]   14   17   20   23
-[3,]   15   18   21   24
+	 [,1] [,2] [,3] [,4]
+    [1,]   13   16   19   22
+    [2,]   14   17   20   23
+    [3,]   15   18   21   24
 </pre>
 
 <p>
@@ -507,17 +501,17 @@ R では array(ベクトル、各次元の要素の個数)を使っ てさらに
 </div>
 </div>
 
-<div id="outline-container-orgd9ef504" class="outline-3">
-<h3 id="orgd9ef504">6. 簡単なリストの作成</h3>
-<div class="outline-text-3" id="text-orgd9ef504">
+<div id="outline-container-org0cebbe1" class="outline-2">
+<h2 id="org0cebbe1">6. 簡単なリストの作成</h2>
+<div class="outline-text-2" id="text-org0cebbe1">
 <p>
 リストは様々な型のデータをひとまとめにして管理できるデータ型です。
 </p>
 
 <div class="org-src-container">
 <pre class="src src-R">
-(x &lt;- list("Oh", "Nomura", "Kadota"))
-(x &lt;- list("Oh", "Nomura", "Kadota", c(868, 657, 567)))
+(x <span style="color: #e5786d;">&lt;-</span> list(<span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Kadota"</span>))
+(x <span style="color: #e5786d;">&lt;-</span> list(<span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Kadota"</span>, c(868, 657, 567)))
 
 x[[2]]
 x[[4]]
@@ -525,28 +519,28 @@ x[[4]]
 </pre>
 </div>
 
-<pre class="example" id="orgd424c8a">
-[[1]]
-[1] "Oh"
+<pre class="example" id="orgcdd5d97">
+    [[1]]
+    [1] "Oh"
 
-[[2]]
-[1] "Nomura"
+    [[2]]
+    [1] "Nomura"
 
-[[3]]
-[1] "Kadota"
-[[1]]
-[1] "Oh"
+    [[3]]
+    [1] "Kadota"
+    [[1]]
+    [1] "Oh"
 
-[[2]]
-[1] "Nomura"
+    [[2]]
+    [1] "Nomura"
 
-[[3]]
-[1] "Kadota"
+    [[3]]
+    [1] "Kadota"
 
-[[4]]
-[1] 868 657 567
-[1] "Nomura"
-[1] 868 657 567
+    [[4]]
+    [1] 868 657 567
+    [1] "Nomura"
+    [1] 868 657 567
 </pre>
 
 
@@ -555,23 +549,23 @@ x[[4]]
 </p>
 <div class="org-src-container">
 <pre class="src src-R">
-(x &lt;- list(First="Oh", Second="Nomura", Third="Kadota", Home_Runs=c(868, 657, 567)))
+(x <span style="color: #e5786d;">&lt;-</span> list(First=<span style="color: #95e454;">"Oh"</span>, Second=<span style="color: #95e454;">"Nomura"</span>, Third=<span style="color: #95e454;">"Kadota"</span>, Home_Runs=c(868, 657, 567)))
 
 </pre>
 </div>
 
-<pre class="example" id="org57f52a5">
-$First
-[1] "Oh"
+<pre class="example" id="org96f29f0">
+    $First
+    [1] "Oh"
 
-$Second
-[1] "Nomura"
+    $Second
+    [1] "Nomura"
 
-$Third
-[1] "Kadota"
+    $Third
+    [1] "Kadota"
 
-$Home_Runs
-[1] 868 657 567
+    $Home_Runs
+    [1] 868 657 567
 </pre>
 
 
@@ -604,9 +598,9 @@ x$Home_Runs
 </div>
 </div>
 
-<div id="outline-container-org91c9a22" class="outline-3">
-<h3 id="org91c9a22">7. 簡単なデータフレームの作成</h3>
-<div class="outline-text-3" id="text-org91c9a22">
+<div id="outline-container-org2243440" class="outline-2">
+<h2 id="org2243440">7. 簡単なデータフレームの作成</h2>
+<div class="outline-text-2" id="text-org2243440">
 <p>
 R にはデータフレームと呼ばれる型が存在します。
 </p>
@@ -627,9 +621,9 @@ Home_Runs 2901 657 3085 504 2543 504 2786 868 2566 567
 
 <div class="org-src-container">
 <pre class="src src-R">
-(x &lt;- data.frame(
- row.names = c("Nomura", "Harimoto", "Kinugasa", "Oh", "Kadota"),
- Team = c("Hawks", "Flyers", "Carps", "Giants", "Hawks"),
+(x <span style="color: #e5786d;">&lt;-</span> data.frame(
+ row.names = c(<span style="color: #95e454;">"Nomura"</span>, <span style="color: #95e454;">"Harimoto"</span>, <span style="color: #95e454;">"Kinugasa"</span>, <span style="color: #95e454;">"Oh"</span>, <span style="color: #95e454;">"Kadota"</span>),
+ Team = c(<span style="color: #95e454;">"Hawks"</span>, <span style="color: #95e454;">"Flyers"</span>, <span style="color: #95e454;">"Carps"</span>, <span style="color: #95e454;">"Giants"</span>, <span style="color: #95e454;">"Hawks"</span>),
  At_Bat = c(10472, 9666, 9404, 9250, 8868),
  Hits = c(2901, 3085, 2543, 2786, 2566),
  Home_Runs = c(657, 504, 504, 868, 567)
@@ -652,7 +646,7 @@ Kadota    Hawks   8868 2566       567
 <div class="org-src-container">
 <pre class="src src-R">
 x$Hits
-x[ c(1,5), c(2,3,4) ] # 1、5 行目と 2、3、4 列目を抽出する
+x[ c(1,5), c(2,3,4) ] <span style="color: #99968b;"># </span><span style="color: #99968b;">1&#12289;5 &#34892;&#30446;&#12392; 2&#12289;3&#12289;4 &#21015;&#30446;&#12434;&#25277;&#20986;&#12377;&#12427;</span>
 </pre>
 </div>
 
@@ -703,16 +697,16 @@ class(x)
 
 
 
-<div id="outline-container-orgdcc199a" class="outline-4">
-<h4 id="orgdcc199a">課題 7-1:</h4>
-<div class="outline-text-4" id="text-orgdcc199a">
+<div id="outline-container-org848aeda" class="outline-3">
+<h3 id="org848aeda">課題 7-1:</h3>
+<div class="outline-text-3" id="text-org848aeda">
 <p>
 下の表は G8 加盟国の国力の一部です。これをデータフレームとして変数にしま しょう5。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">(x &lt;- data.frame(
-row.names = c("USA", "England", "Italy", "Canada", "Germany", "Japan", "France", "Russia"), 
+<pre class="src src-R">(x <span style="color: #e5786d;">&lt;-</span> data.frame(
+row.names = c(<span style="color: #95e454;">"USA"</span>, <span style="color: #95e454;">"England"</span>, <span style="color: #95e454;">"Italy"</span>, <span style="color: #95e454;">"Canada"</span>, <span style="color: #95e454;">"Germany"</span>, <span style="color: #95e454;">"Japan"</span>, <span style="color: #95e454;">"France"</span>, <span style="color: #95e454;">"Russia"</span>), 
     Area = c(9.4, 0.2, 0.3, 10.0, 0.3, 0.3, 0.5, 17.1),
     Population = c(315, 62, 60, 34, 82, 127, 62, 141),
     GDP = c(14, 3, 2, 2, 4, 5, 3, 2)
@@ -734,9 +728,9 @@ Russia  17.1        141   2
 </div>
 </div>
 
-<div id="outline-container-orgc3bbce2" class="outline-4">
-<h4 id="orgc3bbce2">課題 7-2:</h4>
-<div class="outline-text-4" id="text-orgc3bbce2">
+<div id="outline-container-org3c66d25" class="outline-3">
+<h3 id="org3c66d25">課題 7-2:</h3>
+<div class="outline-text-3" id="text-org3c66d25">
 <p>
 上記で作成したデータフレームより G8 加盟国の国土面積、人口、GDP の
 平均を それぞれ求めましょう。
@@ -746,36 +740,35 @@ Russia  17.1        141   2
 <pre class="src src-R">
 x
 mean(x$Area)
-mean(x[["Population"]])
+mean(x[[<span style="color: #95e454;">"Population"</span>]])
 mean(x[,3])
-c("mean(x$Area) = ", mean(x$Area))
+c(<span style="color: #95e454;">"mean(x$Area) = "</span>, mean(x$Area))
 
 </pre>
 </div>
 
-<pre class="example" id="org5954f37">
-	Area Population GDP
-USA      9.4        315  14
-England  0.2         62   3
-Italy    0.3         60   2
-Canada  10.0         34   2
-Germany  0.3         82   4
-Japan    0.3        127   5
-France   0.5         62   3
-Russia  17.1        141   2
-[1] 4.7625
-[1] 110.375
-[1] 4.375
-[1] "mean(x$Area) = " "4.7625"
+<pre class="example" id="orgb096e62">
+	    Area Population GDP
+    USA      9.4        315  14
+    England  0.2         62   3
+    Italy    0.3         60   2
+    Canada  10.0         34   2
+    Germany  0.3         82   4
+    Japan    0.3        127   5
+    France   0.5         62   3
+    Russia  17.1        141   2
+    [1] 4.7625
+    [1] 110.375
+    [1] 4.375
+    [1] "mean(x$Area) = " "4.7625"
 </pre>
-</div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-10-26 火 21:42</p>
+<p class="date">Created: 2021-11-11 木 07:35</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,7 +1,7 @@
 #+setupfile: org/info/index-bigblow-header.setup
 #+include: org/info/common-header.org
 #+AUTHOR: 鈴木正幸，非常勤講師
-#+title: 10/28 bio_stat
+#+title: 11/11 bio_stat
 
 * 今日の講義の関連サイト
 
@@ -12,6 +12,56 @@
   - http://github.com/masayuki054/bio_stat/
     講義保存場所
 
+* 5th 11/11
+
+** Done RStudio を使いましょう
+   CLOSED: [2021-11-07 日 21:16]
+
+   - 生物統計用のプロジェクトを作ろう
+   - 毎回のRのプログラムを，R-スクリプトとして残そう 
+     
+** Done [[https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html][Rの初歩]]
+   CLOSED: [2021-11-07 日 21:17]
+   - RStudioの概要
+   - プロジェクトの作成
+
+
+** Rによる入門統計学
+
+   - スライドまたは PDF を手元に準備
+   - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org     
+     
+*** 入門統計学の2章
+**** 確率分布 [3/4]
+     - [X] 確率変数と確率分布
+     - [X] 期待値と分散
+     - [X] 標準化と偏差
+     - [ ] 二項分布，ポアソン分布，正規分布
+
+**** Rの演習
+     - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html
+       - 2. データの図示と基本統計量の計算 をやってみましょう
+
+*** 入門統計学の3章
+**** 推定と誤差 [0/5]
+     - [ ] 推測統計学とは
+     - [ ] 標本平均と標本不偏分散
+     - [ ] 標本分布と誤差
+     - [ ] 標本のばらつき
+     - [ ] 標本分布のまとめ
+
+**** Rの演習
+     - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-3.html
+       - 2. データの図示と基本統計量の計算 をやってみましょう
+
+** R 入門
+   [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
+   - 先生の演習ノート [[https://github.com/masayuki054/bio_stat/blob/main/org/R-intro-3.org][bio_stat/R-intro-3.org at main · masayuki054/bio_stat]] 
+     - ファイルの読み書き
+     - スクリプトの実行
+     - 関数を作る
+     
+    
 * 4th 11/04
 
 ** RStudio を使いましょう
@@ -44,7 +94,6 @@
 **** Rの演習
      - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html
        - 2. データの図示と基本統計量の計算 をやってみましょう
-
 
 
 * 3rd 10/28

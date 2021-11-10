@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-04 木 14:21 -->
+<!-- 2021-11-11 木 07:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>入門統計学 (2)</title>
+<title>入門統計学 2章 確率と統計</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
 <style type="text/css">
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -192,70 +205,111 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">入門統計学 (2)</h1>
-
-<div id="outline-container-orgdef6d63" class="outline-2">
-<h2 id="orgdef6d63">2章</h2>
-<div class="outline-text-2" id="text-orgdef6d63">
-</div>
-<div id="outline-container-orgdb299d9" class="outline-3">
-<h3 id="orgdb299d9">2.1 サイコロ と 一様分布</h3>
-<div class="outline-text-3" id="text-orgdb299d9">
+<h1 class="title">入門統計学 2章 確率と統計</h1>
+<p>
+#+beign_src R :tangle R-text/code/02.R
+</p>
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #99968b;">#</span><span style="color: #99968b;">+begin_src R </span>
-<span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
+<pre class="src src-R">
+</pre>
+</div>
+
+<div id="outline-container-org394bb4d" class="outline-2">
+<h2 id="org394bb4d">2.1 サイコロ と 一様分布</h2>
+<div class="outline-text-2" id="text-org394bb4d">
+</div>
+<div id="outline-container-orge24aabf" class="outline-3">
+<h3 id="orge24aabf">一様分布</h3>
+<div class="outline-text-3" id="text-orge24aabf">
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
+
+<span style="color: #99968b;">## </span><span style="color: #99968b;">1~6 &#12414;&#12391;&#12398;&#19968;&#27096;&#20998;&#24067;&#12398;&#30906;&#29575;&#20516;&#12398;&#35336;&#31639;</span>
+
 (dice <span style="color: #e5786d;">&lt;-</span> dunif(1:6, min=1,max=7))
-dice2 <span style="color: #e5786d;">&lt;-</span> rep(0,12)
+</pre>
+</div>
+
+<pre class="example">
+[1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+plot(1:6, dice, main=<span style="color: #95e454;">"1~6&#12398;&#19968;&#27096;&#20998;&#24067;"</span>)
+
+</pre>
+</div>
+
+
+<div id="orged9ea1a" class="figure">
+<p><img src="./R-text/graph/02-unif-01.png" alt="02-unif-01.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbd3b241" class="outline-3">
+<h3 id="orgbd3b241">一様分布の和の分布</h3>
+<div class="outline-text-3" id="text-orgbd3b241">
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">* 1~6&#12398;&#19968;&#27096;&#20998;&#24067;&#12398;&#21644;&#12398;&#20998;&#24067;&#12398;&#30906;&#29575;&#20516;&#12398;&#35336;&#31639;</span>
+<span style="color: #99968b;">##</span>
+
+dice2 <span style="color: #e5786d;">&lt;-</span> rep(0,12) <span style="color: #99968b;">## </span><span style="color: #99968b;">&#30906;&#29575;&#20516;&#20445;&#23384;&#29992;&#12505;&#12463;&#12488;&#12523;&#12398;&#29983;&#25104;</span>
+
 <span style="color: #8ac6f2; font-weight: bold;">for</span> (i <span style="color: #8ac6f2; font-weight: bold;">in</span> 1:6) {
   <span style="color: #8ac6f2; font-weight: bold;">for</span> (j <span style="color: #8ac6f2; font-weight: bold;">in</span> 1:6) {
+    <span style="color: #99968b;"># </span>
     dice2[i+j] <span style="color: #e5786d;">&lt;-</span> dice2[i+j] + dice[i]*dice[j]
   }
 }
@@ -264,45 +318,155 @@ dice2
 </div>
 
 <pre class="example">
-[1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667
- [1] 0.00000000 0.02777778 0.05555556 0.08333333 0.11111111 0.13888889
- [7] 0.16666667 0.13888889 0.11111111 0.08333333 0.05555556 0.02777778
+[1] 0.00000000 0.02777778 0.05555556 0.08333333 0.11111111 0.13888889
+[7] 0.16666667 0.13888889 0.11111111 0.08333333 0.05555556 0.02777778
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">1~6&#12398;&#19968;&#27096;&#20998;&#24067;&#12398;&#21644;&#12398;&#20998;&#24067;&#12398;&#12498;&#12473;&#12488;&#12464;&#12521;&#12512;</span>
+<span style="color: #99968b;">##</span>
+plot(1:12, dice2, main=<span style="color: #95e454;">"1~6&#12398;&#19968;&#27096;&#20998;&#24067;&#12398;&#21644;&#12398;&#20998;&#24067;"</span>)
 
 </pre>
 </div>
+
+
+<div id="org20a62e5" class="figure">
+<p><img src="./R-text/graph/02-unif-02.png" alt="02-unif-02.png" />
+</p>
+</div>
+</div>
+</div>
 </div>
 
-<div id="outline-container-org9eace80" class="outline-3">
-<h3 id="org9eace80">2.2 二項分布の例題</h3>
-<div class="outline-text-3" id="text-org9eace80">
+
+<div id="outline-container-orgb9627a2" class="outline-2">
+<h2 id="orgb9627a2">2.2 二項分布</h2>
+<div class="outline-text-2" id="text-orgb9627a2">
+<p>
+\( n \) 回のコイン投げ試行で，\( x \) 回表のでる確率は,
+</p>
+
+<p>
+\( P(X=x) = n C_x p^x (1-p)^{(n-x)} \) となる。
+</p>
+
+<p>
+\( x=0 \) から \( x=n \) までの確率を表わす確率分布を
+二項分布と呼び，\( B(n, p) \) と表わす。
+</p>
+
+<p>
+Rでは binom(size=n, prob=p).
+</p>
+
+
+<p>
+二項分布が確率関数に従うことを，
+</p>
+
+<p>
+\( B(n, p) \) \( \sim n C_x p^x (1-p)^{(n-x)} \) 
+</p>
+
+<p>
+と表わす。
+</p>
+
+<p>
+\( B(n, p) \) の平均は \(n p\), 分散は \(np(1-p)\)。
+</p>
+
+
 <div class="org-src-container">
 <pre class="src src-R">
 <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
 
 <span style="color: #99968b;">## </span><span style="color: #99968b;">dbinom(x, size, prob)</span>
 
-<span style="color: #99968b;">## </span><span style="color: #99968b;">&#20108;&#38917;&#20998;&#24067; nCx p^x &#12398;&#35336;&#31639;</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#20108;&#38917;&#20998;&#24067; nCx p^x (1-p)^(n-x) &#12398;&#35336;&#31639;</span>
 
 dbinom(c(0,1,2,3,4),3,1/3)
 
-plot(dbinom(c(0,1,2,3,4),3,1/3),type=<span style="color: #95e454;">"h"</span>)
+<span style="color: #99968b;">## </span><span style="color: #99968b;">plot(x,y)</span>
+
+plot(c(0, 1,2,3,4), dbinom(c(0,1,2,3,4),3,1/3),type=<span style="color: #95e454;">"h"</span>)
+
+<span style="color: #99968b;">## </span><span style="color: #99968b;">B(n,p) ~ N(np, np(1-p))</span>
+
 </pre>
 </div>
 
 <pre class="example">
 [1] 0.29629630 0.44444444 0.22222222 0.03703704 0.00000000
-
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgef25a46" class="outline-3">
-<h3 id="orgef25a46">2.3 正規分布</h3>
-<div class="outline-text-3" id="text-orgef25a46">
+<div id="outline-container-org3dac021" class="outline-2">
+<h2 id="org3dac021">2.3 正規分布</h2>
+<div class="outline-text-2" id="text-org3dac021">
 <p>
-例題：正規分布の確率計算
+平均 \( \mu \), 分散 \( \sigma^2 \) の正規分布 を \( N(\mu,
+  \sigma^2) \) と表わす。
 </p>
 
+<p>
+R では norm(mean=\( \mu \), sd=\( \sigma \)).
+</p>
+</div>
+
+<div id="outline-container-orgb5b4f91" class="outline-3">
+<h3 id="orgb5b4f91">確率密度関数</h3>
+<div class="outline-text-3" id="text-orgb5b4f91">
+<p>
+\( N(\mu,\sigma^2) \) \( \sim \) \( \frac{1}{\sqrt{2\pi\sigma^2}}  e^{-\frac{1}{2}\left({\frac{x-\mu}{\sigma}\right)^2 \)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2bb5e9f" class="outline-3">
+<h3 id="org2bb5e9f">正規分布と二項分布の対応</h3>
+<div class="outline-text-3" id="text-org2bb5e9f">
+<p>
+正規分布は，二項分布 \( B(n,p) \)で \( n \) が大きいときの近似とな
+る。その対応は，\( \mu = n p \), \( \sigma^2 = n p (1-p) \) となる。
+</p>
+
+<ul class="org-ul">
+<li>二項分布は正確な確率が計算できる式であるが，大きな桁の整数計算が必
+要であるが，結果に求められる精度は少なくてよい。</li>
+
+<li>正規分布は近似計算であり，正確ではないが，不動小数を用いた計算によ
+り，結果に求められる精度で計算することが可能となる。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org391b37e" class="outline-3">
+<h3 id="org391b37e">標準化</h3>
+<div class="outline-text-3" id="text-org391b37e">
+<p>
+\( N(\mu, \sigma^2\) \) を \( N(0, 1) \) に変換するには，
+</p>
+
+<p>
+<b>標準化</b> \( z = \frac{(x - \mu)}{\sigma} \) することで，
+</p>
+
+<p>
+<b>標準正規分布</b> \( N(0,1) \sim \frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}} \) となる。
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6041001" class="outline-3">
+<h3 id="org6041001">例題：正規分布の確率計算</h3>
+<div class="outline-text-3" id="text-org6041001">
 <div class="org-src-container">
 <pre class="src src-R">
 <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
@@ -324,22 +488,165 @@ pnorm(44, mean=40, sd=2)
 <pre class="example">
 [1] 0.2307994842 0.4886025119 0.2307994842 0.0243260867 0.0005720947
 [1] 0.9772499
-
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org645375d" class="outline-3">
-<h3 id="org645375d">2.4 標準化と偏差値 例題</h3>
-<div class="outline-text-3" id="text-org645375d">
+<div id="outline-container-orgf7da73e" class="outline-3">
+<h3 id="orgf7da73e">s-課題-1:</h3>
+<div class="outline-text-3" id="text-orgf7da73e">
 <p>
-例題: 胡瓜収穫量の標準化
+(1) コイン投げで表が出る確率が1/2の時，1万回投げたとき x 回表のでる
+    確率分布を，Rを用いて表示してください。
+(2) 上記の2項分布を，正規分布で近似し，二項分布と正規分布のグラフを
+    Rを用いて重ね描きしてください。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">#</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">2&#31456;&#12398;s-&#35506;&#38988;-1</span>
+<span style="color: #99968b;">#</span>
+<span style="color: #99968b;">###  </span><span style="color: #99968b;">dbinom(x,n,p)</span>
+<span style="color: #99968b;">###  </span><span style="color: #99968b;">dnorm(x,mean=np, sd=sqrt(np(1-p)))</span>
+
+plot(4800:5200, dbinom(4800:5200,10000,1/2),col=<span style="color: #95e454;">"blue"</span>,type=<span style="color: #95e454;">"h"</span>); 
+<span style="color: #99968b;"># </span><span style="color: #99968b;">plot(4800:5200, dnorm(4800:5200,mean=5000,sd=50),xlim=c(4800,5200),col="red", type="p")</span>
+curve (dnorm(x,mean=5000,sd=50),from=4800,to=5200,col=<span style="color: #95e454;">"red"</span>,add=T)
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9d40b12" class="outline-2">
+<h2 id="org9d40b12">2.4 標準化と偏差値 例題</h2>
+<div class="outline-text-2" id="text-org9d40b12">
+<p>
+<b>標準化</b> \( z = \frac{(x - \mu)}{\sigma} \) 
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org3742ac3" class="outline-2">
+<h2 id="org3742ac3">2.5 ポアソン分布</h2>
+<div class="outline-text-2" id="text-org3742ac3">
+<p>
+R では，pois(lambda=頻度)
+</p>
+
+
+<p>
+\( n \)回の試行の二項分布 \( B(n, p) \)で，\( p \) が非常に小さい場合を考える。
+\( p \) は一定であるので，\( n \)回での期待値は \(np\) となり，
+\( 2n \) 回での期待値は，\( 2np \) となる。
+</p>
+
+<p>
+極小な \( p \) に対して \( np \) がほどよい大きさの数になるような
+\( n \) を基準回数 (基準時間) と考え，\( \lambda = n p \) を基準回
+数でおこる事象の <b>頻度</b> と呼ぶ。
+</p>
+
+<ul class="org-ul">
+<li>\( 10^6 \) 回に3回起こるは，頻度 \( \lambda = 3 \) (回/10^6回)</li>
+
+<li>\( 10 \)年に3回起こる， 頻度 \( \lambda = 0.3 \) (回/1年)</li>
+</ul>
+
+<p>
+頻度 \( \lambda \) のポアソン分布を，\( Po (\lambda) \) と表わす。
+R では，pois(lambda=頻度) と表わす。
 </p>
 </div>
 
-<div id="outline-container-org1a9a335" class="outline-4">
-<h4 id="org1a9a335">胡瓜収穫量データの読み込み</h4>
-<div class="outline-text-4" id="text-org1a9a335">
+<div id="outline-container-orgcf7141b" class="outline-3">
+<h3 id="orgcf7141b">二項分布とポアソン分布の対応</h3>
+<div class="outline-text-3" id="text-orgcf7141b">
+<p>
+Po(\(\lambda\))とB(n,p)の間には，平均: \( \lambda = np \),
+分散: \(np(1-p) = \lambda \)，となっている。
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge7fde4e" class="outline-3">
+<h3 id="orge7fde4e">ポアソン分布の表示</h3>
+<div class="outline-text-3" id="text-orge7fde4e">
+<div class="org-src-container">
+<pre class="src src-R">
+x <span style="color: #e5786d;">&lt;-</span> 0:10
+plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</span>,
+     main=<span style="color: #95e454;">"&#12509;&#12450;&#12477;&#12531;&#20998;&#24067;"</span>,
+     ylab=<span style="color: #95e454;">"&#30906;&#29575;"</span>,
+     xlab=<span style="color: #95e454;">"&#20986;&#29694;&#20516;"</span>,xaxt=<span style="color: #95e454;">"n"</span>)
+<span style="color: #8ac6f2; font-weight: bold;">for</span> (lamb <span style="color: #8ac6f2; font-weight: bold;">in</span> c(1,2,3,4,5,6,7,8,9,10)) {
+  points(x, dpois(x, lamb), type=<span style="color: #95e454;">"l"</span>, col=<span style="color: #95e454;">"green"</span>)
+}
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7c2dc0c" class="outline-3">
+<h3 id="org7c2dc0c">ポアソン分布，二項分布，正規分布</h3>
+</div>
+
+<div id="outline-container-orgf749faa" class="outline-3">
+<h3 id="orgf749faa">s-課題</h3>
+<div class="outline-text-3" id="text-orgf749faa">
+<p>
+3つの確率分布を同時に描いてみよう:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#12509;&#12450;&#12477;&#12531;&#20998;&#24067;&#65292;&#20108;&#38917;&#20998;&#24067;&#65292;&#27491;&#35215;&#20998;&#24067;</span>
+<span style="color: #99968b;">##</span>
+
+x <span style="color: #e5786d;">&lt;-</span> 0:10
+plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</span>,
+     main=<span style="color: #95e454;">"&#12509;&#12450;&#12477;&#12531;&#20998;&#24067;,&#20108;&#38917;&#20998;&#24067;&#65292;&#27491;&#35215;&#20998;&#24067;"</span>,
+     ylab=<span style="color: #95e454;">"&#30906;&#29575;"</span>,
+     xlab=<span style="color: #95e454;">"&#20986;&#29694;&#20516;"</span>,xaxt=<span style="color: #95e454;">"n"</span>)
+<span style="color: #8ac6f2; font-weight: bold;">for</span> (lamb <span style="color: #8ac6f2; font-weight: bold;">in</span> c(1,2,3,4,5,6,7,8,9,10)) {
+  points(x, dpois(x, lamb), type=<span style="color: #95e454;">"l"</span>, col=<span style="color: #95e454;">"green"</span>)
+  points(x, dbinom(x, 100, lamb/100), type=<span style="color: #95e454;">"l"</span>, col=<span style="color: #95e454;">"blue"</span>)
+  points(x, dnorm(x, mean=lamb, sd=sqrt(100*lamb/100*(1-lamb/100))),type=<span style="color: #95e454;">"l"</span>, col=<span style="color: #95e454;">"red"</span>)
+}
+
+</pre>
+</div>
+
+
+<div id="org911e36d" class="figure">
+<p><img src="./R-text/graph/02-3.png" alt="02-3.png" />
+</p>
+</div>
+
+<p>
+#+beign_src R :tangle R-text/code/02.R
+,#+end_src
+#+end_src
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgce1c2c5" class="outline-2">
+<h2 id="orgce1c2c5">例題: 胡瓜収穫量の標準化</h2>
+<div class="outline-text-2" id="text-orgce1c2c5">
+<p>
+胡瓜収穫量データの読み込み
+</p>
+
 <p>
 <a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text/data/01-02.csv">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text/data/01-02.csv</a>
 </p>
@@ -359,56 +666,56 @@ pnorm(44, mean=40, sd=2)
 </pre>
 </div>
 
-<pre class="example">
-       栽培法A 栽培法B
-    1     3063    3157
-    2     2275    2707
-    3     2089    3270
-    4     2855    3181
-    5     2836    3633
-    6     3219    3404
-    7     2817    2219
-    8     2136    2730
-    9     2540    3408
-    10    2263    3203
-    11    2140    2938
-    12    1757    3286
-    13    2499    2920
-    14    2093    3332
-    15    2073    3478
+<pre class="example" id="orgdea3994">
+       ポット番号 栽培法A 栽培法B
+    1           1    3063    3157
+    2           2    2275    2707
+    3           3    2089    3270
+    4           4    2855    3181
+    5           5    2836    3633
+    6           6    3219    3404
+    7           7    2817    2219
+    8           8    2136    2730
+    9           9    2540    3408
+    10         10    2263    3203
+    11         11    2140    2938
+    12         12    1757    3286
+    13         13    2499    2920
+    14         14    2093    3332
+    15         15    2073    3478
 </pre>
 </div>
 
 
-<div id="outline-container-orgfb1ba51" class="outline-5">
-<h5 id="orgfb1ba51">行列化</h5>
-<div class="outline-text-5" id="text-orgfb1ba51">
+<div id="outline-container-org49a9e81" class="outline-5">
+<h5 id="org49a9e81">行列化</h5>
+<div class="outline-text-5" id="text-org49a9e81">
 <div class="org-src-container">
 <pre class="src src-R">
-(mat.1.2 <span style="color: #e5786d;">&lt;-</span> matrix(as.matrix(csv.1.2), nrow(csv.1.2), ncol(csv.1.2))) 
+(mat.1.2 <span style="color: #e5786d;">&lt;-</span> matrix(as.matrix(csv.1.2[,2:3]), nrow(csv.1.2), ncol(csv.1.2)-1)) 
 class(mat.1.2)
 
 </pre>
 </div>
 
-<pre class="example">
-	     [,1] [,2]
-	[1,] 3063 3157
-	[2,] 2275 2707
-	[3,] 2089 3270
-	[4,] 2855 3181
-	[5,] 2836 3633
-	[6,] 3219 3404
-	[7,] 2817 2219
-	[8,] 2136 2730
-	[9,] 2540 3408
-       [10,] 2263 3203
-       [11,] 2140 2938
-       [12,] 1757 3286
-       [13,] 2499 2920
-       [14,] 2093 3332
-       [15,] 2073 3478
-       [1] "matrix"
+<pre class="example" id="orgc2ebe67">
+	    [,1] [,2]
+       [1,] 3063 3157
+       [2,] 2275 2707
+       [3,] 2089 3270
+       [4,] 2855 3181
+       [5,] 2836 3633
+       [6,] 3219 3404
+       [7,] 2817 2219
+       [8,] 2136 2730
+       [9,] 2540 3408
+      [10,] 2263 3203
+      [11,] 2140 2938
+      [12,] 1757 3286
+      [13,] 2499 2920
+      [14,] 2093 3332
+      [15,] 2073 3478
+      [1] "matrix"
 </pre>
 
 <div class="org-src-container">
@@ -426,8 +733,8 @@ class(mat.1.2)
  [1]  0.08921788 -1.14231733  0.39847006  0.15489976  1.39190846  0.76519388
  [7] -2.47784884 -1.07937219  0.77614086  0.21510815 -0.51012925  0.44225798
 [13] -0.55939066  0.56814824  0.96771300
-
 </pre>
+
 
 <div class="org-src-container">
 <pre class="src src-R">
@@ -442,95 +749,184 @@ c(<span style="color: #95e454;">"z2 (mean, var,sd): "</span>, mean(z2), var(z2),
 [4] "1"
 [1] "z2 (mean, var,sd): "   "-2.46084981096277e-16" "1"                    
 [4] "1"
-
 </pre>
 </div>
 </div>
 </div>
+
+
+<div id="outline-container-org4f3d1b2" class="outline-2">
+<h2 id="org4f3d1b2">本章のRコード</h2>
 </div>
 
 
-<div id="outline-container-org343396a" class="outline-3">
-<h3 id="org343396a">2.5 ポアソン分布</h3>
-<div class="outline-text-3" id="text-org343396a">
-<div class="org-src-container">
-<pre class="src src-R">dev.new()
-x <span style="color: #e5786d;">&lt;-</span> 0:10
-plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</span>,
-     main=<span style="color: #95e454;">"&#12509;&#12450;&#12477;&#12531;&#20998;&#24067;"</span>,
-     ylab=<span style="color: #95e454;">"&#30906;&#29575;"</span>,
-     xlab=<span style="color: #95e454;">"&#20986;&#29694;&#20516;"</span>,xaxt=<span style="color: #95e454;">"n"</span>)
-<span style="color: #8ac6f2; font-weight: bold;">for</span> (lamb <span style="color: #8ac6f2; font-weight: bold;">in</span> c(1,2,3,4,5,6,7,8,9,10)) {
-  points(x, dpois(x, lamb), type=<span style="color: #95e454;">"l"</span>)
-}
+<div id="outline-container-org18a6dac" class="outline-2">
+<h2 id="org18a6dac">本章のRコード</h2>
+<div class="outline-text-2" id="text-org18a6dac">
+<p>
+#+begin_src R  
+## 入門統計学2章1節
+</p>
 
-</pre>
-</div>
-</div>
-</div>
-</div>
+<p>
+## 1~6 までの一様分布の確率値の計算
+</p>
 
-<div id="outline-container-orga5d7f15" class="outline-2">
-<h2 id="orga5d7f15">R-script</h2>
-<div class="outline-text-2" id="text-orga5d7f15">
-<div class="org-src-container">
-<pre class="src src-R"><span style="color: #99968b;">#</span><span style="color: #99968b;">+end_src</span>
+<p>
+(dice &lt;- dunif(1:6, min=1,max=7))
+</p>
 
-</pre>
-</div>
+<p>
+plot(1:6, dice, main="1~6の一様分布")
+</p>
 
+<p>
+##
+## * 1~6の一様分布の和の分布の確率値の計算
+##
+</p>
 
-<div class="org-src-container">
-<pre class="src src-R">  
-  <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
-  
-  <span style="color: #99968b;">## </span><span style="color: #99968b;">dbinom(x, size, prob)</span>
-  
-  <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20108;&#38917;&#20998;&#24067; nCx p^x &#12398;&#35336;&#31639;</span>
-  
-  dbinom(c(0,1,2,3,4),3,1/3)
-  
-  plot(dbinom(c(0,1,2,3,4),3,1/3),type=<span style="color: #95e454;">"h"</span>)
-  <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
-  
-  <span style="color: #99968b;">## </span><span style="color: #99968b;">dnorm(x, mean=, sd=) x &#12391;&#12398;&#30906;&#29575;&#23494;&#24230;</span>
-  <span style="color: #99968b;">## </span><span style="color: #99968b;">norm(x, mean=, sd=)  0..x &#12414;&#12391;&#12398;&#30906;&#29575;</span>
-  
-  <span style="color: #99968b;"># </span><span style="color: #99968b;">dnorm</span>
-  dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3))
-  
-  plot(dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3)))
-  
-  <span style="color: #99968b;"># </span><span style="color: #99968b;">pnorm</span>
-  pnorm(44, mean=40, sd=2)
-  (csv.1.2 <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"R-text/data/01-02.csv"</span>))
-  <span style="color: #99968b;"># </span><span style="color: #99968b;">class(csv.1.2)</span>
-  <span style="color: #99968b;"># </span><span style="color: #99968b;">(csv.1.2[,1:2])</span>
-  <span style="color: #99968b;"># </span><span style="color: #99968b;">class(csv.1.2[,1:2])</span>
-  (mat.1.2 <span style="color: #e5786d;">&lt;-</span> matrix(as.matrix(csv.1.2), nrow(csv.1.2), ncol(csv.1.2))) 
-  class(mat.1.2)
-  (z1 <span style="color: #e5786d;">&lt;-</span> (mat.1.2[,1] - mean(mat.1.2[,1]))/sqrt(var(mat.1.2[,1])))
-  (z2 <span style="color: #e5786d;">&lt;-</span> (mat.1.2[,2] - mean(mat.1.2[,2]))/sqrt(var(mat.1.2[,2])))
-  c(<span style="color: #95e454;">"z1 (mean, var,sd): "</span>, mean(z1), var(z1), sqrt(var(z1)))
-  c(<span style="color: #95e454;">"z2 (mean, var,sd): "</span>, mean(z2), var(z2), sqrt(var(z2)))
-  dev.new()
-  x <span style="color: #e5786d;">&lt;-</span> 0:10
-  plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</span>,
-       main=<span style="color: #95e454;">"&#12509;&#12450;&#12477;&#12531;&#20998;&#24067;"</span>,
-       ylab=<span style="color: #95e454;">"&#30906;&#29575;"</span>,
-       xlab=<span style="color: #95e454;">"&#20986;&#29694;&#20516;"</span>,xaxt=<span style="color: #95e454;">"n"</span>)
-  <span style="color: #8ac6f2; font-weight: bold;">for</span> (lamb <span style="color: #8ac6f2; font-weight: bold;">in</span> c(1,2,3,4,5,6,7,8,9,10)) {
-    points(x, dpois(x, lamb), type=<span style="color: #95e454;">"l"</span>)
+<p>
+dice2 &lt;- rep(0,12) ## 確率値保存用ベクトルの生成
+</p>
+
+<p>
+for (i in 1:6) {
+  for (j in 1:6) {
+</p>
+
+<p>
+    dice2[i+j] &lt;- dice2[i+j] + dice[i]*dice[j]
   }
-</pre>
-</div>
+}
+dice2
+</p>
+
+<p>
+##
+## 1~6の一様分布の和の分布のヒストグラム
+##
+plot(1:12, dice2, main="1~6の一様分布の和の分布")
+</p>
+
+<p>
+## 入門統計学2章1節
+</p>
+
+<p>
+## dbinom(x, size, prob)
+</p>
+
+<p>
+## 二項分布 nCx p^x (1-p)^(n-x) の計算
+</p>
+
+<p>
+dbinom(c(0,1,2,3,4),3,1/3)
+</p>
+
+<p>
+## plot(x,y)
+</p>
+
+<p>
+plot(c(0, 1,2,3,4), dbinom(c(0,1,2,3,4),3,1/3),type="h")
+</p>
+
+<p>
+## B(n,p) ~ N(np, np(1-p))
+</p>
+
+<p>
+## 入門統計学2章1節
+</p>
+
+<p>
+## dnorm(x, mean=, sd=) x での確率密度
+## norm(x, mean=, sd=)  0..x までの確率
+</p>
+
+<p>
+dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3))
+</p>
+
+<p>
+plot(dnorm(c(0,1,2,3,4),mean=1,sd=sqrt(2/3)))
+</p>
+
+<p>
+pnorm(44, mean=40, sd=2)
+</p>
+
+<p>
+###  dbinom(x,n,p)
+###  dnorm(x,mean=np, sd=sqrt(np(1-p)))
+</p>
+
+<p>
+plot(4800:5200, dbinom(4800:5200,10000,1/2),col="blue",type="h"); 
+</p>
+
+<p>
+curve (dnorm(x,mean=5000,sd=50),from=4800,to=5200,col="red",add=T)
+</p>
+
+<p>
+(csv.1.2 &lt;- read.csv("R-text/data/01-02.csv"))
+</p>
+
+<p>
+(mat.1.2 &lt;- matrix(as.matrix(csv.1.2[,2:3]), nrow(csv.1.2), ncol(csv.1.2)-1)) 
+class(mat.1.2)
+</p>
+
+<p>
+(z1 &lt;- (mat.1.2[,1] - mean(mat.1.2[,1]))/sqrt(var(mat.1.2[,1])))
+(z2 &lt;- (mat.1.2[,2] - mean(mat.1.2[,2]))/sqrt(var(mat.1.2[,2])))
+</p>
+
+<p>
+c("z1 (mean, var,sd): ", mean(z1), var(z1), sqrt(var(z1)))
+c("z2 (mean, var,sd): ", mean(z2), var(z2), sqrt(var(z2)))
+</p>
+
+<p>
+x &lt;- 0:10
+plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
+     main="ポアソン分布",
+     ylab="確率",
+     xlab="出現値",xaxt="n")
+for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
+  points(x, dpois(x, lamb), type="l", col="green")
+}
+</p>
+
+<p>
+##
+## ポアソン分布，二項分布，正規分布
+##
+</p>
+
+<p>
+x &lt;- 0:10
+plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
+     main="ポアソン分布,二項分布，正規分布",
+     ylab="確率",
+     xlab="出現値",xaxt="n")
+for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
+  points(x, dpois(x, lamb), type="l", col="green")
+  points(x, dbinom(x, 100, lamb/100), type="l", col="blue")
+  points(x, dnorm(x, mean=lamb, sd=sqrt(100*lamb/100*(1-lamb/100))),type="l", col="red")
+}
+#+end-src  
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-04 木 14:21</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-11-11 木 07:36</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

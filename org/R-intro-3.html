@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-03 水 16:50 -->
+<!-- 2021-11-11 木 07:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>初心者用 R 言語講座 の演習ノート (3)</title>
+<title>初心者用 R 言語講座演習ノート</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
 <style type="text/css">
@@ -251,18 +251,18 @@
 </head>
 <body>
 <div id="content">
-<h1 class="title">初心者用 R 言語講座 の演習ノート (3)</h1>
+<h1 class="title">初心者用 R 言語講座演習ノート</h1>
 <p>
 <a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
 </p>
 
-<div id="outline-container-org2e88323" class="outline-2">
-<h2 id="org2e88323">8. ファイルからの読み込み</h2>
-<div class="outline-text-2" id="text-org2e88323">
+<div id="outline-container-orgefcf251" class="outline-2">
+<h2 id="orgefcf251">8. ファイルからの読み込み</h2>
+<div class="outline-text-2" id="text-orgefcf251">
 </div>
-<div id="outline-container-orgbde4d2e" class="outline-3">
-<h3 id="orgbde4d2e">データファイルとフォルダ</h3>
-<div class="outline-text-3" id="text-orgbde4d2e">
+<div id="outline-container-org654d22c" class="outline-3">
+<h3 id="org654d22c">データファイルとフォルダ</h3>
+<div class="outline-text-3" id="text-org654d22c">
 <p>
 まず、以下のような数値データが書かれたファイルを用意しましょう。
 </p>
@@ -291,9 +291,9 @@
 </div>
 </div>
 
-<div id="outline-container-org270efd2" class="outline-3">
-<h3 id="org270efd2">数値列を読み込む scan 関数</h3>
-<div class="outline-text-3" id="text-org270efd2">
+<div id="outline-container-org84a4bf1" class="outline-3">
+<h3 id="org84a4bf1">数値列を読み込む scan 関数</h3>
+<div class="outline-text-3" id="text-org84a4bf1">
 <p>
 次に scan コマンドを使って、データを変数 x に読み込みます。
 </p>
@@ -316,9 +316,9 @@ x にファイルの数値が <b>ベクトル</b> として読み込まれてい
 </div>
 </div>
 
-<div id="outline-container-org2772201" class="outline-3">
-<h3 id="org2772201">表の読み込みを行う関数 read.table</h3>
-<div class="outline-text-3" id="text-org2772201">
+<div id="outline-container-org1583d4e" class="outline-3">
+<h3 id="org1583d4e">表の読み込みを行う関数 read.table</h3>
+<div class="outline-text-3" id="text-org1583d4e">
 <p>
 以下のようなタブ区切 りのファイル batters.txt があったとします。
 </p>
@@ -405,17 +405,17 @@ read.table の引数のオプション
 </div>
 </div>
 
-<div id="outline-container-orga9a6464" class="outline-2">
-<h2 id="orga9a6464">9. ファイルへの書き出し (データの保存)</h2>
-<div class="outline-text-2" id="text-orga9a6464">
+<div id="outline-container-org03c7c17" class="outline-2">
+<h2 id="org03c7c17">9. ファイルへの書き出し (データの保存)</h2>
+<div class="outline-text-2" id="text-org03c7c17">
 <p>
 ファイル出力を行なう関数
 </p>
 </div>
 
-<div id="outline-container-org4e5045b" class="outline-3">
-<h3 id="org4e5045b">write関数</h3>
-<div class="outline-text-3" id="text-org4e5045b">
+<div id="outline-container-orgbd54aa2" class="outline-3">
+<h3 id="orgbd54aa2">write関数</h3>
+<div class="outline-text-3" id="text-orgbd54aa2">
 <ul class="org-ul">
 <li>一番簡単なのが write 関数でしょう。</li>
 <li>変数に格納された数値をファイルに書き出すことができます。</li>
@@ -455,9 +455,9 @@ write(t(x), <span style="color: #95e454;">"R-intro/data/outfile2.txt"</span>, nc
 </div>
 </div>
 
-<div id="outline-container-org0f190de" class="outline-3">
-<h3 id="org0f190de">write.table関数</h3>
-<div class="outline-text-3" id="text-org0f190de">
+<div id="outline-container-orgcba8bab" class="outline-3">
+<h3 id="orgcba8bab">write.table関数</h3>
+<div class="outline-text-3" id="text-orgcba8bab">
 <p>
 データフレームをファイルに出力する関数
 </p>
@@ -493,9 +493,9 @@ Kadota   2566       567
 </div>
 </div>
 
-<div id="outline-container-org7c5dccc" class="outline-2">
-<h2 id="org7c5dccc">10. プログラムの読み込み</h2>
-<div class="outline-text-2" id="text-org7c5dccc">
+<div id="outline-container-org258b9f3" class="outline-2">
+<h2 id="org258b9f3">10. プログラムの読み込み</h2>
+<div class="outline-text-2" id="text-org258b9f3">
 <p>
 一連の手続きをファイルにしておいて、それを必要なときに実行すること
 が可能です。
@@ -541,9 +541,9 @@ source を使ってその 手続きを実行してみましょう。14
 </div>
 
 
-<div id="outline-container-orge28df06" class="outline-2">
-<h2 id="orge28df06">11. 関数の定義</h2>
-<div class="outline-text-2" id="text-orge28df06">
+<div id="outline-container-orgdb0fa78" class="outline-2">
+<h2 id="orgdb0fa78">11. 関数の定義</h2>
+<div class="outline-text-2" id="text-orgdb0fa78">
 <p>
 関数は数学的にはある入力に対応した出力を返すものです。
 </p>
@@ -561,9 +561,9 @@ source を使ってその 手続きを実行してみましょう。14
 </p>
 </div>
 
-<div id="outline-container-org9c9b0dc" class="outline-3">
-<h3 id="org9c9b0dc">function(引数リスト) { 関数本体 }</h3>
-<div class="outline-text-3" id="text-org9c9b0dc">
+<div id="outline-container-org7597911" class="outline-3">
+<h3 id="org7597911">function(引数リスト) { 関数本体 }</h3>
+<div class="outline-text-3" id="text-org7597911">
 <p>
 R では以下のよう に function を使って以下のように記述します。
 </p>
@@ -602,9 +602,9 @@ function(x, y) {
 </div>
 
 
-<div id="outline-container-org261176a" class="outline-3">
-<h3 id="org261176a">関数の一般的な定義の</h3>
-<div class="outline-text-3" id="text-org261176a">
+<div id="outline-container-org94a26f4" class="outline-3">
+<h3 id="org94a26f4">関数の一般的な定義の</h3>
+<div class="outline-text-3" id="text-org94a26f4">
 <div class="org-src-container">
 <pre class="src src-R">
 
@@ -616,9 +616,9 @@ function(x, y) {
 </div>
 </div>
 
-<div id="outline-container-orgf00ada4" class="outline-4">
-<h4 id="orgf00ada4">課題 11:</h4>
-<div class="outline-text-4" id="text-orgf00ada4">
+<div id="outline-container-org0e791e0" class="outline-4">
+<h4 id="org0e791e0">課題 11:</h4>
+<div class="outline-text-4" id="text-org0e791e0">
 <p>
 f(x, a, b, c) = ax2 + bx + c を R の関数として実装しましょう。
 f(4, 3, 2, 1)はいくつ になりますか。
@@ -630,7 +630,7 @@ f(4, 3, 2, 1)はいくつ になりますか。
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-03 水 16:50</p>
+<p class="date">Created: 2021-11-11 木 07:35</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

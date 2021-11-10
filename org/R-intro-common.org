@@ -1,0 +1,6 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+title: 初心者用 R 言語講座演習ノート
+#+OPTIONS: tex:t 
+#+PROPERTY: header-args:R :session *bioR* :results output :exports both

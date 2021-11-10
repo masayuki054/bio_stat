@@ -1,28 +1,66 @@
+#+include: R-intro-common.org
+#+PROPERTY: header-args:R :session *bioR* :results output :exports both
+[[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
+* 12.グラフの作成
+
 **  14. その他のコマンドや関数
  R でよく使う関数をいくつか挙げておきましょう。
 
-***  14.1 使い方
-  ・ help(関数)で関数の詳しい使い方が表示されます。
+*** 14.1 使い方
+  - help(関数)で関数の詳しい使い方が表示されます。
 
-***   14.2 変数と属性
-  ・ ls()または objects()で現在定義されている変数が表示されます。
-  ・ class(変数)または mode(変数)でオブジェクトの型(例えば変数が数値なのか、文字なの
-  か、リストなのか、行列かなど)を知ることができます。
-  ・ attributes(変数)で定義されている属性がリストで返ってきます。
+*** 14.2 変数と属性
+  - ls()または objects()で現在定義されている変数が表示されます。
+  - class(変数)または mode(変数)でオブジェクトの型(例えば変数が数値な
+    のか、文字なのか、リストなのか、行列かなど)を知ることができます。
+  - attributes(変数)で定義されている属性がリストで返ってきます。
 
-***   14.3 apply 系関数
-  ・ apply を使うと、行列の各行または各列に対して同じ処理を繰り返し、結果をベクトル
-  で受け取ることができます(5. 簡単な行列の作成と演算参照)。
-  ・ sapply を使うと、ベクトルの要素 1 つ 1 つを与えられた関数に入力し、出力結果を 1
-  つ 1 つ含んだベクトルとして得ることができます
-  func1_sub <- function(elm){ # スカラーelem に対する関数の定義 if(-1 <= elm & elm <= 1){ return (1) } else { return (0) }
+*** 14.3 apply 系関数
+
+  - apply を使うと、行列の各行または各列に対して同じ処理を繰り返し、結果をベクトル
+    で受け取ることができます(5. 簡単な行列の作成と演算参照)。
+
+  - sapply を使うと、ベクトルの要素 1 つ 1 つを与えられた関数に入力し、出力結果を 1
+    つ 1 つ含んだベクトルとして得ることができます
+
+  #+begin_src R :tangle R-intro/code/14.R :results output
+    
+  func1_sub <- function(elm){ # スカラーelem に対する関数の定義
+    if(-1 <= elm & elm <= 1) {
+
+      return (1)
+      
+    } else {
+
+      return (0)
+    }
   }
-  func1 <- function(x){ # ベクトル x を入力とする関数
-  return(sapply(x, func1_sub)) }
+  
+  func1 <- function(x) { # ベクトル x を入力とする関数
 
-***   14.4 図の作成
-  ・curve 関数で関数のグラフを作成できます。詳しくは help を参照して下さい。 例:
+    return(sapply(x, func1_sub))
+
+  }
+  #+end_src
+
+  #+RESULTS:
+    
+*** 14.4 図の作成
+    
+  - curve 関数で関数のグラフを作成できます。詳しくは help を参照して下
+    さい。
+
+    例:
+
+    #+begin_src R :tangle R-intro/code/14.R :results graphics :file R-intro/graph/14-4.png
+
   curve(dnorm, -7, +7) # 正規分布の描画
-  curve(cos(x)+cos(2*x), -2*pi, 2*pi, 1000) # 1000はプロット数 curve(func1, -3, 3) # 14.3apply系関数で定義した関数
+  curve(cos(x)+cos(2*x), -2*pi, 2*pi, 1000, add=T) # 1000はプロット数
+  curve(func1, -3, 3, add=T) # 14.3apply系関数で定義した関数
 
+   #+end_src
+
+   #+RESULTS:
+
+  [[./R-intro/graph/14-4.png]]
 

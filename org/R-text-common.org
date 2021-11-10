@@ -1,0 +1,8 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+Title: 入門統計学
+#+OPTIONS: tex:t 
+#+property: header-args:R :session *rtext* :results output :exports both
+
+
