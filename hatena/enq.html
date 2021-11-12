@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-03 水 21:16 -->
+<!-- 2021-11-11 木 13:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>生物統計学 アンケート</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -205,39 +192,438 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 </head>
 <body>
 <div id="content">
 <h1 class="title">生物統計学 アンケート</h1>
 
-<div id="outline-container-org5764e6d" class="outline-2">
-<h2 id="org5764e6d">10/28 3回目</h2>
-<div class="outline-text-2" id="text-org5764e6d">
+<div id="outline-container-org79a4538" class="outline-2">
+<h2 id="org79a4538">11/04 4回目</h2>
+<div class="outline-text-2" id="text-org79a4538">
 </div>
-<div id="outline-container-org49ad760" class="outline-3">
-<h3 id="org49ad760">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-org49ad760">
+<div id="outline-container-org907836f" class="outline-3">
+<h3 id="org907836f">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org907836f">
+<ul class="org-ul">
+<li>プロットの仕方、二項分布の意味</li>
+
+<li>Rの使い方</li>
+
+<li>特にありません。</li>
+
+<li>Rにおいて関数記号を覚えることが重要であること、</li>
+
+<li>予習してあやふやだった部分を授業の説明で補足できたので、確率変数と確
+率分布について理解できました。統計をRのコードではどのように打つのか
+を学ぶことができたので、もっとRでどのように統計を行うのか勉強してい
+きたいです。</li>
+
+<li>連続型の数値の確率密度は積分によって得られると知った。連続型確率変数
+の場合、確率変数がある一点の値をとる確率は0になるため確率密度を用い
+るという。その際、連続型確率変数Xがある値xをとる確率密度を関数にした
+ものを確率密度関数と呼び、Rではdunif()を用いて求められると知り、複雑
+な計算がコマンド一つでできるのは便利だと思った。</li>
+<li>確率分布</li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-orga71a7ab" class="outline-3">
+<h3 id="orga71a7ab">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-orga71a7ab">
+<ul class="org-ul">
+<li>Rに確率の計算させる方法(プログラムの組み方)</li>
+
+<li>Rのコードとグラフを同時に提出する方法</li>
+
+<li>計算を関数に置き換える作業は難しかった</li>
+
+<li>やはり分散の説明が腑に落ちなかったです。</li>
+
+<li>繰り返し処理のプログラムの書き方と意味がよく分からなかった</li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-orga4f40a4" class="outline-3">
+<h3 id="orga4f40a4">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-orga4f40a4">
+<ul class="org-ul">
+<li>どこのファイルやページを開いて説明しているのか分からないことが時々あり
+ます。できれば、その都度言っていただけると嬉しいです。</li>
+
+<li>統計の説明とプログラミングで半々で授業を進めていくこのままの形式で良いと思います。
+分かりやすいです。</li>
+
+<li>今の授業スタイル（Rの時間と統計学の時間を分ける）で続けてほしいと思っ
+た。Rの時間に関してはもう少しスピードが速くても良いようにも思う。</li>
+
+<li>プログラミングができるようになるには？</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org16955d1" class="outline-2">
+<h2 id="org16955d1">10/28 3回目</h2>
+<div class="outline-text-2" id="text-org16955d1">
+</div>
+<div id="outline-container-org0af9e8b" class="outline-3">
+<h3 id="org0af9e8b">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org0af9e8b">
 <ul class="org-ul">
 <li>四則演算について</li>
 <li>Rの使い方</li>
@@ -255,9 +641,9 @@
 </div>
 </div>
 
-<div id="outline-container-org152da44" class="outline-3">
-<h3 id="org152da44">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org152da44">
+<div id="outline-container-org2059d6f" class="outline-3">
+<h3 id="org2059d6f">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org2059d6f">
 <ul class="org-ul">
 <li>最後のスライドについて</li>
 <li>統計学の最終的な使い方わからない</li>
@@ -275,9 +661,9 @@
 </div>
 </div>
 
-<div id="outline-container-orge7427f8" class="outline-3">
-<h3 id="orge7427f8">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-orge7427f8">
+<div id="outline-container-org81e1ac3" class="outline-3">
+<h3 id="org81e1ac3">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org81e1ac3">
 <ul class="org-ul">
 <li>授業の進行速度はちょうど良い。タイピングに自信がないが集中して取り組
 めばついて行けるので、このままで大丈夫だと思う。</li>
@@ -610,13 +996,13 @@
 
 
 
-<div id="outline-container-orgb2d68fd" class="outline-2">
-<h2 id="orgb2d68fd">10/14 2回目</h2>
-<div class="outline-text-2" id="text-orgb2d68fd">
+<div id="outline-container-org99d45ef" class="outline-2">
+<h2 id="org99d45ef">10/14 2回目</h2>
+<div class="outline-text-2" id="text-org99d45ef">
 </div>
-<div id="outline-container-orgc197bc6" class="outline-3">
-<h3 id="orgc197bc6">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-orgc197bc6">
+<div id="outline-container-orgdc843ec" class="outline-3">
+<h3 id="orgdc843ec">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-orgdc843ec">
 <ul class="org-ul">
 <li>ここまで関数を丁寧に解説してもらえる授業は他になかったためとても分かりやすかった。</li>
 <li>特にwhich関数の使い方が参考になった。which()[]で抽出したデータの中から要素を取り出すことができると知り、便利だと思った。Rの関数は無数にあるため、分かりやすい解説とともに教えてもらえて良かった。</li>
@@ -648,9 +1034,9 @@
 </div>
 
 
-<div id="outline-container-org3ce09bf" class="outline-3">
-<h3 id="org3ce09bf">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org3ce09bf">
+<div id="outline-container-org2d4ab0c" class="outline-3">
+<h3 id="org2d4ab0c">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org2d4ab0c">
 <ul class="org-ul">
 <li>板書</li>
 <li>Rでエラーが出るタイミング</li>
@@ -671,9 +1057,9 @@
 </div>
 
 
-<div id="outline-container-orgd6d404e" class="outline-3">
-<h3 id="orgd6d404e">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-orgd6d404e">
+<div id="outline-container-org22b45a6" class="outline-3">
+<h3 id="org22b45a6">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org22b45a6">
 <ul class="org-ul">
 <li>ベイズ統計を勉強したいのですが、今後の授業で触れる機会はあるのでしょうか。</li>
 <li>Rに関してなのですが、基礎的な項目ということもあり、躓く人も少なそう
@@ -698,8 +1084,8 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-03 水 21:16</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-11-11 木 13:13</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

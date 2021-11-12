@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-11 木 07:34 -->
+<!-- 2021-11-11 木 13:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>11/11 bio_stat</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -205,35 +192,59 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 </head>
 <body>
 <div id="content">
 <h1 class="title">11/11 bio_stat</h1>
 
-<div id="outline-container-org33eaff2" class="outline-2">
-<h2 id="org33eaff2">今日の講義の関連サイト</h2>
-<div class="outline-text-2" id="text-org33eaff2">
+<div id="outline-container-orgc486f03" class="outline-2">
+<h2 id="orgc486f03">今日の講義の関連サイト</h2>
+<div class="outline-text-2" id="text-orgc486f03">
 <ul class="org-ul">
 <li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/</a>
 講義内容</li>
@@ -241,17 +252,20 @@
 スライド，データ，など</li>
 <li><a href="http://github.com/masayuki054/bio_stat/">http://github.com/masayuki054/bio_stat/</a>
 講義保存場所</li>
+
+<li><a href="./hatena/enq.html">./hatena/enq.html</a> 
+アンケート</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org37968b5" class="outline-2">
-<h2 id="org37968b5">5th 11/11</h2>
-<div class="outline-text-2" id="text-org37968b5">
+<div id="outline-container-org94df2c9" class="outline-2">
+<h2 id="org94df2c9">5th 11/11</h2>
+<div class="outline-text-2" id="text-org94df2c9">
 </div>
-<div id="outline-container-orgb1b9794" class="outline-3">
-<h3 id="orgb1b9794"><span class="done Done">Done</span> RStudio を使いましょう</h3>
-<div class="outline-text-3" id="text-orgb1b9794">
+<div id="outline-container-org39c7ab5" class="outline-3">
+<h3 id="org39c7ab5"><span class="done Done">Done</span> RStudio を使いましょう</h3>
+<div class="outline-text-3" id="text-org39c7ab5">
 <ul class="org-ul">
 <li>生物統計用のプロジェクトを作ろう</li>
 <li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
@@ -259,9 +273,9 @@
 </div>
 </div>
 
-<div id="outline-container-org580392f" class="outline-3">
-<h3 id="org580392f"><span class="done Done">Done</span> <a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
-<div class="outline-text-3" id="text-org580392f">
+<div id="outline-container-org0c70b53" class="outline-3">
+<h3 id="org0c70b53"><span class="done Done">Done</span> <a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
+<div class="outline-text-3" id="text-org0c70b53">
 <ul class="org-ul">
 <li>RStudioの概要</li>
 <li>プロジェクトの作成</li>
@@ -270,22 +284,22 @@
 </div>
 
 
-<div id="outline-container-orgacc2f3f" class="outline-3">
-<h3 id="orgacc2f3f">Rによる入門統計学</h3>
-<div class="outline-text-3" id="text-orgacc2f3f">
+<div id="outline-container-org67fd846" class="outline-3">
+<h3 id="org67fd846">Rによる入門統計学</h3>
+<div class="outline-text-3" id="text-org67fd846">
 <ul class="org-ul">
 <li>スライドまたは PDF を手元に準備</li>
 <li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
 </ul>
 </div>
 
-<div id="outline-container-org0648655" class="outline-4">
-<h4 id="org0648655">入門統計学の2章</h4>
-<div class="outline-text-4" id="text-org0648655">
+<div id="outline-container-org149cf9d" class="outline-4">
+<h4 id="org149cf9d">入門統計学の2章</h4>
+<div class="outline-text-4" id="text-org149cf9d">
 </div>
-<div id="outline-container-org9f773eb" class="outline-5">
-<h5 id="org9f773eb">確率分布 <code>[3/4]</code></h5>
-<div class="outline-text-5" id="text-org9f773eb">
+<div id="outline-container-org374fd8c" class="outline-5">
+<h5 id="org374fd8c">確率分布 <code>[3/4]</code></h5>
+<div class="outline-text-5" id="text-org374fd8c">
 <ul class="org-ul">
 <li class="on"><code>[X]</code> 確率変数と確率分布</li>
 <li class="on"><code>[X]</code> 期待値と分散</li>
@@ -295,9 +309,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd9fe4be" class="outline-5">
-<h5 id="orgd9fe4be">Rの演習</h5>
-<div class="outline-text-5" id="text-orgd9fe4be">
+<div id="outline-container-org86694e0" class="outline-5">
+<h5 id="org86694e0">Rの演習</h5>
+<div class="outline-text-5" id="text-org86694e0">
 <ul class="org-ul">
 <li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html</a>
 <ul class="org-ul">
@@ -308,13 +322,13 @@
 </div>
 </div>
 
-<div id="outline-container-org5f8ab5a" class="outline-4">
-<h4 id="org5f8ab5a">入門統計学の3章</h4>
-<div class="outline-text-4" id="text-org5f8ab5a">
+<div id="outline-container-orgfff4131" class="outline-4">
+<h4 id="orgfff4131">入門統計学の3章</h4>
+<div class="outline-text-4" id="text-orgfff4131">
 </div>
-<div id="outline-container-orgbde25fb" class="outline-5">
-<h5 id="orgbde25fb">推定と誤差 <code>[0/5]</code></h5>
-<div class="outline-text-5" id="text-orgbde25fb">
+<div id="outline-container-org2ab9ab8" class="outline-5">
+<h5 id="org2ab9ab8">推定と誤差 <code>[0/5]</code></h5>
+<div class="outline-text-5" id="text-org2ab9ab8">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> 推測統計学とは</li>
 <li class="off"><code>[&#xa0;]</code> 標本平均と標本不偏分散</li>
@@ -325,9 +339,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgaefe0f1" class="outline-5">
-<h5 id="orgaefe0f1">Rの演習</h5>
-<div class="outline-text-5" id="text-orgaefe0f1">
+<div id="outline-container-orgcf7c466" class="outline-5">
+<h5 id="orgcf7c466">Rの演習</h5>
+<div class="outline-text-5" id="text-orgcf7c466">
 <ul class="org-ul">
 <li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-3.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-3.html</a>
 <ul class="org-ul">
@@ -337,34 +351,50 @@
 </div>
 </div>
 </div>
-</div>
 
-<div id="outline-container-orge7fbcad" class="outline-3">
-<h3 id="orge7fbcad">R 入門</h3>
-<div class="outline-text-3" id="text-orge7fbcad">
-<p>
-<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a> の8，9，10，11章
-</p>
+<div id="outline-container-orgcc483f5" class="outline-4">
+<h4 id="orgcc483f5">標本と統計的推測</h4>
+<div class="outline-text-4" id="text-orgcc483f5">
 <ul class="org-ul">
-<li>先生の演習ノート <a href="https://github.com/masayuki054/bio_stat/blob/main/org/R-intro-3.org">bio_stat/R-intro-3.org at main · masayuki054/bio_stat</a> 
-<ul class="org-ul">
-<li>ファイルの読み書き</li>
-<li>スクリプトの実行</li>
-<li>関数を作る</li>
-</ul></li>
+<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html</a></li>
+<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html</a></li>
 </ul>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org7c66c55" class="outline-2">
-<h2 id="org7c66c55">4th 11/04</h2>
-<div class="outline-text-2" id="text-org7c66c55">
+<div id="outline-container-orge486a15" class="outline-3">
+<h3 id="orge486a15">R 入門</h3>
+<div class="outline-text-3" id="text-orge486a15">
+<p>
+<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a> の8，9，10，11章
+</p>
+
+<p>
+先生の演習ノート 
+</p>
+<ul class="org-ul">
+<li><a href="./org/R-intro-1.html">./org/R-intro-1.html</a> - 基本操作</li>
+<li><a href="./org/R-intro-2.html">./org/R-intro-2.html</a> - データ処理</li>
+<li><a href="./org/R-intro-3.html">./org/R-intro-3.html</a> - 89ファイルの読み書き, 10スクリプトの実行, 11関数を作る</li>
+<li><a href="./org/R-intro-4.html">./org/R-intro-4.html</a> - 12グラフ</li>
+<li><a href="./org/R-intro-5.html">./org/R-intro-5.html</a> - 13構文</li>
+<li><a href="./org/R-intro-6.html">./org/R-intro-6.html</a> - 14その他</li>
+</ul>
 </div>
-<div id="outline-container-orgbefd765" class="outline-3">
-<h3 id="orgbefd765">RStudio を使いましょう</h3>
-<div class="outline-text-3" id="text-orgbefd765">
+</div>
+</div>
+
+
+
+<div id="outline-container-orgf8a2861" class="outline-2">
+<h2 id="orgf8a2861">4th 11/04</h2>
+<div class="outline-text-2" id="text-orgf8a2861">
+</div>
+<div id="outline-container-orgdbec90a" class="outline-3">
+<h3 id="orgdbec90a">RStudio を使いましょう</h3>
+<div class="outline-text-3" id="text-orgdbec90a">
 <ul class="org-ul">
 <li>生物統計用のプロジェクトを作ろう</li>
 <li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
@@ -372,9 +402,9 @@
 </div>
 </div>
 
-<div id="outline-container-org42003e8" class="outline-3">
-<h3 id="org42003e8"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
-<div class="outline-text-3" id="text-org42003e8">
+<div id="outline-container-org920a0df" class="outline-3">
+<h3 id="org920a0df"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
+<div class="outline-text-3" id="text-org920a0df">
 <ul class="org-ul">
 <li>RStudioの概要</li>
 <li>プロジェクトの作成</li>
@@ -382,9 +412,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgbaac45c" class="outline-3">
-<h3 id="orgbaac45c">R 入門</h3>
-<div class="outline-text-3" id="text-orgbaac45c">
+<div id="outline-container-orga9e63a9" class="outline-3">
+<h3 id="orga9e63a9">R 入門</h3>
+<div class="outline-text-3" id="text-orga9e63a9">
 <p>
 <a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">
 初心者用 - R_Stats2.pdf</a> の8，9，10，11章
@@ -400,22 +430,22 @@
 </div>
 </div>
 
-<div id="outline-container-org816182a" class="outline-3">
-<h3 id="org816182a">Rによる統計入門</h3>
-<div class="outline-text-3" id="text-org816182a">
+<div id="outline-container-orgdd7ee15" class="outline-3">
+<h3 id="orgdd7ee15">Rによる統計入門</h3>
+<div class="outline-text-3" id="text-orgdd7ee15">
 <ul class="org-ul">
 <li>スライドまたは PDF を手元に準備</li>
 <li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
 </ul>
 </div>
 
-<div id="outline-container-org054a532" class="outline-4">
-<h4 id="org054a532">入門統計学の2章</h4>
-<div class="outline-text-4" id="text-org054a532">
+<div id="outline-container-org534ad30" class="outline-4">
+<h4 id="org534ad30">入門統計学の2章</h4>
+<div class="outline-text-4" id="text-org534ad30">
 </div>
-<div id="outline-container-org91b4449" class="outline-5">
-<h5 id="org91b4449">確率分布</h5>
-<div class="outline-text-5" id="text-org91b4449">
+<div id="outline-container-org14defab" class="outline-5">
+<h5 id="org14defab">確率分布</h5>
+<div class="outline-text-5" id="text-org14defab">
 <ul class="org-ul">
 <li>確率変数と確率分布</li>
 <li>期待値と分散</li>
@@ -424,9 +454,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org244adc7" class="outline-5">
-<h5 id="org244adc7">Rの演習</h5>
-<div class="outline-text-5" id="text-org244adc7">
+<div id="outline-container-org28ea4b5" class="outline-5">
+<h5 id="org28ea4b5">Rの演習</h5>
+<div class="outline-text-5" id="text-org28ea4b5">
 <ul class="org-ul">
 <li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html</a>
 <ul class="org-ul">
@@ -440,17 +470,17 @@
 </div>
 
 
-<div id="outline-container-org97f0862" class="outline-2">
-<h2 id="org97f0862">3rd 10/28</h2>
-<div class="outline-text-2" id="text-org97f0862">
+<div id="outline-container-org81ad650" class="outline-2">
+<h2 id="org81ad650">3rd 10/28</h2>
+<div class="outline-text-2" id="text-org81ad650">
 <p>
 先週は休講にしてすみませんでした。
 </p>
 </div>
 
-<div id="outline-container-org541cb48" class="outline-3">
-<h3 id="org541cb48">RStudio を使いましょう</h3>
-<div class="outline-text-3" id="text-org541cb48">
+<div id="outline-container-org8c7f134" class="outline-3">
+<h3 id="org8c7f134">RStudio を使いましょう</h3>
+<div class="outline-text-3" id="text-org8c7f134">
 <ul class="org-ul">
 <li>生物統計用のプロジェクトを作ろう</li>
 <li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
@@ -458,9 +488,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc1dda7d" class="outline-3">
-<h3 id="orgc1dda7d"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
-<div class="outline-text-3" id="text-orgc1dda7d">
+<div id="outline-container-orgb394457" class="outline-3">
+<h3 id="orgb394457"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
+<div class="outline-text-3" id="text-orgb394457">
 <ul class="org-ul">
 <li>RStudioの概要</li>
 <li>プロジェクトの作成</li>
@@ -468,9 +498,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9cf9709" class="outline-3">
-<h3 id="org9cf9709">R 入門</h3>
-<div class="outline-text-3" id="text-org9cf9709">
+<div id="outline-container-orgfc8049f" class="outline-3">
+<h3 id="orgfc8049f">R 入門</h3>
+<div class="outline-text-3" id="text-orgfc8049f">
 <ul class="org-ul">
 <li><a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>，</li>
 <li>先生の演習ノート <a href="./org/R-intro-2.html">./org/R-intro-2.html</a>
@@ -483,25 +513,25 @@
 </div>
 </div>
 
-<div id="outline-container-org79f9052" class="outline-3">
-<h3 id="org79f9052">Rによる統計入門</h3>
-<div class="outline-text-3" id="text-org79f9052">
+<div id="outline-container-org3b3f89f" class="outline-3">
+<h3 id="org3b3f89f">Rによる統計入門</h3>
+<div class="outline-text-3" id="text-org3b3f89f">
 <ul class="org-ul">
 <li>スライドまたは PDF を手元に準備</li>
 </ul>
 </div>
 
-<div id="outline-container-org2d37c1b" class="outline-4">
-<h4 id="org2d37c1b">入門統計学の1章</h4>
-<div class="outline-text-4" id="text-org2d37c1b">
+<div id="outline-container-org02c418b" class="outline-4">
+<h4 id="org02c418b">入門統計学の1章</h4>
+<div class="outline-text-4" id="text-org02c418b">
 <ul class="org-ul">
 <li>スライドまたは PDF を手元に準備</li>
 </ul>
 </div>
 
-<div id="outline-container-org775ccdd" class="outline-5">
-<h5 id="org775ccdd">Rの演習</h5>
-<div class="outline-text-5" id="text-org775ccdd">
+<div id="outline-container-orge1237f6" class="outline-5">
+<h5 id="orge1237f6">Rの演習</h5>
+<div class="outline-text-5" id="text-orge1237f6">
 <ul class="org-ul">
 <li><a href="http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html">生物統計学１</a>
 <ul class="org-ul">
@@ -521,16 +551,16 @@
 </div>
 </div>
 
-<div id="outline-container-org478e38f" class="outline-4">
-<h4 id="org478e38f">入門統計学の2章</h4>
-<div class="outline-text-4" id="text-org478e38f">
+<div id="outline-container-org6cdfeaa" class="outline-4">
+<h4 id="org6cdfeaa">入門統計学の2章</h4>
+<div class="outline-text-4" id="text-org6cdfeaa">
 </div>
-<div id="outline-container-orgaf9f2da" class="outline-5">
-<h5 id="orgaf9f2da">統計分布 (スライド)</h5>
+<div id="outline-container-org30a3ea7" class="outline-5">
+<h5 id="org30a3ea7">統計分布 (スライド)</h5>
 </div>
-<div id="outline-container-org3497908" class="outline-5">
-<h5 id="org3497908">Rの演習</h5>
-<div class="outline-text-5" id="text-org3497908">
+<div id="outline-container-orgdeac57a" class="outline-5">
+<h5 id="orgdeac57a">Rの演習</h5>
+<div class="outline-text-5" id="text-orgdeac57a">
 <ul class="org-ul">
 <li><a href="./org/R-text-2.html">./org/R-text-2.html</a>
 <ul class="org-ul">
@@ -543,13 +573,13 @@
 </div>
 </div>
 
-<div id="outline-container-org6617228" class="outline-2">
-<h2 id="org6617228">2nd 10/14</h2>
-<div class="outline-text-2" id="text-org6617228">
+<div id="outline-container-org0797232" class="outline-2">
+<h2 id="org0797232">2nd 10/14</h2>
+<div class="outline-text-2" id="text-org0797232">
 </div>
-<div id="outline-container-orgfb1a486" class="outline-3">
-<h3 id="orgfb1a486">講義について</h3>
-<div class="outline-text-3" id="text-orgfb1a486">
+<div id="outline-container-org503efce" class="outline-3">
+<h3 id="org503efce">講義について</h3>
+<div class="outline-text-3" id="text-org503efce">
 <ul class="org-ul">
 <li>お昼休みサッカー (再度)
 <ul class="org-ul">
@@ -560,9 +590,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6dc0430" class="outline-3">
-<h3 id="org6dc0430"><span class="done Done">Done</span> スライドとデータの準備</h3>
-<div class="outline-text-3" id="text-org6dc0430">
+<div id="outline-container-org64f289d" class="outline-3">
+<h3 id="org64f289d"><span class="done Done">Done</span> スライドとデータの準備</h3>
+<div class="outline-text-3" id="text-org64f289d">
 <ul class="org-ul">
 <li>確認 全員 office 有り</li>
 <li><p>
@@ -571,26 +601,28 @@
 
 <pre class="example">
 c:/Users/名前/Onedrive/Documents/R (/は円記号かもしれない)
+
 </pre></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdcc846f" class="outline-3">
-<h3 id="orgdcc846f"><span class="done Done">Done</span> R のインストール</h3>
-<div class="outline-text-3" id="text-orgdcc846f">
+<div id="outline-container-orgb2469d5" class="outline-3">
+<h3 id="orgb2469d5"><span class="done Done">Done</span> R のインストール</h3>
+<div class="outline-text-3" id="text-orgb2469d5">
 </div>
 </div>
 
-<div id="outline-container-org624620b" class="outline-3">
-<h3 id="org624620b">Rcmdr か RStudio を使いましょう</h3>
-<div class="outline-text-3" id="text-org624620b">
+<div id="outline-container-orged7d6fe" class="outline-3">
+<h3 id="orged7d6fe">Rcmdr か RStudio を使いましょう</h3>
+<div class="outline-text-3" id="text-orged7d6fe">
 <ul class="org-ul">
 <li><p>
 Rcmdr の起動       
 </p>
 <pre class="example">
 library(Rcmdr)
+
 </pre></li>
 
 <li>Rcmdr を自動的に起動する方法
@@ -601,9 +633,9 @@ library(Rcmdr)
 </div>
 </div>
 
-<div id="outline-container-org080e859" class="outline-3">
-<h3 id="org080e859"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
-<div class="outline-text-3" id="text-org080e859">
+<div id="outline-container-org996ac1b" class="outline-3">
+<h3 id="org996ac1b"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h3>
+<div class="outline-text-3" id="text-org996ac1b">
 <ul class="org-ul">
 <li>RStudioの概要</li>
 <li>help</li>
@@ -613,9 +645,9 @@ library(Rcmdr)
 </div>
 </div>
 
-<div id="outline-container-org2306c26" class="outline-3">
-<h3 id="org2306c26">R 入門</h3>
-<div class="outline-text-3" id="text-org2306c26">
+<div id="outline-container-orgefe1915" class="outline-3">
+<h3 id="orgefe1915">R 入門</h3>
+<div class="outline-text-3" id="text-orgefe1915">
 <ul class="org-ul">
 <li><p>
 <a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
@@ -636,13 +668,13 @@ library(Rcmdr)
 </div>
 </div>
 
-<div id="outline-container-org65cbdda" class="outline-3">
-<h3 id="org65cbdda">Rによる統計入門</h3>
-<div class="outline-text-3" id="text-org65cbdda">
+<div id="outline-container-orgd2659bb" class="outline-3">
+<h3 id="orgd2659bb">Rによる統計入門</h3>
+<div class="outline-text-3" id="text-orgd2659bb">
 </div>
-<div id="outline-container-org5550e1e" class="outline-4">
-<h4 id="org5550e1e">入門統計学の1章</h4>
-<div class="outline-text-4" id="text-org5550e1e">
+<div id="outline-container-org107bda1" class="outline-4">
+<h4 id="org107bda1">入門統計学の1章</h4>
+<div class="outline-text-4" id="text-org107bda1">
 <ul class="org-ul">
 <li>Excel -&gt; R で書き直し</li>
 <li>スライドまたは PDF を手元に準備</li>
@@ -650,9 +682,9 @@ library(Rcmdr)
 </div>
 </div>
 
-<div id="outline-container-org6f3cae8" class="outline-4">
-<h4 id="org6f3cae8">Rの演習</h4>
-<div class="outline-text-4" id="text-org6f3cae8">
+<div id="outline-container-orgb70a62e" class="outline-4">
+<h4 id="orgb70a62e">Rの演習</h4>
+<div class="outline-text-4" id="text-orgb70a62e">
 <ul class="org-ul">
 <li><a href="http://whitewell.sakura.ne.jp/R/Rstatistics-01.html">Rで統計学を学ぶ(1)</a></li>
 <li><a href="http://whitewell.sakura.ne.jp/R/Rstatistics-02.html">Rで統計学を学ぶ(2)</a></li>
@@ -680,13 +712,13 @@ library(Rcmdr)
 </div>
 
 
-<div id="outline-container-orga5bc7bc" class="outline-2">
-<h2 id="orga5bc7bc">1st 10/07</h2>
-<div class="outline-text-2" id="text-orga5bc7bc">
+<div id="outline-container-org02958dd" class="outline-2">
+<h2 id="org02958dd">1st 10/07</h2>
+<div class="outline-text-2" id="text-org02958dd">
 </div>
-<div id="outline-container-orge801110" class="outline-3">
-<h3 id="orge801110">講義について</h3>
-<div class="outline-text-3" id="text-orge801110">
+<div id="outline-container-org12d1bf8" class="outline-3">
+<h3 id="org12d1bf8">講義について</h3>
+<div class="outline-text-3" id="text-org12d1bf8">
 <ul class="org-ul">
 <li>シラバス
 
@@ -724,9 +756,9 @@ library(Rcmdr)
 </div>
 
 
-<div id="outline-container-org5d82120" class="outline-3">
-<h3 id="org5d82120">スライドとデータの準備</h3>
-<div class="outline-text-3" id="text-org5d82120">
+<div id="outline-container-orgbc53e4f" class="outline-3">
+<h3 id="orgbc53e4f">スライドとデータの準備</h3>
+<div class="outline-text-3" id="text-orgbc53e4f">
 <ul class="org-ul">
 <li>ダウンロード</li>
 <li>解凍</li>
@@ -739,9 +771,9 @@ library(Rcmdr)
 </div>
 </div>
 
-<div id="outline-container-org7539199" class="outline-3">
-<h3 id="org7539199">前期の確率統計の内容確認</h3>
-<div class="outline-text-3" id="text-org7539199">
+<div id="outline-container-org96ea1e6" class="outline-3">
+<h3 id="org96ea1e6">前期の確率統計の内容確認</h3>
+<div class="outline-text-3" id="text-org96ea1e6">
 <ul class="org-ul">
 <li>確率
 <ul class="org-ul">
@@ -782,9 +814,9 @@ library(Rcmdr)
 </div>
 </div>
 
-<div id="outline-container-org3cdcfd8" class="outline-3">
-<h3 id="org3cdcfd8">R のインストール</h3>
-<div class="outline-text-3" id="text-org3cdcfd8">
+<div id="outline-container-org86b5dbc" class="outline-3">
+<h3 id="org86b5dbc">R のインストール</h3>
+<div class="outline-text-3" id="text-org86b5dbc">
 <p>
 スライド 00 (解凍したスライドの00章)
 </p>
@@ -806,12 +838,14 @@ R のパッケージインストール
 </p>
 <pre class="example">
 install.packages("Rcmdr")
+
 </pre></li>
 <li><p>
 Rcmdr の起動       
 </p>
 <pre class="example">
 library(Rcmdr)
+
 </pre></li>
 </ul></li>
 </ul>
@@ -821,8 +855,8 @@ library(Rcmdr)
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-11 木 07:34</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-11-11 木 13:53</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
