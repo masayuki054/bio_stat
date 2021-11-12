@@ -7,7 +7,7 @@
 #+begin_src R
 #+end_src
 
-* 標本分布 (http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Rfors-II-04.html より抜粋)
+* 標本分布 (http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/RforS-II-04.html より抜粋)
 
 *** 正規母集団
 	#+begin_src R :results output graphics :file R-text/graph/04-04.png :tangle R-text/code/03.R
