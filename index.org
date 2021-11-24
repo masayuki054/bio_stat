@@ -94,7 +94,7 @@
    [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
 
 ***  先生の演習ノート [4/5]
-     - [X][[ ./org/R-intro-1.org]] - 基本操作
+     - [X] [[./org/R-intro-1.org]] - 基本操作
      - [X] [[./org/R-intro-2.org]] - データ処理
      - [X] [[./org/R-intro-3.org]] - 89ファイルの読み書き, 10スクリプトの実行, 11関数を作る
      - [X] [[./org/R-intro-4.org]] - 12グラフ
