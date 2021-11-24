@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-11 木 13:13 -->
+<!-- 2021-11-24 水 21:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>生物統計学 アンケート</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -161,6 +162,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -178,7 +192,6 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
@@ -191,64 +204,93 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">生物統計学 アンケート</h1>
 
-<div id="outline-container-org79a4538" class="outline-2">
-<h2 id="org79a4538">11/04 4回目</h2>
-<div class="outline-text-2" id="text-org79a4538">
+<div id="outline-container-org23446b5" class="outline-2">
+<h2 id="org23446b5">11/11 5回目</h2>
+<div class="outline-text-2" id="text-org23446b5">
 </div>
-<div id="outline-container-org907836f" class="outline-3">
-<h3 id="org907836f">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-org907836f">
+<div id="outline-container-org58b2424" class="outline-3">
+<h3 id="org58b2424">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org58b2424">
+<ul class="org-ul">
+<li>確率分布</li>
+<li>今までよりも発展的な知識を学んだ</li>
+<li>前半にやった実習ではif、whileは自分でもやることができて例題も解けて楽しかった</li>
+<li>else文を打つ際にそのまま改行してしまうと文法ミスと判断されると初めて
+知った。}elseと表記するのはその対策だと知り、今後間違えないように気
+を付けようと思った。</li>
+<li>初歩的な関数の書き方</li>
+<li>・while構文の際に13−2の課題で、式を間違えると出力された値が延々にコ
+ンソールに出力されたので、ループが起こっている事を身をもって知ること
+ができました。</li>
+<li>・for文やwhile文の構造を板書してくださったことで中で何が起こっている
+のかイメージしやすかったです。</li>
+<li>if,whlil,for構文</li>
+<li>標本について</li>
+<li>講義の趣旨とはずれますがグラフのplotの際に色を変える方法について理解できました。</li>
+<li>繰り返し処理のwhile,for文</li>
+<li>基本的なRの構文について理解して使うことが出来た</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgcdc9272" class="outline-3">
+<h3 id="orgcdc9272">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-orgcdc9272">
+<ul class="org-ul">
+<li>全体的に少し早くて所々分からなかった</li>
+<li>whileが難しかった</li>
+<li>forの方はコマンド入力をしても所謂回答のような青文字が出てこなくて何
+が間違っているのか分からなかった。コマンドを打った後に何か代入の式を
+もう一つ入力しなければならないのだろうか？</li>
+<li>if文でｌist()を使う理由が分からなかった。</li>
+<li>ポアソン分布の概要</li>
+<li>・課題13−2ができていないので家でやり直したいと思います。</li>
+<li>・dice2[i+j] &lt;- dice2[i+j] + dice[i]*dice[j]のプログラムがいまいち理
+解できませんでした。</li>
+<li>Whileの使い方がいまいちよく分かりませんでした。</li>
+<li>Rのif文　課題13－1、関数ｄの定義</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1e75250" class="outline-3">
+<h3 id="org1e75250">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org1e75250">
+<ul class="org-ul">
+<li>期末テストなどはありますか。</li>
+
+<li>もう少しゆっくりにしてほしい</li>
+
+<li>最近少しずつRの入力ができるようになってきて楽しい。最終的な試験では
+どのように扱うのかが気になった。</li>
+
+<li>授業用のページ（先生の演習ノート）があるため多少躓いても授業に戻れた
+ので、今後も続けてもらえたら嬉しいです。</li>
+
+<li>・forとwhileの構文の違いは、for文は繰り返しの回数が決まっている場合
+に使い、while文は繰り返しの回数が決まっていない場合で条件を満たして
+いる限り処理を繰り返したい時に使うということで良いのでしょうか。</li>
+
+<li>Rの練習問題の解答を出してほしいです。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7bb1e63" class="outline-2">
+<h2 id="org7bb1e63">11/04 4回目</h2>
+<div class="outline-text-2" id="text-org7bb1e63">
+</div>
+<div id="outline-container-org7e97713" class="outline-3">
+<h3 id="org7e97713">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org7e97713">
 <ul class="org-ul">
 <li>プロットの仕方、二項分布の意味</li>
 
@@ -376,9 +418,9 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orga71a7ab" class="outline-3">
-<h3 id="orga71a7ab">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-orga71a7ab">
+<div id="outline-container-org546715b" class="outline-3">
+<h3 id="org546715b">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org546715b">
 <ul class="org-ul">
 <li>Rに確率の計算させる方法(プログラムの組み方)</li>
 
@@ -495,9 +537,9 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orga4f40a4" class="outline-3">
-<h3 id="orga4f40a4">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-orga4f40a4">
+<div id="outline-container-orgc3917b5" class="outline-3">
+<h3 id="orgc3917b5">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-orgc3917b5">
 <ul class="org-ul">
 <li>どこのファイルやページを開いて説明しているのか分からないことが時々あり
 ます。できれば、その都度言っていただけると嬉しいです。</li>
@@ -617,13 +659,13 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org16955d1" class="outline-2">
-<h2 id="org16955d1">10/28 3回目</h2>
-<div class="outline-text-2" id="text-org16955d1">
+<div id="outline-container-org8fbfc52" class="outline-2">
+<h2 id="org8fbfc52">10/28 3回目</h2>
+<div class="outline-text-2" id="text-org8fbfc52">
 </div>
-<div id="outline-container-org0af9e8b" class="outline-3">
-<h3 id="org0af9e8b">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-org0af9e8b">
+<div id="outline-container-orgc1d0978" class="outline-3">
+<h3 id="orgc1d0978">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-orgc1d0978">
 <ul class="org-ul">
 <li>四則演算について</li>
 <li>Rの使い方</li>
@@ -641,9 +683,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org2059d6f" class="outline-3">
-<h3 id="org2059d6f">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org2059d6f">
+<div id="outline-container-org04e2786" class="outline-3">
+<h3 id="org04e2786">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org04e2786">
 <ul class="org-ul">
 <li>最後のスライドについて</li>
 <li>統計学の最終的な使い方わからない</li>
@@ -661,9 +703,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org81e1ac3" class="outline-3">
-<h3 id="org81e1ac3">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-org81e1ac3">
+<div id="outline-container-org2875f1e" class="outline-3">
+<h3 id="org2875f1e">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org2875f1e">
 <ul class="org-ul">
 <li>授業の進行速度はちょうど良い。タイピングに自信がないが集中して取り組
 めばついて行けるので、このままで大丈夫だと思う。</li>
@@ -996,13 +1038,13 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org99d45ef" class="outline-2">
-<h2 id="org99d45ef">10/14 2回目</h2>
-<div class="outline-text-2" id="text-org99d45ef">
+<div id="outline-container-orga295014" class="outline-2">
+<h2 id="orga295014">10/14 2回目</h2>
+<div class="outline-text-2" id="text-orga295014">
 </div>
-<div id="outline-container-orgdc843ec" class="outline-3">
-<h3 id="orgdc843ec">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-orgdc843ec">
+<div id="outline-container-org251de7f" class="outline-3">
+<h3 id="org251de7f">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org251de7f">
 <ul class="org-ul">
 <li>ここまで関数を丁寧に解説してもらえる授業は他になかったためとても分かりやすかった。</li>
 <li>特にwhich関数の使い方が参考になった。which()[]で抽出したデータの中から要素を取り出すことができると知り、便利だと思った。Rの関数は無数にあるため、分かりやすい解説とともに教えてもらえて良かった。</li>
@@ -1034,9 +1076,9 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org2d4ab0c" class="outline-3">
-<h3 id="org2d4ab0c">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org2d4ab0c">
+<div id="outline-container-orgb11a800" class="outline-3">
+<h3 id="orgb11a800">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-orgb11a800">
 <ul class="org-ul">
 <li>板書</li>
 <li>Rでエラーが出るタイミング</li>
@@ -1057,9 +1099,9 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org22b45a6" class="outline-3">
-<h3 id="org22b45a6">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-org22b45a6">
+<div id="outline-container-orga8fa577" class="outline-3">
+<h3 id="orga8fa577">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-orga8fa577">
 <ul class="org-ul">
 <li>ベイズ統計を勉強したいのですが、今後の授業で触れる機会はあるのでしょうか。</li>
 <li>Rに関してなのですが、基礎的な項目ということもあり、躓く人も少なそう
@@ -1084,8 +1126,8 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-11 木 13:13</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-11-24 水 21:21</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

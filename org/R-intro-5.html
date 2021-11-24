@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-10 水 20:02 -->
+<!-- 2021-11-24 水 21:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>初心者用 R 言語講座演習ノート</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,21 +42,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,7 +192,6 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
@@ -204,45 +204,23 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">初心者用 R 言語講座演習ノート</h1>
 
 
-<div id="outline-container-org3c19e55" class="outline-2">
-<h2 id="org3c19e55">13. 基本的なプログラミングの構文</h2>
-<div class="outline-text-2" id="text-org3c19e55">
+<div id="outline-container-org59b4a23" class="outline-2">
+<h2 id="org59b4a23">13. 基本的なプログラミングの構文</h2>
+<div class="outline-text-2" id="text-org59b4a23">
 <p>
 基本的なプログラミングの構文について, かいつまんで簡単に説明します。
 </p>
 </div>
 
-<div id="outline-container-org3d98586" class="outline-3">
-<h3 id="org3d98586">13.1 if 文</h3>
-<div class="outline-text-3" id="text-org3d98586">
+<div id="outline-container-orge6fafa5" class="outline-3">
+<h3 id="orge6fafa5">13.1 if 文</h3>
+<div class="outline-text-3" id="text-orge6fafa5">
 <p>
 if 文は与えられた条件11が成立するときのみ、与えられた手続きを実行す
 る構文です。
@@ -254,7 +232,10 @@ if 文は与えられた条件11が成立するときのみ、与えられた手
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">x <span style="color: #e5786d;">&lt;-</span> 5
+<pre class="src src-R"><span style="color: #99968b;">#</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">if&#25991;&#65306; x &gt; 0 &#12398;&#12392;&#12365;&#12395; y &#12434; 1 &#12395;&#12377;&#12427;&#12289;&#12381;&#12428;&#20197;&#22806;&#12399; y &#12434; 0 &#12395;&#12377;&#12427;&#12392;&#12356;&#12358;&#25163;&#32154;</span>
+<span style="color: #99968b;">#</span>
+x <span style="color: #e5786d;">&lt;-</span> 5
 
 <span style="color: #8ac6f2; font-weight: bold;">if</span> (x &gt; 0)  {
 
@@ -296,7 +277,10 @@ if 文のより一般的な形式は以下の通りです。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">   
+<pre class="src src-R"><span style="color: #99968b;">#</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">if&#25991;&#12398;&#27083;&#25991;</span>
+<span style="color: #99968b;">#</span>
+   
 <span style="color: #8ac6f2; font-weight: bold;">if</span> (&#26465;&#20214; 1) {
 
     &#26465;&#20214; 1 &#12364;&#25104;&#31435;&#12375;&#12383;&#12392;&#12365;&#12398;&#25163;&#32154;&#12365;
@@ -320,29 +304,59 @@ if 文のより一般的な形式は以下の通りです。
 </div>
 
 <p>
-課題 13-1: 入力が 0 のときに 1、それ以外では 0 を返す関数 d を定義しましょう。
+課題 13-1: 入力が 0 のときに 1、それ以外では 0 を返す関数 d を定義し
+ましょう。
 </p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#35506;&#38988; 13-1: &#20837;&#21147;&#12364; 0 &#12398;&#12392;&#12365;&#12395; 1&#12289;&#12381;&#12428;&#20197;&#22806;&#12391;&#12399; 0 &#12434;&#36820;&#12377;&#38306;&#25968; d &#12434;&#23450;&#32681;&#12375;</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#12414;&#12375;&#12423;&#12358;&#12290;</span>
+
+<span style="color: #cae682;">d</span> <span style="color: #e5786d;">&lt;-</span> <span style="color: #8ac6f2; font-weight: bold;">function</span> (x) {
+
+  <span style="color: #8ac6f2; font-weight: bold;">if</span> ( x==0 ) {
+    1
+  } <span style="color: #8ac6f2; font-weight: bold;">else</span> {
+    0
+  }
+}
+
+d(0); d(1);  d(-2)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 1
+[1] 0
+[1] 0
+</pre>
 </div>
 </div>
 
-<div id="outline-container-org6831d61" class="outline-3">
-<h3 id="org6831d61">13.2 while 文</h3>
-<div class="outline-text-3" id="text-org6831d61">
+
+
+<div id="outline-container-org490cd15" class="outline-3">
+<h3 id="org490cd15">13.2 while 文</h3>
+<div class="outline-text-3" id="text-org490cd15">
 <p>
 while 文は与えられた条件が成立している間、与えられた手続きを繰り返
 す構文です。
 </p>
 </div>
 
-<div id="outline-container-org4dd5f76" class="outline-4">
-<h4 id="org4dd5f76">while 文の形式</h4>
-<div class="outline-text-4" id="text-org4dd5f76">
+<div id="outline-container-org19534eb" class="outline-4">
+<h4 id="org19534eb">while 文の形式</h4>
+<div class="outline-text-4" id="text-org19534eb">
 <p>
 条件文には&amp;(論理積)や|(論理和)などの論理演算子が使えます。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">
+<pre class="src src-R"><span style="color: #99968b;">#</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">while &#25991;</span>
+<span style="color: #99968b;"># </span>
 <span style="color: #8ac6f2; font-weight: bold;">while</span> (&#26465;&#20214;) {
 
     &#26465;&#20214;&#12364;&#25104;&#31435;&#12375;&#12390;&#12356;&#12427;&#12392;&#12365;&#12289;&#23455;&#34892;&#12377;&#12427;&#25163;&#32154;&#12365;
@@ -359,12 +373,16 @@ while 文は与えられた条件が成立している間、与えられた手�
 例えば
 </p>
 
+
 <div class="org-src-container">
-<pre class="src src-R">    x <span style="color: #e5786d;">&lt;-</span> 1
-    <span style="color: #8ac6f2; font-weight: bold;">while</span> (x &lt;= 3) {
-      print(x);
-      x <span style="color: #e5786d;">&lt;-</span> x + 1
-    }
+<pre class="src src-R"><span style="color: #99968b;">#</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">while&#25991;: 1 &#12363;&#12425; 3 &#12414;&#12391;&#12364;&#20986;&#21147;&#12373;&#12428;&#12414;&#12377;&#12290;</span>
+<span style="color: #99968b;">#</span>
+x <span style="color: #e5786d;">&lt;-</span> 1
+<span style="color: #8ac6f2; font-weight: bold;">while</span> (x &lt;= 3) {
+  print(x);
+  x <span style="color: #e5786d;">&lt;-</span> x + 1
+}
 </pre>
 </div>
 
@@ -407,20 +425,46 @@ while 文の次の繰り返しを強制的に行う next、while 文から強制
 </div>
 
 
-<div id="outline-container-org32ba261" class="outline-5">
-<h5 id="org32ba261">課題 13-2:</h5>
-<div class="outline-text-5" id="text-org32ba261">
+<div id="outline-container-org50b145f" class="outline-5">
+<h5 id="org50b145f">課題 13-2:</h5>
+<div class="outline-text-5" id="text-org50b145f">
 <p>
 while 文を使って、1,3,5,7,9,11 を1行ずつ表示しましょう。
 </p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#35506;&#38988; 13-2:</span>
+<span style="color: #99968b;">##</span>
+<span style="color: #99968b;">##  </span><span style="color: #99968b;">while &#25991;&#12434;&#20351;&#12387;&#12390;&#12289;1,3,5,7,9,11 &#12434;1&#34892;&#12378;&#12388;&#34920;&#31034;&#12375;&#12414;&#12375;&#12423;&#12358;&#12290;</span>
+<span style="color: #99968b;">##</span>
+
+n <span style="color: #e5786d;">&lt;-</span> 1
+<span style="color: #8ac6f2; font-weight: bold;">while</span> (n&lt;13) {
+  print(n)
+  n <span style="color: #e5786d;">&lt;-</span> n+2
+}  
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 1
+[1] 3
+[1] 5
+[1] 7
+[1] 9
+[1] 11
+</pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8492bd1" class="outline-3">
-<h3 id="org8492bd1">13.3 for 文</h3>
-<div class="outline-text-3" id="text-org8492bd1">
+<div id="outline-container-org71cfcf6" class="outline-3">
+<h3 id="org71cfcf6">13.3 for 文</h3>
+<div class="outline-text-3" id="text-org71cfcf6">
 <p>
 for 文も while 文と同じ繰り返しですが、for 文では与えられた要素群の
 中の要素1つ1つを変数に1回ずつ代入しながら繰り返し処理を行います。その
@@ -428,7 +472,10 @@ for 文も while 文と同じ繰り返しですが、for 文では与えられ�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"> 
+<pre class="src src-R"><span style="color: #99968b;">#</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">for &#25991;&#12398;&#27083;&#25991;</span>
+<span style="color: #99968b;">#</span>
+
    <span style="color: #8ac6f2; font-weight: bold;">for</span> (&#22793;&#25968; <span style="color: #8ac6f2; font-weight: bold;">in</span> &#35201;&#32032;&#32676;) {
 
      &#25163;&#32154;&#12365;
@@ -453,12 +500,21 @@ for (i in 1:5)){ print(i) }なら、1 から 5 までが変数 i に代入され
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">   x <span style="color: #e5786d;">&lt;-</span> <span style="color: #92a65e; font-weight: bold;">NULL</span>
+<pre class="src src-R"><span style="color: #99968b;">#</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">for: 1 &#12363;&#12425; 5 &#12414;&#12391;&#12398;&#20108;&#20055;&#12434;&#12505;&#12463;&#12488;&#12523;&#12395;&#12375; &#12414;&#12377;&#12290;</span>
+<span style="color: #99968b;"># </span>
+   x <span style="color: #e5786d;">&lt;-</span> <span style="color: #92a65e; font-weight: bold;">NULL</span>
    <span style="color: #8ac6f2; font-weight: bold;">for</span> (i <span style="color: #8ac6f2; font-weight: bold;">in</span> 1:5) {
      x <span style="color: #e5786d;">&lt;-</span> append(x, i**2)
    }
+   x
 </pre>
 </div>
+
+<pre class="example">
+[1]  1  4  9 16 25
+</pre>
+
 
 <ul class="org-ul">
 <li>x &lt;- NULL で空のベクトルを x に代入します。NULL は空を意味します。</li>
@@ -471,9 +527,9 @@ i)はベクトル x に i を追加する関数です14。</li>
 </ul>
 </div>
 
-<div id="outline-container-orgeb3c780" class="outline-4">
-<h4 id="orgeb3c780">課題 13-3:</h4>
-<div class="outline-text-4" id="text-orgeb3c780">
+<div id="outline-container-orgfa1ea29" class="outline-4">
+<h4 id="orgfa1ea29">課題 13-3:</h4>
+<div class="outline-text-4" id="text-orgfa1ea29">
 <p>
 課題 12-2 を for 文を使って書き直しましょう。
 </p>
@@ -485,6 +541,40 @@ i)はベクトル x に i を追加する関数です14。</li>
 <p>
 x &lt;- c(x, i**2)でも良い。c はベクトルの連結にも使うことができる。
 </p>
+
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #99968b;">##</span>
+<span style="color: #99968b;">## </span><span style="color: #99968b;">&#35506;&#38988; 13-3:</span>
+
+<span style="color: #99968b;">### </span><span style="color: #99968b;">&#35506;&#38988; 12-2 &#12434; for &#25991;&#12434;&#20351;&#12387;&#12390;&#26360;&#12365;&#30452;&#12375;&#12414;&#12375;&#12423;&#12358;&#12290;</span>
+
+<span style="color: #99968b;">###   </span><span style="color: #99968b;">&#23455;&#12399; for &#25991;&#12434;&#20351;&#12431;&#12394;&#12367;&#12390;&#12418;&#12289;x &lt;- (1:5)**2 &#12391;&#21516;&#12376;&#12371;&#12392;&#12364;&#12391;&#12365;&#12427;&#12290;</span>
+<span style="color: #99968b;">###   </span><span style="color: #99968b;">x &lt;- c(x, i**2)&#12391;&#12418;&#33391;&#12356;&#12290;c &#12399;&#12505;&#12463;&#12488;&#12523;&#12398;&#36899;&#32080;&#12395;&#12418;&#20351;&#12358;&#12371;&#12392;&#12364;&#12391;&#12365;&#12427;&#12290;</span>
+
+(1:5)*2+1
+
+seq(1,11,2)
+
+<span style="color: #8ac6f2; font-weight: bold;">for</span> (i <span style="color: #8ac6f2; font-weight: bold;">in</span> seq(1,11,2)) {
+
+  print(i)
+
+}
+
+</pre>
+</div>
+
+<pre class="example">
+[1]  3  5  7  9 11
+[1]  1  3  5  7  9 11
+[1] 1
+[1] 3
+[1] 5
+[1] 7
+[1] 9
+[1] 11
+</pre>
 </div>
 </div>
 </div>
@@ -492,7 +582,7 @@ x &lt;- c(x, i**2)でも良い。c はベクトルの連結にも使うことが
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-10 水 20:02</p>
+<p class="date">Created: 2021-11-24 水 21:11</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

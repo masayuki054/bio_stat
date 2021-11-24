@@ -1,0 +1,137 @@
+#+OPTIONS: tex:t 
+#+include: R-text-common.org
+#+Title: 5章 \( \chi^2 \) 分布と \( F \) 分布
+#+property: header-args:R :session *rtext* :results output :exports both
+
+#+beign_src R :tangle R-text/code/05.R
+#+end_src
+
+- \( \chi^2 \) 分布 :: 
+  データの平方和である統計量 \( \chi^2 \) が従う分布
+
+  - 母分散の区間推定
+
+  - 独立性の検定
+
+- \( F \) 分布 :: 二つの \( \chi^2 \) の比が従う分布
+
+  - 等分散の検定
+
+  - 分散分析
+
+* 5.1 \( \chi^2 \) 分布
+
+  工場で製造される製品の容量のバラツキは？
+  
+** データの平方和
+
+*** 標準正規母集団からの無作為標本
+    
+    \( X_{i=1:n} \) 標準正規母集団からの無作為標本
+
+    - 母集団が正規分布の場合は，標準化する
+
+    
+*** \( \chi^2 \) 統計量
+
+**** 標準化
+
+     \( X ~ N(\mu, \sigma^2) \) のとき， \( Z = \frac{X-\mu}{\sigma} \) \( \sim N(0, 1) \) となる。
+
+     \( Z^2 \) は，\(E[Z^2] = 0 \), \(V[Z^2]=2\),  \( Z^2 \sim
+     \chi^2_{(1)} \) (自由度1のカイ二乗分布) となる。
+     
+**** 標準化された平方和の分布
+
+      \( \chi^2_{(n)}  = \Sigma_{i=1}^{n} Z_i^2 = \Sigma_{i=1}^{n}
+      (X_i-\mu)^2/\sigma^2 \)
+
+      自由度1のカイ二乗分布の和であるので，
+      - \( n \) は自由度。
+      - 期待値は \( n \),
+      - 分散は， \( 2 n \)
+      - 再生成 \( \chi^2_{(m+n)} = \chi^2_{(m)} + \chi^2_{(n)} \)
+	  
+**** \( \chi^2 \) 分布
+
+      - 非対称, 平均は中央にない
+	
+    
+ #+begin_src R ：tangle R-text/code/05.R :session *rtext* :results output graphics :file R-text/graph/05-chisq.png
+
+curve(dchisq(x,df=1),from=0, to=10, lty=1, col=1,main="自由度によって形が変るカイ二乗分布")
+curve(dchisq(x,df=3),from=0, to=10, lty=1, col=2, add=T)
+curve(dchisq(x,df=10),from=0, to=10, lty=1, col=3, add=T)
+legend(2, 0.7, c("自由度=1", "自由度=3", "自由度=10"), lty=c(1,1,1), col=c(1,2,3))
+
+ #+end_src
+
+ #+RESULTS:
+
+
+ [[./R-text/graph/05-chisq.png]]
+
+
+* 5.2 母分散の区間推定
+
+** 標本不偏分散 (\( \hat{s}^2 \))の標本分布
+
+     - 不偏分散は，母分散の不偏推定量
+     - 標本分散は，標本の散布度
+
+     #+begin_src R :tangle R-text/code/05.R :results output
+##
+## 標本不偏分散の標本分布
+##
+
+samples.no <- 10000   # いくつ標本を用いるか
+sample.size <- 10     # ひとつの標本の中のデータの個数
+
+this.mean <- 50       # 分布の平均
+this.sd <- 10         # 分布の標準偏差
+
+不偏分散s <- numeric(samples.no) # 各々の標本の不偏分散値の保存場所
+
+for (i in 1:samples.no) {
+  標本 <- rnorm(n=sample.size, mean=this.mean, sd=this.sd) # ひとつの標本の生成
+  不偏分散s[i] <- var(標本)
+}
+
+c(mean(不偏分散s),sd(不偏分散s))  # 標本不偏分散達の平均と分散
+#+end_src
+
+#+RESULTS:
+: [1] 99.74877 46.92062
+
+
+     #+begin_src R :results output graphics :file R-text/graph/05-var-hist.png :tangle R-text/code/05.R
+##
+## 標本不偏分散の頻度表
+##
+hist(不偏分散s, breaks=seq(0,500,10), main="不偏分散の分布")
+
+     #+end_src
+
+     #+RESULTS:
+
+*** 不偏分散の分布
+      
+[[./R-text/graph/05-var-hist.png]]
+
+     #+begin_src R :results output graphics :file R-text/graph/05-chi2.png :tangle R-text/code/05.R :session *rtext*
+##
+## 標本不偏分散の頻度表
+##
+hist((不偏分散s/100)*9, freq=FALSE, breaks=seq(0,50,1), main="不偏分散/母分散の分布と自由度9のカイ二乗分布")
+curve(dchisq(x,9), add=TRUE, col="red")
+     #+end_src
+
+     #+RESULTS:
+
+[[./R-text/graph/05-chi2.png]] 
+
+*** \( \chi^2_{(n-1)} \sim \frac{(n-1) \hat{\sigma}^2}{\sigma^2} \)
+
+    - 信頼係数 :: \( 1 - \alpha \), 
+
+   
