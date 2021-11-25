@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-11 木 07:36 -->
+<!-- 2021-11-25 木 09:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>入門統計学 2章 確率と統計</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,21 +42,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,7 +192,6 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
@@ -204,28 +204,6 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -246,11 +224,10 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">入門統計学 2章 確率と統計</h1>
 <p>
 #+beign_src R :tangle R-text/code/02.R
@@ -260,13 +237,13 @@
 </pre>
 </div>
 
-<div id="outline-container-org394bb4d" class="outline-2">
-<h2 id="org394bb4d">2.1 サイコロ と 一様分布</h2>
-<div class="outline-text-2" id="text-org394bb4d">
+<div id="outline-container-org97d43d0" class="outline-2">
+<h2 id="org97d43d0">2.1 サイコロ と 一様分布</h2>
+<div class="outline-text-2" id="text-org97d43d0">
 </div>
-<div id="outline-container-orge24aabf" class="outline-3">
-<h3 id="orge24aabf">一様分布</h3>
-<div class="outline-text-3" id="text-orge24aabf">
+<div id="outline-container-org45968b1" class="outline-3">
+<h3 id="org45968b1">一様分布</h3>
+<div class="outline-text-3" id="text-org45968b1">
 <div class="org-src-container">
 <pre class="src src-R"><span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
 
@@ -290,16 +267,16 @@ plot(1:6, dice, main=<span style="color: #95e454;">"1~6&#12398;&#19968;&#27096;&
 </div>
 
 
-<div id="orged9ea1a" class="figure">
+<div id="orgdfee59e" class="figure">
 <p><img src="./R-text/graph/02-unif-01.png" alt="02-unif-01.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgbd3b241" class="outline-3">
-<h3 id="orgbd3b241">一様分布の和の分布</h3>
-<div class="outline-text-3" id="text-orgbd3b241">
+<div id="outline-container-orgab3e929" class="outline-3">
+<h3 id="orgab3e929">一様分布の和の分布</h3>
+<div class="outline-text-3" id="text-orgab3e929">
 <div class="org-src-container">
 <pre class="src src-R"><span style="color: #99968b;">##</span>
 <span style="color: #99968b;">## </span><span style="color: #99968b;">* 1~6&#12398;&#19968;&#27096;&#20998;&#24067;&#12398;&#21644;&#12398;&#20998;&#24067;&#12398;&#30906;&#29575;&#20516;&#12398;&#35336;&#31639;</span>
@@ -334,7 +311,7 @@ plot(1:12, dice2, main=<span style="color: #95e454;">"1~6&#12398;&#19968;&#27096
 </div>
 
 
-<div id="org20a62e5" class="figure">
+<div id="org62bbc35" class="figure">
 <p><img src="./R-text/graph/02-unif-02.png" alt="02-unif-02.png" />
 </p>
 </div>
@@ -343,9 +320,9 @@ plot(1:12, dice2, main=<span style="color: #95e454;">"1~6&#12398;&#19968;&#27096
 </div>
 
 
-<div id="outline-container-orgb9627a2" class="outline-2">
-<h2 id="orgb9627a2">2.2 二項分布</h2>
-<div class="outline-text-2" id="text-orgb9627a2">
+<div id="outline-container-org912d87c" class="outline-2">
+<h2 id="org912d87c">2.2 二項分布</h2>
+<div class="outline-text-2" id="text-org912d87c">
 <p>
 \( n \) 回のコイン投げ試行で，\( x \) 回表のでる確率は,
 </p>
@@ -400,15 +377,17 @@ plot(c(0, 1,2,3,4), dbinom(c(0,1,2,3,4),3,1/3),type=<span style="color: #95e454;
 </pre>
 </div>
 
-<pre class="example">
-[1] 0.29629630 0.44444444 0.22222222 0.03703704 0.00000000
-</pre>
+
+<div id="org713bdf1" class="figure">
+<p><img src="./R-text/graph/02-binom.png" alt="02-binom.png" />  
+</p>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org3dac021" class="outline-2">
-<h2 id="org3dac021">2.3 正規分布</h2>
-<div class="outline-text-2" id="text-org3dac021">
+<div id="outline-container-orgb458867" class="outline-2">
+<h2 id="orgb458867">2.3 正規分布</h2>
+<div class="outline-text-2" id="text-orgb458867">
 <p>
 平均 \( \mu \), 分散 \( \sigma^2 \) の正規分布 を \( N(\mu,
   \sigma^2) \) と表わす。
@@ -419,18 +398,18 @@ R では norm(mean=\( \mu \), sd=\( \sigma \)).
 </p>
 </div>
 
-<div id="outline-container-orgb5b4f91" class="outline-3">
-<h3 id="orgb5b4f91">確率密度関数</h3>
-<div class="outline-text-3" id="text-orgb5b4f91">
+<div id="outline-container-orgf241427" class="outline-3">
+<h3 id="orgf241427">確率密度関数</h3>
+<div class="outline-text-3" id="text-orgf241427">
 <p>
 \( N(\mu,\sigma^2) \) \( \sim \) \( \frac{1}{\sqrt{2\pi\sigma^2}}  e^{-\frac{1}{2}\left({\frac{x-\mu}{\sigma}\right)^2 \)
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2bb5e9f" class="outline-3">
-<h3 id="org2bb5e9f">正規分布と二項分布の対応</h3>
-<div class="outline-text-3" id="text-org2bb5e9f">
+<div id="outline-container-org5647965" class="outline-3">
+<h3 id="org5647965">正規分布と二項分布の対応</h3>
+<div class="outline-text-3" id="text-org5647965">
 <p>
 正規分布は，二項分布 \( B(n,p) \)で \( n \) が大きいときの近似とな
 る。その対応は，\( \mu = n p \), \( \sigma^2 = n p (1-p) \) となる。
@@ -446,9 +425,9 @@ R では norm(mean=\( \mu \), sd=\( \sigma \)).
 </div>
 </div>
 
-<div id="outline-container-org391b37e" class="outline-3">
-<h3 id="org391b37e">標準化</h3>
-<div class="outline-text-3" id="text-org391b37e">
+<div id="outline-container-orgaf7e8b1" class="outline-3">
+<h3 id="orgaf7e8b1">標準化</h3>
+<div class="outline-text-3" id="text-orgaf7e8b1">
 <p>
 \( N(\mu, \sigma^2\) \) を \( N(0, 1) \) に変換するには，
 </p>
@@ -464,9 +443,9 @@ R では norm(mean=\( \mu \), sd=\( \sigma \)).
 </div>
 
 
-<div id="outline-container-org6041001" class="outline-3">
-<h3 id="org6041001">例題：正規分布の確率計算</h3>
-<div class="outline-text-3" id="text-org6041001">
+<div id="outline-container-org8647226" class="outline-3">
+<h3 id="org8647226">例題：正規分布の確率計算</h3>
+<div class="outline-text-3" id="text-org8647226">
 <div class="org-src-container">
 <pre class="src src-R">
 <span style="color: #99968b;">## </span><span style="color: #99968b;">&#20837;&#38272;&#32113;&#35336;&#23398;2&#31456;1&#31680;</span>
@@ -485,16 +464,17 @@ pnorm(44, mean=40, sd=2)
 </pre>
 </div>
 
-<pre class="example">
-[1] 0.2307994842 0.4886025119 0.2307994842 0.0243260867 0.0005720947
-[1] 0.9772499
-</pre>
+
+<div id="orga5ed4e6" class="figure">
+<p><img src="./R-text/graph/03-norm-01.png" alt="03-norm-01.png" />   
+</p>
+</div>
 </div>
 </div>
 
-<div id="outline-container-orgf7da73e" class="outline-3">
-<h3 id="orgf7da73e">s-課題-1:</h3>
-<div class="outline-text-3" id="text-orgf7da73e">
+<div id="outline-container-org246ce25" class="outline-3">
+<h3 id="org246ce25">s-課題-1:</h3>
+<div class="outline-text-3" id="text-org246ce25">
 <p>
 (1) コイン投げで表が出る確率が1/2の時，1万回投げたとき x 回表のでる
     確率分布を，Rを用いて表示してください。
@@ -515,14 +495,19 @@ curve (dnorm(x,mean=5000,sd=50),from=4800,to=5200,col=<span style="color: #95e45
 
 </pre>
 </div>
+
+
+<div id="org4442611" class="figure">
+<p><img src="./R-text/graph/02-coin-10000.png" alt="02-coin-10000.png" />
+</p>
+</div>
 </div>
 </div>
 </div>
 
-
-<div id="outline-container-org9d40b12" class="outline-2">
-<h2 id="org9d40b12">2.4 標準化と偏差値 例題</h2>
-<div class="outline-text-2" id="text-org9d40b12">
+<div id="outline-container-org224c59d" class="outline-2">
+<h2 id="org224c59d">2.4 標準化と偏差値 例題</h2>
+<div class="outline-text-2" id="text-org224c59d">
 <p>
 <b>標準化</b> \( z = \frac{(x - \mu)}{\sigma} \) 
 </p>
@@ -530,11 +515,9 @@ curve (dnorm(x,mean=5000,sd=50),from=4800,to=5200,col=<span style="color: #95e45
 </div>
 
 
-
-
-<div id="outline-container-org3742ac3" class="outline-2">
-<h2 id="org3742ac3">2.5 ポアソン分布</h2>
-<div class="outline-text-2" id="text-org3742ac3">
+<div id="outline-container-org4b83d60" class="outline-2">
+<h2 id="org4b83d60">2.5 ポアソン分布</h2>
+<div class="outline-text-2" id="text-org4b83d60">
 <p>
 R では，pois(lambda=頻度)
 </p>
@@ -564,9 +547,9 @@ R では，pois(lambda=頻度) と表わす。
 </p>
 </div>
 
-<div id="outline-container-orgcf7141b" class="outline-3">
-<h3 id="orgcf7141b">二項分布とポアソン分布の対応</h3>
-<div class="outline-text-3" id="text-orgcf7141b">
+<div id="outline-container-orge18c9d2" class="outline-3">
+<h3 id="orge18c9d2">二項分布とポアソン分布の対応</h3>
+<div class="outline-text-3" id="text-orge18c9d2">
 <p>
 Po(\(\lambda\))とB(n,p)の間には，平均: \( \lambda = np \),
 分散: \(np(1-p) = \lambda \)，となっている。
@@ -575,9 +558,9 @@ Po(\(\lambda\))とB(n,p)の間には，平均: \( \lambda = np \),
 </div>
 
 
-<div id="outline-container-orge7fde4e" class="outline-3">
-<h3 id="orge7fde4e">ポアソン分布の表示</h3>
-<div class="outline-text-3" id="text-orge7fde4e">
+<div id="outline-container-orgecdc2c8" class="outline-3">
+<h3 id="orgecdc2c8">ポアソン分布の表示</h3>
+<div class="outline-text-3" id="text-orgecdc2c8">
 <div class="org-src-container">
 <pre class="src src-R">
 x <span style="color: #e5786d;">&lt;-</span> 0:10
@@ -591,16 +574,22 @@ plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</s
 
 </pre>
 </div>
+
+
+<div id="orgfbbb46c" class="figure">
+<p><img src="./R-text/graph/02-pois.png" alt="02-pois.png" />     
+</p>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org7c2dc0c" class="outline-3">
-<h3 id="org7c2dc0c">ポアソン分布，二項分布，正規分布</h3>
+<div id="outline-container-org660bb5d" class="outline-3">
+<h3 id="org660bb5d">ポアソン分布，二項分布，正規分布</h3>
 </div>
 
-<div id="outline-container-orgf749faa" class="outline-3">
-<h3 id="orgf749faa">s-課題</h3>
-<div class="outline-text-3" id="text-orgf749faa">
+<div id="outline-container-org0425952" class="outline-3">
+<h3 id="org0425952">s-課題</h3>
+<div class="outline-text-3" id="text-org0425952">
 <p>
 3つの確率分布を同時に描いてみよう:
 </p>
@@ -612,7 +601,7 @@ plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</s
 
 x <span style="color: #e5786d;">&lt;-</span> 0:10
 plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</span>,
-     main=<span style="color: #95e454;">"&#12509;&#12450;&#12477;&#12531;&#20998;&#24067;,&#20108;&#38917;&#20998;&#24067;&#65292;&#27491;&#35215;&#20998;&#24067;"</span>,
+     main=<span style="color: #95e454;">"&#12509;&#12450;&#12477;&#12531;&#20998;&#24067;, &#20108;&#38917;&#20998;&#24067;&#65292;&#27491;&#35215;&#20998;&#24067;"</span>,
      ylab=<span style="color: #95e454;">"&#30906;&#29575;"</span>,
      xlab=<span style="color: #95e454;">"&#20986;&#29694;&#20516;"</span>,xaxt=<span style="color: #95e454;">"n"</span>)
 <span style="color: #8ac6f2; font-weight: bold;">for</span> (lamb <span style="color: #8ac6f2; font-weight: bold;">in</span> c(1,2,3,4,5,6,7,8,9,10)) {
@@ -625,7 +614,7 @@ plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</s
 </div>
 
 
-<div id="org911e36d" class="figure">
+<div id="orge404ecd" class="figure">
 <p><img src="./R-text/graph/02-3.png" alt="02-3.png" />
 </p>
 </div>
@@ -640,9 +629,9 @@ plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</s
 </div>
 
 
-<div id="outline-container-orgce1c2c5" class="outline-2">
-<h2 id="orgce1c2c5">例題: 胡瓜収穫量の標準化</h2>
-<div class="outline-text-2" id="text-orgce1c2c5">
+<div id="outline-container-org0b18a78" class="outline-2">
+<h2 id="org0b18a78">例題: 胡瓜収穫量の標準化</h2>
+<div class="outline-text-2" id="text-org0b18a78">
 <p>
 胡瓜収穫量データの読み込み
 </p>
@@ -666,7 +655,7 @@ plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</s
 </pre>
 </div>
 
-<pre class="example" id="orgdea3994">
+<pre class="example" id="orgcafb523">
        ポット番号 栽培法A 栽培法B
     1           1    3063    3157
     2           2    2275    2707
@@ -687,9 +676,9 @@ plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type=<span style="color: #95e454;">"l"</s
 </div>
 
 
-<div id="outline-container-org49a9e81" class="outline-5">
-<h5 id="org49a9e81">行列化</h5>
-<div class="outline-text-5" id="text-org49a9e81">
+<div id="outline-container-orgd91049d" class="outline-5">
+<h5 id="orgd91049d">行列化</h5>
+<div class="outline-text-5" id="text-orgd91049d">
 <div class="org-src-container">
 <pre class="src src-R">
 (mat.1.2 <span style="color: #e5786d;">&lt;-</span> matrix(as.matrix(csv.1.2[,2:3]), nrow(csv.1.2), ncol(csv.1.2)-1)) 
@@ -698,7 +687,7 @@ class(mat.1.2)
 </pre>
 </div>
 
-<pre class="example" id="orgc2ebe67">
+<pre class="example" id="org663564b">
 	    [,1] [,2]
        [1,] 3063 3157
        [2,] 2275 2707
@@ -755,16 +744,11 @@ c(<span style="color: #95e454;">"z2 (mean, var,sd): "</span>, mean(z2), var(z2),
 </div>
 
 
-<div id="outline-container-org4f3d1b2" class="outline-2">
-<h2 id="org4f3d1b2">本章のRコード</h2>
-</div>
-
-
-<div id="outline-container-org18a6dac" class="outline-2">
-<h2 id="org18a6dac">本章のRコード</h2>
-<div class="outline-text-2" id="text-org18a6dac">
+<div id="outline-container-orgea41b9e" class="outline-2">
+<h2 id="orgea41b9e">本章のRコード</h2>
+<div class="outline-text-2" id="text-orgea41b9e">
 <p>
-#+begin_src R  
+#,+begin_src R  
 ## 入門統計学2章1節
 </p>
 
@@ -918,14 +902,14 @@ for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
   points(x, dbinom(x, 100, lamb/100), type="l", col="blue")
   points(x, dnorm(x, mean=lamb, sd=sqrt(100*lamb/100*(1-lamb/100))),type="l", col="red")
 }
-#+end-src  
+#,+end_src  
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-11 木 07:36</p>
+<p class="date">Created: 2021-11-25 木 09:26</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

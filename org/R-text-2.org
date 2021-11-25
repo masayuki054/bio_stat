@@ -11,7 +11,7 @@
 
 **  一様分布
 
-#+begin_src R :tangle R-text/code/02.R
+#+begin_src R :tangle R-text/code/02.R :session *rtext* :results output :exports both
 ## 入門統計学2章1節
 
 ## 1~6 までの一様分布の確率値の計算
@@ -23,7 +23,7 @@
 : [1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667
 
 
-#+begin_src R :tangle R-text/code/02.R :results graphics :file R-text/graph/02-unif-01.png
+#+begin_src R :tangle R-text/code/02.R :results graphics :file R-text/graph/02-unif-01.png :session *rtext* :results output :exports both
 
 plot(1:6, dice, main="1~6の一様分布")
 
@@ -36,7 +36,7 @@ plot(1:6, dice, main="1~6の一様分布")
 
 ** 一様分布の和の分布
    
-#+begin_src R :tangle R-text/code/02.R
+#+begin_src R :tangle R-text/code/02.R :session *rtext* :results output :exports both
 ##
 ## * 1~6の一様分布の和の分布の確率値の計算
 ##
@@ -56,7 +56,7 @@ dice2
  :  [1] 0.00000000 0.02777778 0.05555556 0.08333333 0.11111111 0.13888889
  :  [7] 0.16666667 0.13888889 0.11111111 0.08333333 0.05555556 0.02777778
 
- #+begin_src R :tangle R-text/code/02.R :results graphics :file R-text/graph/02-unif-02.png
+ #+begin_src R :tangle R-text/code/02.R :results graphics :file R-text/graph/02-unif-2.png :session *rtext* :results output :exports both
 
 ##
 ## 1~6の一様分布の和の分布のヒストグラム
@@ -91,7 +91,7 @@ plot(1:12, dice2, main="1~6の一様分布の和の分布")
    \( B(n, p) \) の平均は \(n p\), 分散は \(np(1-p)\)。
 
     
-#+begin_src R :tangle R-text/code/02.R
+#+begin_src R :tangle R-text/code/02.R :session *rtext* :results graphics :file R-text/graph/02-binom.png :exports both
 
 ## 入門統計学2章1節
 
@@ -109,8 +109,10 @@ plot(c(0, 1,2,3,4), dbinom(c(0,1,2,3,4),3,1/3),type="h")
 
  #+end_src
 
-  #+RESULTS:
-  : [1] 0.29629630 0.44444444 0.22222222 0.03703704 0.00000000
+ #+RESULTS:
+
+
+[[./R-text/graph/02-binom.png]]  
   
 * 2.3 正規分布 
 
@@ -145,7 +147,7 @@ plot(c(0, 1,2,3,4), dbinom(c(0,1,2,3,4),3,1/3),type="h")
     
 ** 例題：正規分布の確率計算
    
-     #+begin_src R :tangle R-text/code/02.R 
+     #+begin_src R :tangle R-text/code/02.R :session *rtext* :results output graphics :file R-text/graph/03-norm-01.png :exports both :
 
 ## 入門統計学2章1節
 
@@ -163,8 +165,8 @@ pnorm(44, mean=40, sd=2)
    #+end_src
 
    #+RESULTS:
-   : [1] 0.2307994842 0.4886025119 0.2307994842 0.0243260867 0.0005720947
-   : [1] 0.9772499
+
+[[./R-text/graph/03-norm-01.png]]   
 
 ** s-課題-1:
 
@@ -173,7 +175,7 @@ pnorm(44, mean=40, sd=2)
    (2) 上記の2項分布を，正規分布で近似し，二項分布と正規分布のグラフを
        Rを用いて重ね描きしてください。
 
-   #+begin_src R :tangle R-text/code/02.R        
+   #+begin_src R :tangle R-text/code/02.R  :session *rtext* :results output graphics :file R-text/graph/02-coin-10000.png :exports both
 #
 # 2章のs-課題-1
 #
@@ -185,13 +187,14 @@ plot(4800:5200, dbinom(4800:5200,10000,1/2),col="blue",type="h");
 curve (dnorm(x,mean=5000,sd=50),from=4800,to=5200,col="red",add=T)
 
    #+end_src
-   
+
+   #+RESULTS:
+
+   [[./R-text/graph/02-coin-10000.png]]
 
 * 2.4 標準化と偏差値 例題
 
   *標準化* \( z = \frac{(x - \mu)}{\sigma} \) 
-
-  
 
       
 * 2.5 ポアソン分布
@@ -223,7 +226,7 @@ curve (dnorm(x,mean=5000,sd=50),from=4800,to=5200,col="red",add=T)
     
 ** ポアソン分布の表示
 
-   #+begin_src R :results graphics :file R-text/graph/02-pois.png  :exports both :tangle R-text/code/02.R
+   #+begin_src R :session *rtext* :results graphics :file R-text/graph/02-pois.png  :exports both :tangle R-text/code/02.R
 
 x <- 0:10
 plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
@@ -238,20 +241,22 @@ for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
 
      #+RESULTS:
 
+[[./R-text/graph/02-pois.png]]     
+
 ** ポアソン分布，二項分布，正規分布
 
 ** s-課題
 
      3つの確率分布を同時に描いてみよう:
 
-     #+begin_src R :results graphics :file R-text/graph/02-3.png :tangle R-text/code/02.R
+     #+begin_src R :session *rtext* :results graphics :file R-text/graph/02-3.png :tangle R-text/code/02.R
 ##
 ## ポアソン分布，二項分布，正規分布
 ##
 
 x <- 0:10
 plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
-     main="ポアソン分布,二項分布，正規分布",
+     main="ポアソン分布, 二項分布，正規分布",
      ylab="確率",
      xlab="出現値",xaxt="n")
 for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
@@ -371,9 +376,6 @@ c("z2 (mean, var,sd): ", mean(z2), var(z2), sqrt(var(z2)))
 
 * 本章のRコード
 
-
-* 本章のRコード
-
-#+begin_src R  
+#,+begin_src R  
 #+include: R-text/code/02.R
-#+end-src  
+#,+end_src  
