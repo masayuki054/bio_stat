@@ -104,7 +104,7 @@ hist(rnorm(n=1000, mean=50, sd=10), main="図4.8 N(50, 10)からの n=1000 の�
 
       ということを検討することになる。
 
-***** 正規母集団の母平均の推定
+*** 正規母集団の母平均の推定
 
       - 母集団分布 \( \sim N(50, 10^2)\)
       - \( n = 10 \)
@@ -122,7 +122,7 @@ mean(標本)
       #+RESULTS:
       : 44.9971134002593
 
-***** 標本分布を求める
+**** 標本平均の標本分布を求める
 
       母平均の推定を10000回繰り返し
       #+begin_src R :results output :tangle R-text/code/03.R :session *rtext* 
@@ -219,7 +219,7 @@ curve(dnorm(x, mean=this.mean, sd=this.sd/sqrt(this.sample_size)), add=TRUE, col
 
    [[./R-text/graph/04-13.png]]
 
-***** 4.5.5 不偏性
+**** 4.5.5 不偏性
 
       推定値 (e.g. 標本平均) の平均 (e.g. 標本分布の平均) は
       母集団分布によらず，
@@ -227,7 +227,7 @@ curve(dnorm(x, mean=this.mean, sd=this.sd/sqrt(this.sample_size)), add=TRUE, col
 
       標本平均は，母平均の不偏推定量である。
 
-***** 4.5.6 標準誤差
+**** 4.5.6 標準誤差
      
       推定量の標本分布を調べるときの2つの観点のうち「（2）標本分布が横
       に大きく広がっていないか」にかかわるのが標準誤差です。
@@ -304,20 +304,15 @@ curve(dnorm(x,mean=50,sd=this.sd/sqrt(10)),col="blue",add=TRUE)
 ****** 図4.14 標本サイズを大きくしたときの標本平均の標本分布
 	[[./R-text/graph/04-14.png]]
 
-***** 4.6 標本平均以外の標本分布
 
-      #+property: header-args:R :tangle RforS-Codes/04-06.R
+*** 4.6 標本分散と不偏分散の標本分布
 
-      あらゆる標本統計量に対して標本分布を考えることができる。
-    
-****** 標本分散と不偏分散の標本分布
-
-       - 不偏分散は，母分散の不偏推定量
-       - 標本分散は，標本の散布度
+    - 不偏分散は，母分散の不偏推定量
+    - 標本分散は，標本の散布度
 
        #+begin_src R :tangle R-text/code/03.R :results output :session *rtext*
 ##
-## 4.6 標本平均以外の標本分布
+## 4.6 標本分散と不偏分散の標本分布
 ##
 
 samples.no <- 10000   # いくつ標本を用いるか
@@ -343,25 +338,6 @@ c(mean(不偏分散s),sd(不偏分散s))  # 標本不偏分散達の平均と分
   : [1] 90.08901 42.72613
   : [1] 100.09890  47.47348
 
-    #+begin_src R :tangle R-text/code/03.R :results output :session *rtext*
-
-
-標本分散誤差100以上 <- ifelse(標本分散s>=100,1,0)
-不偏分散誤差100以上 <- ifelse(不偏分散s>=100,1,0)
-table(標本分散誤差100以上)
-table(不偏分散誤差100以上)
-
-     #+end_src
-
-       #+RESULTS:
-       : 標本分散誤差100以上
-       :    0    1 
-       : 6488 3512
-       : 不偏分散誤差100以上
-       :    0    1 
-       : 5667 4333
-
-
        #+begin_src R :session *rtext* :results output graphics :file R-text/graph/04-15-1.png :tangle R-text/code/03.R 
 ##
 ## 標本分散の頻度表
@@ -383,14 +359,14 @@ hist(不偏分散s, breaks=seq(0,500,10), main="不偏分散の分布")
 
        #+RESULTS:
 
-******* 図4.15 標本分散と不偏分散の分布
+**** 図4.15 標本分散と不偏分散の分布
       
   [[./R-text/graph/04-15-1.png]] [[./R-text/graph/04-15-2.png]]
 
 
      #+begin_src R :results output graphics :file R-text/graph/04-15-3.png :tangle R-text/03.R :session *rtext*
 ##
-## 標本分散の頻度表
+## 標本分散の分布
 ##
 hist(標本分散s/100*10, freq=FALSE, breaks=seq(0,50,1), main="標本分散/母分散の分布と自由度9のカイ二乗分布")
 curve(dchisq(x,9), add=TRUE, col="red")
@@ -401,7 +377,7 @@ curve(dchisq(x,9), add=TRUE, col="red")
 
      #+begin_src R :results output graphics :file R-text/graph/04-15-4.png :tangle R-text/code/03.R :session *rtext*
 ##
-## 標本不偏分散の頻度表
+## 標本不偏分散の分布
 ##
 hist((不偏分散s/100)*9, freq=FALSE, breaks=seq(0,50,1), main="不偏分散/母分散の分布と自由度9のカイ二乗分布")
 curve(dchisq(x,9), add=TRUE, col="red")

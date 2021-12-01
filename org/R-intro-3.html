@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-11 木 07:35 -->
+<!-- 2021-12-01 水 20:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>初心者用 R 言語講座演習ノート</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,21 +42,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,7 +192,6 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
@@ -204,28 +204,6 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -246,23 +224,22 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">初心者用 R 言語講座演習ノート</h1>
 <p>
 <a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
 </p>
 
-<div id="outline-container-orgefcf251" class="outline-2">
-<h2 id="orgefcf251">8. ファイルからの読み込み</h2>
-<div class="outline-text-2" id="text-orgefcf251">
+<div id="outline-container-orgc012bdf" class="outline-2">
+<h2 id="orgc012bdf">8. ファイルからの読み込み</h2>
+<div class="outline-text-2" id="text-orgc012bdf">
 </div>
-<div id="outline-container-org654d22c" class="outline-3">
-<h3 id="org654d22c">データファイルとフォルダ</h3>
-<div class="outline-text-3" id="text-org654d22c">
+<div id="outline-container-org893d050" class="outline-3">
+<h3 id="org893d050">データファイルとフォルダ</h3>
+<div class="outline-text-3" id="text-org893d050">
 <p>
 まず、以下のような数値データが書かれたファイルを用意しましょう。
 </p>
@@ -291,9 +268,9 @@
 </div>
 </div>
 
-<div id="outline-container-org84a4bf1" class="outline-3">
-<h3 id="org84a4bf1">数値列を読み込む scan 関数</h3>
-<div class="outline-text-3" id="text-org84a4bf1">
+<div id="outline-container-orgfa97dca" class="outline-3">
+<h3 id="orgfa97dca">数値列を読み込む scan 関数</h3>
+<div class="outline-text-3" id="text-orgfa97dca">
 <p>
 次に scan コマンドを使って、データを変数 x に読み込みます。
 </p>
@@ -316,9 +293,9 @@ x にファイルの数値が <b>ベクトル</b> として読み込まれてい
 </div>
 </div>
 
-<div id="outline-container-org1583d4e" class="outline-3">
-<h3 id="org1583d4e">表の読み込みを行う関数 read.table</h3>
-<div class="outline-text-3" id="text-org1583d4e">
+<div id="outline-container-org1608cda" class="outline-3">
+<h3 id="org1608cda">表の読み込みを行う関数 read.table</h3>
+<div class="outline-text-3" id="text-org1608cda">
 <p>
 以下のようなタブ区切 りのファイル batters.txt があったとします。
 </p>
@@ -405,17 +382,17 @@ read.table の引数のオプション
 </div>
 </div>
 
-<div id="outline-container-org03c7c17" class="outline-2">
-<h2 id="org03c7c17">9. ファイルへの書き出し (データの保存)</h2>
-<div class="outline-text-2" id="text-org03c7c17">
+<div id="outline-container-orgdc15ec7" class="outline-2">
+<h2 id="orgdc15ec7">9. ファイルへの書き出し (データの保存)</h2>
+<div class="outline-text-2" id="text-orgdc15ec7">
 <p>
 ファイル出力を行なう関数
 </p>
 </div>
 
-<div id="outline-container-orgbd54aa2" class="outline-3">
-<h3 id="orgbd54aa2">write関数</h3>
-<div class="outline-text-3" id="text-orgbd54aa2">
+<div id="outline-container-orgf5fcdfb" class="outline-3">
+<h3 id="orgf5fcdfb">write関数</h3>
+<div class="outline-text-3" id="text-orgf5fcdfb">
 <ul class="org-ul">
 <li>一番簡単なのが write 関数でしょう。</li>
 <li>変数に格納された数値をファイルに書き出すことができます。</li>
@@ -455,9 +432,9 @@ write(t(x), <span style="color: #95e454;">"R-intro/data/outfile2.txt"</span>, nc
 </div>
 </div>
 
-<div id="outline-container-orgcba8bab" class="outline-3">
-<h3 id="orgcba8bab">write.table関数</h3>
-<div class="outline-text-3" id="text-orgcba8bab">
+<div id="outline-container-org1af4e57" class="outline-3">
+<h3 id="org1af4e57">write.table関数</h3>
+<div class="outline-text-3" id="text-org1af4e57">
 <p>
 データフレームをファイルに出力する関数
 </p>
@@ -493,9 +470,9 @@ Kadota   2566       567
 </div>
 </div>
 
-<div id="outline-container-org258b9f3" class="outline-2">
-<h2 id="org258b9f3">10. プログラムの読み込み</h2>
-<div class="outline-text-2" id="text-org258b9f3">
+<div id="outline-container-org0af74d5" class="outline-2">
+<h2 id="org0af74d5">10. プログラムの読み込み</h2>
+<div class="outline-text-2" id="text-org0af74d5">
 <p>
 一連の手続きをファイルにしておいて、それを必要なときに実行すること
 が可能です。
@@ -541,9 +518,9 @@ source を使ってその 手続きを実行してみましょう。14
 </div>
 
 
-<div id="outline-container-orgdb0fa78" class="outline-2">
-<h2 id="orgdb0fa78">11. 関数の定義</h2>
-<div class="outline-text-2" id="text-orgdb0fa78">
+<div id="outline-container-orgf7648c2" class="outline-2">
+<h2 id="orgf7648c2">11. 関数の定義</h2>
+<div class="outline-text-2" id="text-orgf7648c2">
 <p>
 関数は数学的にはある入力に対応した出力を返すものです。
 </p>
@@ -561,9 +538,9 @@ source を使ってその 手続きを実行してみましょう。14
 </p>
 </div>
 
-<div id="outline-container-org7597911" class="outline-3">
-<h3 id="org7597911">function(引数リスト) { 関数本体 }</h3>
-<div class="outline-text-3" id="text-org7597911">
+<div id="outline-container-org3fff41f" class="outline-3">
+<h3 id="org3fff41f">function(引数リスト) { 関数本体 }</h3>
+<div class="outline-text-3" id="text-org3fff41f">
 <p>
 R では以下のよう に function を使って以下のように記述します。
 </p>
@@ -602,9 +579,9 @@ function(x, y) {
 </div>
 
 
-<div id="outline-container-org94a26f4" class="outline-3">
-<h3 id="org94a26f4">関数の一般的な定義の</h3>
-<div class="outline-text-3" id="text-org94a26f4">
+<div id="outline-container-orga8909dd" class="outline-3">
+<h3 id="orga8909dd">関数の一般的な定義の</h3>
+<div class="outline-text-3" id="text-orga8909dd">
 <div class="org-src-container">
 <pre class="src src-R">
 
@@ -616,9 +593,9 @@ function(x, y) {
 </div>
 </div>
 
-<div id="outline-container-org0e791e0" class="outline-4">
-<h4 id="org0e791e0">課題 11:</h4>
-<div class="outline-text-4" id="text-org0e791e0">
+<div id="outline-container-orgdbf1bb6" class="outline-4">
+<h4 id="orgdbf1bb6">課題 11:</h4>
+<div class="outline-text-4" id="text-orgdbf1bb6">
 <p>
 f(x, a, b, c) = ax2 + bx + c を R の関数として実装しましょう。
 f(4, 3, 2, 1)はいくつ になりますか。
@@ -630,7 +607,7 @@ f(4, 3, 2, 1)はいくつ になりますか。
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-11-11 木 07:35</p>
+<p class="date">Created: 2021-12-01 水 20:49</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

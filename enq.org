@@ -1,9 +1,38 @@
-#+setupfile: ../org/info/index-bigblow-header.setup
-#+include: ../org/info/common-header.org
+#+setupfile: ./org/info/index-bigblow-header.setup
+#+include: ./org/info/common-header.org
 #+AUTHOR: 鈴木正幸，非常勤講師
 #+Title: 生物統計学 アンケート
 #+OPTIONS: tex:t 
 #+property: header-args:R :session *biot* :results output :exports both
+
+* 11/25 6
+
+** 理解したこと、印象に残ったこと
+- Rでのヒストグラムの書き方
+- 表の作成のコマンドを学べました
+- ガラフの書き方
+- 正規分布のグラフの書き方
+- Rの少し発展的な操作
+- グラフの書き方が分かった
+
+** 理解できなかったこと
+- 手動で入力するとほとんどエラーになってしまう
+- 標本分布を求めるコードの書き方とその原理
+
+
+** 質問・要望・意見をお願いします．
+- 先生のスクリプト中に良く入っている、コードの改行のやり方（for文書く
+  時などの実行せずに改行する方法）が分かりません。
+
+- 授業スピードがすこし速いとおもった
+
+
+
+
+
+
+
+
 
 * 11/11 5回目
 
@@ -314,7 +343,6 @@
   た。Rの時間に関してはもう少しスピードが速くても良いようにも思う。
 
 - プログラミングができるようになるには？
-
 
 
 
@@ -775,7 +803,6 @@
 
 
 
-  
 * 10/14 2回目
 
 ** 理解したこと、印象に残ったこと
