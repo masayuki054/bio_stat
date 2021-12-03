@@ -20,28 +20,40 @@
 
 ** 毎回のアンケート
    [[./enq.org]]
-   
-* 今日(12/02) の講義
+
+* Todo 今日(12/09) の講義
 
 ** Rによる入門統計学
-
    - スライドまたは PDF を手元に準備
    - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org
-     
 *** 入門統計学の4章
-**** 信頼区間の推定 [0/5]
-     - [ ] 大数の法則と中心極限定理
-     - [ ] 信頼区間の推定
-     - [ ] 母平均の推定，母分散既知
+**** 信頼区間の推定 [3/5]
+     - [X] 大数の法則と中心極限定理
+     - [X] 信頼区間の推定
+     - [X] 母平均の推定，母分散既知
      - [ ] 母平均の推定，母分散未知
      - [ ] 母比率の推定，母分布未知
+*** 入門統計学の5章
+**** カイ二乗分布とF分布 [0/3]
+     - [ ] カイ二乗分布とF分布 
+     - [ ] 母分散の区間推定
+     - [ ] F分布 
 
-***** まとめとRの演習
+
+*** まとめとRの演習
     - http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html
+      - [X] 信頼区間の推定
+      - [X] 母平均の推定，母分散既知
+      - [ ] 母平均の推定，母分散未知
+      - [ ] 母平均の推定，母分布未知	
+      - [ ] 母比率の推定，母分布未知
     
 *** 標本と統計的推測 (6回目のまとめ)
-
     - http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html
+      - [X] 大数の法則と中心極限定理
+      - [X] 標本平均の従う分布
+      - [X] 標本不偏分散の従う分布	
+
     - http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html
 
     
@@ -58,8 +70,55 @@
      - [ ] [[./org/R-intro-4.org]] - 12グラフ
      - [X] [[./org/R-intro-5.org]] - 13構文
      - [ ] [[./org/R-intro-6.org]] - 14その他
+   
 
-* 講義記録  
+* 講義記録
+** 7th 12/02 
+
+*** Rによる入門統計学
+
+   - スライドまたは PDF を手元に準備
+   - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org
+     
+**** 入門統計学の4章
+***** 信頼区間の推定 [3/5]
+     - [X] 大数の法則と中心極限定理
+     - [X] 信頼区間の推定
+     - [X] 母平均の推定，母分散既知
+     - [ ] 母平均の推定，母分散未知
+     - [ ] 母比率の推定，母分布未知
+
+****** まとめとRの演習
+      - http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html
+       - [X] 大数の法則と中心極限定理
+       - [X] 信頼区間の推定
+       - [X] 母平均の推定，母分散既知
+       - [ ] 母平均の推定，母分散未知
+       - [ ] 母比率の推定，母分布未知
+    
+**** 標本と統計的推測 (6回目のまとめ)
+
+    - http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html
+      - [X] 標本平均が従う分布
+      - [X] 標本不偏分散が従う分布
+
+    - http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html
+
+    
+*** R 入門
+   [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
+
+   先生の演習ノート [4/6]
+     - [X] [[./org/R-intro-1.org]] - 基本操作
+     - [X] [[./org/R-intro-2.org]] - データ処理
+     - [X] [[./org/R-intro-3.org]]
+       - [X] 89 ファイルの読み書き  12/02
+       - [X] 10 スクリプトの実行    12/02
+       - [X] 11 関数を作る
+     - [ ] [[./org/R-intro-4.org]] - 12グラフ
+     - [X] [[./org/R-intro-5.org]] - 13構文
+     - [ ] [[./org/R-intro-6.org]] - 14その他
+
 ** 6th 11/25
 
 *** Done RStudio を使いましょう
