@@ -386,8 +386,3 @@
   - http://github.com/masayuki054/bio_stat/
     講義保存場所
 
-  - [[./hatena/enq.org]] 
-    アンケート
-
-
-
