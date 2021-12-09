@@ -73,7 +73,6 @@
      - [X] [[./org/R-intro-5.org]] - 13構文
      - [ ] [[./org/R-intro-6.org]] - 14その他
    
-
 * 講義記録
 ** 7th 12/02 
 
@@ -107,7 +106,8 @@
     - http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html
 
     
-*** R 入門
+*** R 入門g
+
    [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
 
    先生の演習ノート [4/6]
@@ -429,13 +429,30 @@
 
 * RStudio を使いましょう
 
-  講師も RStudio が使える環境を手に入れたので，
+
+講師も RStudio が使える環境を手に入れたので，
   気付いたことを書き留めようと思います。
   
    - 生物統計用のプロジェクトを作ろう
    - 毎回のRのプログラムを，R-スクリプトとして残そう
-     
 
+     
+** session
+
+*** file
+
+**** file
+
+***** script
+
+**** import data set
+*** project
+
+*** session
+*** working directory
+*** workspace
+
+** view
 * 関連サイト
 
   - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/
