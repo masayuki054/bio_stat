@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-12-01 水 20:50 -->
+<!-- 2021-12-09 木 09:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>入門統計学 5章 \( \chi^2 \) 分布と \( F \) 分布</title>
@@ -252,21 +252,21 @@
 </ul></dd>
 </dl>
 
-<div id="outline-container-orgc3c6d08" class="outline-2">
-<h2 id="orgc3c6d08">5.1 \( \chi^2 \) 分布</h2>
-<div class="outline-text-2" id="text-orgc3c6d08">
+<div id="outline-container-orgef941bf" class="outline-2">
+<h2 id="orgef941bf">5.1 \( \chi^2 \) 分布</h2>
+<div class="outline-text-2" id="text-orgef941bf">
 <p>
 工場で製造される製品の容量のバラツキは？
 </p>
 </div>
 
-<div id="outline-container-orgf0d7e3a" class="outline-3">
-<h3 id="orgf0d7e3a">データの平方和</h3>
-<div class="outline-text-3" id="text-orgf0d7e3a">
+<div id="outline-container-org85570cb" class="outline-3">
+<h3 id="org85570cb">データの平方和</h3>
+<div class="outline-text-3" id="text-org85570cb">
 </div>
-<div id="outline-container-org0085502" class="outline-4">
-<h4 id="org0085502">標準正規母集団からの無作為標本</h4>
-<div class="outline-text-4" id="text-org0085502">
+<div id="outline-container-org69098fb" class="outline-4">
+<h4 id="org69098fb">標準正規母集団からの無作為標本</h4>
+<div class="outline-text-4" id="text-org69098fb">
 <p>
 \( X_{i=1:n} \) 標準正規母集団からの無作為標本
 </p>
@@ -278,13 +278,13 @@
 </div>
 
 
-<div id="outline-container-orgb128f52" class="outline-4">
-<h4 id="orgb128f52">\( \chi^2 \) 統計量</h4>
-<div class="outline-text-4" id="text-orgb128f52">
+<div id="outline-container-orgc5aabbb" class="outline-4">
+<h4 id="orgc5aabbb">\( \chi^2 \) 統計量</h4>
+<div class="outline-text-4" id="text-orgc5aabbb">
 </div>
-<div id="outline-container-org13234a4" class="outline-5">
-<h5 id="org13234a4">標準化</h5>
-<div class="outline-text-5" id="text-org13234a4">
+<div id="outline-container-orgf7e3991" class="outline-5">
+<h5 id="orgf7e3991">標準化</h5>
+<div class="outline-text-5" id="text-orgf7e3991">
 <p>
 \( X \sim N(\mu, \sigma^2) \) のとき， \( Z = \frac{X-\mu}{\sigma} \) \( \sim N(0, 1) \) となる。
 </p>
@@ -296,9 +296,9 @@
 </div>
 </div>
 
-<div id="outline-container-org10265f9" class="outline-5">
-<h5 id="org10265f9">標準化された平方和の分布</h5>
-<div class="outline-text-5" id="text-org10265f9">
+<div id="outline-container-org2d16b28" class="outline-5">
+<h5 id="org2d16b28">標準化された平方和の分布</h5>
+<div class="outline-text-5" id="text-org2d16b28">
 <p>
 教科書等では，統計量も分布も区別せずに \( \chi^2 \) で記述していますが，
 ここでは，標本サイズ \( n \) の統計量は \(K_{(n)}^2\), 自由度\(n-1\)のカイ二乗分布を
@@ -323,9 +323,9 @@
 </div>
 </div>
 
-<div id="outline-container-org16428d1" class="outline-5">
-<h5 id="org16428d1">\( \chi^2 \) 分布</h5>
-<div class="outline-text-5" id="text-org16428d1">
+<div id="outline-container-org773470a" class="outline-5">
+<h5 id="org773470a">\( \chi^2 \) 分布</h5>
+<div class="outline-text-5" id="text-org773470a">
 <ul class="org-ul">
 <li>非対称, 平均は中央にない</li>
 </ul>
@@ -342,7 +342,7 @@ legend(2, 0.7, c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;=1"</spa
 </div>
 
 
-<div id="org2f287f9" class="figure">
+<div id="org9d570fc" class="figure">
 <p><img src="./R-text/graph/05-chisq.png" alt="05-chisq.png" />
 </p>
 </div>
@@ -353,13 +353,13 @@ legend(2, 0.7, c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;=1"</spa
 </div>
 
 
-<div id="outline-container-org9d40fd1" class="outline-2">
-<h2 id="org9d40fd1">5.2 母分散の区間推定</h2>
-<div class="outline-text-2" id="text-org9d40fd1">
+<div id="outline-container-org3298e9b" class="outline-2">
+<h2 id="org3298e9b">5.2 母分散の区間推定</h2>
+<div class="outline-text-2" id="text-org3298e9b">
 </div>
-<div id="outline-container-org26b4b2f" class="outline-3">
-<h3 id="org26b4b2f">前提</h3>
-<div class="outline-text-3" id="text-org26b4b2f">
+<div id="outline-container-org011b8fa" class="outline-3">
+<h3 id="org011b8fa">前提</h3>
+<div class="outline-text-3" id="text-org011b8fa">
 <ul class="org-ul">
 <li>母集団 \( \sim N(\mu, \sigma^2) \),</li>
 <li>\( \mu \), \( \sigma^2 \) は未知</li>
@@ -367,9 +367,9 @@ legend(2, 0.7, c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;=1"</spa
 </div>
 </div>
 
-<div id="outline-container-org131bf43" class="outline-3">
-<h3 id="org131bf43">分散の推定量 (標本不偏分散)</h3>
-<div class="outline-text-3" id="text-org131bf43">
+<div id="outline-container-org453ccce" class="outline-3">
+<h3 id="org453ccce">分散の推定量 (標本不偏分散)</h3>
+<div class="outline-text-3" id="text-org453ccce">
 <p>
 分散の推定量 \( S^2_{(n)} \) (以下，自明なときは標本サイズ \((n)\)を省く)は，
 </p>
@@ -380,9 +380,9 @@ legend(2, 0.7, c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;=1"</spa
 </div>
 </div>
 
-<div id="outline-container-org6a788c4" class="outline-3">
-<h3 id="org6a788c4">信頼区間</h3>
-<div class="outline-text-3" id="text-org6a788c4">
+<div id="outline-container-org8cc9bfa" class="outline-3">
+<h3 id="org8cc9bfa">信頼区間</h3>
+<div class="outline-text-3" id="text-org8cc9bfa">
 <p>
 \( P( u \leq (n-1) S^2/\sigma^2 \leq v ) = 1 - \alpha \)
 </p>
@@ -401,20 +401,24 @@ legend(2, 0.7, c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;=1"</spa
 </div>
 </div>
 
-<div id="outline-container-orgcacca08" class="outline-3">
-<h3 id="orgcacca08">95% 信頼区間の両端点</h3>
-<div class="outline-text-3" id="text-orgcacca08">
+<div id="outline-container-orgb9d2a0e" class="outline-3">
+<h3 id="orgb9d2a0e">95% 信頼区間の両端点</h3>
+<div class="outline-text-3" id="text-orgb9d2a0e">
 <div class="org-src-container">
 <pre class="src src-R"><span style="color: #99968b;">###</span>
 <span style="color: #99968b;">### </span>
 <span style="color: #99968b;">###</span>
+
+print(c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;"</span>, <span style="color: #95e454;">""</span>, <span style="color: #95e454;">"&#19979;&#38480;"</span>, <span style="color: #95e454;">"&#19978;&#38480;"</span>))
+
 <span style="color: #8ac6f2; font-weight: bold;">for</span> (d <span style="color: #8ac6f2; font-weight: bold;">in</span> c(4,8,16,32,64)) {
-  print(c(d), qchisq(0.025,df=d), qchisq(0.975,df=d)))
+  print(c(d, qchisq(0.025,df=d), qchisq(0.975,df=d)))
 }
 </pre>
 </div>
 
 <pre class="example">
+[1] "自由度" "下限"   "上限"
 [1]  4.0000000  0.4844186 11.1432868
 [1]  8.000000  2.179731 17.534546
 [1] 16.000000  6.907664 28.845351
@@ -425,9 +429,9 @@ legend(2, 0.7, c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;=1"</spa
 </div>
 
 
-<div id="outline-container-orgc875f40" class="outline-3">
-<h3 id="orgc875f40">90% 信頼区間の両端点</h3>
-<div class="outline-text-3" id="text-orgc875f40">
+<div id="outline-container-org548cb59" class="outline-3">
+<h3 id="org548cb59">90% 信頼区間の両端点</h3>
+<div class="outline-text-3" id="text-org548cb59">
 <div class="org-src-container">
 <pre class="src src-R"><span style="color: #99968b;">###</span>
 <span style="color: #99968b;">### </span>
@@ -448,9 +452,10 @@ legend(2, 0.7, c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;=1"</spa
 </div>
 </div>
 
-<div id="outline-container-orgeccfe07" class="outline-3">
-<h3 id="orgeccfe07">例題 (入門統計学5.2-p99)</h3>
-<div class="outline-text-3" id="text-orgeccfe07">
+
+<div id="outline-container-orgc07fe5a" class="outline-3">
+<h3 id="orgc07fe5a">例題 (入門統計学5.2-p99)</h3>
+<div class="outline-text-3" id="text-orgc07fe5a">
 <div class="org-src-container">
 <pre class="src src-R"><span style="color: #99968b;">###</span>
 <span style="color: #99968b;">### </span>
@@ -487,9 +492,9 @@ X-squared = 5.5918, df = 4, p-value = 0.2318
 </div>
 
 
-<div id="outline-container-orgd2b8542" class="outline-2">
-<h2 id="orgd2b8542">標本不偏分散 (\( \hat{s}^2 \))の標本分布を求める</h2>
-<div class="outline-text-2" id="text-orgd2b8542">
+<div id="outline-container-orgd1fd63d" class="outline-2">
+<h2 id="orgd1fd63d">標本不偏分散 (\( \hat{s}^2 \))の標本分布を求める</h2>
+<div class="outline-text-2" id="text-orgd1fd63d">
 <ul class="org-ul">
 <li>不偏分散は，母分散の不偏推定量</li>
 <li>標本分散は，標本の散布度</li>
@@ -533,11 +538,11 @@ hist(&#19981;&#20559;&#20998;&#25955;s, breaks=seq(0,500,10), main=<span style="
 </div>
 </div>
 
-<div id="outline-container-orge891ccf" class="outline-4">
-<h4 id="orge891ccf">不偏分散の分布</h4>
-<div class="outline-text-4" id="text-orge891ccf">
+<div id="outline-container-org34bddae" class="outline-4">
+<h4 id="org34bddae">不偏分散の分布</h4>
+<div class="outline-text-4" id="text-org34bddae">
 
-<div id="org27f8668" class="figure">
+<div id="orgb7d5f18" class="figure">
 <p><img src="./R-text/graph/05-var-hist.png" alt="05-var-hist.png" />
 </p>
 </div>
@@ -552,16 +557,16 @@ curve(dchisq(x,9), add=<span style="color: #92a65e; font-weight: bold;">TRUE</sp
 </div>
 
 
-<div id="orgdb8ad27" class="figure">
+<div id="org679e32e" class="figure">
 <p><img src="./R-text/graph/05-chi2.png" alt="05-chi2.png" /> 
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org45d1118" class="outline-4">
-<h4 id="org45d1118">\( \chi^2_{(n-1)} \sim \frac{(n-1) \hat{\sigma}^2}{\sigma^2} \)</h4>
-<div class="outline-text-4" id="text-org45d1118">
+<div id="outline-container-org2842de3" class="outline-4">
+<h4 id="org2842de3">\( \chi^2_{(n-1)} \sim \frac{(n-1) \hat{\sigma}^2}{\sigma^2} \)</h4>
+<div class="outline-text-4" id="text-org2842de3">
 <dl class="org-dl">
 <dt>信頼係数</dt><dd>\( 1 - \alpha \),</dd>
 </dl>
@@ -570,9 +575,9 @@ curve(dchisq(x,9), add=<span style="color: #92a65e; font-weight: bold;">TRUE</sp
 </div>
 
 
-<div id="outline-container-orgc7cd5c0" class="outline-2">
-<h2 id="orgc7cd5c0">F 分布</h2>
-<div class="outline-text-2" id="text-orgc7cd5c0">
+<div id="outline-container-org8744460" class="outline-2">
+<h2 id="org8744460">F 分布</h2>
+<div class="outline-text-2" id="text-org8744460">
 <p>
 二つの母集団から抽出した二種の標本からの統計量が従う分布
 </p>
@@ -586,9 +591,9 @@ F統計量 :: \( F_{(\nu_1, \nu_2)} = \frac{\chi^2_{(\nu_1)}/{\nu_1}}{\chi^2_{(\
 </p>
 </div>
 
-<div id="outline-container-org903895a" class="outline-3">
-<h3 id="org903895a">F 分布のグラフ</h3>
-<div class="outline-text-3" id="text-org903895a">
+<div id="outline-container-org6cf8882" class="outline-3">
+<h3 id="org6cf8882">F 分布のグラフ</h3>
+<div class="outline-text-3" id="text-org6cf8882">
 <div class="org-src-container">
 <pre class="src src-R">
 curve(df(x,1,4),from=0, to=10, lty=1, col=1,main=<span style="color: #95e454;">"&#33258;&#30001;&#24230;&#12395;&#12424;&#12387;&#12390;&#24418;&#12364;&#22793;&#12427;F&#20998;&#24067;"</span>)
@@ -600,7 +605,7 @@ legend(2, 0.7, c(<span style="color: #95e454;">"&#33258;&#30001;&#24230;=(1,4)"<
 </div>
 
 
-<div id="org00a64cb" class="figure">
+<div id="org2cdd9bc" class="figure">
 <p><img src="./R-text/graph/05-F-1.png" alt="05-F-1.png" />
 </p>
 </div>
@@ -615,16 +620,16 @@ curve(df(x,20,1),from=0, to=4, lty=1,col=1)
 </div>
 
 
-<div id="org731cf57" class="figure">
+<div id="orge3e5f94" class="figure">
 <p><img src="./R-text/graph/05-F-2.png" alt="05-F-2.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2634e85" class="outline-3">
-<h3 id="org2634e85">確率密度関数</h3>
-<div class="outline-text-3" id="text-org2634e85">
+<div id="outline-container-org31cab40" class="outline-3">
+<h3 id="org31cab40">確率密度関数</h3>
+<div class="outline-text-3" id="text-org31cab40">
 <p>
 \( f(F) = \frac{\Gamma(\frac{\nu_1+\nu_2}{2})F^{\frac{\nu_1-2}{2}}}
 {\Gamma(\nu_1/2) \Gamma(\nu_2/2) (1+\nu_1/\nu_2 F)^{(\nu_1+\nu_2)/2}}
@@ -646,9 +651,9 @@ curve(df(x,20,1),from=0, to=4, lty=1,col=1)
 </div>
 </div>
 
-<div id="outline-container-org78d2157" class="outline-2">
-<h2 id="org78d2157">5.4 特別なF値</h2>
-<div class="outline-text-2" id="text-org78d2157">
+<div id="outline-container-org961f148" class="outline-2">
+<h2 id="org961f148">5.4 特別なF値</h2>
+<div class="outline-text-2" id="text-org961f148">
 <p>
 F統計量 :: \( F_{(\nu_1, \nu_2)} = \frac{\chi^2_{(\nu_1)}/{\nu_1}}{\chi^2_{(\nu_2)}/{\nu_2}} \)
 </p>
@@ -679,9 +684,9 @@ F統計量 :: \( F_{(\nu_1, \nu_2)} = \frac{\chi^2_{(\nu_1)}/{\nu_1}}{\chi^2_{(\
 </div>
 </div>
 
-<div id="outline-container-orgaa08f62" class="outline-2">
-<h2 id="orgaa08f62">F と t の関係</h2>
-<div class="outline-text-2" id="text-orgaa08f62">
+<div id="outline-container-orgdafda68" class="outline-2">
+<h2 id="orgdafda68">F と t の関係</h2>
+<div class="outline-text-2" id="text-orgdafda68">
 <p>
 標本サイズ n とし，統計量に n を明示し，
 </p>
@@ -699,12 +704,22 @@ F統計量 :: \( F_{(\nu_1, \nu_2)} = \frac{\chi^2_{(\nu_1)}/{\nu_1}}{\chi^2_{(\
 <p>
 \(T_{(n)} = \frac{\overline{Z}_(n)} {{S_{(n)}}/{\sigma}} \)
 </p>
+
+<p>
+\(T_{(n)^2} = \frac{\overline{Z}_(n)^2} {{S_{(n)}^2}/{\sigma^2 }}
+   = \frac{\chi^2_{1}/1}{\chi^2_{n-1}/(n-1)} = F_{(1,(n-1))}   \)
+</p>
+
+
+<p>
+\(   
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-12-01 水 20:50</p>
+<p class="date">Created: 2021-12-09 木 09:27</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
