@@ -464,3 +464,9 @@
   - http://github.com/masayuki054/bio_stat/
     講義保存場所
 
+* メモ
+
+   -  講義メモ [[https://drive.google.com/drive/u/0/folders/1nGs6svr0actrLPmtz6onPuj2eUrHMQ8M][note - Google ドライブ]]
+
+   - 中心極限定理
+      http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf
