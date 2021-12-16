@@ -1,0 +1,312 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\hypertarget{ux30c0ux30a4ux30baux5730ux4e0aux90e8ux4e7eux7269ux91cdux30c7ux30fcux30bf}{%
+\subsubsection{ダイズ地上部乾物重データ}\label{ux30c0ux30a4ux30baux5730ux4e0aux90e8ux4e7eux7269ux91cdux30c7ux30fcux30bf}}
+
+ダイズの植物体に圃場環境の不均一性がどのように現れるかの実験
+
+1971年に、長野県塩尻市 にある中信試験場（現在は，長野県野菜・花卉試験
+場）で実施された。一枚の圃場（南北約 8m、東西約 18m）で、畝は南北に作
+り、畝間は約75cm、株間は約15cmの間隔に作られた植穴に2粒ずつ播種し、間
+引きと補植で1本仕立てにした。各個体は、根際で切断され、地上部を乾燥し
+た後、地上部全重(g)、粒重(g)、主茎長(cm)、分枝数(本)の4形質が測定され
+た。
+
+今回使用するデータは、その北西部分にあたる12畝、25株の地上部全重デー
+タをそれらの位置に対応して並べたものである。すなわち、データ行 列
+の左側と上側は道路に面しているが、右側と下側は他のダイズ個体に面し
+ていた。
+
+データダウンロード \textless{}./bio/data/daizu.csv\textgreater{}
+
+\hypertarget{ux30c0ux30a4ux30baux30c7ux30fcux30bfux8aadux307fux8fbcux307f}{%
+\subsubsection{ダイズデータ読み込み}\label{ux30c0ux30a4ux30baux30c7ux30fcux30bfux8aadux307fux8fbcux307f}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    daizu.df <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"bio/data/daizu.csv"}\NormalTok{)     }\CommentTok{# daizu.csv ファイル読み込み}
+    \KeywordTok{dim}\NormalTok{(daizu.df)                }\CommentTok{# データの大きさ}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 25 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{head}\NormalTok{(daizu.df)               }\CommentTok{# 最初の一部の行のみを表示}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   ridge1 ridge2 ridge3 ridge4 ridge5 ridge6 ridge7 ridge8 ridge9 ridge10
+## 1    176    171    173    194     NA    130    168    143    100     167
+## 2    119     75     83    154    140    125     99    106    109      85
+## 3    101    107     69     77    103    107     76     70     73      74
+## 4     77     90    103     46     85     62     75     83     68      68
+## 5     75     81     69     75     44     59     51     76     58      84
+## 6     77     70     62     10     40     58     66     28     62      71
+##   ridge11 ridge12
+## 1     160     134
+## 2     110      44
+## 3      84      70
+## 4      53      71
+## 5      58      73
+## 6      62      48
+\end{verbatim}
+
+\hypertarget{daizu.dfux306fdata.frameux306aux306eux3067ux884cux5217ux306bux5909ux63dbux3059ux308b}{%
+\subsubsection{daizu.dfはdata.frameなので行列に変換する}\label{daizu.dfux306fdata.frameux306aux306eux3067ux884cux5217ux306bux5909ux63dbux3059ux308b}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    daizu.mat <-}\StringTok{ }\KeywordTok{as.matrix}\NormalTok{(daizu.df)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux30d9ux30afux30c8ux30ebux5316}{%
+\subsubsection{ベクトル化}\label{ux30d9ux30afux30c8ux30ebux5316}}
+
+1次元数値データにする
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    daizu <-}\StringTok{ }\KeywordTok{as.vector}\NormalTok{(daizu.mat)}
+    \KeywordTok{length}\NormalTok{(daizu)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 300
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{summary}\NormalTok{(daizu)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##    1.00   54.00   65.00   67.68   75.00  194.00       2
+\end{verbatim}
+
+\hypertarget{ux6b20ux6e2cux5024ux306eux51e6ux7406}{%
+\subsubsection{欠測値の処理}\label{ux6b20ux6e2cux5024ux306eux51e6ux7406}}
+
+NA(Not Avairable) が含まれていると計算してくれないので、
+NA部分を除く(remove)という命令、na.rm=Tを付け加える必要がある。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{mean}\NormalTok{(daizu)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{mean}\NormalTok{(daizu, }\DataTypeTok{na.rm=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 67.68121
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{sd}\NormalTok{(daizu, }\DataTypeTok{na.rm=}\NormalTok{T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 26.1403
+\end{verbatim}
+
+\hypertarget{ux30c0ux30a4ux30baux30c7ux30fcux30bfux306eux7bb1ux30d2ux30b2ux56f3}{%
+\subsubsection{ダイズデータの箱ヒゲ図}\label{ux30c0ux30a4ux30baux30c7ux30fcux30bfux306eux7bb1ux30d2ux30b2ux56f3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{boxplot}\NormalTok{(daizu)}
+    \KeywordTok{title}\NormalTok{(}\DataTypeTok{main=}\StringTok{"ダイズデータの箱ひげ図"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{daizu_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{ux30c0ux30a4ux30baux30c7ux30fcux30bfux3092ux983bux5ea6ux8868}{%
+\subsubsection{ダイズデータを頻度表}\label{ux30c0ux30a4ux30baux30c7ux30fcux30bfux3092ux983bux5ea6ux8868}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{hist}\NormalTok{(daizu, }\DataTypeTok{breaks=}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{200}\NormalTok{, }\DataTypeTok{by=}\DecValTok{5}\NormalTok{), }\DataTypeTok{main=}\StringTok{"ダイズデータの頻度表"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{daizu_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\hypertarget{ux30c0ux30a4ux30baux30c7ux30fcux30bfux306eux884cux5e73ux5747ux3084ux5217ux5e73ux5747ux3092ux6c42ux308b}{%
+\subsubsection{ダイズデータの行平均や列平均を求る。}\label{ux30c0ux30a4ux30baux30c7ux30fcux30bfux306eux884cux5e73ux5747ux3084ux5217ux5e73ux5747ux3092ux6c42ux308b}}
+
+これは、apply()関数を用いる。 - mean の他に max, sum, sd,
+など色々な操作もできる。 - na.rm=T も忘れずに入れる。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    rowmean <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(daizu.df, }\DecValTok{1}\NormalTok{, mean, }\DataTypeTok{na.rm=}\NormalTok{T); rowmean       }\CommentTok{# 行平均}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 156.00000 104.08333  84.25000  73.41667  66.91667  54.50000  66.83333
+##  [8]  57.91667  64.00000  60.75000  62.25000  60.54545  61.08333  61.00000
+## [15]  61.83333  55.50000  60.08333  63.33333  62.16667  59.00000  58.66667
+## [22]  55.33333  54.83333  64.83333  69.66667
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    colmean <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(daizu.df, }\DecValTok{2}\NormalTok{, mean, }\DataTypeTok{na.rm=}\NormalTok{T); colmean       }\CommentTok{# 列平均}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  ridge1  ridge2  ridge3  ridge4  ridge5  ridge6  ridge7  ridge8  ridge9 ridge10 
+##  78.360  76.720  71.200  68.120  64.000  67.640  66.160  62.040  62.640  65.625 
+## ridge11 ridge12 
+##  67.520  61.920
+\end{verbatim}
+
+\hypertarget{section}{%
+\subsubsection{}\label{section}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{plot}\NormalTok{(rowmean, }\DataTypeTok{type=}\StringTok{"b"}\NormalTok{, }\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{daizu_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{plot}\NormalTok{(colmean, }\DataTypeTok{type=}\StringTok{"b"}\NormalTok{, }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{daizu_files/figure-latex/unnamed-chunk-8-2.pdf}
+
+\end{document}

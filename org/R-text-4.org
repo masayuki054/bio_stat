@@ -18,7 +18,7 @@
 
   20人の患者への投与により，増加の程度 (%) の標本値が得られた:
 
-#+begin_src R :results output :session *stext* 
+#+begin_src R :results output :session *rtext* 
 ##
 ## 正規分布からの標本
 ##
@@ -68,7 +68,7 @@
 
 **** 危険度0.05, 信頼度0.95となる \(z^*\) 
 
-     #+begin_src R :results output :session *stext*
+     #+begin_src R :results output :session *rtext*
 ##
 ##  危険度・信頼度に対する z^* を求める
 ##
@@ -127,7 +127,7 @@ pnorm(zs)  ## [-\infty, zs]となる確率
     母平均 29.2, 母分散 1 の正規分布からの20個のデータからなる標本を作
     る:
     
-#+begin_src R :results output :session *stext* 
+#+begin_src R :results output :session *rtext* 
 
 (sample <- rnorm(20, mean=29.2, sd=1))
 
@@ -136,9 +136,8 @@ pnorm(zs)  ## [-\infty, zs]となる確率
   
 **** 標準正規分布で信頼度(1-\alpha)の信頼区間 (上記の説明通り)求める
 
-      #+begin_src R :results output :session *stext* 
+      #+begin_src R :results output :session *rtext* 
 ## 
-
 ## 標準正規分布での信頼度(1-alpha)の信頼区間
 z_interval <- function (alpha) {
   c(qnorm(1-alpha/2), qnorm(alpha/2))
@@ -173,7 +172,7 @@ est_conf_interval(0.05, sample, 1)
  Rを用いれば，N(標本平均，sigma^2) の分布上での上下限座標を求めるのは簡
  単なので，標準化を行なわず，標本平均の正規分布上で直接計算でき:
      
-      #+begin_src R :results output :session *stext*
+      #+begin_src R :results output :session *rtext*
 
 ## N(標本平均，sigma^2) の分布上で求める
 ## 母平均の区間推定，分散既知
@@ -228,7 +227,7 @@ est_conf_interval_2(0.05, sample, 1)
 
      下記のRによる計算では，具体的は自由度の値が必要となる。
           
-     #+begin_src R :results output :session *stext* 
+     #+begin_src R :results output :session *rtext* 
 degree_of_free <- length(sample)-1
 (tns <- qt(0.975,df=degree_of_free)) ## 下側97.5%, 上側2.5% 点
 pt(tns,degree_of_free)  ## [-\infty, zs]となる確率
@@ -279,7 +278,7 @@ pt(tns, df=degree_of_free)  ## [-\infty, zs]となる確率
 
 **** t_{n-1}分布で信頼度(1-alpha)の信頼区間 (上記の説明通り)求める
 
-      #+begin_src R :results output :session *stext* 
+      #+begin_src R :results output :session *rtext* 
 ## 
 
 ## t-分布での信頼度(1-alpha)の信頼区間
@@ -361,7 +360,7 @@ est_t_conf_interval(0.05, sample)
      \leq  \overline{X_{(n)}} + z^{*}\sqrt{S^2/n} \right) \)
      
 
-     #+begin_src R :session *stext* :results output :exports both :tangle Rtext/code/01.R
+     #+begin_src R :session *rtext* :results output :exports both :tangle Rtext/code/01.R
 
 tz_interval <- function (alpha, sample) {
   c(qnorm(1-alpha/2), qnorm(alpha/2))
@@ -579,7 +578,7 @@ est_tz_conf_interval(0.05, sample)
      
 ** 95% 信頼区間の両端点
 
-#+begin_src R :results output :session *stext* 
+#+begin_src R :results output :session *rtext* 
 ###
 ### 
 ###
@@ -598,7 +597,7 @@ for (d in c(4,8,16,32,64)) {
 
 ** 90% 信頼区間の両端点
 
-#+begin_src R :results output :session *stext* 
+#+begin_src R :results output :session *rtext* 
 ###
 ### 
 ###

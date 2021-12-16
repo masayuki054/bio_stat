@@ -1,0 +1,92 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+### ダイズ地上部乾物重データ
+
+   ダイズの植物体に圃場環境の不均一性がどのように現れるかの実験
+
+1971年に、長野県塩尻市 にある中信試験場（現在は，長野県野菜・花卉試験
+場）で実施された。一枚の圃場（南北約 8m、東西約 18m）で、畝は南北に作
+り、畝間は約75cm、株間は約15cmの間隔に作られた植穴に2粒ずつ播種し、間
+引きと補植で1本仕立てにした。各個体は、根際で切断され、地上部を乾燥し
+た後、地上部全重(g)、粒重(g)、主茎長(cm)、分枝数(本)の4形質が測定され
+た。
+
+今回使用するデータは、その北西部分にあたる12畝、25株の地上部全重デー
+タをそれらの位置に対応して並べたものである。すなわち、データ行 列
+の左側と上側は道路に面しているが、右側と下側は他のダイズ個体に面し
+ていた。
+
+データダウンロード <./bio/data/daizu.csv>
+
+
+### ダイズデータ読み込み
+
+```{r}
+    daizu.df <- read.csv("bio/data/daizu.csv")     # daizu.csv ファイル読み込み
+    dim(daizu.df)                # データの大きさ
+    head(daizu.df)               # 最初の一部の行のみを表示
+```
+
+### daizu.dfはdata.frameなので行列に変換する
+
+```{r}
+    
+    daizu.mat <- as.matrix(daizu.df)
+	
+```	
+         
+###  ベクトル化
+
+1次元数値データにする
+
+```{r}
+	daizu <- as.vector(daizu.mat)
+    length(daizu)
+    summary(daizu)
+```	
+
+
+###  欠測値の処理
+
+NA(Not Avairable) が含まれていると計算してくれないので、
+NA部分を除く(remove)という命令、na.rm=Tを付け加える必要がある。
+
+```{r}
+    mean(daizu)
+    mean(daizu, na.rm=T)
+    sd(daizu, na.rm=T)
+```
+
+### ダイズデータの箱ヒゲ図
+
+```{r}
+    boxplot(daizu)
+    title(main="ダイズデータの箱ひげ図")
+```
+
+### ダイズデータを頻度表
+```{r}
+    hist(daizu, breaks=seq(0, 200, by=5), main="ダイズデータの頻度表")
+```
+
+### ダイズデータの行平均や列平均を求る。
+
+これは、apply()関数を用いる。
+-   mean の他に max, sum, sd, など色々な操作もできる。
+-   na.rm=T も忘れずに入れる。
+
+```{r}
+    rowmean <- apply(daizu.df, 1, mean, na.rm=T); rowmean		# 行平均
+    colmean <- apply(daizu.df, 2, mean, na.rm=T); colmean		# 列平均
+```
+
+### 
+```{r}
+    plot(rowmean, type="b", col="blue") 
+    
+    plot(colmean, type="b", col="red")
+```
+

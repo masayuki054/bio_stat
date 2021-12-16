@@ -1,0 +1,35 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+Title: 生物統計学
+#+OPTIONS: tex:t 
+#+Title: 大豆
+#+property: header-args:R :session *rtext* :results output :exports both
+
+* Rmarkdown の利用
+
+** 大豆レポートで使うデータ
+  [[./bio/data/daizu.csv]] をダウンロードして，しかるべきところに保存して
+  ください。
+  
+** [[./daizu.Rmd]] 大豆レポートのR-markdown ファイル
+
+   [[./daizu.Rmd]] をダウンロードして，RStudio で開いてみてください。
+
+** Run メニュー
+
+   すべてのchunkを実行
+
+   
+** 実行結果の確認
+
+   計算結果，プロット結果の確認
+
+** Knit メニュー
+
+   - knit to HTML をやってみる
+   - knit to PDF をやってみる
+     
+
+
+ 

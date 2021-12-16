@@ -136,6 +136,7 @@ summary(daizu)
 
 ## データに欠測値、NA(Not Avairable) が含まれていると計算してくれないので、
 ## NA部分を除く(remove)という命令、na.rm=Tを付け加える必要がある。
+
 mean(daizu)
 mean(daizu, na.rm=T)
 sd(daizu, na.rm=T)
