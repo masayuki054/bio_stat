@@ -75,7 +75,7 @@
 RStudioを使ってない人は，RStudio をインストールしましょう。
 講義終了後，相談にのります。
 
-*** Todo RStudio (2) 12/16
+* Todo RStudio (2) 12/16
 
 [[./org/daizu.org]] に従って，Rmarkdown を使ってみましょう。
 

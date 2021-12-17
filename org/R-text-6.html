@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-12-16 木 09:24 -->
+<!-- 2021-12-16 木 13:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>入門統計学 第6章 仮説検定と検出力</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
-<meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,9 +31,8 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,22 +40,22 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
+    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    top: -8px;
-    right: 12px;
+    background-color: white;
+    top: -10px;
+    right: 10px;
     padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
+    border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -162,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -192,6 +178,7 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
@@ -204,6 +191,52 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -224,23 +257,23 @@
              }
 });
 </script>
-<script src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script type="text/javascript"
+        src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="content">
 <h1 class="title">入門統計学 第6章 仮説検定と検出力</h1>
 <p>
 入門統計学-第6章のスライドから
 </p>
 
-<div id="outline-container-org93848ee" class="outline-2">
-<h2 id="org93848ee">(本章と次章で)仮説検定を学ぶと何を検証できる?</h2>
-<div class="outline-text-2" id="text-org93848ee">
+<div id="outline-container-org88c745d" class="outline-2">
+<h2 id="org88c745d">(本章と次章で)仮説検定を学ぶと何を検証できる?</h2>
+<div class="outline-text-2" id="text-org88c745d">
 <ul class="org-ul">
 <li>病気かどうかの判断</li>
 <li>薬の効き目の有無</li>
 <li>機械導入効果の有無</li>
-
 <li>特定の値と標本平均を比較したり，</li>
 <li>処理前後の 標本平均を比較することで，
 その背後にある母集団の平にも差があるか否かを判定できる</li>
@@ -248,9 +281,9 @@
 </ul>
 </div>
 
-<div id="outline-container-org204c265" class="outline-3">
-<h3 id="org204c265">仮説検定の長所</h3>
-<div class="outline-text-3" id="text-org204c265">
+<div id="outline-container-org83f8016" class="outline-3">
+<h3 id="org83f8016">仮説検定の長所</h3>
+<div class="outline-text-3" id="text-org83f8016">
 <ul class="org-ul">
 <li><p>
 点推定や区間推定は，あくまで推 定量や誤差を数値で表すだけ
@@ -272,9 +305,9 @@
 </div>
 </div>
 
-<div id="outline-container-org59ad0da" class="outline-3">
-<h3 id="org59ad0da">仮説検定と検出力</h3>
-<div class="outline-text-3" id="text-org59ad0da">
+<div id="outline-container-orgbc97166" class="outline-3">
+<h3 id="orgbc97166">仮説検定と検出力</h3>
+<div class="outline-text-3" id="text-orgbc97166">
 <p>
 仮説検定:母集団に対して主張したくない 仮説(処理の効果がない等)を立て，その 仮説が間違いであることを，実験結果の起 き難ささから判断する。
 検出力:母集団の特性に差があるときに， ちゃんと“差がある”と判断できる能力。検定 の性能を表す指標で近年重視されている。
@@ -283,56 +316,49 @@
 </div>
 </div>
 
-<div id="outline-container-orge11d5b4" class="outline-2">
-<h2 id="orge11d5b4">6.1 検定の概要</h2>
-<div class="outline-text-2" id="text-orge11d5b4">
+<div id="outline-container-org33c28f5" class="outline-2">
+<h2 id="org33c28f5">6.1 検定の概要</h2>
+<div class="outline-text-2" id="text-org33c28f5">
 <ol class="org-ol">
 <li>仮説の設定:つまらない仮説(帰無仮説)を立てる</li>
 <li>検定統計量の計算:実験データから求める</li>
 <li>確率の計算:実験結果の起こりやすさ(確率)を求める</li>
-</ol>
-<p>
-4  仮説の判定
-</p>
+<li>仮説の判定
 <ul class="org-ul">
-<li>4.1 仮説は正しい
-よく起きることが起きただ</li>
-<li>4.2 仮説は間違い
-滅多に起きないことが起きた
-棄却</li>
-</ul>
+<li><p>
+4.1 仮説は正しい
+</p>
+
+<p>
+よく起きることが起きただけ
+</p></li>
+
+<li><p>
+4.2 仮説は間違い
+</p>
+
+<p>
+滅多にしか起きないことが起きたので
+棄却
+</p></li>
+</ul></li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org19966c4" class="outline-2">
-<h2 id="org19966c4">仮説検定の大まかな手順</h2>
-<div class="outline-text-2" id="text-org19966c4">
+<div id="outline-container-org03733f8" class="outline-2">
+<h2 id="org03733f8">仮説検定の大まかな手順</h2>
+<div class="outline-text-2" id="text-org03733f8">
 <dl class="org-dl">
-<dt>手順1</dt><dd><p>
-仮説の設定
-</p>
+<dt>手順1 仮説の設定</dt><dd>母集団における未知の事実を説明するため，とりあえず正しいものと仮定し
+ておく道筋を立てる</dd>
 
-<p>
-母集団における未知の事実を説明するため，とりあえず正しいものと仮定し
-ておく道筋を立てる
-</p></dd>
-
-<dt>手順2</dt><dd><p>
-検定統計量の計算
-</p>
-
-<p>
-観測されたデータのままでは検定できるこ とは少ないので，目的に沿った
+<dt>手順2 検定統計量の計算</dt><dd>観測されたデータのままでは検定できるこ とは少ないので，目的に沿った
 検定のため の統計量を求める (ただし，本章ではこの手順をスキップでき
-る基本的な検定から解説する)
-</p></dd>
+る基本的な検定から解説する)</dd>
 
-<dt>手順3</dt><dd><p>
-確率の計算
-</p>
-
-<p>
-仮説が正しい下での実験結果の起こりやすさ(確率)を計算。
+<dt>手順3 確率の計算</dt><dd><p>
+  仮説が正しい下での実験結果の起こりやすさ(確率)を計算。
 </p>
 
 <p>
@@ -340,23 +366,31 @@
 ているのかで仮説の是非を判定
 </p></dd>
 
-<dt>手順4</dt><dd><p>
-仮説の判定
+<dt>手順4 仮説の判定</dt><dd><ul class="org-ul">
+<li><p>
+滅多に起きないことが起きたといえるぐらい確率が低いならば，
 </p>
 
 <p>
-滅多に起きないことが起きたといえるぐらい 確率が低いならば，そもそも
-仮説が間違い だったと判断。そうでなければ判定を保留す る(仮説が正し
-かったとはいわない)
-</p></dd>
+そもそもの仮説が間違いだったと判断。
+</p></li>
+
+<li><p>
+そうでなければ判定を保留する
+</p>
+
+<p>
+(仮説が正し かったとはいわない)
+</p></li>
+</ul></dd>
 </dl>
 </div>
 </div>
 
 
-<div id="outline-container-org1cfa753" class="outline-2">
-<h2 id="org1cfa753">6.2 仮説の設定  (手順1の説明から)</h2>
-<div class="outline-text-2" id="text-org1cfa753">
+<div id="outline-container-orgeeafc09" class="outline-2">
+<h2 id="orgeeafc09">6.2 仮説の設定  (手順1の説明から)</h2>
+<div class="outline-text-2" id="text-orgeeafc09">
 <p>
 母集団に立てる仮説には， * 帰無仮説 (H0) *と * 対立仮説 (H1) *の2つがある
 </p>
@@ -379,11 +413,11 @@
 なぜ主張したい内容としないのだろうか?
 </p></dd>
 </dl>
+</div>
 
-<p>
-帰無仮説の内容
-</p>
-
+<div id="outline-container-orgee3a2ef" class="outline-3">
+<h3 id="orgee3a2ef">帰無仮説の内容</h3>
+<div class="outline-text-3" id="text-orgee3a2ef">
 <dl class="org-dl">
 <dt>例</dt><dd><p>
 殺虫剤の効果を検定する場合
@@ -406,10 +440,11 @@
 </dl>
 </div>
 </div>
+</div>
 
-<div id="outline-container-orge7c35c9" class="outline-2">
-<h2 id="orge7c35c9">6.3 (1標本の)母平均の検定 </h2>
-<div class="outline-text-2" id="text-orge7c35c9">
+<div id="outline-container-orgabb4b1d" class="outline-2">
+<h2 id="orgabb4b1d">6.3 (1標本の)母平均の検定 </h2>
+<div class="outline-text-2" id="text-orgabb4b1d">
 <p>
 検定統計量が不要(容易)な検定から学びます
 </p>
@@ -436,9 +471,9 @@
 </div>
 
 
-<div id="outline-container-org870fdef" class="outline-3">
-<h3 id="org870fdef">母平均の検定の適用例</h3>
-<div class="outline-text-3" id="text-org870fdef">
+<div id="outline-container-orgb98205a" class="outline-3">
+<h3 id="orgb98205a">母平均の検定の適用例</h3>
+<div class="outline-text-3" id="text-orgb98205a">
 <ul class="org-ul">
 <li>病気の疑いのあるグループの平均と正常値とを比較して，病気か健康かを判
 定</li>
@@ -451,9 +486,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgacd1998" class="outline-3">
-<h3 id="orgacd1998">検定の原理</h3>
-<div class="outline-text-3" id="text-orgacd1998">
+<div id="outline-container-orgd549087" class="outline-3">
+<h3 id="orgd549087">検定の原理</h3>
+<div class="outline-text-3" id="text-orgd549087">
 <p>
 分布の母平均 μ を仮定，標本平均 \( \overline{X}_{n} \) を計算
 </p>
@@ -479,18 +514,18 @@
 </div>
 </div>
 
-<div id="outline-container-org94b4c21" class="outline-3">
-<h3 id="org94b4c21">ステップ1:2つの仮説を考える</h3>
-<div class="outline-text-3" id="text-org94b4c21">
+<div id="outline-container-org2c38af1" class="outline-3">
+<h3 id="org2c38af1">ステップ1:2つの仮説を考える</h3>
+<div class="outline-text-3" id="text-org2c38af1">
 <dl class="org-dl">
 <dt>帰無仮説 H0:μ=μ0</dt><dd>同じ母集団から抽出 (μ0は𝑥 ̄ の真の値)</dd>
 <dt>対立仮説 H1:μ≠μ0</dt><dd>異なる母集団から抽出 (μ0は𝑥 ̄ の真の値ではない)</dd>
 </dl>
 </div>
 
-<div id="outline-container-org6332914" class="outline-4">
-<h4 id="org6332914">対立仮説の内容は3種類</h4>
-<div class="outline-text-4" id="text-org6332914">
+<div id="outline-container-orgc460301" class="outline-4">
+<h4 id="orgc460301">対立仮説の内容は3種類</h4>
+<div class="outline-text-4" id="text-orgc460301">
 <p>
 普通はどち らが大きいかはわからないため，両側検定を基本とする
 </p>
@@ -527,9 +562,9 @@
 </div>
 </div>
 
-<div id="outline-container-org55a5b42" class="outline-3">
-<h3 id="org55a5b42">ステップ2: 帰無仮説が正しい場合の  標本の位置は?</h3>
-<div class="outline-text-3" id="text-org55a5b42">
+<div id="outline-container-orga7d2444" class="outline-3">
+<h3 id="orga7d2444">ステップ2: 帰無仮説が正しい場合の  標本の位置は?</h3>
+<div class="outline-text-3" id="text-orga7d2444">
 <ul class="org-ul">
 <li>μ0を真の値とした母集団から抽出した標本分布(比較対象)</li>
 <li>μを真の値とした母集団から抽出した標本分布 (観測された標本の分布)</li>
@@ -544,9 +579,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9f20d1c" class="outline-3">
-<h3 id="org9f20d1c">ステップ2:  帰無仮説が間違っている場合は?</h3>
-<div class="outline-text-3" id="text-org9f20d1c">
+<div id="outline-container-org38a3a13" class="outline-3">
+<h3 id="org38a3a13">ステップ2:  帰無仮説が間違っている場合は?</h3>
+<div class="outline-text-3" id="text-org38a3a13">
 <dl class="org-dl">
 <dt>帰無仮説の分布</dt><dd>μ0を真の値とした標本分布 (比較対象)</dd>
 
@@ -567,9 +602,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6782050" class="outline-3">
-<h3 id="org6782050">ステップ3: どこから帰無仮説を棄却する?</h3>
-<div class="outline-text-3" id="text-org6782050">
+<div id="outline-container-org7117827" class="outline-3">
+<h3 id="org7117827">ステップ3: どこから帰無仮説を棄却する?</h3>
+<div class="outline-text-3" id="text-org7117827">
 <ul class="org-ul">
 <li>任意の有意水準 (一般的にα=5%とする)</li>
 <li>に対応する値を基準(限界値)として，</li>
@@ -578,9 +613,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgbcbf2e5" class="outline-3">
-<h3 id="orgbcbf2e5">ステップ4: 検定統計量(観測された標本平均)と比較する</h3>
-<div class="outline-text-3" id="text-orgbcbf2e5">
+<div id="outline-container-org500db44" class="outline-3">
+<h3 id="org500db44">ステップ4: 検定統計量(観測された標本平均)と比較する</h3>
+<div class="outline-text-3" id="text-org500db44">
 <p>
 正規分布 (中心極限定理より)
 有意水準α/ 2=0.025
@@ -602,9 +637,9 @@
 </div>
 
 
-<div id="outline-container-orgdfc4ab5" class="outline-3">
-<h3 id="orgdfc4ab5">ステップ4の補足: p値を使った検定法  (ソフトウェアが必要)</h3>
-<div class="outline-text-3" id="text-orgdfc4ab5">
+<div id="outline-container-orgac5b4be" class="outline-3">
+<h3 id="orgac5b4be">ステップ4の補足: p値を使った検定法  (ソフトウェアが必要)</h3>
+<div class="outline-text-3" id="text-orgac5b4be">
 <p>
 p値    𝑥 ̄ 実験で観測された標本平均
 𝑥 ̄
@@ -615,13 +650,13 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </div>
 </div>
 
-<div id="outline-container-org5c32ef2" class="outline-2">
-<h2 id="org5c32ef2">例 題</h2>
+<div id="outline-container-org30a201a" class="outline-2">
+<h2 id="org30a201a">例 題</h2>
 </div>
 
-<div id="outline-container-org8d18ac6" class="outline-2">
-<h2 id="org8d18ac6">6.5 検出力分析</h2>
-<div class="outline-text-2" id="text-org8d18ac6">
+<div id="outline-container-orgaf647b9" class="outline-2">
+<h2 id="orgaf647b9">6.5 検出力分析</h2>
+<div class="outline-text-2" id="text-orgaf647b9">
 <p>
 1実施した検定の能力(検出力)はどのぐらいだったのかを 示すのが重要になってきている
 2処理効果(2群の差)そのものの大きさ(効果量)を推定 することも重要になってきている
@@ -631,9 +666,9 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </p>
 </div>
 
-<div id="outline-container-org3fb8be2" class="outline-3">
-<h3 id="org3fb8be2">統計的過誤は</h3>
-<div class="outline-text-3" id="text-org3fb8be2">
+<div id="outline-container-org7a5ace8" class="outline-3">
+<h3 id="org7a5ace8">統計的過誤は</h3>
+<div class="outline-text-3" id="text-org7a5ace8">
 <p>
 標本を用いている以上，仮説検定で間違った判断(統計的 過誤)を下してしまうこともある
 第一種の過誤:処理効果(群間で差)が無いのに有ると判 断してしまう間違い→帰無仮説が真なのに棄却してしまう過 ち(確率はαで表す)
@@ -646,9 +681,9 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </div>
 
 
-<div id="outline-container-orgf4a86ca" class="outline-3">
-<h3 id="orgf4a86ca">第一種の過誤 (TypeIerror)</h3>
-<div class="outline-text-3" id="text-orgf4a86ca">
+<div id="outline-container-org7d2ae22" class="outline-3">
+<h3 id="org7d2ae22">第一種の過誤 (TypeIerror)</h3>
+<div class="outline-text-3" id="text-org7d2ae22">
 <p>
  本当は差が無いのに こちらを採択 (差は有ると誤判定)
 対立仮説の分布 (間違っている)
@@ -664,9 +699,9 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </div>
 </div>
 
-<div id="outline-container-org379d909" class="outline-3">
-<h3 id="org379d909">第二種の過誤 (TypeIIerror)</h3>
-<div class="outline-text-3" id="text-org379d909">
+<div id="outline-container-org3a2c39c" class="outline-3">
+<h3 id="org3a2c39c">第二種の過誤 (TypeIIerror)</h3>
+<div class="outline-text-3" id="text-org3a2c39c">
 <p>
 β
 検定統計量が対立仮説の 分布で端の値を取ると&#x2026;
@@ -680,9 +715,9 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </div>
 </div>
 
-<div id="outline-container-orgb22ff79" class="outline-3">
-<h3 id="orgb22ff79">第一種と第二種の過誤では どちらが重大(致命的)?</h3>
-<div class="outline-text-3" id="text-orgb22ff79">
+<div id="outline-container-org6458cbb" class="outline-3">
+<h3 id="org6458cbb">第一種と第二種の過誤では どちらが重大(致命的)?</h3>
+<div class="outline-text-3" id="text-org6458cbb">
 <p>
 例えば，効果が無い薬を売り出した場合(第一種過誤) と，効果が有る薬を開発したのに売り出せない場合(第二 種過誤)では，どちらが製薬会社にとって致命的なダメー ジとなるか?
  →第一種の過誤の方が致命的な事が多い  →その検定で許容できる第一種の過誤を犯す確率α(有意
@@ -696,9 +731,9 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </div>
 </div>
 
-<div id="outline-container-org65b6c32" class="outline-3">
-<h3 id="org65b6c32">第二種の過誤の方が致命的な事例</h3>
-<div class="outline-text-3" id="text-org65b6c32">
+<div id="outline-container-orgd8ab65d" class="outline-3">
+<h3 id="orgd8ab65d">第二種の過誤の方が致命的な事例</h3>
+<div class="outline-text-3" id="text-orgd8ab65d">
 <p>
 一旦，効果(差)を見逃してしまったら，取 り返しの付かない場合
  →下例で正しい対立仮説を採択し損ねたら? 事例1:環境保護政策の効果の検定
@@ -710,9 +745,9 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </div>
 </div>
 
-<div id="outline-container-org7ee7e9e" class="outline-3">
-<h3 id="org7ee7e9e">第二種の過誤を抑えた検定はどうやる?</h3>
-<div class="outline-text-3" id="text-org7ee7e9e">
+<div id="outline-container-orge7bd515" class="outline-3">
+<h3 id="orge7bd515">第二種の過誤を抑えた検定はどうやる?</h3>
+<div class="outline-text-3" id="text-orge7bd515">
 <p>
 有意水準αのように，その検定で許容できる できない
 </p>
@@ -726,9 +761,9 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </div>
 </div>
 
-<div id="outline-container-org8651e4f" class="outline-3">
-<h3 id="org8651e4f">対立仮説の分布(非心分布)</h3>
-<div class="outline-text-3" id="text-org8651e4f">
+<div id="outline-container-org6bd066b" class="outline-3">
+<h3 id="org6bd066b">対立仮説の分布(非心分布)</h3>
+<div class="outline-text-3" id="text-org6bd066b">
 <p>
   t分布
 非心t分布上の 確率計算は困難
@@ -743,9 +778,9 @@ p値:帰無仮説の下で，実験結果(検定統計量)よりも極端な値 
 </div>
 </div>
 
-<div id="outline-container-org5ab084c" class="outline-3">
-<h3 id="org5ab084c">効果量</h3>
-<div class="outline-text-3" id="text-org5ab084c">
+<div id="outline-container-org1932ed2" class="outline-3">
+<h3 id="org1932ed2">効果量</h3>
+<div class="outline-text-3" id="text-org1932ed2">
 <p>
  (注:検定によって計算式は色々ある)
 母集団が持つ処理効果そのもの(実質的な差)の大きさ 
@@ -767,9 +802,9 @@ d = 不偏標準偏差
 </div>
 </div>
 
-<div id="outline-container-orgad75a6b" class="outline-3">
-<h3 id="orgad75a6b">効果量を検定結果に加えよう!</h3>
-<div class="outline-text-3" id="text-orgad75a6b">
+<div id="outline-container-org6a54b9c" class="outline-3">
+<h3 id="org6a54b9c">効果量を検定結果に加えよう!</h3>
+<div class="outline-text-3" id="text-org6a54b9c">
 <p>
 検定は標本サイズに影響を受けるが，効果量は標 本サイズと関係ない
 →検定結果が有意でなくても効果量が大きいことも ある(逆に，有意でも効果量が小さいこともあ
@@ -799,9 +834,9 @@ d = 不偏標準偏差
 </div>
 </div>
 
-<div id="outline-container-orgab63a2d" class="outline-3">
-<h3 id="orgab63a2d">第二種の過誤を抑えるもう一つの裏技</h3>
-<div class="outline-text-3" id="text-orgab63a2d">
+<div id="outline-container-org284afd5" class="outline-3">
+<h3 id="org284afd5">第二種の過誤を抑えるもう一つの裏技</h3>
+<div class="outline-text-3" id="text-org284afd5">
 <p>
   αを大きくして
 βを小さくする αを大きくすれば&#x2026;
@@ -817,9 +852,9 @@ d = 不偏標準偏差
 </div>
 
 
-<div id="outline-container-org6fd4c09" class="outline-3">
-<h3 id="org6fd4c09">検出力</h3>
-<div class="outline-text-3" id="text-org6fd4c09">
+<div id="outline-container-org48c18ae" class="outline-3">
+<h3 id="org48c18ae">検出力</h3>
+<div class="outline-text-3" id="text-org48c18ae">
 <p>
  を使ってきましたが&#x2026;
 第二種の過誤確率βよりも，その補数(1-β)である検出力を考え る方がわかりやすい →本当に処理効果(差)があるときに，「ある」といえる能力
@@ -837,9 +872,9 @@ d = 不偏標準偏差
 </div>
 </div>
 
-<div id="outline-container-org43a4287" class="outline-3">
-<h3 id="org43a4287">検出力も検定結果に加えよう!</h3>
-<div class="outline-text-3" id="text-org43a4287">
+<div id="outline-container-org0766c11" class="outline-3">
+<h3 id="org0766c11">検出力も検定結果に加えよう!</h3>
+<div class="outline-text-3" id="text-org0766c11">
 <p>
  検出力は，その検定の能力を表している
  p値や有意水準のみでは，正しい対立仮説を
@@ -851,9 +886,9 @@ d = 不偏標準偏差
 </div>
 </div>
 
-<div id="outline-container-org2c25f4b" class="outline-3">
-<h3 id="org2c25f4b">検出力の計算(事後分析)</h3>
-<div class="outline-text-3" id="text-org2c25f4b">
+<div id="outline-container-orgb7a8bdc" class="outline-3">
+<h3 id="orgb7a8bdc">検出力の計算(事後分析)</h3>
+<div class="outline-text-3" id="text-orgb7a8bdc">
 <p>
   効果量d
 標本サイズn
@@ -866,9 +901,9 @@ d = 不偏標準偏差
 </div>
 </div>
 
-<div id="outline-container-org11b28e3" class="outline-3">
-<h3 id="org11b28e3">ソフト(G*power)を使った検出力計算</h3>
-<div class="outline-text-3" id="text-org11b28e3">
+<div id="outline-container-org981ee27" class="outline-3">
+<h3 id="org981ee27">ソフト(G*power)を使った検出力計算</h3>
+<div class="outline-text-3" id="text-org981ee27">
 <p>
    痛風の例題で推定してみると&#x2026;
  効果量は1.57，検出力は0.75
@@ -884,9 +919,9 @@ d = 不偏標準偏差
 </div>
 </div>
 
-<div id="outline-container-orgc939087" class="outline-3">
-<h3 id="orgc939087">標本サイズの計算(事前分析)</h3>
-<div class="outline-text-3" id="text-orgc939087">
+<div id="outline-container-orgfde6cd2" class="outline-3">
+<h3 id="orgfde6cd2">標本サイズの計算(事前分析)</h3>
+<div class="outline-text-3" id="text-orgfde6cd2">
 <p>
 任意の有意水準の下で望ましい検出力になるような  標本サイズを事前に求める(効果量は予想するしかな
 い)
@@ -901,9 +936,9 @@ d = 不偏標準偏差
 </div>
 </div>
 
-<div id="outline-container-org546d774" class="outline-3">
-<h3 id="org546d774">ソフト(G*power)を使った標本サイズの計算</h3>
-<div class="outline-text-3" id="text-org546d774">
+<div id="outline-container-org22a27df" class="outline-3">
+<h3 id="org22a27df">ソフト(G*power)を使った標本サイズの計算</h3>
+<div class="outline-text-3" id="text-org22a27df">
 <p>
   大きい効果量(0.8)が得られると予想されるな ら，一般的な有意水準(0.05)と検出力(0.8)
 の検定を実現するための標本サイズは&#x2026;
@@ -924,8 +959,8 @@ d = 不偏標準偏差
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-12-16 木 09:24</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-12-16 木 13:21</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
