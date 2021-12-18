@@ -1,37 +1,44 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{article}
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -73,7 +80,7 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -82,25 +89,17 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 
 \author{}
 \date{\vspace{-2.5em}}
@@ -124,15 +123,15 @@
 の左側と上側は道路に面しているが、右側と下側は他のダイズ個体に面し
 ていた。
 
-データダウンロード \textless{}./bio/data/daizu.csv\textgreater{}
+データダウンロード \textless./bio/data/daizu.csv\textgreater{}
 
 \hypertarget{ux30c0ux30a4ux30baux30c7ux30fcux30bfux8aadux307fux8fbcux307f}{%
 \subsubsection{ダイズデータ読み込み}\label{ux30c0ux30a4ux30baux30c7ux30fcux30bfux8aadux307fux8fbcux307f}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{    daizu.df <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"bio/data/daizu.csv"}\NormalTok{)     }\CommentTok{# daizu.csv ファイル読み込み}
-    \KeywordTok{dim}\NormalTok{(daizu.df)                }\CommentTok{# データの大きさ}
+\NormalTok{    daizu.df }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"bio/data/daizu.csv"}\NormalTok{)     }\CommentTok{\# daizu.csv ファイル読み込み}
+    \FunctionTok{dim}\NormalTok{(daizu.df)                }\CommentTok{\# データの大きさ}
 \end{Highlighting}
 \end{Shaded}
 
@@ -142,7 +141,7 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{head}\NormalTok{(daizu.df)               }\CommentTok{# 最初の一部の行のみを表示}
+    \FunctionTok{head}\NormalTok{(daizu.df)               }\CommentTok{\# 最初の一部の行のみを表示}
 \end{Highlighting}
 \end{Shaded}
 
@@ -168,7 +167,7 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{    daizu.mat <-}\StringTok{ }\KeywordTok{as.matrix}\NormalTok{(daizu.df)}
+\NormalTok{    daizu.mat }\OtherTok{\textless{}{-}} \FunctionTok{as.matrix}\NormalTok{(daizu.df)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -179,8 +178,8 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{    daizu <-}\StringTok{ }\KeywordTok{as.vector}\NormalTok{(daizu.mat)}
-    \KeywordTok{length}\NormalTok{(daizu)}
+\NormalTok{    daizu }\OtherTok{\textless{}{-}} \FunctionTok{as.vector}\NormalTok{(daizu.mat)}
+    \FunctionTok{length}\NormalTok{(daizu)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -190,7 +189,7 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{summary}\NormalTok{(daizu)}
+    \FunctionTok{summary}\NormalTok{(daizu)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -207,7 +206,7 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{mean}\NormalTok{(daizu)}
+    \FunctionTok{mean}\NormalTok{(daizu)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -217,7 +216,7 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{mean}\NormalTok{(daizu, }\DataTypeTok{na.rm=}\NormalTok{T)}
+    \FunctionTok{mean}\NormalTok{(daizu, }\AttributeTok{na.rm=}\NormalTok{T)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -227,7 +226,7 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{sd}\NormalTok{(daizu, }\DataTypeTok{na.rm=}\NormalTok{T)}
+    \FunctionTok{sd}\NormalTok{(daizu, }\AttributeTok{na.rm=}\NormalTok{T)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -240,10 +239,175 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{boxplot}\NormalTok{(daizu)}
-    \KeywordTok{title}\NormalTok{(}\DataTypeTok{main=}\StringTok{"ダイズデータの箱ひげ図"}\NormalTok{)}
+    \FunctionTok{boxplot}\NormalTok{(daizu)}
+    \FunctionTok{title}\NormalTok{(}\AttributeTok{main=}\StringTok{"ダイズデータの箱ひげ図"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <83> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <80> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <82> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <a4> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <82> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <ba> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <83> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <87> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <83> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <bc> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <82> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <bf> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <81> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <ae> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e7> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <ae> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <b1> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <81> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <b2> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e3> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <81> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <92> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <e5> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <9b> をドットで置き換えました
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = "ダイズデータの箱ひげ図"): 'mbcsToSbcs' 中の 'ダイズデー
+## タの箱ひげ図' で変換に失敗: <b3> をドットで置き換えました
+\end{verbatim}
 
 \includegraphics{daizu_files/figure-latex/unnamed-chunk-5-1.pdf}
 
@@ -252,9 +416,189 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{hist}\NormalTok{(daizu, }\DataTypeTok{breaks=}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{200}\NormalTok{, }\DataTypeTok{by=}\DecValTok{5}\NormalTok{), }\DataTypeTok{main=}\StringTok{"ダイズデータの頻度表"}\NormalTok{)}
+    \FunctionTok{hist}\NormalTok{(daizu, }\AttributeTok{breaks=}\FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{200}\NormalTok{, }\AttributeTok{by=}\DecValTok{5}\NormalTok{), }\AttributeTok{main=}\StringTok{"ダイズデータの頻度表"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e3> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <83> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <80> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e3> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <82> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <a4> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e3> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <82> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <ba> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e3> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <83> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <87> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e3> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <83> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <bc> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e3> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <82> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <bf> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e3> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <81> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <ae> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e9> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <a0> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <bb> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e5> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <ba> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <a6> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <e8> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <a1> をドットで置き換えま
+## した
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+## 'mbcsToSbcs' 中の 'ダイズデータの頻度表' で変換に失敗: <a8> をドットで置き換えま
+## した
+\end{verbatim}
 
 \includegraphics{daizu_files/figure-latex/unnamed-chunk-6-1.pdf}
 
@@ -266,7 +610,7 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{    rowmean <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(daizu.df, }\DecValTok{1}\NormalTok{, mean, }\DataTypeTok{na.rm=}\NormalTok{T); rowmean       }\CommentTok{# 行平均}
+\NormalTok{    rowmean }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(daizu.df, }\DecValTok{1}\NormalTok{, mean, }\AttributeTok{na.rm=}\NormalTok{T); rowmean       }\CommentTok{\# 行平均}
 \end{Highlighting}
 \end{Shaded}
 
@@ -279,7 +623,7 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{    colmean <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(daizu.df, }\DecValTok{2}\NormalTok{, mean, }\DataTypeTok{na.rm=}\NormalTok{T); colmean       }\CommentTok{# 列平均}
+\NormalTok{    colmean }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(daizu.df, }\DecValTok{2}\NormalTok{, mean, }\AttributeTok{na.rm=}\NormalTok{T); colmean       }\CommentTok{\# 列平均}
 \end{Highlighting}
 \end{Shaded}
 
@@ -295,7 +639,7 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{plot}\NormalTok{(rowmean, }\DataTypeTok{type=}\StringTok{"b"}\NormalTok{, }\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{) }
+    \FunctionTok{plot}\NormalTok{(rowmean, }\AttributeTok{type=}\StringTok{"b"}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -303,10 +647,18 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    \KeywordTok{plot}\NormalTok{(colmean, }\DataTypeTok{type=}\StringTok{"b"}\NormalTok{, }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+    \FunctionTok{plot}\NormalTok{(colmean, }\AttributeTok{type=}\StringTok{"b"}\NormalTok{, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{daizu_files/figure-latex/unnamed-chunk-8-2.pdf}
+\includegraphics{daizu_files/figure-latex/unnamed-chunk-8-2.pdf} \$
+\overline{x} = \Sigma\_i X\_i/n \$
+
+\[ 
+\begin{array}{ccc}
+x & y & z \\
+a & b & c \\
+\end{array} 
+\]
 
 \end{document}

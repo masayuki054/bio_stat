@@ -1,8 +1,10 @@
 ---
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
+
+
 ### ダイズ地上部乾物重データ
 
    ダイズの植物体に圃場環境の不均一性がどのように現れるかの実験
@@ -89,4 +91,12 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
     
     plot(colmean, type="b", col="red")
 ```
+$ \overline{x} = \Sigma_i X_i/n $
+
+$$ 
+\begin{array}{ccc}
+x & y & z \\
+a & b & c \\
+\end{array} 
+$$
 
