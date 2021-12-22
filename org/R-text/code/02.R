@@ -62,20 +62,6 @@ plot(4800:5200, dbinom(4800:5200,10000,1/2),col="blue",type="h");
 # plot(4800:5200, dnorm(4800:5200,mean=5000,sd=50),xlim=c(4800,5200),col="red", type="p")
 curve (dnorm(x,mean=5000,sd=50),from=4800,to=5200,col="red",add=T)
 
-(csv.1.2 <- read.csv("R-text/data/01-02.csv"))
-# class(csv.1.2)
-# (csv.1.2[,1:2])
-# class(csv.1.2[,1:2])
-
-(mat.1.2 <- matrix(as.matrix(csv.1.2[,2:3]), nrow(csv.1.2), ncol(csv.1.2)-1)) 
-class(mat.1.2)
-
-(z1 <- (mat.1.2[,1] - mean(mat.1.2[,1]))/sqrt(var(mat.1.2[,1])))
-(z2 <- (mat.1.2[,2] - mean(mat.1.2[,2]))/sqrt(var(mat.1.2[,2])))
-
-c("z1 (mean, var,sd): ", mean(z1), var(z1), sqrt(var(z1)))
-c("z2 (mean, var,sd): ", mean(z2), var(z2), sqrt(var(z2)))
-
 x <- 0:10
 plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
      main="ポアソン分布",
@@ -91,7 +77,7 @@ for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
 
 x <- 0:10
 plot(0,0, xlim=c(0,10), ylim=c(0,0.5), type="l",
-     main="ポアソン分布,二項分布，正規分布",
+     main="ポアソン分布, 二項分布，正規分布",
      ylab="確率",
      xlab="出現値",xaxt="n")
 for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
@@ -99,3 +85,17 @@ for (lamb in c(1,2,3,4,5,6,7,8,9,10)) {
   points(x, dbinom(x, 100, lamb/100), type="l", col="blue")
   points(x, dnorm(x, mean=lamb, sd=sqrt(100*lamb/100*(1-lamb/100))),type="l", col="red")
 }
+
+(csv.1.2 <- read.csv("R-text/data/01-02.csv"))
+# class(csv.1.2)
+# (csv.1.2[,1:2])
+# class(csv.1.2[,1:2])
+
+(mat.1.2 <- matrix(as.matrix(csv.1.2[,2:3]), nrow(csv.1.2), ncol(csv.1.2)-1)) 
+class(mat.1.2)
+
+(z1 <- (mat.1.2[,1] - mean(mat.1.2[,1]))/sqrt(var(mat.1.2[,1])))
+(z2 <- (mat.1.2[,2] - mean(mat.1.2[,2]))/sqrt(var(mat.1.2[,2])))
+
+c("z1 (mean, var,sd): ", mean(z1), var(z1), sqrt(var(z1)))
+c("z2 (mean, var,sd): ", mean(z2), var(z2), sqrt(var(z2)))

@@ -3,6 +3,10 @@
 #+Title: 3章 推定と誤差
 #+property: header-args:R :session *rtext* :results output :exports both
 
+#+beign_src R :tangle R-text/code/03.R
+#+begin_src R
+#+end_src
+
 * 標本分布 (http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/RforS-II-04.html より抜粋)
 
 *** 正規母集団
@@ -31,7 +35,7 @@ curve(dnorm(x,mean=1,sd=1), add=TRUE) # 平均1， 偏差1 の正規分布，上
     例えば、平均50、標準偏差10の正規母集団からn＝5の標本を無作為抽出
     する
 
-    #+begin_src R :session *rtext* :results output graphics :file R-text/graph/04-07.png :tangle R-text/code/03.R
+    #+begin_src R :session *rtext* :results output graphics :file R-text/graph/04-07.png :tangle R-text/03.R
 ##
 ## 平均50、標準偏差10の正規母集団からn＝5の標本を無作為抽出する
 ##
@@ -167,7 +171,7 @@ hist(標本平均,main="図4.12 標本抽出10,000回のときの標本平均の
 
        母平均 (50)からのズレが5以内か否かで振り分ける
      
-       #+begin_src R :tangle R-text/code/03.R
+       #+begin_src R :tangle RforS-Codes/04-05.R
 
 ## 母平均 (50)からのズレが5以内か否かで振り分ける
 

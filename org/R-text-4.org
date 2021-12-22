@@ -18,7 +18,7 @@
 
   20人の患者への投与により，増加の程度 (%) の標本値が得られた:
 
-#+begin_src R :results output :session *rtext* 
+#+begin_src R :results output :session *rtext* :tangle R-text/code/04.R
 ##
 ## 正規分布からの標本
 ##
@@ -360,7 +360,7 @@ est_t_conf_interval(0.05, sample)
      \leq  \overline{X_{(n)}} + z^{*}\sqrt{S^2/n} \right) \)
      
 
-     #+begin_src R :session *rtext* :results output :exports both :tangle Rtext/code/01.R
+#+begin_src R :session *rtext* :results output :exports both :tangle R-text/code/04.R
 
 tz_interval <- function (alpha, sample) {
   c(qnorm(1-alpha/2), qnorm(alpha/2))

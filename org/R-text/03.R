@@ -1,6 +1,5 @@
 ##
-## 平均50、標準偏差10の正規母集団からn＝5の標本を無作為抽出する
+## 標本分散の分布
 ##
-
-rnorm(n=5, mean=50, sd=10)       # 標本の抽出
-hist(rnorm(n=5, mean=50, sd=10), main="図4.7 N(50, 10)からの n=5 の標本の頻度表") # 頻度表の描画
+hist(標本分散s/100*10, freq=FALSE, breaks=seq(0,50,1), main="標本分散/母分散の分布と自由度9のカイ二乗分布")
+curve(dchisq(x,9), add=TRUE, col="red")

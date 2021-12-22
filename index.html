@@ -3,11 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-12-18 土 16:02 -->
+<!-- 2021-12-22 水 22:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>生物統計学</title>
-<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
+<meta name="author" content="鈴木正幸，非常勤講師" />
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -208,118 +208,81 @@
 <body>
 <div id="content" class="content">
 <h1 class="title">生物統計学</h1>
-
-<div id="outline-container-orgbcaa8e5" class="outline-2">
-<h2 id="orgbcaa8e5">お知らせ</h2>
-<div class="outline-text-2" id="text-orgbcaa8e5">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org544a6a9">1. <span class="todo Todo">Todo</span> 今日(12/23) の講義</a>
+<ul>
+<li><a href="#orgfdf0aeb">1.1. Rによる入門統計学</a>
+<ul>
+<li><a href="#org6c00912">入門統計学の6章</a>
+<ul>
+<li><a href="#orgd280324"><span class="todo Todo">Todo</span> 仮説検定と検定力 [ ] スライド</a></li>
+<li><a href="#org59eb23f">./org/R-text-6.org 教科書のまとめ 未完</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org44c16f0">1.2. RStudio を使いましょう</a></li>
+<li><a href="#orgbce9543">1.3. <span class="todo Todo">Todo</span> RStudio (2) 12/16</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org232d48e">RStudio (1)</a></li>
+<li><a href="#org80acf35">file</a>
+<ul>
+<li><a href="#orgec393f4">file</a>
+<ul>
+<li><a href="#orgdafdf7e">R-script, R-notebook, R-markdown</a></li>
+</ul>
+</li>
+<li><a href="#orgb0e89b5">project</a></li>
+<li><a href="#org54b1a11">import data set</a></li>
+</ul>
+</li>
+<li><a href="#org1374078">session</a>
+<ul>
+<li><a href="#orgd3964e9">project</a></li>
+<li><a href="#org0be8120">session</a></li>
+<li><a href="#org28cac83">working directory</a></li>
+<li><a href="#org6be8a73">workspace</a></li>
+</ul>
+</li>
+<li><a href="#org84f5cd0">view</a></li>
+</ul>
+</li>
+<li><a href="#orgf2d18bd">R 入門</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
-<div id="outline-container-org83f39c1" class="outline-4">
-<h4 id="org83f39c1">12/16 の手書き説明</h4>
-<div class="outline-text-4" id="text-org83f39c1">
-<p>
-<a href="./summary/summary.html">./summary/summary.html</a> にアップしました。
-</p>
 </div>
+<div id="outline-container-org544a6a9" class="outline-2">
+<h2 id="org544a6a9"><span class="section-number-2">1.</span> <span class="todo Todo">Todo</span> 今日(12/23) の講義</h2>
+<div class="outline-text-2" id="text-1">
 </div>
-
-
-<div id="outline-container-orgdbd6ed8" class="outline-4">
-<h4 id="orgdbd6ed8">2回目のレポートを出題しました</h4>
-<div class="outline-text-4" id="text-orgdbd6ed8">
-<p>
-<a href="./report.html">./report.html</a>
-</p>
-</div>
-</div>
-
-
-<div id="outline-container-org416685c" class="outline-4">
-<h4 id="org416685c">12/02 講義終了後，R/RStudio の質問に答える時間を設けます。</h4>
-<div class="outline-text-4" id="text-org416685c">
-<p>
-先週，何人かの人から質問がありましたが，解答にまとまった時間が取れませ
-んでした。すみません。
-</p>
-
-<p>
-なので，要望があれば，今週から，一緒に考える時間を取りたいと思っていま
-す。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org1dff390" class="outline-4">
-<h4 id="org1dff390">毎回のアンケート</h4>
-<div class="outline-text-4" id="text-org1dff390">
-<p>
-<a href="./enq.html">./enq.html</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org85c2536" class="outline-4">
-<h4 id="org85c2536"><span class="todo Todo">Todo</span> 今日(12/16) の講義</h4>
-<div class="outline-text-4" id="text-org85c2536">
-</div>
-<div id="outline-container-orgd2fde28" class="outline-5">
-<h5 id="orgd2fde28">Rによる入門統計学</h5>
-<div class="outline-text-5" id="text-orgd2fde28">
+<div id="outline-container-orgfdf0aeb" class="outline-3">
+<h3 id="orgfdf0aeb"><span class="section-number-3">1.1.</span> Rによる入門統計学</h3>
+<div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>スライドまたは PDF を手元に準備</li>
 <li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
 </ul>
 </div>
 
-<div id="outline-container-orgb20ae54" class="outline-6">
-<h6 id="orgb20ae54">入門統計学の4章</h6>
-<div class="outline-text-6" id="text-orgb20ae54">
+<div id="outline-container-org6c00912" class="outline-4">
+<h4 id="org6c00912">入門統計学の6章</h4>
+<div class="outline-text-4" id="text-org6c00912">
 </div>
-<div id="outline-container-org3900cfa" class="outline-7">
-<h7 id="org3900cfa"><span class="todo Todo">Todo</span> 信頼区間の推定</h7>
-<div class="outline-text-7" id="text-org3900cfa">
+<div id="outline-container-orgd280324" class="outline-5">
+<h5 id="orgd280324"><span class="todo Todo">Todo</span> 仮説検定と検定力 [ ] スライド</h5>
+<div class="outline-text-5" id="text-orgd280324">
 <ul class="org-ul">
-<li class="on"><code>[X]</code> 大数の法則と中心極限定理</li>
-<li class="on"><code>[X]</code> 信頼区間の推定</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散既知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散未知</li>
-<li class="on"><code>[X]</code> 母比率の推定，母分布未知</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgb0ee8d3" class="outline-7">
-<h7 id="orgb0ee8d3"><a href="./org/R-text-4.html">./org/R-text-4.html</a> 教科書のまとめ</h7>
-</div>
-</div>
-
-<div id="outline-container-orgc5df8e7" class="outline-6">
-<h6 id="orgc5df8e7">入門統計学の5章</h6>
-<div class="outline-text-6" id="text-orgc5df8e7">
-</div>
-<div id="outline-container-orgef78d0c" class="outline-7">
-<h7 id="orgef78d0c">カイ二乗分布とF分布 <code>[1/3]</code> スライド</h7>
-<div class="outline-text-7" id="text-orgef78d0c">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> カイ二乗分布とF分布</li>
-<li class="off"><code>[&#xa0;]</code> 母分散の区間推定</li>
-<li class="off"><code>[&#xa0;]</code> F分布</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgb2cce5a" class="outline-7">
-<h7 id="orgb2cce5a"><a href="./org/R-text-5.html">./org/R-text-5.html</a> 教科書のまとめ</h7>
-</div>
-</div>
-
-<div id="outline-container-org24333fe" class="outline-6">
-<h6 id="org24333fe">入門統計学の6章</h6>
-<div class="outline-text-6" id="text-org24333fe">
-</div>
-<div id="outline-container-org6f16743" class="outline-7">
-<h7 id="org6f16743"><span class="todo Todo">Todo</span> 仮説検定と検定力 [ ] スライド</h7>
-<div class="outline-text-7" id="text-org6f16743">
-<ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> 検定の概要</li>
-<li class="off"><code>[&#xa0;]</code> 仮説の検定</li>
+<li class="on"><code>[X]</code> 検定の概要</li>
+<li class="on"><code>[X]</code> 仮説の検定</li>
 <li class="off"><code>[&#xa0;]</code> 1標本の母平均の検定
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> 例題 <a href="./org/examples-06.html">./org/examples-06.html</a></li>
@@ -332,48 +295,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org5cddc09" class="outline-7">
-<h7 id="org5cddc09"><a href="./org/R-text-6.html">./org/R-text-6.html</a> 教科書のまとめ 未完</h7>
-</div>
-</div>
 
-
-<div id="outline-container-orge9ef86e" class="outline-6">
-<h6 id="orge9ef86e">まとめとRの演習</h6>
-<div class="outline-text-6" id="text-orge9ef86e">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 信頼区間の推定</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散既知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散未知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分布未知</li>
-<li class="on"><code>[X]</code> 母比率の推定，母分布未知</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org8dcd69d" class="outline-6">
-<h6 id="org8dcd69d">標本と統計的推測 (6回目のまとめ)</h6>
-<div class="outline-text-6" id="text-org8dcd69d">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 大数の法則と中心極限定理</li>
-<li class="on"><code>[X]</code> 標本平均の従う分布</li>
-<li class="on"><code>[X]</code> 標本不偏分散の従う分布</li>
-</ul></li>
-
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html</a></li>
-</ul>
+<div id="outline-container-org59eb23f" class="outline-5">
+<h5 id="org59eb23f"><a href="./org/R-text-6.html">./org/R-text-6.html</a> 教科書のまとめ 未完</h5>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4c5849e" class="outline-5">
-<h5 id="org4c5849e">RStudio を使いましょう</h5>
-<div class="outline-text-5" id="text-org4c5849e">
+<div id="outline-container-org44c16f0" class="outline-3">
+<h3 id="org44c16f0"><span class="section-number-3">1.2.</span> RStudio を使いましょう</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 RStudioを使ってない人は，RStudio をインストールしましょう。
 講義終了後，相談にのります。
@@ -381,17 +312,17 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
 </div>
 </div>
 
-<div id="outline-container-org9c97db8" class="outline-5">
-<h5 id="org9c97db8"><span class="todo Todo">Todo</span> RStudio (2) 12/16</h5>
-<div class="outline-text-5" id="text-org9c97db8">
+<div id="outline-container-orgbce9543" class="outline-3">
+<h3 id="orgbce9543"><span class="section-number-3">1.3.</span> <span class="todo Todo">Todo</span> RStudio (2) 12/16</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 <a href="./org/daizu.html">./org/daizu.html</a> に従って，Rmarkdown を使ってみましょう。
 </p>
 </div>
 
-<div id="outline-container-org4edc611" class="outline-7">
-<h7 id="org4edc611">RStudio (1)</h7>
-<div class="outline-text-7" id="text-org4edc611">
+<div id="outline-container-org232d48e" class="outline-5">
+<h5 id="org232d48e">RStudio (1)</h5>
+<div class="outline-text-5" id="text-org232d48e">
 <p>
 講師も RStudio が使える環境を手に入れたので，気付いたことを書き留めよ
 うと思います。
@@ -404,40 +335,51 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
 </div>
 </div>
 
-<div id="outline-container-org356ff27" class="outline-7">
-<h7 id="org356ff27">file</h7>
-<div class="outline-text-7" id="text-org356ff27">
+<div id="outline-container-org80acf35" class="outline-5">
+<h5 id="org80acf35">file</h5>
+<div class="outline-text-5" id="text-org80acf35">
 </div>
-<ul class="org-ul">
-<li><a id="org77bf188"></a>file<br />
-<ul class="org-ul">
-<li><a id="orgc7b3561"></a>R-script, R-notebook, R-markdown<br /></li>
-</ul>
-</li>
-<li><a id="org6ede3dc"></a>project<br /></li>
-<li><a id="orga064f66"></a>import data set<br /></li>
-</ul>
+<div id="outline-container-orgec393f4" class="outline-6">
+<h6 id="orgec393f4">file</h6>
+<div class="outline-text-6" id="text-orgec393f4">
 </div>
-<div id="outline-container-orgd987ea8" class="outline-7">
-<h7 id="orgd987ea8">session</h7>
-<div class="outline-text-7" id="text-orgd987ea8">
+<div id="outline-container-orgdafdf7e" class="outline-7">
+<h7 id="orgdafdf7e">R-script, R-notebook, R-markdown</h7>
 </div>
-<ul class="org-ul">
-<li><a id="org4a1d788"></a>project<br /></li>
-
-<li><a id="orgd6e8771"></a>session<br /></li>
-<li><a id="org7a8af90"></a>working directory<br /></li>
-<li><a id="org8f70163"></a>workspace<br /></li>
-</ul>
 </div>
-
-<div id="outline-container-orgfc85417" class="outline-7">
-<h7 id="orgfc85417">view</h7>
+<div id="outline-container-orgb0e89b5" class="outline-6">
+<h6 id="orgb0e89b5">project</h6>
+</div>
+<div id="outline-container-org54b1a11" class="outline-6">
+<h6 id="org54b1a11">import data set</h6>
+</div>
+</div>
+<div id="outline-container-org1374078" class="outline-5">
+<h5 id="org1374078">session</h5>
+<div class="outline-text-5" id="text-org1374078">
+</div>
+<div id="outline-container-orgd3964e9" class="outline-6">
+<h6 id="orgd3964e9">project</h6>
 </div>
 
-<div id="outline-container-org530b382" class="outline-6">
-<h6 id="org530b382">R 入門</h6>
-<div class="outline-text-6" id="text-org530b382">
+<div id="outline-container-org0be8120" class="outline-6">
+<h6 id="org0be8120">session</h6>
+</div>
+<div id="outline-container-org28cac83" class="outline-6">
+<h6 id="org28cac83">working directory</h6>
+</div>
+<div id="outline-container-org6be8a73" class="outline-6">
+<h6 id="org6be8a73">workspace</h6>
+</div>
+</div>
+
+<div id="outline-container-org84f5cd0" class="outline-5">
+<h5 id="org84f5cd0">view</h5>
+</div>
+
+<div id="outline-container-orgf2d18bd" class="outline-4">
+<h4 id="orgf2d18bd">R 入門</h4>
+<div class="outline-text-4" id="text-orgf2d18bd">
 <p>
 <a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a> の8，9，10，11章
 </p>
@@ -460,1090 +402,12 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
 </ul>
 </div>
 </div>
-</div>
-</div>
-
-
-
-<div id="outline-container-orga6bfbfa" class="outline-3">
-<h3 id="orga6bfbfa">講義記録</h3>
-<div class="outline-text-3" id="text-orga6bfbfa">
-</div>
-<div id="outline-container-orgcc6daf5" class="outline-4">
-<h4 id="orgcc6daf5">9th 12/16の講義</h4>
-<div class="outline-text-4" id="text-orgcc6daf5">
-</div>
-<div id="outline-container-orgbcdc2b3" class="outline-5">
-<h5 id="orgbcdc2b3">Rによる入門統計学</h5>
-<div class="outline-text-5" id="text-orgbcdc2b3">
-<ul class="org-ul">
-<li>スライドまたは PDF を手元に準備</li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
-</ul>
-</div>
-
-<div id="outline-container-org88584ac" class="outline-6">
-<h6 id="org88584ac">入門統計学の4章</h6>
-<div class="outline-text-6" id="text-org88584ac">
-</div>
-<div id="outline-container-orga8ea78d" class="outline-7">
-<h7 id="orga8ea78d"><span class="todo Todo">Todo</span> 信頼区間の推定</h7>
-<div class="outline-text-7" id="text-orga8ea78d">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 大数の法則と中心極限定理</li>
-<li class="on"><code>[X]</code> 信頼区間の推定</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散既知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散未知</li>
-<li class="on"><code>[X]</code> 母比率の推定，母分布未知</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgaa40a97" class="outline-7">
-<h7 id="orgaa40a97"><a href="./org/R-text-4.html">./org/R-text-4.html</a> 教科書のまとめ</h7>
-</div>
-</div>
-
-<div id="outline-container-org67ee2b7" class="outline-6">
-<h6 id="org67ee2b7">入門統計学の5章</h6>
-<div class="outline-text-6" id="text-org67ee2b7">
-</div>
-<div id="outline-container-org790316d" class="outline-7">
-<h7 id="org790316d">カイ二乗分布とF分布 <code>[1/3]</code> スライド</h7>
-<div class="outline-text-7" id="text-org790316d">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> カイ二乗分布とF分布</li>
-<li class="off"><code>[&#xa0;]</code> 母分散の区間推定</li>
-<li class="off"><code>[&#xa0;]</code> F分布</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org20e4450" class="outline-7">
-<h7 id="org20e4450"><a href="./org/R-text-5.html">./org/R-text-5.html</a> 教科書のまとめ</h7>
-</div>
-</div>
-
-<div id="outline-container-org5aea5e2" class="outline-6">
-<h6 id="org5aea5e2">入門統計学の6章</h6>
-<div class="outline-text-6" id="text-org5aea5e2">
-</div>
-<div id="outline-container-org550762e" class="outline-7">
-<h7 id="org550762e"><span class="todo Todo">Todo</span> 仮説検定と検定力 [ ] スライド</h7>
-<div class="outline-text-7" id="text-org550762e">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 検定の概要</li>
-<li class="on"><code>[X]</code> 仮説の検定</li>
-<li class="on"><code>[X]</code> 1標本の母平均の検定
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 例題 <a href="./org/examples-06.html">./org/examples-06.html</a></li>
-</ul></li>
-<li class="off"><code>[&#xa0;]</code> 標準正規分布やt分布の利用
-<ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> 例題 <a href="./org/examples-06.html">./org/examples-06.html</a></li>
-</ul></li>
-<li class="off"><code>[&#xa0;]</code> 検出力分析</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org94d546e" class="outline-7">
-<h7 id="org94d546e"><a href="./org/R-text-6.html">./org/R-text-6.html</a> 教科書のまとめ 未完</h7>
-</div>
-</div>
-
-
-<div id="outline-container-org9761f00" class="outline-6">
-<h6 id="org9761f00">まとめとRの演習</h6>
-<div class="outline-text-6" id="text-org9761f00">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 信頼区間の推定</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散既知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散未知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分布未知</li>
-<li class="on"><code>[X]</code> 母比率の推定，母分布未知</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgbe2cd1f" class="outline-5">
-<h5 id="orgbe2cd1f">標本と統計的推測 (6回目のまとめ)</h5>
-<div class="outline-text-5" id="text-orgbe2cd1f">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 大数の法則と中心極限定理</li>
-<li class="on"><code>[X]</code> 標本平均の従う分布</li>
-<li class="on"><code>[X]</code> 標本不偏分散の従う分布</li>
-</ul></li>
-
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html</a></li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgb9fe015" class="outline-4">
-<h4 id="orgb9fe015">RStudio を使いましょう</h4>
-<div class="outline-text-4" id="text-orgb9fe015">
-<p>
-RStudioを使ってない人は，RStudio をインストールしましょう。
-講義終了後，相談にのります。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org24f5e6f" class="outline-4">
-<h4 id="org24f5e6f"><span class="todo Doing">Doing</span> RStudio (2) 12/16</h4>
-<div class="outline-text-4" id="text-org24f5e6f">
-<p>
-<a href="./org/daizu.html">./org/daizu.html</a> に従って，Rmarkdown を使ってみましょう。
-</p>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org5754e6a" class="outline-3">
-<h3 id="org5754e6a">8th 12/09の講義</h3>
-<div class="outline-text-3" id="text-org5754e6a">
-</div>
-<div id="outline-container-org146e669" class="outline-4">
-<h4 id="org146e669">Rによる入門統計学</h4>
-<div class="outline-text-4" id="text-org146e669">
-<ul class="org-ul">
-<li>スライドまたは PDF を手元に準備</li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
-</ul>
-</div>
-
-<div id="outline-container-org70b4603" class="outline-5">
-<h5 id="org70b4603">入門統計学の4章</h5>
-<div class="outline-text-5" id="text-org70b4603">
-</div>
-<div id="outline-container-org9051c83" class="outline-6">
-<h6 id="org9051c83">信頼区間の推定 <code>[5/5]</code></h6>
-<div class="outline-text-6" id="text-org9051c83">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 大数の法則と中心極限定理</li>
-<li class="on"><code>[X]</code> 信頼区間の推定</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散既知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散未知</li>
-<li class="on"><code>[X]</code> 母比率の推定，母分布未知</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org0356491" class="outline-5">
-<h5 id="org0356491">入門統計学の5章</h5>
-<div class="outline-text-5" id="text-org0356491">
-</div>
-<div id="outline-container-org35d6135" class="outline-6">
-<h6 id="org35d6135">カイ二乗分布とF分布 <code>[1/3]</code> スライド</h6>
-<div class="outline-text-6" id="text-org35d6135">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> カイ二乗分布とF分布</li>
-<li class="off"><code>[&#xa0;]</code> 母分散の区間推定</li>
-<li class="off"><code>[&#xa0;]</code> F分布</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgce14502" class="outline-6">
-<h6 id="orgce14502"><a href="./org/R-text-5.html">./org/R-text-5.html</a> 教科書のまとめ</h6>
-</div>
-</div>
-
-<div id="outline-container-org01a81d0" class="outline-5">
-<h5 id="org01a81d0">まとめとRの演習</h5>
-<div class="outline-text-5" id="text-org01a81d0">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 信頼区間の推定</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散既知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散未知</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分布未知</li>
-<li class="on"><code>[X]</code> 母比率の推定，母分布未知</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org42678a2" class="outline-5">
-<h5 id="org42678a2">標本と統計的推測 (6回目のまとめ)</h5>
-<div class="outline-text-5" id="text-org42678a2">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 大数の法則と中心極限定理</li>
-<li class="on"><code>[X]</code> 標本平均の従う分布</li>
-<li class="on"><code>[X]</code> 標本不偏分散の従う分布</li>
-</ul></li>
-
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html</a></li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org7f8cd6f" class="outline-4">
-<h4 id="org7f8cd6f">RStudio を使いましょう</h4>
-<div class="outline-text-4" id="text-org7f8cd6f">
-<p>
-講師も RStudio が使える環境を手に入れたので，
-  気付いたことを書き留めようと思います。
-</p>
-
-<ul class="org-ul">
-<li>生物統計用のプロジェクトを作ろう</li>
-<li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
-</ul>
-</div>
-
-<div id="outline-container-orgbce9bed" class="outline-5">
-<h5 id="orgbce9bed">file</h5>
-<div class="outline-text-5" id="text-orgbce9bed">
-</div>
-<div id="outline-container-orgf70318c" class="outline-6">
-<h6 id="orgf70318c">file</h6>
-<div class="outline-text-6" id="text-orgf70318c">
-</div>
-<div id="outline-container-orga287104" class="outline-7">
-<h7 id="orga287104">R-script, R-notebook, R-markdown</h7>
-</div>
-</div>
-<div id="outline-container-orgd1d0dde" class="outline-6">
-<h6 id="orgd1d0dde">project</h6>
-</div>
-<div id="outline-container-orgd737f2b" class="outline-6">
-<h6 id="orgd737f2b">import data set</h6>
-</div>
-</div>
-<div id="outline-container-org2cba6dc" class="outline-5">
-<h5 id="org2cba6dc">session</h5>
-<div class="outline-text-5" id="text-org2cba6dc">
-</div>
-<div id="outline-container-org27f682a" class="outline-6">
-<h6 id="org27f682a">project</h6>
-</div>
-
-<div id="outline-container-orgdc3d56e" class="outline-6">
-<h6 id="orgdc3d56e">session</h6>
-</div>
-<div id="outline-container-org9254c0c" class="outline-6">
-<h6 id="org9254c0c">working directory</h6>
-</div>
-<div id="outline-container-orga569fe8" class="outline-6">
-<h6 id="orga569fe8">workspace</h6>
-</div>
-</div>
-
-<div id="outline-container-org6c3f170" class="outline-5">
-<h5 id="org6c3f170">view</h5>
-</div>
-</div>
-
-<div id="outline-container-orgeed180c" class="outline-4">
-<h4 id="orgeed180c">R 入門</h4>
-<div class="outline-text-4" id="text-orgeed180c">
-<p>
-<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a> の8，9，10，11章
-</p>
-
-<p>
-先生の演習ノート <code>[4/6]</code>
-</p>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> <a href="./org/R-intro-1.html">./org/R-intro-1.html</a> - 基本操作</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-2.html">./org/R-intro-2.html</a> - データ処理</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-3.html">./org/R-intro-3.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 89 ファイルの読み書き  12/02</li>
-<li class="on"><code>[X]</code> 10 スクリプトの実行    12/02</li>
-<li class="on"><code>[X]</code> 11 関数を作る</li>
-</ul></li>
-<li class="off"><code>[&#xa0;]</code> <a href="./org/R-intro-4.html">./org/R-intro-4.html</a> - 12グラフ</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-5.html">./org/R-intro-5.html</a> - 13構文</li>
-<li class="off"><code>[&#xa0;]</code> <a href="./org/R-intro-6.html">./org/R-intro-6.html</a> - 14その他</li>
-</ul>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org1f81859" class="outline-3">
-<h3 id="org1f81859">7th 12/02</h3>
-<div class="outline-text-3" id="text-org1f81859">
-</div>
-<div id="outline-container-org1d63093" class="outline-4">
-<h4 id="org1d63093">Rによる入門統計学</h4>
-<div class="outline-text-4" id="text-org1d63093">
-<ul class="org-ul">
-<li>スライドまたは PDF を手元に準備</li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
-</ul>
-</div>
-
-<div id="outline-container-org751d378" class="outline-5">
-<h5 id="org751d378">入門統計学の4章</h5>
-<div class="outline-text-5" id="text-org751d378">
-</div>
-<div id="outline-container-org509cd4e" class="outline-6">
-<h6 id="org509cd4e">信頼区間の推定 <code>[3/5]</code></h6>
-<div class="outline-text-6" id="text-org509cd4e">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 大数の法則と中心極限定理</li>
-<li class="on"><code>[X]</code> 信頼区間の推定</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散既知</li>
-<li class="off"><code>[&#xa0;]</code> 母平均の推定，母分散未知</li>
-<li class="off"><code>[&#xa0;]</code> 母比率の推定，母分布未知</li>
-</ul>
-</div>
-
-<div id="outline-container-org9763697" class="outline-7">
-<h7 id="org9763697">まとめとRの演習</h7>
-<div class="outline-text-7" id="text-org9763697">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-interval-estimation.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 大数の法則と中心極限定理</li>
-<li class="on"><code>[X]</code> 信頼区間の推定</li>
-<li class="on"><code>[X]</code> 母平均の推定，母分散既知</li>
-<li class="off"><code>[&#xa0;]</code> 母平均の推定，母分散未知</li>
-<li class="off"><code>[&#xa0;]</code> 母比率の推定，母分布未知</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgd57e9c2" class="outline-5">
-<h5 id="orgd57e9c2">標本と統計的推測 (6回目のまとめ)</h5>
-<div class="outline-text-5" id="text-orgd57e9c2">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 標本平均が従う分布</li>
-<li class="on"><code>[X]</code> 標本不偏分散が従う分布</li>
-</ul></li>
-
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html</a></li>
-</ul>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org2b0a7c1" class="outline-4">
-<h4 id="org2b0a7c1">R 入門</h4>
-<div class="outline-text-4" id="text-org2b0a7c1">
-<p>
-<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a> の8，9，10，11章
-</p>
-
-<p>
-先生の演習ノート <code>[4/6]</code>
-</p>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> <a href="./org/R-intro-1.html">./org/R-intro-1.html</a> - 基本操作</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-2.html">./org/R-intro-2.html</a> - データ処理</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-3.html">./org/R-intro-3.html</a>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 89 ファイルの読み書き  12/02</li>
-<li class="on"><code>[X]</code> 10 スクリプトの実行    12/02</li>
-<li class="on"><code>[X]</code> 11 関数を作る</li>
-</ul></li>
-<li class="off"><code>[&#xa0;]</code> <a href="./org/R-intro-4.html">./org/R-intro-4.html</a> - 12グラフ</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-5.html">./org/R-intro-5.html</a> - 13構文</li>
-<li class="off"><code>[&#xa0;]</code> <a href="./org/R-intro-6.html">./org/R-intro-6.html</a> - 14その他</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgdc96071" class="outline-3">
-<h3 id="orgdc96071">6th 11/25</h3>
-<div class="outline-text-3" id="text-orgdc96071">
-</div>
-<div id="outline-container-org4de4c23" class="outline-4">
-<h4 id="org4de4c23"><span class="done Done">Done</span> RStudio を使いましょう</h4>
-<div class="outline-text-4" id="text-org4de4c23">
-<ul class="org-ul">
-<li>生物統計用のプロジェクトを作ろう</li>
-<li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org04c740d" class="outline-4">
-<h4 id="org04c740d">Rによる入門統計学</h4>
-<div class="outline-text-4" id="text-org04c740d">
-<ul class="org-ul">
-<li>スライドまたは PDF を手元に準備</li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
-</ul>
-</div>
-
-<div id="outline-container-org32be622" class="outline-5">
-<h5 id="org32be622">入門統計学の3章</h5>
-<div class="outline-text-5" id="text-org32be622">
-</div>
-<div id="outline-container-org19dee74" class="outline-6">
-<h6 id="org19dee74">推定と誤差 <code>[4/5]</code></h6>
-<div class="outline-text-6" id="text-org19dee74">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 推測統計学とは</li>
-<li class="on"><code>[X]</code> 標本平均と標本不偏分散</li>
-<li class="on"><code>[X]</code> 標本分布と誤差</li>
-<li class="on"><code>[X]</code> 標本のばらつき</li>
-<li class="off"><code>[&#xa0;]</code> 標本分布のまとめ
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html</a></li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html</a></li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org653c6b6" class="outline-6">
-<h6 id="org653c6b6">Rの演習</h6>
-<div class="outline-text-6" id="text-org653c6b6">
-<ul class="org-ul">
-<li><a href="./org/R-text-3.html">./org/R-text-3.html</a>
-<ul class="org-ul">
-<li>標本平均の確率分布をRで理解する</li>
-<li>標本不偏分散に関連する確率分布をRで理解する</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orga341212" class="outline-5">
-<h5 id="orga341212">標本と統計的推測</h5>
-<div class="outline-text-5" id="text-orga341212">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation.html</a></li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/Stat-estimation-2.html</a></li>
-</ul>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org8c2ce61" class="outline-4">
-<h4 id="org8c2ce61">R 入門</h4>
-<div class="outline-text-4" id="text-org8c2ce61">
-<p>
-<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a> の8，9，10，11章
-</p>
-
-<p>
-先生の演習ノート <code>[3/6]</code>
-</p>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> <a href="./org/R-intro-1.html">./org/R-intro-1.html</a> - 基本操作</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-2.html">./org/R-intro-2.html</a> - データ処理</li>
-<li class="trans"><code>[-]</code> <a href="./org/R-intro-3.html">./org/R-intro-3.html</a>
-<ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> 89 ファイルの読み書き,</li>
-<li class="off"><code>[&#xa0;]</code> 10 スクリプトの実行</li>
-<li class="on"><code>[X]</code> 11 関数を作る</li>
-</ul></li>
-<li class="off"><code>[&#xa0;]</code> <a href="./org/R-intro-4.html">./org/R-intro-4.html</a> - 12グラフ</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-5.html">./org/R-intro-5.html</a> - 13構文</li>
-<li class="off"><code>[&#xa0;]</code> <a href="./org/R-intro-6.html">./org/R-intro-6.html</a> - 14その他</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org4e8feba" class="outline-3">
-<h3 id="org4e8feba">5th 11/11</h3>
-<div class="outline-text-3" id="text-org4e8feba">
-</div>
-<div id="outline-container-orgd8ca3da" class="outline-4">
-<h4 id="orgd8ca3da"><span class="done Done">Done</span> RStudio を使いましょう</h4>
-<div class="outline-text-4" id="text-orgd8ca3da">
-<ul class="org-ul">
-<li>生物統計用のプロジェクトを作ろう</li>
-<li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org300f756" class="outline-4">
-<h4 id="org300f756"><span class="done Done">Done</span> <a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h4>
-<div class="outline-text-4" id="text-org300f756">
-<ul class="org-ul">
-<li>RStudioの概要</li>
-<li>プロジェクトの作成</li>
-</ul>
-</div>
-</div>
-
-
-<div id="outline-container-org9b5fa39" class="outline-4">
-<h4 id="org9b5fa39">Rによる入門統計学</h4>
-<div class="outline-text-4" id="text-org9b5fa39">
-<ul class="org-ul">
-<li>スライドまたは PDF を手元に準備</li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
-</ul>
-</div>
-
-<div id="outline-container-orgd7d4620" class="outline-5">
-<h5 id="orgd7d4620">入門統計学の2章</h5>
-<div class="outline-text-5" id="text-orgd7d4620">
-</div>
-<div id="outline-container-orgfaffded" class="outline-6">
-<h6 id="orgfaffded">確率分布 <code>[4/4]</code></h6>
-<div class="outline-text-6" id="text-orgfaffded">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 確率変数と確率分布</li>
-<li class="on"><code>[X]</code> 期待値と分散</li>
-<li class="on"><code>[X]</code> 標準化と偏差</li>
-<li class="on"><code>[X]</code> 二項分布，ポアソン分布，正規分布</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org48450a8" class="outline-6">
-<h6 id="org48450a8">Rの演習</h6>
-<div class="outline-text-6" id="text-org48450a8">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org7c39948" class="outline-4">
-<h4 id="org7c39948">R 入門</h4>
-<div class="outline-text-4" id="text-org7c39948">
-<p>
-<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a> の8，9，10，11章
-</p>
-</div>
-
-<div id="outline-container-org91e87c0" class="outline-5">
-<h5 id="org91e87c0">先生の演習ノート <code>[4/5]</code></h5>
-<div class="outline-text-5" id="text-org91e87c0">
-<ul class="org-ul">
-<li class="on"><code>[X]</code> <a href="./org/R-intro-1.html">./org/R-intro-1.html</a> - 基本操作</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-2.html">./org/R-intro-2.html</a> - データ処理</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-3.html">./org/R-intro-3.html</a> - 89ファイルの読み書き, 10スクリプトの実行, 11関数を作る</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-4.html">./org/R-intro-4.html</a> - 12グラフ</li>
-<li class="on"><code>[X]</code> <a href="./org/R-intro-5.html">./org/R-intro-5.html</a> - 13構文</li>
-<li class="off"><code>[&#xa0;]</code> <a href="./org/R-intro-6.html">./org/R-intro-6.html</a> - 14その他</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-
-
-<div id="outline-container-org69502e7" class="outline-3">
-<h3 id="org69502e7">4th 11/04</h3>
-<div class="outline-text-3" id="text-org69502e7">
-</div>
-<div id="outline-container-orgbe33260" class="outline-4">
-<h4 id="orgbe33260">RStudio を使いましょう</h4>
-<div class="outline-text-4" id="text-orgbe33260">
-<ul class="org-ul">
-<li>生物統計用のプロジェクトを作ろう</li>
-<li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org0b83be7" class="outline-4">
-<h4 id="org0b83be7"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h4>
-<div class="outline-text-4" id="text-org0b83be7">
-<ul class="org-ul">
-<li>RStudioの概要</li>
-<li>プロジェクトの作成</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org14ff9ba" class="outline-4">
-<h4 id="org14ff9ba">R 入門</h4>
-<div class="outline-text-4" id="text-org14ff9ba">
-<p>
-<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">
-初心者用 - R_Stats2.pdf</a> の8，9，10，11章
-</p>
-<ul class="org-ul">
-<li>先生の演習ノート <a href="https://github.com/masayuki054/bio_stat/blob/main/org/R-intro-3.org">bio_stat/R-intro-3.org at main · masayuki054/bio_stat</a> 
-<ul class="org-ul">
-<li>ファイルの読み書き</li>
-<li>スクリプトの実行</li>
-<li>関数を作る</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org414b7f1" class="outline-4">
-<h4 id="org414b7f1">Rによる統計入門</h4>
-<div class="outline-text-4" id="text-org414b7f1">
-<ul class="org-ul">
-<li>スライドまたは PDF を手元に準備</li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org</a></li>
-</ul>
-</div>
-
-<div id="outline-container-org0e5d69d" class="outline-5">
-<h5 id="org0e5d69d">入門統計学の2章</h5>
-<div class="outline-text-5" id="text-org0e5d69d">
-</div>
-<div id="outline-container-orgca690d6" class="outline-6">
-<h6 id="orgca690d6">確率分布</h6>
-<div class="outline-text-6" id="text-orgca690d6">
-<ul class="org-ul">
-<li>確率変数と確率分布</li>
-<li>期待値と分散</li>
-<li>標準化と偏差</li>
-<li>二項分布，ポアソン分布，正規分布</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org8d4c593" class="outline-6">
-<h6 id="org8d4c593">Rの演習</h6>
-<div class="outline-text-6" id="text-org8d4c593">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org/R-text-2.html</a>
-<ul class="org-ul">
-<li>2. データの図示と基本統計量の計算 をやってみましょう</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org3a5ff39" class="outline-3">
-<h3 id="org3a5ff39">3rd 10/28</h3>
-<div class="outline-text-3" id="text-org3a5ff39">
-<p>
-先週は休講にしてすみませんでした。
-</p>
-</div>
-
-<div id="outline-container-org75dd3c6" class="outline-4">
-<h4 id="org75dd3c6">RStudio を使いましょう</h4>
-<div class="outline-text-4" id="text-org75dd3c6">
-<ul class="org-ul">
-<li>生物統計用のプロジェクトを作ろう</li>
-<li>毎回のRのプログラムを，R-スクリプトとして残そう</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgeabddc4" class="outline-4">
-<h4 id="orgeabddc4"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h4>
-<div class="outline-text-4" id="text-orgeabddc4">
-<ul class="org-ul">
-<li>RStudioの概要</li>
-<li>プロジェクトの作成</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org76de662" class="outline-4">
-<h4 id="org76de662">R 入門</h4>
-<div class="outline-text-4" id="text-org76de662">
-<ul class="org-ul">
-<li><a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>，</li>
-<li>先生の演習ノート <a href="./org/R-intro-2.html">./org/R-intro-2.html</a>
-<ul class="org-ul">
-<li>簡単な行列の作成と演算</li>
-<li>簡単なリストの作成</li>
-<li>簡単なデータフレームの作成</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org8ef90d8" class="outline-4">
-<h4 id="org8ef90d8">Rによる統計入門</h4>
-<div class="outline-text-4" id="text-org8ef90d8">
-<ul class="org-ul">
-<li>スライドまたは PDF を手元に準備</li>
-</ul>
-</div>
-
-<div id="outline-container-orga3662dc" class="outline-5">
-<h5 id="orga3662dc">入門統計学の1章</h5>
-<div class="outline-text-5" id="text-orga3662dc">
-<ul class="org-ul">
-<li>スライドまたは PDF を手元に準備</li>
-</ul>
-</div>
-
-<div id="outline-container-orgc87d4d7" class="outline-6">
-<h6 id="orgc87d4d7">Rの演習</h6>
-<div class="outline-text-6" id="text-orgc87d4d7">
-<ul class="org-ul">
-<li><a href="http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/distribution.html">生物統計学１</a>
-<ul class="org-ul">
-<li>2. データの図示と基本統計量の計算 をやってみましょう</li>
-<li><a href="./org/bio.html">./org/bio.html</a></li>
-</ul></li>
-</ul>
-
-<p>
-今日の演習内容をファイルに保存しましょう。
-</p>
-<ul class="org-ul">
-<li>自分のRの演習フォルダに</li>
-<li>日付と項目がわかるように。</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgcacd2fd" class="outline-5">
-<h5 id="orgcacd2fd">入門統計学の2章</h5>
-<div class="outline-text-5" id="text-orgcacd2fd">
-</div>
-<div id="outline-container-orgf055933" class="outline-6">
-<h6 id="orgf055933">統計分布 (スライド)</h6>
-</div>
-<div id="outline-container-org07eaddc" class="outline-6">
-<h6 id="org07eaddc">Rの演習</h6>
-<div class="outline-text-6" id="text-org07eaddc">
-<ul class="org-ul">
-<li><a href="./org/R-text-2.html">./org/R-text-2.html</a>
-<ul class="org-ul">
-<li>2. データの図示と基本統計量の計算 をやってみましょう</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org9fb1628" class="outline-3">
-<h3 id="org9fb1628">2nd 10/14</h3>
-<div class="outline-text-3" id="text-org9fb1628">
-</div>
-<div id="outline-container-orgb9ce8d5" class="outline-4">
-<h4 id="orgb9ce8d5">講義について</h4>
-<div class="outline-text-4" id="text-orgb9ce8d5">
-<ul class="org-ul">
-<li>お昼休みサッカー (再度)
-<ul class="org-ul">
-<li>12:30 ~ グラウンド， 2~10名でのミニゲーム，素人多数，先生，職
-員，学生</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org867e6d5" class="outline-4">
-<h4 id="org867e6d5"><span class="done Done">Done</span> スライドとデータの準備</h4>
-<div class="outline-text-4" id="text-org867e6d5">
-<ul class="org-ul">
-<li>確認 全員 office 有り</li>
-<li><p>
-ファイル，フォルダ操作の慣れ
-</p>
-
-<pre class="example">
-c:/Users/名前/Onedrive/Documents/R (/は円記号かもしれない)
-</pre></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org42ddd79" class="outline-4">
-<h4 id="org42ddd79"><span class="done Done">Done</span> R のインストール</h4>
-<div class="outline-text-4" id="text-org42ddd79">
-</div>
-</div>
-
-<div id="outline-container-orgaf8aace" class="outline-4">
-<h4 id="orgaf8aace">Rcmdr か RStudio を使いましょう</h4>
-<div class="outline-text-4" id="text-orgaf8aace">
-<ul class="org-ul">
-<li><p>
-Rcmdr の起動       
-</p>
-<pre class="example">
-library(Rcmdr)
-</pre></li>
-
-<li>Rcmdr を自動的に起動する方法
-<ul class="org-ul">
-<li><a href="http://plaza.umin.ac.jp/~takeshou/R/Rcmdrfirst.html">Rコマンダーの簡単な使い方</a></li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org15a174e" class="outline-4">
-<h4 id="org15a174e"><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></h4>
-<div class="outline-text-4" id="text-org15a174e">
-<ul class="org-ul">
-<li>RStudioの概要</li>
-<li>help</li>
-<li>終了</li>
-<li>ワーキング・ディレクトリ(フォルダ)， .Rhistory, .RData, ~/.Rprofile</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org7634717" class="outline-4">
-<h4 id="org7634717">R 入門</h4>
-<div class="outline-text-4" id="text-org7634717">
-<ul class="org-ul">
-<li><p>
-<a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a>
-</p>
-
-<p>
-これを何回かかけてやりましょう
-</p>
-<ul class="org-ul">
-<li>起動と終了</li>
-<li>変数への代入</li>
-<li>簡単な演算</li>
-<li>簡単なベクトル演算</li>
-<li>簡単な行列の作成と演算</li>
-<li>簡単なリストの作成</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org9d7351b" class="outline-4">
-<h4 id="org9d7351b">Rによる統計入門</h4>
-<div class="outline-text-4" id="text-org9d7351b">
-</div>
-<div id="outline-container-org921f597" class="outline-5">
-<h5 id="org921f597">入門統計学の1章</h5>
-<div class="outline-text-5" id="text-org921f597">
-<ul class="org-ul">
-<li>Excel -&gt; R で書き直し</li>
-<li>スライドまたは PDF を手元に準備</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orge7dc481" class="outline-5">
-<h5 id="orge7dc481">Rの演習</h5>
-<div class="outline-text-5" id="text-orge7dc481">
-<ul class="org-ul">
-<li><a href="http://whitewell.sakura.ne.jp/R/Rstatistics-01.html">Rで統計学を学ぶ(1)</a></li>
-<li><a href="http://whitewell.sakura.ne.jp/R/Rstatistics-02.html">Rで統計学を学ぶ(2)</a></li>
-</ul>
-
-<p>
-今日の演習内容をファイルに保存しましょう。
-</p>
-<ul class="org-ul">
-<li>自分のRの演習フォルダに</li>
-<li>日付と項目がわかるように。</li>
-</ul>
-
-
-<ul class="org-ul">
-<li>参考サイト
-<ul class="org-ul">
-<li><a href="http://whitewell.sakura.ne.jp/R/">Webpage for Probability Theory and Statistics (B)</a></li>
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/">http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/</a></li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org10ad840" class="outline-3">
-<h3 id="org10ad840">1st 10/07</h3>
-<div class="outline-text-3" id="text-org10ad840">
-</div>
-<div id="outline-container-org40d9094" class="outline-4">
-<h4 id="org40d9094">講義について</h4>
-<div class="outline-text-4" id="text-org40d9094">
-<ul class="org-ul">
-<li>シラバス
-
-<ul class="org-ul">
-<li>引き継いだだけの状態，要相談</li>
-</ul></li>
-
-<li>講師の自己紹介
-
-<ul class="org-ul">
-<li>生物，生命に関し，まったくの素人</li>
-
-<li>数学としての確率・統計を教えている</li>
-
-<li>お昼休みサッカー
-
-<ul class="org-ul">
-<li>12:30 ~ グラウンド， 2~10名でのミニゲーム，素人多数，先生，職
-員，学生</li>
-</ul></li>
-</ul></li>
-
-<li>講義内容</li>
-
-<li>講義方法</li>
-<li>講義に関する相談
-<ul class="org-ul">
-<li>統計に関する既習のことの確認</li>
-<li>パソコンの知識</li>
-<li>確率統計に関する確認事項</li>
-<li>Rの習得法</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-
-<div id="outline-container-org0d854de" class="outline-4">
-<h4 id="org0d854de">スライドとデータの準備</h4>
-<div class="outline-text-4" id="text-org0d854de">
-<ul class="org-ul">
-<li>ダウンロード</li>
-<li>解凍</li>
-<li>確認
-<ul class="org-ul">
-<li>office 有無</li>
-<li>ファイル，フォルダ操作の慣れ</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orga72a81e" class="outline-4">
-<h4 id="orga72a81e">前期の確率統計の内容確認</h4>
-<div class="outline-text-4" id="text-orga72a81e">
-<ul class="org-ul">
-<li>確率
-<ul class="org-ul">
-<li>事前確率，事後確率，ベイズの定理</li>
-</ul></li>
-<li>記述統計
-<ul class="org-ul">
-<li>平均，分散，共分散，相関</li>
-</ul></li>
-<li>確率分布
-<ul class="org-ul">
-<li>確率変数</li>
-<li>確率密度関数</li>
-<li>期待値</li>
-</ul></li>
-<li>ベルヌーイ試行，二項分布，多項分布</li>
-<li>一様分布，正規分布，2次元正規分布</li>
-<li>カイ二乗分布，t-分布，F-分布</li>
-<li>母集団と標本
-<ul class="org-ul">
-<li>大数の法則，中心極限定理</li>
-<li>標本平均が従がう分布の平均と分散</li>
-</ul></li>
-<li>推定
-<ul class="org-ul">
-<li>最尤推定</li>
-<li>母平均値の区間推定</li>
-<li>母分散の区間推定</li>
-</ul></li>
-</ul>
-<ul class="org-ul">
-<li>仮説検定</li>
-</ul>
-
-<p>
-復習しながら学んでいきましょう。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga7d0b0e" class="outline-4">
-<h4 id="orga7d0b0e">R のインストール</h4>
-<div class="outline-text-4" id="text-orga7d0b0e">
-<p>
-スライド 00 (解凍したスライドの00章)
-</p>
-<ul class="org-ul">
-<li>R とは</li>
-<li>R のインストール
-<ul class="org-ul">
-<li>ダウンロード <a href="http://www.okadajp.org/RWiki/?CRAN%E5%9B%BD%E5%86%85%E3%83%9F%E3%83%A9%E3%83%BC%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">CRAN国内ミラーの使い方 - RjpWiki</a></li>
-<li>インストーラの実行</li>
-<li>確認</li>
-</ul></li>
-</ul>
-<ul class="org-ul">
-<li>Rコマンダーのインストール
-<ul class="org-ul">
-<li>R の起動</li>
-<li><p>
-R のパッケージインストール
-</p>
-<pre class="example">
-install.packages("Rcmdr")
-</pre></li>
-<li><p>
-Rcmdr の起動       
-</p>
-<pre class="example">
-library(Rcmdr)
-</pre></li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-org37004ea" class="outline-2">
-<h2 id="org37004ea">関連サイト</h2>
-<div class="outline-text-2" id="text-org37004ea">
-<ul class="org-ul">
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/">http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/</a>
-講義内容</li>
-
-<li><a href="http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/">http://wiki.cis.iwate-u.ac.jp/~suzuki/biostat/</a>
-スライド，データ，など</li>
-
-<li><a href="http://github.com/masayuki054/bio_stat/">http://github.com/masayuki054/bio_stat/</a>
-講義保存場所</li>
-</ul>
-</div>
-</div>
-
-
-<div id="outline-container-orgd89eabd" class="outline-2">
-<h2 id="orgd89eabd">メモ</h2>
-<div class="outline-text-2" id="text-orgd89eabd">
-<ul class="org-ul">
-<li>講義メモ <a href="https://drive.google.com/drive/u/0/folders/1nGs6svr0actrLPmtz6onPuj2eUrHMQ8M">note - Google ドライブ</a></li>
-
-<li>中心極限定理
-<a href="http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf">http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf</a></li>
-</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-12-18 土 16:02</p>
+<p class="author">Author: 鈴木正幸，非常勤講師</p>
+<p class="date">Created: 2021-12-22 水 22:11</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -7,16 +7,6 @@
  #+begin_src R :session *rtext* :results output :exports both :tangle R-text/code/01.R
  #+end_src
 
- #+begin_src R ：tangle Codes/01.R :session t
-
-## 入門統計学1章1節
-
-
- #+end_src
-
- #+RESULTS:
-
-
 * 1章 データの整理
   
 ** 表1.2の読み込み
