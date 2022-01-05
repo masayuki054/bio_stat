@@ -47,6 +47,7 @@
      - [ ] 検出力分析
        
 **** [[./org/R-text-6.org]] 教科書のまとめ 未完
+- [[http://wiki.cis.iwate-u.ac.jp/~suzuki/RforS/org/RforS-II-05.html]]
 
 ** RStudio を使いましょう
 RStudioを使ってない人は，RStudio をインストールしましょう。
@@ -54,7 +55,7 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
 
 ** Todo RStudio (2) 12/16
 
-[[./org/daizu.org]] に従って，Rmarkdown を使ってみましょう。
+[[./org/daizu.Rmd]] に従って，Rmarkdown を使ってみましょう。
 
 **** RStudio (1)
 講師も RStudio が使える環境を手に入れたので，気付いたことを書き留めよ
@@ -66,12 +67,15 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
 **** file
 ***** file
 ****** R-script, R-notebook, R-markdown
+- chunk
+- knit
+
 ***** project
 ***** import data set
 **** session
+- new session
 
 ***** project
-
 ***** session
 ***** working directory
 ***** workspace
@@ -602,3 +606,16 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
 
    - 中心極限定理
       http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf
+
+** rmarkdown ファイル
+   
+- [[./org/daizu.Rmd]]  [[./org/daizu.html]]
+
+- [[./org/example-03.Rmd]] [[./org/example-03.html]]
+
+- [[./org/example-06.Rmd]]   [[./org/example-06.html]] 
+
+
+** ./org/
+
+- [[./org/]] ディレクトリ 
