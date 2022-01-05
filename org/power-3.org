@@ -1,0 +1,329 @@
+
+* [[https://note.com/][[[data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iYS1ub3RlTG9nbyBzdmVsdGUtcjBkZG9rIiB3aWR0aD0iOTAiIGhlaWdodD0iMjMiIHZpZXdib3g9IjAgMCA5MCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUyLjI4NDggNS44ODU2NkM1Ni4zNzI1IDUuODg1NjYgNTkuNDU4MyA4Ljg3NTg2IDU5LjQ1ODMgMTIuODIwMkM1OS40NTgzIDE2Ljc2NTQgNTYuMzcyNSAxOS43NTU2IDUyLjI4NDggMTkuNzU1NkM0OC4xOTcgMTkuNzU1NiA0NS4xMTEyIDE2Ljc2NTQgNDUuMTExMiAxMi44MjAyQzQ1LjExMTIgOC44NzU4NiA0OC4xOTcgNS44ODU2NiA1Mi4yODQ4IDUuODg1NjZWNS44ODU2NlpNODMuNTU2MyA1Ljk1MDAxQzg3Ljk3ODcgNS45NTAwMSA5MCA5LjM4NTEgOTAgMTMuMTM4MkM5MCAxMy4zODU1IDkwIDEzLjYyNDUgODkuOTc1MiAxMy44NzA5Qzg5Ljk2MDUgMTQuMDE5OCA4OS44ODk3IDE0LjExMjYgODkuNzUgMTQuMTIzNkw4OS43MjA2IDE0LjEyNDZIODAuNzI2MUM4MS4wOTE5IDE1Ljc1NTIgODIuMTU3MyAxNi43MzMzIDgzLjk3MDkgMTYuNzMzM0M4NS4wNjc1IDE2LjczMzMgODUuOTY2NSAxNi40NTU3IDg3LjA0MTEgMTUuNTQxMUM4Ny4xNDQ5IDE1LjQ1MTkgODcuMjU1MiAxNS40MzkgODcuMzY2NSAxNS41MjE4TDg3LjM5MDQgMTUuNTQwMUw4OS4xNDA1IDE3LjExNTdDODkuMjYgMTcuMjE4NiA4OS4yODMgMTcuMzU0NyA4OS4xNzI3IDE3LjQ4MTVDODcuODYwMSAxOC45ODQ0IDg2LjE0OTQgMTkuNzU1NiA4My45MjMxIDE5Ljc1NTZDNzkuOTE0NCAxOS43NTU2IDc3LjAwNDIgMTYuOTQwMSA3Ny4wMDQyIDEyLjgzNjdDNzcuMDA0MiA5LjA2NzA1IDc5LjY5MTEgNS45NDkwOSA4My41NTczIDUuOTQ5MDlMODMuNTU2MyA1Ljk1MDAxWk02OC44OTIyIDIuNzk4OTVDNjkuMDUxMiAyLjc5ODk1IDY5LjE0NjggMi44OTM2MyA2OS4xNDY4IDMuMDUyNjVWNi4yMDQ2M0g3Mi4wMDkyQzcyLjE2ODIgNi4yMDQ2MyA3Mi4yNjM4IDYuMzAwMjMgNzIuMjYzOCA2LjQ1OTI1VjkuMTMxNEM3Mi4yNjM4IDkuMjkwNDIgNzIuMTY4MiA5LjM4NjAyIDcyLjAwOTIgOS4zODYwMkg2OS4xNDY4VjE1LjE1OTZDNjkuMTQ2OCAxNi4wMzQ3IDY5LjUzNjUgMTYuNDQ4MyA3MC4zMDc3IDE2LjQ0ODNDNzAuODgwNCAxNi40NDgzIDcxLjM0OTIgMTYuNDAwNSA3MS45MTQ1IDE2LjExNDZDNzIuMDg5MiAxNi4wMjY0IDcyLjIxNjkgMTYuMDgyNSA3Mi4yMTY5IDE2LjI1OFYxOC43NTQ2QzcyLjIxNjkgMTguODgyNCA3Mi4xNjgyIDE4Ljk5MzYgNzIuMDQyMyAxOS4wNzI3QzcxLjM0OTIgMTkuNTAyOSA3MC40MzQ2IDE5Ljc1NjYgNjkuMjQyNCAxOS43NTY2QzY3LjE4MjQgMTkuNzU2NiA2NS43MTA4IDE5LjAxNjYgNjUuNDMyMiAxNi42NjM0QzY1LjQwMDggMTYuMzIwMyA2NS4zODc2IDE1Ljk3NTcgNjUuMzkyNyAxNS42MzExVjkuMzg1MUg2NC4wNTYyQzYzLjg5NzIgOS4zODUxIDYzLjgwMjUgOS4yODk1IDYzLjgwMjUgOS4xMzA0OFY2LjQ1ODMzQzYzLjgwMjUgNi4yOTkzMSA2My44OTcyIDYuMjAzNzEgNjQuMDU2MiA2LjIwMzcxSDY1LjM5MjdWMy4wNTM1N0M2NS4zOTI3IDIuODk0NTUgNjUuNDg4MyAyLjc5OTg3IDY1LjY0NzMgMi43OTk4N0g2OC44OTIyVjIuNzk4OTVaTTM1Ljc5MTMgNS44ODQ3NEMzOC4xODQxIDUuODg0NzQgMzkuNzI3NCA3LjIyODYzIDQwLjE1NzYgOS40Nzg4NkM0MC4yMzY3IDkuODkyNTEgNDAuMjc2MiAxMC4zODYxIDQwLjI3NjIgMTEuMDEzOVYxOS4xODIxQzQwLjI3NjIgMTkuMzQxMSA0MC4xODA2IDE5LjQzNjcgNDAuMDIxNiAxOS40MzY3SDM2Ljc3NjdDMzYuNjE3NyAxOS40MzY3IDM2LjUyMjEgMTkuMzQxMSAzNi41MjIxIDE5LjE4MjFWMTEuOTkyOUMzNi41MjIxIDEwLjIyNzEgMzUuNjc5MiA5LjI4ODU4IDM0LjI0OCA5LjI4ODU4QzMyLjgxNTkgOS4yODg1OCAzMS45MDk1IDEwLjIxMDYgMzEuOTA5NSAxMS45OTI5VjE5LjE4MjFDMzEuOTA5NSAxOS4zNDExIDMxLjgxMzkgMTkuNDM2NyAzMS42NTQ5IDE5LjQzNjdIMjguNDEwMUMyOC4yNTExIDE5LjQzNjcgMjguMTU1NSAxOS4zNDExIDI4LjE1NTUgMTkuMTgyMVY2LjQ1ODMzQzI4LjE1NTUgNi4yOTkzMSAyOC4yNTExIDYuMjAzNzEgMjguNDEwMSA2LjIwMzcxSDMxLjY1NDlDMzEuODEzOSA2LjIwMzcxIDMxLjkwOTUgNi4yOTkzMSAzMS45MDk1IDYuNDU4MzNWNy45Njk1MUMzMy4xNTc4IDYuMjk5MzEgMzQuNjEyOSA1Ljg4NTY2IDM1Ljc5MTMgNS44ODU2NlY1Ljg4NDc0Wk01Mi4yODU3IDkuMTI5NTZDNTAuMTU0IDkuMTI5NTYgNDguODE4NCAxMC44NDc2IDQ4LjgxODQgMTIuODE5M0M0OC44MTg0IDE0Ljc5MTkgNTAuMTU0IDE2LjUwOTkgNTIuMjg1NyAxNi41MDk5QzU0LjQxODIgMTYuNTA5OSA1NS43NTI5IDE0Ljc5MTkgNTUuNzUyOSAxMi44MTkzQzU1Ljc1MjkgMTAuODQ3NiA1NC40MTczIDkuMTI5NTYgNTIuMjg1NyA5LjEyOTU2VjkuMTI5NTZaTTgzLjU1NzMgOC45NTQ5MUM4Mi4wNjI2IDguOTU0OTEgODEuMDkxIDkuOTcyNDggODAuNjY2MyAxMS43MDM0TDgwLjY0NyAxMS43ODYxSDg2LjM0OThDODYuMDg2OSAxMC4xMzE1IDg1LjE4MDYgOC45NTQ5MSA4My41NTgyIDguOTU0OTFIODMuNTU3M1oiIGZpbGw9ImJsYWNrIj48L3BhdGg+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04LjQ2MjI2IDkuNzk4NzVINS44Mzc5MUM1LjUyNzIyIDkuNzk4NzUgNS40MjQyNyA5Ljc4MjIxIDUuMjY1MjQgOS43MzQ0MUM0LjgzNTk3IDkuNjA3NTYgNC41MDEzOCA5LjE3ODI5IDQuNTAxMzggOC42NjkwNEM0LjUwMTM4IDguMTU5OCA0LjgzNTk3IDcuNzMxNDUgNS4yNjQzMiA3LjYwMjc2QzUuNDI0MjcgNy41NTU4OCA1LjUyNzIyIDcuNTQwMjUgNS44Mzc5MSA3LjU0MDI1SDcuNTM5MzdWNS44MzY5NUM3LjUzOTM3IDUuNTI2MjYgNy41NTU5MiA1LjQyMzMxIDcuNjAzNzIgNS4yNjQyOEM3LjczMDU3IDQuODI2NzQgOC4xNTk4NCA0LjUwMDQyIDguNjY5MDggNC41MDA0MkM5LjE3NzQxIDQuNTAwNDIgOS42MDc2IDQuODM0MDkgOS43MzUzNyA1LjI2NDI4QzkuNzgyMjUgNS40MjMzMSA5Ljc5ODc5IDUuNTI2MjYgOS43OTg3OSA1LjgzNjk1VjguNDYxM0M5Ljc5ODc5IDguNjIwMzMgOS43OTg3OSA4Ljc3OTM1IDkuNzY2NjIgOC45MjI3NUM5LjcxNTM2IDkuMTI2MjggOS42MDk5MiA5LjMxMjEzIDkuNDYxNSA5LjQ2MDU0QzkuMzEzMDkgOS42MDg5NiA5LjEyNzI0IDkuNzE0NCA4LjkyMzcxIDkuNzY1NjZDOC43ODAzMSA5Ljc5Nzg0IDguNjIxMjkgOS43OTc4NCA4LjQ2MjI2IDkuNzk3ODRWOS43OTg3NVpNMTYuODkyNCAxOS40Mzc2SDIuODE1NTRWNy4wMzgzNkMyLjgxNTU0IDYuODc5MzQgMi44NzA3IDYuNzQ0MjEgMi45ODE5MiA2LjYzMzkxTDYuNjMzMDMgMi45ODE4OEM2LjY4NTY4IDIuOTI3OTcgNi43NDg4IDIuODg1NCA2LjgxODUyIDIuODU2NzhDNi44ODgyMyAyLjgyODE3IDYuOTYzMDYgMi44MTQxMiA3LjAzODQgMi44MTU1MUgxNi44OTI0VjE5LjQzNzZWMTkuNDM3NlpNMC42ODM4OTMgNC45NTU0M0MwLjMwOTc3NCA1LjMyODYzIDAuMDY0MzQ0OCA1Ljc5ODM1IDAuMDE1NjI2NiA2LjMyMzIyQzAuMDA1NTgzMDQgNi40MzY2MiAwLjAwMDM2OTQ2MSA2LjU1MDQgMCA2LjY2NDI0TDAgMjAuNjg1OUMwIDIwLjg2ODggMC4wMDgyNzI5IDIwLjk2MzUgMC4wMTU2MjY2IDIxLjAzNTJDMC4wNzk5NzE0IDIxLjYzMjcgMC42MjA0NjggMjIuMTczMiAxLjIxNzA0IDIyLjIzNjZDMS4yODg3MyAyMi4yNDQgMS4zODQzMyAyMi4yNTIyIDEuNTY2MzQgMjIuMjUyMkgxOC4xNDE2QzE4LjMyNDUgMjIuMjUyMiAxOC40MjAxIDIyLjI0NCAxOC40OTA5IDIyLjIzNjZDMTkuMDg4MyAyMi4xNzIzIDE5LjYyODggMjEuNjMxOCAxOS42OTIzIDIxLjAzNTJDMTkuNzAwNSAyMC45NjM1IDE5LjcwNzkgMjAuODY4OCAxOS43MDc5IDIwLjY4NTlWMS41NjYzQzE5LjcwNzkgMS4zODI0NSAxOS43MDA1IDEuMjg3NzggMTkuNjkyMyAxLjIxNjA4QzE5LjYyNzkgMC42MTk1MDkgMTkuMDg3NCAwLjA3OTAxMjkgMTguNDkxOCAwLjAxNTU4NzNDMTguMzc1NCAwLjAwMzUzMTY0IDE4LjI1ODUgLTAuMDAxNjg2MTkgMTguMTQxNiAtMy45MzMxNmUtMDVINi42NjQyOEM2LjUzNjUxIC0zLjkzMzE2ZS0wNSA2LjQwOTY2IDAuMDA4MjMzNTcgNi4zMjIzNCAwLjAxNjUwNjVDNS43OTY1NSAwLjA2MzM4NjMgNS4zMjc3NSAwLjMxMDY1NCA0Ljk1MzYzIDAuNjgzODU0TDAuNjgzODkzIDQuOTU1NDNaIiBmaWxsPSIjNDFDOUI0Ij48L3BhdGg+PC9zdmc+]]]]
+  :PROPERTIES:
+  :CUSTOM_ID: section
+  :END:
+
+[[data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iYS1ub3RlSWNvbl9faWNvbiBhLW5vdGVJY29uX19pY29uLS1tZWRpdW0iIGhlaWdodD0iMjQiIHZpZXdib3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0xNS41IDE0aC0uNzlsLS4yOC0uMjdjLjk4LTEuMTQgMS41Ny0yLjYyIDEuNTctNC4yMyAwLTMuNTktMi45MS02LjUtNi41LTYuNXMtNi41IDIuOTEtNi41IDYuNSAyLjkxIDYuNSA2LjUgNi41YzEuNjEgMCAzLjA5LS41OSA0LjIzLTEuNTdsLjI3LjI4di43OWw1IDQuOTkgMS40OS0xLjQ5em0tNiAwYy0yLjQ5IDAtNC41LTIuMDEtNC41LTQuNXMyLjAxLTQuNSA0LjUtNC41IDQuNSAyLjAxIDQuNSA0LjUtMi4wMSA0LjUtNC41IDQuNXoiPjwvcGF0aD48L3N2Zz4=]]
+
+[[/login?redirect_path=][]]
+
+ãƒ­ã‚°ã‚¤ãƒ³
+
+[[https://note.com/signup][]]
+
+ä¼šå“¡ç™»éŒ²
+
+[[/hanaori][]]
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+çµ±è¨ˆå­¦ï½œæ¤œå‡ºåŠ›ã?¨ã?¯ã?ªã‚“ã?žã‚„
+
+[[/hanaori][hanaori]]
+
+ãƒ•ã‚©ãƒ­ãƒ¼ã?---ã?¾ã?---ã?Ÿ
+
+[[https://assets.st-note.com/production/uploads/images/26124166/rectangle_large_type_2_78a49dfff7493893f6123a0c1d7def0d.png?width=800]]
+
+* çµ±è¨ˆå­¦ï½œæ¤œå‡ºåŠ›ã?¨ã?¯ã?ªã‚“ã?žã‚„
+  :PROPERTIES:
+  :CUSTOM_ID: çµèˆåï½œæœåºåšãããªããžã
+  :CLASS: o-noteContentText__title
+  :v-138fc355: 
+  :END:
+
+ã‚¹ã‚­ // 57
+
+[[/hanaori][]]
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+[[/hanaori][hanaori]]
+
+2020å¹´8æœˆ3æ---¥ 08:00 ãƒ•ã‚©ãƒ­ãƒ¼ã?---ã?¾ã?---ã?Ÿ
+
+æ¤œå‡ºåŠ›ã?®æ‰‹è¨ˆç®---ã?Œã?„ã?¤ã‚‚ã?±ã?£ã?¨ã?§ã??ã?ªã?„ã?®ã?§ã€?ã?“ã‚Œã‚'æœŸã?«æ¤œå‡ºåŠ›ã?«ã?¤ã?„ã?¦ã?¾ã?¨ã‚?ã?¦ã?¿ã‚ˆã?†ã?¨æ€?ã?„ã?¾ã?™ã€‚å?Œæ™‚ã?«ã?“ã‚Œã?‹ã‚‰å‹‰å¼·ã?---ã?Ÿã?„ã€?ä»Šã??ã?“å‹‰å¼·ä¸­ã? ã‚ˆã?¨ã?„ã?†æ--¹ã?®å?‚è€ƒã?«ã?ªã‚‹ã?¨ã?†ã‚Œã?---ã?„ã?§ã?™
+ðŸŒ±
+
+** çµ±è¨ˆçš„ä»®èª¬æ¤œå®šã?®åŸºæœ¬çš„ã?ªæµ?ã‚Œ
+   :PROPERTIES:
+   :CUSTOM_ID: çµèˆçšäèªæœåšãåÿºæœçšãªæµãœ
+   :name: crdT4
+   :END:
+æœ€åˆ?ã?«åŸºæœ¬çš„ã?ªçµ±è¨ˆçš„ä»®èª¬æ¤œå®šã?®æµ?ã‚Œã‚'ç¢ºèª?ã?---ã?¾ã?™ã€‚
+
+#+begin_quote
+  *1.* å¸°ç„¡ä»®èª¬ï¼ˆH0ï¼‰ã‚'è¨­å®šã?™ã‚‹ï¼ˆä¾‹: Î¼ = 0ï¼‰\\
+  *2.* å¯¾ç«‹ä»®èª¬ï¼ˆH1ï¼‰ã‚'è¨­å®šã?™ã‚‹ ï¼ˆä¾‹: Î¼ = 1, Î¼ > 0ï¼‰\\
+  *3.* æœ‰æ„?æ°´æº--ï¼ˆÎ±ï¼‰ã‚'æ±ºå®šã?™ã‚‹ï¼ˆä¾‹: Î± = 0.05ï¼‰\\
+  *4.* ã‚µãƒ³ãƒ---ãƒ«ã?‹ã‚‰æ¤œå®šçµ±è¨ˆé‡?ã‚'è¨ˆç®---ã?™ã‚‹\\
+  *5.*
+  4ã?§è¨ˆç®---ã?---ã?Ÿæ¤œå®šçµ±è¨ˆé‡?ã?Œã€?3ã?§æ±ºã‚?ã?Ÿæœ‰æ„?æ°´æº--ã?‹ã‚‰æ±‚ã‚?ã‚‰ã‚Œã‚‹æ£„å?´åŸŸå†...ã?«å?Žã?¾ã‚Œã?°ã€?H0
+  ã‚'æ£„å?´ã?™ã‚‹
+#+end_quote
+
+** ç¬¬1ç¨®ã?®èª¤ã‚Šã?¨ç¬¬2ç¨®ã?®èª¤ã‚Š\\
+   :PROPERTIES:
+   :CUSTOM_ID: ç1çãèªãšãç2çãèªãš
+   :name: xmUVb
+   :END:
+æ¤œå®šã‚'è¡Œã?†ã?¨ã??ã?¯æœ‰æ„?æ°´æº--ãƒ»æ£„å?´åŸŸã‚'å®šã‚?ã€?æ±‚ã‚?ã?Ÿæ¤œå®šçµ±è¨ˆé‡?ã?Œã??ã?®ä¸­ã?«å...¥ã‚‹ã?¨è‡ªå‹•çš„ã?«
+H0
+ã?Œæ£„å?´ã?•ã‚Œã?¾ã?™ã€‚ã?---ã?‹ã?---æ£„å?´åŸŸã?«å...¥ã?£ã?¦ã?„ã‚‹ã‚‚ã?®ã?®æœ¬å½“ã?¯
+H0 ã?Œæ­£ã?---ã?„å ´å?ˆã‚‚ã?‚ã‚Šã?¾ã?™ã€‚å??å¯¾ã?«æœ¬å½“ã?¯ H1
+ã?Œæ­£ã?---ã?„ã?®ã?«æ£„å?´åŸŸã?«å...¥ã‚‰ã?ªã?„ã?“ã?¨ã‚‚è€ƒã?ˆã‚‰ã‚Œã?¾ã?™ã?­ã€‚\\
+
+ã??ã?†ã?„ã?£ã?Ÿ*ä»®èª¬æ¤œå®šã‚'è¡Œã?†éš›ã?«èµ·ã?“ã‚Šã?ˆã‚‹èª¤ã‚Š*ã?«ã?¤ã?„ã?¦ç¢ºèª?ã?---ã?¦ã?Šã??ã?¾ã?™ã€‚\\
+ã?“ã?“ã?§ã?¯ä¾‹ã?ˆã?°ä»¥ä¸‹ã?®ã‚ˆã?†ã?«å¸°ç„¡ä»®èª¬ãƒ»å¯¾ç«‹ä»®èª¬ã‚'è¨­å®šã?---ã?¾ã?---ã?Ÿã€‚\\
+
+#+begin_quote
+  H0 (å¸°ç„¡ä»®èª¬) : Î¼ = Î¼0\\
+  H1 (å¯¾ç«‹ä»®èª¬) : Î¼ = Î¼1
+#+end_quote
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+#+begin_quote
+  *ç¬¬1ç¨®ã?®èª¤ã‚Šï¼ˆÎ±ã‚¨ãƒ©ãƒ¼ï¼‰*ï¼šH0 (Î¼ = Î¼0)
+  ã?Œæ­£ã?---ã?„ã?®ã?«æ£„å?´ã?---ã?¦ã?---ã?¾ã?†ç¢ºçŽ‡\\
+  *ç¬¬2ç¨®ã?®èª¤ã‚Šï¼ˆÎ²ã‚¨ãƒ©ãƒ¼ï¼‰*ï¼šH1 (Î¼ = Î¼1)
+  ã?Œæ­£ã?---ã?„ã?®ã?« H0 ã‚'æ£„å?´ã?§ã??ã?ªã?„ç¢ºçŽ‡\\
+#+end_quote
+
+*çœŸã?® Î¼ ã?¯ Î¼0* ã?ªã?®ã?«èª¤ã?£ã?¦ H0
+ã‚'æ£„å?´ã?---ã?¦ã?---ã?¾ã?†ã?®ã?Œã‚ªãƒ¬ãƒ³ã‚¸ã?®éƒ¨åˆ†ã?®
+*ç¬¬1ç¨®ã?®èª¤ã‚Šï¼ˆÎ±ã‚¨ãƒ©ãƒ¼ï¼‰*ã?§ã?™ã€‚é€†ã?«ã€?*çœŸã?® Î¼ ã?Œ Î¼1*
+ã? ã?£ã?Ÿã?¨ã??èª¤ã?£ã?¦ H0
+ã‚'æŽ¡æŠžã?---ã?¦ã?---ã?¾ã?†ã?®ã?Œç·‘ã?®éƒ¨åˆ†ã?®
+*ç¬¬2ç¨®ã?®èª¤ã‚Šï¼ˆÎ²ã‚¨ãƒ©ãƒ¼ï¼‰*ã?§ã?™ã€‚
+
+ä»®èª¬æ¤œå®šã‚'è¡Œã?†ã?¨ã??ã?«ã??ã‚Œã‚‰ã?®èª¤ã‚Šã?Œã?©ã?®ç¨‹åº¦èµ·ã??ã‚‹ã?®ã?‹ã€?ã?¾ã?Ÿ
+*H0 ã?Œé--“é?•ã?£ã?¦ã?„ã‚‹éš›ã?©ã‚Œã? ã?‘æ­£ã?---ã?? H0
+ã‚'æ£„å?´ã?§ã??ã‚‹ã?®ã?‹ *çŸ¥ã?£ã?¦ã?Šã??ã?“ã?¨ã?¯å¤§åˆ‡ã??ã?†ã?§ã?™ã?­ã€‚
+
+** æ¤œå‡ºåŠ›ã?¨ã?¯
+   :PROPERTIES:
+   :CUSTOM_ID: æœåºåšãã
+   :name: r2icZ
+   :END:
+ç¬¬1ç¨®ã?®èª¤ã‚Šã?¨ç¬¬2ç¨®ã?®èª¤ã‚Šã?¨ã?„ã?†ã‚‚ã?®ã?Œã?‚ã‚‹ã?“ã?¨ã?¯ç?†è§£ã?---ã?¾ã?---ã?Ÿã€‚ã?§ã?¯ã?“ã?®è¨˜äº‹ã?®ãƒ¡ã‚¤ãƒ³ãƒ†ãƒ¼ãƒžã€Œæ¤œå‡ºåŠ›ã€?ã?¨ã?¯ã?ªã‚“ã?ªã?®ã?‹ã‚'è¦‹ã?¦ã?„ã??ã?Ÿã?„ã?¨æ€?ã?„ã?¾ã?™ã€‚\\
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+#+begin_quote
+  *æ¤œå‡ºåŠ› = 1 - Î²ã‚¨ãƒ©ãƒ¼*
+#+end_quote
+
+ã?¤ã?¾ã‚Šæ¤œå‡ºåŠ›ã?¨ã?¯ã€?*H1 ã?Œæ­£ã?---ã?„ã?¨ã??ã?«æ­£ã?---ã?? H0
+ã‚'æ£„å?´ã?---ã€?H1 ã‚'æŽ¡æŠžã?™ã‚‹ç¢ºçŽ‡*ã?§ã?™ã€‚
+
+** ã?ªã?œæ¤œå‡ºåŠ›ã‚'çŸ¥ã‚Šã?Ÿã?„ã?®ã?‹ï¼Ÿ
+   :PROPERTIES:
+   :CUSTOM_ID: ãªãœæœåºåšãçÿãšãÿãããï¼ÿ
+   :name: 6159l
+   :END:
+ã‚µã‚¤ãƒ³ã‚¢ãƒƒãƒ---ã?®ãƒœã‚¿ãƒ³ã?®è‰²ã‚'é?'ã?‹ã‚‰èµ¤ã?«å¤‰ã?ˆã?Ÿã?¨ã??ã‚¯ãƒªãƒƒã‚¯çŽ‡ã?«æœ‰æ„?ã?ªå·®ã?Œã?‚ã‚‹ã?‹ã?¨ã?„ã?†æ¤œå®šã‚'ã?™ã‚‹ã?¨ã?---ã?¾ã?™ã€‚
+
+#+begin_quote
+  *H0: é?'ã?¨èµ¤ã?§å·®ã?¯ã?ªã?„ï¼ˆÎ¼ = Î¼0 = 0ï¼‰\\
+  H1: èµ¤ã?®ã?»ã?†ã?Œ 3% ã‚¯ãƒªãƒƒã‚¯çŽ‡ã?Œé«˜ã?„ ï¼ˆÎ¼ = Î¼1 =
+  0.03ï¼‰*\\
+  \\
+  â€» ä¸€èˆ¬çš„ã?«ã?¯ H1: Î¼ > Î¼0
+  ã?®ã‚ˆã?†ã?«å¯¾ç«‹ä»®èª¬ã?Œï¼‘ç‚¹ã?§ã?¯ã?ªã?„å ´å?ˆã?Œå¤šã?„ã?§ã?™ã€‚ã??ã?®å ´å?ˆã?¯å¯¾ç«‹ä»®èª¬ã?«å½“ã?¦ã?¯ã?¾ã‚‹ã?™ã?¹ã?¦ã?®
+  Î¼1 ã?§æ¤œå‡ºåŠ›ã‚'è€ƒã?ˆã?¾ã?™ã€‚\\
+#+end_quote
+
+ä¾‹ã?ˆã?°ã€?H0 ã?¨ H1
+ã?®åˆ†å¸ƒã?Œä»¥ä¸‹ã?®ã‚ˆã?†ã?«ã?ªã‚‹ã?¨ã?---ã?¾ã?™ã€‚
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+å›³ã‚'è¦‹ã‚‹ã?¨æ¤œå‡ºåŠ›ã?Œ 5å‰² ã‚‚ã?‚ã‚Šã?¾ã?›ã‚“ã€‚ã?¤ã?¾ã‚Š 3%
+ã‚¯ãƒªãƒƒã‚¯çŽ‡ã?Œä¸Šã?Œã?£ã?¦ã?„ã?Ÿã?¨ã?---ã?¦ã‚‚æ­£ã?---ã?? H1
+ã‚'æŽ¡æŠžã?§ã??ã‚‹ç¢ºçŽ‡ã?Œä½Žã?„ã?“ã?¨ã?«ã?ªã‚Šã?¾ã?™ã€‚ã‚‚ã?---ã?‚ã?ªã?Ÿã?Œæœ€ä½Žã?§ã‚‚
+3%
+ã‚¯ãƒªãƒƒã‚¯çŽ‡ã?Œä¸Šã?Œã?£ã?¦ã?„ã?Ÿã‚‰ãƒœã‚¿ãƒ³ã‚'èµ¤ã?«ã?---ã?Ÿã?„ã?¨è€ƒã?ˆã?¦ã?„ã‚‹ã?®ã?ªã‚‰ã€?ã?“ã?®æ¤œå®šçµ?æžœã?§åˆ¤æ--­ã?™ã‚‹ã?®ã?¯ãƒžã‚ºã??ã?†ã?§ã?™ã€‚
+
+ã?“ã?®ã‚ˆã?†ã?«ä»®èª¬æ¤œå®šã?---ã?Ÿã‚‚ã?®ã?®å®Ÿã?¯æ¤œå‡ºåŠ›ã?Œä½Žã??æ­£ã?---ã??
+H0
+ã‚'æ£„å?´ã?§ã??ã?ªã?„ã€?ã?¨ã?„ã?†ã?“ã?¨ã?Œã?ªã?„ã‚ˆã?†æ¤œå‡ºåŠ›ã?Œã?©ã‚Œã??ã‚‰ã?„ã?ªã?®ã?‹äº‹å‰?ã?«çŸ¥ã?£ã?¦ã?Šã?‘ã‚‹ã?¨ã‚ˆã?„ã?§ã?™ã?­ã€‚
+
+æ¤œå‡ºåŠ›ã?Œé«˜ã??ã?ªã‚‹ã?®ã?¯ã?©ã?†ã?„ã?†å ´å?ˆã?ªã?®ã?‹ã?¨å?ˆã‚?ã?›ã?¦è¦‹ã?¦ã?„ã??ã?Ÿã?„ã?¨æ€?ã?„ã?¾ã?™ã€‚
+
+** æ¤œå‡ºåŠ›ã?Œé«˜ã??ã?ªã‚‹ã?¨ã??ï¼‘ -
+ã‚µãƒ³ãƒ---ãƒ«ã‚µã‚¤ã‚ºã?Œå¤§ã??ã?„å ´å?ˆ
+   :PROPERTIES:
+   :CUSTOM_ID: æœåºåšãœéããªãããï¼---ãµãƒ³ãƒãƒãµããºãœåããå-åˆ
+   :name: 5kEPw
+   :END:
+ã‚µãƒ³ãƒ---ãƒ«ã‚µã‚¤ã‚ºã?Œå¤§ã??ã??ã?ªã‚‹ã?“ã?¨ã?§åˆ†æ•£ã?Œå°?ã?•ã??ã?ªã‚Šã€?ã??ã?®çµ?æžœæ¤œå‡ºåŠ›ã?Œé«˜ã??ã?ªã‚Šã?¾ã?™ã€‚
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+*âœ? å®Ÿéš›è¨ˆç®---ã?---ã?¦ã?¿ã‚‹*
+
+ã‚µãƒ³ãƒ---ãƒ«ã‚µã‚¤ã‚ºã?Œ 5 å€‹ã?®ã?¨ã??ã?¨ã€?10 å€‹ã?®ã?¨ã??ã?§ Z
+æ¤œå®šã‚'è¡Œã?†éš›ã€?æ¤œå‡ºåŠ›ã?Œã?©ã?†ã?ªã‚‹ã?‹ã‚'æ¯”è¼ƒã?---ã?¦ã?¿ã‚‹ã?“ã?¨ã?«ã?---ã?¾ã?™ã€‚
+
+#+begin_quote
+  *ã??ã?®ä»--ã?®æ?¡ä»¶\\
+  ãƒ»* æ¯?é›†å›£ ND(Î¼, 1) ã?‹ã‚‰ã‚µãƒ³ãƒ---ãƒªãƒ³ã‚°\\
+  *ãƒ»* *H0ï¼šÎ¼ = 0ã€? H1ï¼šÎ¼ = 1*\\
+  *ãƒ»* æœ‰æ„?æ°´æº--ã?¯ç‰‡å?´ 5 %
+#+end_quote
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+ã‚µãƒ³ãƒ---ãƒ«ã‚µã‚¤ã‚º 10 ã?®æ--¹ã?Œã€?5
+ã?®ã?¨ã??ã‚ˆã‚Šæ¤œå‡ºåŠ›ã?Œé«˜ã??ã?ªã?£ã?¦ã?„ã‚‹ã?®ã?Œç¢ºèª?ã?§ã??ã?¾ã?™ã€‚ã?¤ã?¾ã‚Š*ã‚µãƒ³ãƒ---ãƒ«ã‚µã‚¤ã‚ºã?Œå¤§ã??ã?„ã?»ã?†ã?Œæ¤œå‡ºåŠ›ã?Œé«˜ã?¾ã‚Š*ã?¾ã?™ã€‚
+
+** æ¤œå‡ºåŠ›ã?Œé«˜ã??ã?ªã‚‹ã?¨ã??ï¼' - H0 ã?¨ H1
+ã?®å·®ã?Œå¤§ã??ã?„ã?¨æƒ³å®šã?™ã‚‹å ´å?ˆ\\
+   :PROPERTIES:
+   :CUSTOM_ID: æœåºåšãœéããªãããï¼---h0-ã-h1-ãåãœåãããæƒ³åšããå-åˆ
+   :name: 6jdPh
+   :END:
+H0 ã?¨ H1 ã?®
+Î¼ï¼ˆå¹³å?‡ï¼‰ã?®å·®ã‚'å¤§ã??ã??ã?™ã‚‹ã?¨æ¤œå‡ºåŠ›ã?Œé«˜ã??ã?ªã‚Šã?¾ã?™ã€‚
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+H0 ã?¨ H1 ã?® Î¼
+ã?®å·®ã‚'å¤§ã??ã??ã?---ã?¦ã?„ã?£ã?Ÿã?¨ã??ã€?æ¤œå‡ºåŠ›ã?Œã?©ã?†å¤‰åŒ--ã?™ã‚‹ã?‹
+R ã?§ãƒ---ãƒ­ãƒƒãƒˆã?---ã?¦ã?¿ã?¾ã?™ã€‚ä»Šå›žã‚µãƒ³ãƒ---ãƒ«ã‚µã‚¤ã‚ºã?¯
+50ã€?åˆ†æ•£ã?¯ 1 ã?«å›ºå®šã?---ã?¾ã?™ã€‚
+
+#+begin_example
+# å¹³åã®å·® 0 ~ 1
+deltas <- seq(0, 1, length=11) 
+# åæ£ 1ããµã³ãã«ãµã¤ãº 50 ã®æ¤åºå
+powers <- power.t.test(n=50, delta=deltas, sd=1)$power
+
+plot(deltas, powers, type="l", xlab = "å¹³åã®å·®", ylab = "æ¤åºå")
+#+end_example
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+H0 ã?¨ H1 ã?® Î¼
+ã?®å·®ã‚'å¤§ã??ã??ã?---ã?¦ã?„ã??ã?¨ã€?æ¤œå‡ºåŠ›ã?Œä¸Šã?Œã?£ã?¦ã?„ã??ã?®ã?Œã‚?ã?‹ã‚Šã?¾ã?™ã€‚ä»Šå›žã?®æ?¡ä»¶ã?§ã?¯
+Î¼ ã?®å·®ã?Œ 0.6 ä»¥ä¸Šã?§ã?‚ã‚Œã?° æ¤œå‡ºåŠ› 0.8
+ã?§æ¤œå®šã?§ã??ã??ã?†ã?§ã?™ã€‚è‡ªåˆ†ã?Œæœ›ã‚€æ¤œå‡ºåŠ›ã? ã?¨ã?©ã?®ã??ã‚‰ã?„ã?®
+Î¼
+ã?®å·®ã‚'åˆ¤åˆ¥ã?§ã??ã‚‹ã?‹æ¤œå®šå‰?ã?«çŸ¥ã?£ã?¦ã?Šã??ã?¨ã‚ˆã?„ã?¨æ€?ã?„ã?¾ã?™ã€‚
+
+** æ¤œå‡ºåŠ›ã?Œé«˜ã??ã?ªã‚‹ã?¨ã??ï¼“ -
+æœ‰æ„?æ°´æº--ï¼ˆÎ±ï¼‰ã?Œå¤§ã??ã?„å ´å?ˆ\\
+   :PROPERTIES:
+   :CUSTOM_ID: æœåºåšãœéããªãããï¼---æœæææºï¼ˆîï¼ãœåããå-åˆ
+   :name: VKKbH
+   :END:
+æœ‰æ„?æ°´æº--ï¼ˆÎ±ã‚¨ãƒ©ãƒ¼ã‚'èµ·ã?“ã?™ç¢ºçŽ‡ï¼‰ã‚'å¼•ã??ä¸Šã?'ã‚‹ã?¨ã€?æ¤œå‡ºåŠ›ã?Œå¤§ã??ã??ã?ªã‚Šã?¾ã?™ã€‚
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+*âœ? å®Ÿéš›è¨ˆç®---ã?---ã?¦ã?¿ã‚‹*\\
+
+æœ‰æ„?æ°´æº--ã‚'ç‰‡å?´ 5 % ã?¨ ç‰‡å?´ 10 %
+ã?«ã?---ã?Ÿã?¨ã??ã?®æ¤œå‡ºåŠ›ã‚'æ¯”è¼ƒã?---ã?¦ã?¿ã?¾ã?™ã€‚\\
+
+#+begin_quote
+  *ã??ã?®ä»--ã?®æ?¡ä»¶\\
+  ãƒ»*æ¯?é›†å›£ ND(Î¼, 1) ã?‹ã‚‰ 5 ã?¤ã‚µãƒ³ãƒ---ãƒªãƒ³ã‚°\\
+  *ãƒ»* H0ï¼šÎ¼ = 0ã€? H1ï¼šÎ¼ = 1\\
+#+end_quote
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+è¨ˆç®---ã?®çµ?æžœã?‹ã‚‰ã€?ä»®èª¬æ¤œå®šã‚'è¡Œã?£ã?Ÿéš› *Î±
+ã‚¨ãƒ©ãƒ¼ã‚'èµ·ã?“ã?™ç¢ºçŽ‡ã?Œå¤§ã??ã?„ã?»ã?†ã?Œæ¤œå®šåŠ›ã?Œé«˜ã?„*ã?“ã?¨ã?Œã‚?ã?‹ã‚Šã?¾ã?™ã€‚
+
+--- âœ? --- âœ? --- âœ? ---\\
+
+ä»Šå›žã?¯ã??ã‚‚ã??ã‚‚æ¤œå‡ºåŠ›ã?Œã?©ã?†ã?„ã?†ã‚‚ã?®ã?‹ã€?ã?©ã?†ã?„ã?†ã?¨ã??ã?«å¤§ã??ã??ã?ªã‚‹ã?‹ã?«ã?¤ã?„ã?¦è€ƒã?ˆã?¾ã?---ã?Ÿã€‚ã?“ã‚Œã?§ä»¥å‰?ã‚ˆã‚Šã?¯ã‚¹ãƒ©ã‚¹ãƒ©å•?é¡Œã?Œè§£ã?‘ã‚‹...ã?¯ã?šï¼?
+
+æ--°ã?---ã??å‹‰å¼·ã?---ã?Ÿã?„ã?“ã?¨ã‚‚å¾©ç¿'ã?---ã?Ÿã?„ã?“ã?¨ã‚‚ã?Ÿã??ã?•ã‚“ã?‚ã‚‹ã?®ã?§ã€?å°‘ã?---ã?šã?¤ã?§ã‚‚
+note ã?«ã?¾ã?¨ã‚?ã?¦ã?„ã?‘ã‚Œã?°ã?¨æ€?ã?„ã?¾ã?™( *Ë†oË†* )
+
+** å?‚è€ƒè³‡æ--™
+   :PROPERTIES:
+   :CUSTOM_ID: åèƒè³æ
+   :name: fcVAO
+   :END:
+
+#+begin_quote
+  ãƒ»
+  [[https://www.amazon.co.jp/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%AE%E6%B1%BA%E3%82%81%E6%96%B9-%E7%B5%B1%E8%A8%88%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%83%BC-%E6%B0%B8%E7%94%B0-%E9%9D%96/dp/4254126654][ã‚µãƒ³ãƒ---ãƒ«ã‚µã‚¤ã‚ºã?®æ±ºã‚?æ--¹
+  (çµ±è¨ˆãƒ©ã‚¤ãƒ--ãƒ©ãƒªãƒ¼)]]
+#+end_quote
+
+// ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰
+
+- [[/hashtag/%E7%B5%B1%E8%A8%88%E5%AD%A6][]]
+
+  #çµ±è¨ˆå­¦
+
+- [[/hashtag/%E6%A4%9C%E5%87%BA%E5%8A%9B][]]
+
+  #æ¤œå‡ºåŠ›
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+1äººã?Œã‚ªã‚¹ã‚¹ãƒ¡ã?---ã?¦ã?„ã?¾ã?™
+
+ã?“ã?®è¨˜äº‹ã?Œæ°---ã?«å...¥ã?£ã?Ÿã‚‰ã€?ã‚µãƒ?ãƒ¼ãƒˆã‚'ã?---ã?¦ã?¿ã?¾ã?›ã‚“ã?‹ï¼Ÿ\\
+æ°---è»½ã?«ã‚¯ãƒªã‚¨ã‚¤ã‚¿ãƒ¼ã?®æ”¯æ?´ã?¨ã€?è¨˜äº‹ã?®ã‚ªã‚¹ã‚¹ãƒ¡ã?Œã?§ã??ã?¾ã?™ï¼?
+
+[[/hanaori][]]
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+çµ±è¨ˆã?®æœ¬ã€?ã‚‚ã?---ã??ã?¯ã‚?ã‚“ã?“ã?«ã?Šã?„ã?---ã?„ã?Šè?“å­?ã‚'è²·ã?†ã?®ã?«ä½¿ã‚?ã?›ã?¦ã?„ã?Ÿã? ã??ã?¾ã?™(
+*Ë†oË†* )
+
+// æ°---ã?«å...¥ã?£ã?Ÿã‚‰ã‚µãƒ?ãƒ¼ãƒˆ
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+ã€Œã‚¹ã‚­ã€?ã‚'æŠ¼ã?---ã?¦\\
+ã‚¯ãƒªã‚¨ã‚¤ã‚¿ãƒ¼ã‚'å¿œæ?´ã?---ã‚ˆã?†ï¼?
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+noteã?§ã?¯ãƒ­ã‚°ã‚¤ãƒ³ç„¡ã?---ã?§ã‚¹ã‚­ã?§ã??ã?¾ã?™ã€‚
+
+ã‚¹ã‚­ã?§ã‚¯ãƒªã‚¨ã‚¤ã‚¿ãƒ¼ã‚'å¿œæ?´ã?---ã‚ˆã?†ï¼?
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+èª­ã‚“ã?§ã??ã‚Œã?¦ã?‚ã‚Šã?Œã?¨ã?†
+
+57
+
+[[/hanaori][]]
+
+[[data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2233%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%2267%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f7f9f9%22%2F%3E%3CanimateTransform%20attributeName%3D%22gradientTransform%22%20type%3D%22translate%22%20from%3D%22-1%200%22%20to%3D%221%200%22%20begin%3D%220s%22%20dur%3D%221.5s%22%20repeatCount%3D%22indefinite%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22rect%22%20fill%3D%22url(%23a)%22%20d%3D%22M-100-100h300v300h-300z%22%2F%3E%3C%2Fsvg%3E]]
+
+[[/hanaori][hanaori]]
+
+ãƒ•ã‚©ãƒ­ãƒ¼
+
+noteã?§ã‚¨ãƒ³ã‚¸ãƒ‹ã‚¢ã‚'ã?---ã?¦ã?„ã?¾ã?™ã€‚
+çµ¶è³›çµ±è¨ˆå­¦ã‚'å‹‰å¼·ä¸­ã?§ã?™ã€‚ä»Šçµ±è¨ˆå­¦ã‚'å‹‰å¼·ä¸­ã?®æ--¹ã‚„ã??ã‚“ã?ªã?«è©³ã?---ã??ã?ªã?„ã‚ˆã€?ã?¨ã?„ã?†æ--¹ã?§ã‚‚æ¥½ã?---ã‚“ã?§ã‚‚ã‚‰ã?ˆã?Ÿã‚Šåˆ†ã?‹ã‚Šã‚„ã?™ã?„ã?¨æ€?ã?£ã?¦ã‚‚ã‚‰ã?ˆã‚‹ã‚ˆã?†ã?ªãƒŽãƒ¼ãƒˆã‚'æ›¸ã?„ã?¦ã?„ã??ã?Ÿã?„ã?ªã?¨æ€?ã?£ã?¦ã?„ã?¾ã?™ã€‚ã?¨ã??ã?©ã??å±±ã‚„æ---¥å¸¸ã?®å‡ºæ?¥ã?”ã?¨ã‚‚æ›¸ã??ã?¾ã?™ã€‚
+
+- [[https://twitter.com/hana_orin][//]]
+- [[/hanaori/rss][//]]
+
+- [[/premium][noteãƒ---ãƒ¬ãƒŸã‚¢ãƒ ]]
+- [[https://pro.lp-note.com/][note pro]]
+- [[https://help.note.com/hc/ja][ã‚ˆã??ã?‚ã‚‹è³ªå•?ãƒ»noteã?®ä½¿ã?„æ--¹]]
+- [[/magazine][ãƒžã‚¬ã‚¸ãƒ³]]
+- [[/users][ãƒ¦ãƒ¼ã‚¶ãƒ¼]]
+- [[/hashtag][ãƒ?ãƒƒã‚·ãƒ¥ã‚¿ã‚°]]
+- [[https://www.help-note.com/hc/ja/categories/4409699589529][å®‰å¿ƒå®‰å...¨ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³]]
+- [[https://note.jp/n/nd65ead4182a6][ãƒ---ãƒ©ã‚¤ãƒ?ã‚·ãƒ¼]]
+- [[/terms][ã?”åˆ©ç”¨è¦?ç´„]]
+- [[/hanaori/terms/specified][ç‰¹å•†æ³•è¡¨è¨˜]]
+- [[/hanaori/message][ã‚¯ãƒªã‚¨ã‚¤ã‚¿ãƒ¼ã?¸ã?®ã?Šå•?ã?„å?ˆã‚?ã?›]]
+- [[https://help.note.com/hc/ja/requests/new?ticket_form_id=360000081181][ãƒ•ã‚£ãƒ¼ãƒ‰ãƒ?ãƒƒã‚¯]]
+- [[https://docs.google.com/forms/d/e/1FAIpQLSdBit9KWT6oRc7higB2ZReRjqhgNeh19w83tixC1bMBAxZmXg/viewform][ã‚¯ãƒªã‚¨ã‚¤ã‚¿ãƒ¼ã?®æŽ¨è--¦]]

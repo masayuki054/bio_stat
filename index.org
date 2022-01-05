@@ -4,6 +4,8 @@
 #+title: 生物統計学
 
 * お知らせ
+*** 毎回のアンケート
+   [[./enq.org]]
 
 *** 3 回目のレポートを出題しました
 
@@ -25,11 +27,9 @@
 なので，要望があれば，今週から，一緒に考える時間を取りたいと思っていま
 す。
 
-*** 毎回のアンケート
 
-[[./enq.org]]
 
-* Todo 今日(12/23) の講義
+* Todo 今日(1/6) の講義
 
 ** Rによる入門統計学
    - スライドまたは PDF を手元に準備
@@ -37,22 +37,26 @@
 
 *** 入門統計学の6章
 
-**** Todo 仮説検定と検定力 [ ] スライド
-     - [X] 検定の概要
-     - [X] 仮説の検定
-     - [ ] 1標本の母平均の検定
-       - [ ] 例題 [[./org/examples-06.org]]
-     - [ ] 標準正規分布やt分布の利用
-       - [ ] 例題 [[./org/examples-06.org]]
+**** Todo 検定力
      - [ ] 検出力分析
+       - [ ] [[./org/power.org]] を使って説明します
        
-**** [[./org/R-text-6.org]] 教科書のまとめ 未完
+**** [[./org/R-text-6.org]] 教科書のまとめ
+    
+*** 入門統計学の7章
 
-** RStudio を使いましょう
-RStudioを使ってない人は，RStudio をインストールしましょう。
-講義終了後，相談にのります。
+**** Todo 二群の平均の差の検定 [0/5]
 
-** Todo RStudio (2) 12/16
+      [[./org/RforS-II-06.org]]  別の本の内容で解説します。
+      (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
+      
+      - [ ] 指導法データの準備 [[./org/RforS-data.org]] 
+      - [ ] 6.1 2つの平均値を比較するケース
+      - [ ] 6.2 独立な2群の検定
+      - [ ] 6.3 t-検定の前提条件
+      - [ ] 6.4 対応のある (z,t)-検定
+
+** Todo RStudio (3) 
 
 [[./org/daizu.org]] に従って，Rmarkdown を使ってみましょう。
 
@@ -78,6 +82,7 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
 
 **** view
 
+
 *** R 入門
    [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
 
@@ -95,6 +100,70 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
 
 
 * 講義記録
+** 10th 12/23 の講義
+
+*** Rによる入門統計学
+   - スライドまたは PDF を手元に準備
+   - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org
+
+**** 入門統計学の6章
+
+***** Todo 仮説検定と検定力 [ ] スライド
+     - [X] 検定の概要
+     - [X] 仮説の検定
+     - [X] 1標本の母平均の検定
+       - [X] 例題 [[./org/examples-06.org]]
+     - [X] 標準正規分布やt分布の利用
+       - [X] 例題 [[./org/examples-06.org]]
+     - [ ] 検出力分析
+       
+***** [[./org/R-text-6.org]] 教科書のまとめ 未完
+
+*** RStudio を使いましょう
+RStudioを使ってない人は，RStudio をインストールしましょう。
+講義終了後，相談にのります。
+
+*** Todo RStudio (2) 12/16
+
+[[./org/daizu.org]] に従って，Rmarkdown を使ってみましょう。
+
+***** RStudio (1)
+講師も RStudio が使える環境を手に入れたので，気付いたことを書き留めよ
+うと思います。
+  
+   - 生物統計用のプロジェクトを作ろう
+   - 毎回のRのプログラムを，R-スクリプトとして残そう
+
+***** file
+****** file
+******* R-script, R-notebook, R-markdown
+****** project
+****** import data set
+***** session
+
+****** project
+
+****** session
+****** working directory
+****** workspace
+
+***** view
+
+**** R 入門
+   [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
+
+   先生の演習ノート [4/6]
+     - [X] [[./org/R-intro-1.org]] - 基本操作
+     - [X] [[./org/R-intro-2.org]] - データ処理
+     - [X] [[./org/R-intro-3.org]]
+       - [X] 89 ファイルの読み書き  12/02
+       - [X] 10 スクリプトの実行    12/02
+       - [X] 11 関数を作る
+     - [ ] [[./org/R-intro-4.org]] - 12グラフ
+     - [X] [[./org/R-intro-5.org]] - 13構文
+     - [ ] [[./org/R-intro-6.org]] - 14その他
+   
+
 
 ** 9th 12/16の講義
 *** Rによる入門統計学

@@ -1,0 +1,2 @@
+[[https://multivariate-statistics.com/2020/12/25/r-programming-linear-regression/][R言語 回帰分析を使って予測をする【初心者向け】]]
+

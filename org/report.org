@@ -1,0 +1,36 @@
+#+begin_src R :session *t* :results output 
+
+(sample <- rnorm(10, 200, 100)/100)
+c(mean(sample), sqrt(var(sample)))
+summary(sample)
+mean <- sample-2.0
+(t <- (mean(sample)-2.0)/sqrt(var(mean)/length(mean)))
+(t2 <- 2.0-
+pnorm(t)
+
+results <- t.test(sample, )
+results
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+ [1] 2.054252 2.737766 2.221467 2.465893 1.227354 2.676239 1.060073 3.077292
+ [9] 3.174815 2.732592
+[1] 2.3427745 0.7190725
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.060   2.096   2.571   2.343   2.736   3.175
+[1] 1.507425
+[1] 0.9341492
+
+	One Sample t-test
+
+data:  sample
+t = 10.303, df = 9, p-value = 2.79e-06
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ 1.828381 2.857168
+sample estimates:
+mean of x 
+ 2.342774
+#+end_example

@@ -1,0 +1,308 @@
+#+begin_quote
+
+  *統計的仮説検定（信頼区間、信頼率、危険率、検出力、第一種および第二種の過誤）*
+
+   
+
+  　母平均が_{[[./confidence.files/image002.gif]]}で母分散が_{[[./confidence.files/image004.gif]]}の母集団から_{[[./confidence.files/image006.gif]]}の大きさの任意標本を抽出したとき、母集団がどんな分布であろうとも_{[[./confidence.files/image007.gif]]}が大きければ（_{[[./confidence.files/image009.gif]]}）中心極限定理により、その標本平均_{[[./confidence.files/image011.gif]]}は、下図のように、平均が_{[[./confidence.files/image012.gif]]}で分散が_{[[./confidence.files/image014.gif]]}の正規分布_{[[./confidence.files/image016.gif]]}に近似できることが知られています。
+
+   
+
+  [[./confidence.files/image018.gif]]
+
+  　上図で見られるように、母集団から無作為抽出をした大きさ_{[[./confidence.files/image019.gif]]}の標本の平均_{[[./confidence.files/image020.gif]]}は母平均_{[[./confidence.files/image022.gif]]}を中心として_{[[./confidence.files/image024.gif]]}まで分布し得ることがわかります。しかし、標本平均_{[[./confidence.files/image025.gif]]}の値が母平均_{[[./confidence.files/image027.gif]]}から離れるほどその実現確率_{[[./confidence.files/image029.gif]]}は小さくなり_{[[./confidence.files/image031.gif]]}が_{[[./confidence.files/image033.gif]]}の極限では_{[[./confidence.files/image035.gif]]}となり、その場合は決して実現しそうもない標本平均_{[[./confidence.files/image036.gif]]}の値だと言えます。したがって、実際問題として標本平均_{[[./confidence.files/image037.gif]]}がどの程度なら実現可能な値であろうかという推定が必要になってきますが、その問題を解決する前に統計的判断の基本的考え方に触れておくことにします。
+
+   
+
+  　そこで、日本古来から伝わる丁半賭博を例にして統計的判断を考えてみることにします。サイコロを振って丁か半が出る確率はイカサマをしなければ何回振ってもその確率は_{[[./confidence.files/image039.gif]]}であることは経験的にも理論的も知られています。しかし、サイコロを２回続けて振ったときにたまたま丁丁あるいは半半と続けて同じ目が出る場合も偶然にはあり得ることも考えられ、その確率は_{[[./confidence.files/image041.gif]]}です。同様に３回続けて振ったときに偶然に丁丁丁あるいは半半半と出る確率は_{[[./confidence.files/image043.gif]]}となり、一般に_{[[./confidence.files/image045.gif]]}回続けてサイコロを振ったときに偶然丁ばかりあるいは半ばかりの目が出る確率は_{[[./confidence.files/image047.gif]]}となります。
+
+   
+
+  　いま、読者の二人（甲と乙）が運悪く丁半賭博をするはめに陥り、二人ともなけなしのお金を勝負の度にいつも半に賭けたものと仮定します。この賭博場の謳い文句はクリーンなイメージの「イカサマはいない」（仮説）というものでした。が、しかし、現実には、最初の5回までの勝負では謳い文句通りイカサマは行われなかったのですが、たまたまその日は丁ばかりの目が続き、6回目以降はサイコロに細工をしていつも丁が出るようなイカサマをしていたとします。このとき、甲と乙のとった行動が統計的判断の考え方の基本となります。甲は生来アワテモノのせいか丁半勝負を始めてまだ2回しか丁が続かないのに、この賭博はイカサマであると判断し席を蹴って退場しました。これはイカサマをしていないという事実（仮説）が正しいのにイカサマをしているといった誤った判断をアワテテしてしまった過誤（error）であり、これを「第一種の過誤」（アワテモノの誤り、
+  Type ? errorあるいはerror of the first
+  kind）と言います。それに対し、乙は生来ボンヤリモノのせいか、丁半勝負を始めてから10回も丁の目が続いて出ているのに、博打だからまあそんなこともあるだろうとちっともイカサマに気付かない様子で、お金がすってんてんになるまで何度も半を賭け続けていました。もちろん乙の考え方は確立統計の理論からすれば10回続けて丁の目が出る確率は_{[[./confidence.files/image049.gif]]}だけはあり得るわけですから、謳い文句（仮説）通りイカサマが全く行われていなかったなら、この乙の判断には間違いがなかったと言えますが、現実には6回目以降の丁半勝負ではイカサマが行われており事実は仮説とは違うのに、その仮説をいつまでも正しいと判断したボンヤリモノの乙の判断にはやはり重大な過誤がります。このような事実は間違っている（仮説は正しくない）のに仮説を正しいと判断する過誤のことを「第二の過誤」（ボンヤリモノの誤り、
+  Type ? errorあるいは error of the second
+  kind）と言います。そして、甲乙いずれもその犯した過誤の時点での確率_{[[./confidence.files/image051.gif]]}のことを「危険率」（critical
+  rate）と統計学では呼んでいます。すなわち、甲の危険率（甲が第一種の過誤を犯す危険率）は_{[[./confidence.files/image053.gif]]}であり、乙の危険率（乙が第二種の過誤を犯す確率）は_{[[./confidence.files/image055.gif]]}ということです。
+
+   
+
+  　この事実と判断の関係を表にすると下表のようになります。いつも判断が事実に等しければいいのですが、統計的判断ではある危険率で第一種の過誤や第二種の過誤を犯す可能性があります。つまり、第一種の過誤も第二種の過誤も同時に起こさないような判断は難しいということです。すなわち、本来どちらの過誤もできるだけ小さくなるような判断ができればいいのですが、現実にはある一定のデータ数では第一の過誤を小さくするとそれに応じて第二種の過誤は大きくなります。そこで、統計学で行う仮説検定は、第一種の過誤を犯す確率（危険率）を決めて判断し、第二種の過誤については評価を行わないのが普通ですが、その場合、データのバラツキ（分散）を減らすことととデータの数を増やすことによって、すなわち、_{[[./confidence.files/image057.gif]]}を小さくすることによって、第二種の過誤を少なくすることができます。
+
+   
+
+  | 事実         | 仮説は正しいと判断する             | 仮説は誤りと判断する             |
+  | 仮説は正しい | ○                                  | 第一種の過誤（アワテモノの誤り） |
+  | 仮説は誤り   | 第二種の過誤（ボンヤリモノの誤り） | ○                                |
+
+   
+
+  　さて、いよいよ本題に戻ることにしましょう。上図は母平均が_{[[./confidence.files/image058.gif]]}で母分散が_{[[./confidence.files/image059.gif]]}の母集団から_{[[./confidence.files/image060.gif]]}の大きさの任意標本を抽出したときの標本平均_{[[./confidence.files/image061.gif]]}の分布（正規分布_{[[./confidence.files/image063.gif]]}を表していますが、標本平均_{[[./confidence.files/image064.gif]]}の値が母平均_{[[./confidence.files/image066.gif]]}から離れれば離れるほど急速にその実現確率_{[[./confidence.files/image068.gif]]}は小さくなり_{[[./confidence.files/image070.gif]]}では_{[[./confidence.files/image072.gif]]}となって実現性は全くあり得ないことになってしまいます。そこで、_{[[./confidence.files/image073.gif]]}の値が標本の平均としてどの程度までが許容できる限界かを決める必要がありますが、わたしたちは経験的に_{[[./confidence.files/image075.gif]]}以下の確率しかない値はめったに起こりそうにもない実現値であろうと考えるのが妥当とみなします。すなわち、上図では両側併せて_{[[./confidence.files/image077.gif]]}になるところですから片側ずつにすると_{[[./confidence.files/image079.gif]]}以下になる_{[[./confidence.files/image080.gif]]}が実現しそうにない値だと言えます。この限界点のことを信頼限界と呼び、上図では信頼上限は_{[[./confidence.files/image082.gif]]}であり信頼下限は_{[[./confidence.files/image084.gif]]}となります。1.96という数字は正規分布のパーセント点の表で0.025に相当する値です。すなわち、標本平均_{[[./confidence.files/image085.gif]]}の95%信頼区間（confidence
+  interval）は
+
+   
+
+                _{[[./confidence.files/image087.gif]]}
+
+   
+
+  あるいは
+
+   
+
+                _{[[./confidence.files/image089.gif]]}
+
+   
+
+  となります。したがって、上図の標本平均_{[[./confidence.files/image091.gif]]}はこの区間内に入っているから採択可能な標本平均であり、標本平均_{[[./confidence.files/image093.gif]]}はこの区間外にあるから棄却すべき標本平均であると言えます。ただし、そのような判断をしたときに第一種の過誤を犯す危険率は5%であるということになります。
+
+   
+
+  　このような信頼区間についての関係式を変形すると
+
+   
+
+                _{[[./confidence.files/image095.gif]]}
+
+   
+
+  という関係式が得られますが、これは標本平均_{[[./confidence.files/image096.gif]]}から95%の信頼率で母平均_{[[./confidence.files/image098.gif]]}の信頼区間を推定することができるということと同じになります。
+
+   
+
+  　ここで、変数_{[[./confidence.files/image099.gif]]}を規準変数_{[[./confidence.files/image101.gif]]}で変換すると
+
+   
+
+                _{[[./confidence.files/image103.gif]]}
+
+   
+
+  のようになるが、この変数_{[[./confidence.files/image104.gif]]}もまた下図のような標準正規分布_{[[./confidence.files/image106.gif]]}をするので、この図で信頼区間を決める方がわかりやすいかも知れません。
+
+   
+
+  [[./confidence.files/image108.jpg]]
+
+   
+
+  　ちなみに、棄却域（rejection
+  region）に相当する確率_{[[./confidence.files/image110.gif]]}のことを「危険率」（critical
+  rate）と言うが、判断の基準となる確率という意味で「有意水準」（significance
+  levelあるいはlevel of
+  significance）と呼ぶこともあります。また、これとは逆に採択域（acceptance
+  region）は_{[[./confidence.files/image112.gif]]}に相当する確率であり、この確率のことを_{[[./confidence.files/image114.gif]]}信頼率あるいは信頼係数（confidence
+  coefficient）と呼んでいます。それでは、有意水準が5%というのはどういうことを意味しているかというと、原則として棄却することを予測して立てた仮説（このような仮説のことを帰無仮説（null
+  hypothesis）と言い、通常_{[[./confidence.files/image116.gif]]}という記号を使います）を棄却したとしても、そのことによる誤りは5%以下であるということです。言い換えれば、本当は帰無仮説が正しかったにもかかわらず、それを棄却することによって誤り（第一種の過誤）を犯すかも知れない危険を100回のうち５回までは認めてもいいということと同じですので、有意水準_{[[./confidence.files/image118.gif]]}のことを危険率と言う場合が多いのです。帰無仮説（たとえば、_{[[./confidence.files/image120.gif]]}）に対し、_{[[./confidence.files/image122.gif]]}となるような仮説のことを対立仮説（alternative
+  hypothesis）と呼び_{[[./confidence.files/image124.gif]]}という記号を用います。当然、帰無仮説を棄却する場合は対立仮説を採用することになります。
+
+   
+
+  　このように、統計的仮説検定においては、帰無仮説_{[[./confidence.files/image125.gif]]}が正しいにもかかわらずそれを棄却してしまう誤りが第一種の過誤であり、一般にこの誤りの確率を_{[[./confidence.files/image127.gif]]}という記号で表し、この_{[[./confidence.files/image129.gif]]}のことを危険率と呼んだり有意水準と呼んだりします。また、その確率_{[[./confidence.files/image131.gif]]}に相当する規準変数_{[[./confidence.files/image133.gif]]}上の点_{[[./confidence.files/image135.gif]]}のことを有意水準点と呼んでいます。したがって、危険率や有意水準というのは第一種の過誤を犯す確率であると簡潔に言うこともできます。これに対し、対立仮説が正しい（帰無仮説は誤り）のにそれを検出できないのが第二種の過誤で、その確率を記号_{[[./confidence.files/image137.gif]]}を使って表すのが一般的です。また、_{[[./confidence.files/image139.gif]]}に相当する確率のことを「検出力」と呼んでいます。
+
+   
+
+  　統計的仮説検定における危険率（有意水準）_{[[./confidence.files/image141.gif]]}、信頼率_{[[./confidence.files/image143.gif]]}、第二種の過誤を犯す確率_{[[./confidence.files/image145.gif]]}、および検出力_{[[./confidence.files/image147.gif]]}の関係は下図に示してあります。
+
+   
+
+  [[./confidence.files/image149.jpg]]
+
+   
+
+  　いま、ある母集団の母平均_{[[./confidence.files/image151.gif]]}が_{[[./confidence.files/image153.gif]]}に等しいという帰無仮説_{[[./confidence.files/image155.gif]]}を立て、対立仮説として_{[[./confidence.files/image157.gif]]}（すなわち、真の母平均_{[[./confidence.files/image159.gif]]}は帰無仮説で仮定した値_{[[./confidence.files/image161.gif]]}より_{[[./confidence.files/image163.gif]]}だけ大きい）を信頼率_{[[./confidence.files/image165.gif]]}で大きさ_{[[./confidence.files/image166.gif]]}の任意標本について仮説検定してみることにします。この場合、対立仮説が_{[[./confidence.files/image167.gif]]}なので右片側検定をすることになります。したがって、危険率_{[[./confidence.files/image169.gif]]}に相当する有意水準点は正規分布_{[[./confidence.files/image171.gif]]}曲線上の_{[[./confidence.files/image173.gif]]}になり、この_{[[./confidence.files/image175.gif]]}点より右側の黒い部分が帰無仮説_{[[./confidence.files/image176.gif]]}の棄却域になり、対立仮説_{[[./confidence.files/image177.gif]]}を採択することになります。また、この_{[[./confidence.files/image178.gif]]}点より左側の部分はすべて帰無仮説_{[[./confidence.files/image179.gif]]}が棄却できず、帰無仮説_{[[./confidence.files/image180.gif]]}を採択することになります。しかしながら、上図で見るように、対立仮説である_{[[./confidence.files/image182.gif]]}が真実であったとすると、正規分布_{[[./confidence.files/image184.gif]]}曲線上の_{[[./confidence.files/image185.gif]]}点より左側の部分（影の部分）の標本平均_{[[./confidence.files/image186.gif]]}は正規分布_{[[./confidence.files/image187.gif]]}曲線の帰無仮説_{[[./confidence.files/image188.gif]]}採択域に入ってしまい、帰無仮説_{[[./confidence.files/image189.gif]]}が正しくない（対立仮説_{[[./confidence.files/image190.gif]]}が正しい）のに帰無仮説_{[[./confidence.files/image191.gif]]}が正しいという間違った判断（第二種の過誤）をしてしまうことになります。すなわち、正規分布_{[[./confidence.files/image192.gif]]}曲線上の影の部分が第二種の過誤を犯す確率_{[[./confidence.files/image194.gif]]}に相当するわけです。そして、正規分布_{[[./confidence.files/image195.gif]]}曲線上の斜線部分が検出力_{[[./confidence.files/image197.gif]]}になります。検出力_{[[./confidence.files/image198.gif]]}を上げれば相対的に第二種の過誤を犯す確率_{[[./confidence.files/image199.gif]]}を下げることができるので、次に検出力_{[[./confidence.files/image200.gif]]}を高めるにはどうしたらよいかを考えます。
+
+   
+
+  　正規分布_{[[./confidence.files/image201.gif]]}の検出力_{[[./confidence.files/image202.gif]]}に対応する正規分布_{[[./confidence.files/image203.gif]]}の有意水準点_{[[./confidence.files/image204.gif]]}は正規分布_{[[./confidence.files/image205.gif]]}の右片側検定の_{[[./confidence.files/image207.gif]]}点であるから
+
+   
+
+                _{[[./confidence.files/image209.gif]]}
+
+   
+
+  となります。一方、この_{[[./confidence.files/image210.gif]]}点は正規分布_{[[./confidence.files/image211.gif]]}曲線上にあるから、この確率_{[[./confidence.files/image213.gif]]}の始点に相当する規準変数の値を_{[[./confidence.files/image215.gif]]}とすれば
+
+   
+
+                _{[[./confidence.files/image217.gif]]}
+
+   
+
+  となるので、_{[[./confidence.files/image219.gif]]}の関係を考慮して_{[[./confidence.files/image220.gif]]}を求めると
+
+   
+
+               
+  _{[[./confidence.files/image222.gif]][[./confidence.files/image224.gif]]}
+
+   
+
+  となります。
+
+   
+
+  ここで、正規分布_{[[./confidence.files/image225.gif]]}の標本平均_{[[./confidence.files/image226.gif]]}を規準変数_{[[./confidence.files/image227.gif]]}に変換して
+
+   
+
+                _{[[./confidence.files/image229.gif]]}
+
+   
+
+  とすれば、検出力_{[[./confidence.files/image230.gif]]}は正規分布_{[[./confidence.files/image231.gif]]}の規準変数_{[[./confidence.files/image232.gif]]}が正規分布_{[[./confidence.files/image233.gif]]}の棄却域に落ちる確率、すなわち、_{[[./confidence.files/image235.gif]]}だから
+
+   
+
+                _{[[./confidence.files/image237.gif]]}
+
+   
+
+  となります。検出力_{[[./confidence.files/image238.gif]]}を高めるためには確率_{[[./confidence.files/image240.gif]]}を大きくすればよいので、_{[[./confidence.files/image242.gif]]}一定の条件下では
+
+   
+
+                _{[[./confidence.files/image244.gif]]}
+
+   
+
+  という条件を満たせば、検出力_{[[./confidence.files/image245.gif]]}が高まり、相対的に第二種の過誤を犯す確率_{[[./confidence.files/image247.gif]]}を小さくできることがわかります。
+
+   
+
+  　上述の統計的仮説検定は片側検定の場合を想定して行ったが、両側検定の場合も考慮しておく必要があるでしょう。両側検定の場合は、ある母集団の母平均_{[[./confidence.files/image248.gif]]}が_{[[./confidence.files/image249.gif]]}に等しいという帰無仮説_{[[./confidence.files/image250.gif]]}を立て、対立仮説として_{[[./confidence.files/image252.gif]]}（すなわち、真の母平均_{[[./confidence.files/image253.gif]]}は帰無仮説で仮定した値_{[[./confidence.files/image254.gif]]}とは違っている）を信頼率_{[[./confidence.files/image255.gif]]}で大きさ_{[[./confidence.files/image256.gif]]}の任意標本について仮説検定することになります。この場合、対立仮説が_{[[./confidence.files/image258.gif]]}なので両側検定をすることになります。したがって、危険率_{[[./confidence.files/image260.gif]]}に相当する有意水準点は、下図の正規分布_{[[./confidence.files/image261.gif]]}曲線上の_{[[./confidence.files/image263.gif]]}と_{[[./confidence.files/image265.gif]]}になり、この_{[[./confidence.files/image266.gif]]}点より右側の黒い部分および_{[[./confidence.files/image268.gif]]}点より左側の黒い部分が帰無仮説_{[[./confidence.files/image269.gif]]}の棄却域になり、対立仮説_{[[./confidence.files/image271.gif]]}を採択することになります。また、この_{[[./confidence.files/image272.gif]]}点と_{[[./confidence.files/image273.gif]]}点にはさまれた部分はすべて帰無仮説_{[[./confidence.files/image274.gif]]}が棄却できず、帰無仮説_{[[./confidence.files/image275.gif]]}を採択することになります。
+
+   
+
+  [[./confidence.files/image277.jpg]]
+
+   
+
+  　しかしながら、上図で見るように、対立仮説である_{[[./confidence.files/image279.gif]]}（ととえば真の母平均_{[[./confidence.files/image281.gif]]}は帰無仮説の値_{[[./confidence.files/image283.gif]]}より_{[[./confidence.files/image285.gif]]}だけずれている）が真実であったとすると、正規分布_{[[./confidence.files/image286.gif]]}の母平均_{[[./confidence.files/image288.gif]]}が明らかに正規分布_{[[./confidence.files/image289.gif]]}の棄却域に入っている（したがって、_{[[./confidence.files/image291.gif]]}が正しい）にもかかわらず、正規分布_{[[./confidence.files/image292.gif]]}曲線上の_{[[./confidence.files/image293.gif]]}点より右側の部分（影の部分）の標本平均_{[[./confidence.files/image294.gif]]}は正規分布_{[[./confidence.files/image295.gif]]}曲線の帰無仮説_{[[./confidence.files/image296.gif]]}採択域に入ってしまい、帰無仮説_{[[./confidence.files/image297.gif]]}が正しくない（対立仮説_{[[./confidence.files/image299.gif]]}が正しい）のに帰無仮説_{[[./confidence.files/image300.gif]]}が正しいという間違った判断（第二種の過誤）をしてしまうことになります。すなわち、正規分布_{[[./confidence.files/image301.gif]]}曲線上の影の部分が第二種の過誤を犯す確率_{[[./confidence.files/image302.gif]]}に相当するわけです。そして、正規分布_{[[./confidence.files/image303.gif]]}曲線上の斜線部分が検出力_{[[./confidence.files/image304.gif]]}になります。検出力_{[[./confidence.files/image305.gif]]}を上げれば相対的に第二種の過誤を犯す確率_{[[./confidence.files/image306.gif]]}を下げることができます。
+
+   
+
+  　片側検定の場合と同じように、両側検定の場合についても検出力_{[[./confidence.files/image307.gif]]}を求めてみることにします。正規分布_{[[./confidence.files/image308.gif]]}の検出力_{[[./confidence.files/image309.gif]]}に対応する正規分布_{[[./confidence.files/image310.gif]]}の有意水準点_{[[./confidence.files/image311.gif]]}と_{[[./confidence.files/image312.gif]]}はそれぞれ正規分布_{[[./confidence.files/image313.gif]]}の両側検定の_{[[./confidence.files/image315.gif]]}点であるから
+
+   
+
+                _{[[./confidence.files/image317.gif]]}
+
+   
+
+  となります。一方、この_{[[./confidence.files/image318.gif]]}点と_{[[./confidence.files/image319.gif]]}点はいずれも正規分布_{[[./confidence.files/image320.gif]]}曲線上にあるから、この確率_{[[./confidence.files/image321.gif]]}の始点に相当する規準変数の値を_{[[./confidence.files/image322.gif]]}および_{[[./confidence.files/image324.gif]]}とすれば
+
+   
+
+                _{[[./confidence.files/image326.gif]]}
+
+   
+
+  となるので、_{[[./confidence.files/image327.gif]]}の関係を考慮して_{[[./confidence.files/image328.gif]]}と_{[[./confidence.files/image330.gif]]}を求めると
+
+   
+
+               
+  _{[[./confidence.files/image331.gif]][[./confidence.files/image333.gif]]}
+
+   
+
+  となります。
+
+   
+
+  ここで、正規分布_{[[./confidence.files/image334.gif]]}の標本平均_{[[./confidence.files/image335.gif]]}を規準変数_{[[./confidence.files/image336.gif]]}に変換して
+
+   
+
+                _{[[./confidence.files/image337.gif]]}
+
+   
+
+  とすれば、検出力_{[[./confidence.files/image338.gif]]}は正規分布_{[[./confidence.files/image339.gif]]}の規準変数_{[[./confidence.files/image340.gif]]}が正規分布_{[[./confidence.files/image341.gif]]}の棄却域に落ちる確率、すなわち、確率_{[[./confidence.files/image343.gif]]}および確率_{[[./confidence.files/image345.gif]]}の総和だから
+
+   
+
+                _{[[./confidence.files/image347.gif]]}
+
+   
+
+  となります。
+
+   
+
+  　標本の大きさ_{[[./confidence.files/image348.gif]]}によって検出力_{[[./confidence.files/image350.gif]]}がどのように変わるのかを危険率_{[[./confidence.files/image352.gif]]}の両側検定の条件下で_{[[./confidence.files/image354.gif]]}を関数にしてプロットしたものを下図に示します。検出力曲線の逆がOP曲線（オペレーション曲線）です。OP曲線は_{[[./confidence.files/image356.gif]]}が統計パラメーターによってどう変わるかをプロットしたもので、抜き取り検査に使用されます。
+
+   
+
+  [[./confidence.files/image358.jpg]]
+
+   
+
+  　たとえば、母平均の差が母分散程度（_{[[./confidence.files/image360.gif]]}）である場合は検出力曲線と赤線の交点の読みから、標本の大きさが_{[[./confidence.files/image362.gif]]}のときは検出力_{[[./confidence.files/image364.gif]]}は約60%、_{[[./confidence.files/image366.gif]]}のときは約85%、_{[[./confidence.files/image368.gif]]}のときはほとんど100%近くになることがわかります。また、母平均の差が母分散の2倍以上（_{[[./confidence.files/image370.gif]]}）である場合は、標本の大きさが_{[[./confidence.files/image371.gif]]}であっても検出力_{[[./confidence.files/image372.gif]]}はほぼ100%になり、第二種の過誤を犯す可能性はほとんどない（_{[[./confidence.files/image374.gif]]}）ことがわかります。
+
+   
+
+  （例題）母集団は正規分布であり、母分散_{[[./confidence.files/image376.gif]]}は既知であるとします。このとき
+
+   
+
+                _{[[./confidence.files/image378.gif]]}
+
+   
+
+  という条件の下で、有意水準5%で仮説検定を行い、標本の大きさ_{[[./confidence.files/image380.gif]]}について検出力_{[[./confidence.files/image382.gif]]}を計算してみましょう。ただし、母平均_{[[./confidence.files/image384.gif]]}の差は母分散_{[[./confidence.files/image385.gif]]}程度であったと仮定します。
+
+   
+
+  （解答）仮説_{[[./confidence.files/image387.gif]]}および_{[[./confidence.files/image389.gif]]}の有意水準5%の棄却域は、両側検定であるので
+
+   
+
+                _{[[./confidence.files/image391.gif]]}
+
+   
+
+  となります。真の母平均が_{[[./confidence.files/image393.gif]]}であるとき、標本平均_{[[./confidence.files/image394.gif]]}がこの棄却域に落ちる確率すなわち検出力_{[[./confidence.files/image396.gif]]}は
+
+   
+
+                _{[[./confidence.files/image398.gif]]}
+
+   
+
+  となるが、ここで
+
+   
+
+                _{[[./confidence.files/image400.gif]]}
+
+   
+
+  とおけば、この規準変数_{[[./confidence.files/image401.gif]]}は標準正規分布_{[[./confidence.files/image403.gif]]}に従います。よって
+
+   
+
+                _{[[./confidence.files/image405.gif]]}
+
+   
+
+  となります。題意より
+
+   
+
+                _{[[./confidence.files/image407.gif]]}
+
+   
+
+  だから、求める検出力_{[[./confidence.files/image409.gif]]}は
+
+   
+
+                _{[[./confidence.files/image411.gif]]}
+
+   
+
+  となります。
+#+end_quote
