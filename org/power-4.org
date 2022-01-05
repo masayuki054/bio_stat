@@ -1,0 +1,2 @@
+[[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の計算]]
+

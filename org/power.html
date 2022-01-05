@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-01-05 水 21:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>入門統計学 検出力</title>
+<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">入門統計学 検出力</h1>
+
+<div id="outline-container-org79d3077" class="outline-2">
+<h2 id="org79d3077">参考サイト</h2>
+<div class="outline-text-2" id="text-org79d3077">
+<ul class="org-ul">
+<li><a href="https://staff.aist.go.jp/t.ihara/confidence.html">信頼区間と検出力</a></li>
+<li><a href="https://note.com/hanaori/n/nc55ac8614799">統計学｜検出力とはなんぞや｜hanaori｜note</a></li>
+<li><a href="https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/">R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の計算</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgce0bc4f" class="outline-2">
+<h2 id="orgce0bc4f">信頼区間 (confidencial interval)</h2>
+</div>
+
+<div id="outline-container-org0e1766b" class="outline-2">
+<h2 id="org0e1766b">仮説と過誤</h2>
+<div class="outline-text-2" id="text-org0e1766b">
+</div>
+<div id="outline-container-org93e6fe9" class="outline-3">
+<h3 id="org93e6fe9">丁半賭博を例にした統計的判断</h3>
+<div class="outline-text-3" id="text-org93e6fe9">
+</div>
+<div id="outline-container-orgf3d580f" class="outline-4">
+<h4 id="orgf3d580f">設定</h4>
+<div class="outline-text-4" id="text-orgf3d580f">
+<ul class="org-ul">
+<li>甲と乙の二人が丁半賭博に参加し，</li>
+<li>二人ともなけなしのお金を勝負の度にいつ
+も半に賭けたものと仮定します。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org35f4c29" class="outline-4">
+<h4 id="org35f4c29">仮説</h4>
+<div class="outline-text-4" id="text-org35f4c29">
+<ul class="org-ul">
+<li>この賭博場の謳い文句はクリーンなイメージの「イカサマはいない」（仮説）
+というものでした。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge925dbe" class="outline-4">
+<h4 id="orge925dbe">現実</h4>
+<div class="outline-text-4" id="text-orge925dbe">
+<ul class="org-ul">
+<li>最初の5回までの勝負ではイカサマは行われなかったが，たまたまその日は
+最初の5回，丁ばかりの目が続いた</li>
+
+<li>6回目以降はサイコロに細工をしていつも丁が出るようなイカサマをしてい
+た</li>
+</ul>
+
+<p>
+とします。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgef590b4" class="outline-4">
+<h4 id="orgef590b4">甲と乙のとった行動</h4>
+<div class="outline-text-4" id="text-orgef590b4">
+<p>
+統計的判断の考え方の基本となります。
+</p>
+
+<ul class="org-ul">
+<li><p>
+甲は生来アワテモノのせいか丁半勝負を始めてまだ2回しか丁が続かないのに、
+この賭博はイカサマであると判断し席を蹴って退場しました。
+</p>
+
+<p>
+これはイカサマをしていないという事実（仮説）が正しいのにイカサマをし
+ているといった誤った判断をアワテテしてしまった過誤（error）であり、
+これを「第一種の過誤」（アワテモノの誤り、 Type Ⅰ errorあるいは
+error of the first kind）と言います。
+</p></li>
+
+<li><p>
+それに対し、乙は生来ボンヤリモノのせいか、丁半勝負を始めてから10
+回も丁の目が続いて出ているのに、博打だからまあそんなこともあるだろうと
+ちっともイカサマに気付かない様子で、お金がすってんてんになるまで何度も
+半を賭け続けていました。
+</p>
+
+<p>
+もちろん乙の考え方は確立統計の理論からすれば10回続けて丁の目が出る確
+率はだけはあり得るわけですから、謳い文句（仮説）通りイカサマが全く行
+われていなかったなら、この乙の判断には間違いがなかったと言えますが、
+現実には6回目以降の丁半勝負ではイカサマが行われており事実は仮説とは
+違うのに、その仮説をいつまでも正しいと判断したボンヤリモノの乙の判断
+にはやはり重大な過誤がります。
+</p>
+
+<p>
+このような事実は間違っている（仮説は正しくない）のに仮説を正しいと判
+断する過誤のことを「第二の過誤」（ボンヤリモノの誤り、Type Ⅱ error
+あるいは error of the second kind）と言います。
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbe2ba80" class="outline-4">
+<h4 id="orgbe2ba80">危険率</h4>
+<div class="outline-text-4" id="text-orgbe2ba80">
+<p>
+そして、甲乙いずれもその犯した過誤の時点での確率のことを「危険率」
+（critical rate）と統計学では呼んでいます。
+</p>
+
+<p>
+すなわち、甲の危険率（甲が第一種の過誤を犯す危険率）は
+\[
+  P = (1/2)^2 = 1/l4
+  \]
+</p>
+
+<p>
+であり、
+</p>
+
+
+<p>
+乙の危険率（乙が第二種の過誤を犯す確率）は
+</p>
+
+<p>
+\[
+  P = (1/2)^10 =1/1024
+  \]
+</p>
+
+<p>
+ということです。
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf53b9d3" class="outline-2">
+<h2 id="orgf53b9d3">検出力と期待値の差と標本サイズ</h2>
+<div class="outline-text-2" id="text-orgf53b9d3">
+</div>
+<div id="outline-container-org4dac879" class="outline-3">
+<h3 id="org4dac879">片側検定</h3>
+<div class="outline-text-3" id="text-org4dac879">
+<p>
+危険率 0.05% として，標準正規分布の上側95%点のz値は，
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+qnorm(0.95)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 1.644854
+</pre>
+
+
+
+<p>
+[[<img src="./Figs/power-oneside.jpg" alt="power-oneside.jpg" />]]
+</p>
+
+
+
+<p>
+上図の\(N(\mu_0, \sigma^2)\) での a 点は，\( a = \mu_0 + 1.645 \sigma / \sqrt{n} \).
+</p>
+
+<p>
+\(N(\mu, \sigma^2)\)でのa点は，\( a = \mu + z_{\a} \sigma /
+\sqrt{n} \).
+</p>
+
+<p>
+\(z_{a} = \frac{a-\mu}{\sigma/\sqrt{n}} = 1.645 - (\mu -
+\mu_0)/\sigma/\sqrt{n} = 1.645 - \frac{\Delta\mu}{\sigma/\sqrt{n}}\)
+</p>
+
+<p>
+検出力 \(1-\beta\) は， 
+</p>
+
+<p>
+\( 1-\beta = P(z>=z_{a}) \) と計算できる。
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org50d05a2" class="outline-3">
+<h3 id="org50d05a2">両側検定</h3>
+<div class="outline-text-3" id="text-org50d05a2">
+<p>
+危険率 0.05% として，標準正規分布の上側97.5%点のz値は，
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+qnorm(0.975)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 1.959964
+</pre>
+
+
+
+<p>
+[[<img src="./Figs/power-twoside.jpg" alt="power-twoside.jpg" />]]
+</p>
+
+
+<p>
+上図の\(N(\mu_0, \sigma^2)\) での a 点は，\( a = \mu_0 + 1.96 \sigma /
+\sqrt{n} \),
+b 点は，\( b = \mu_0 - 1.96 \sigma / \sqrt{n} \).
+</p>
+
+<p>
+\(N(\mu, \sigma^2)\)でのa点は，\( a = \mu + z_{a} \sigma /
+\sqrt{n} \), b点は，\( b = \mu - z_b{} \sigma /
+\sqrt{n} \).
+</p>
+
+<p>
+\(z_{a} = \frac{a-\mu}{\sigma/\sqrt{n}} = 1.96 - (\mu -
+\mu_0)/\sigma/\sqrt{n} = 1.96 - \frac{\Delta\mu}{\sigma/\sqrt{n}}\)
+</p>
+
+<p>
+\(z_{b} = \frac{b-\mu}{\sigma/\sqrt{n}} = -1.96 - (\mu -
+\mu_0)/\sigma/\sqrt{n} = -1.96 - \frac{\Delta\mu}{\sigma/\sqrt{n}}\)
+</p>
+
+<p>
+検出力 \(1-\beta\) は， 
+</p>
+
+<p>
+\( 1-\beta = P(z>=z_{a}) + P(z <= z_b \) と計算できる。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ce9e92" class="outline-2">
+<h2 id="org9ce9e92">power.t.test {stats}	R Documentation</h2>
+<div class="outline-text-2" id="text-org9ce9e92">
+<p>
+Power calculations for one and two sample t tests
+</p>
+</div>
+
+<div id="outline-container-orgbc43fd2" class="outline-3">
+<h3 id="orgbc43fd2">Description</h3>
+<div class="outline-text-3" id="text-orgbc43fd2">
+<p>
+Compute the power of the one- or two- sample t test, or determine
+parameters to obtain a target power.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5aab890" class="outline-3">
+<h3 id="org5aab890">Usage</h3>
+<div class="outline-text-3" id="text-org5aab890">
+<p>
+power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
+             power = NULL,
+             type = c("two.sample", "one.sample", "paired"),
+             alternative = c("two.sided", "one.sided"),
+             strict = FALSE, tol = .Machine$double.eps^0.25)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org78bdaf6" class="outline-3">
+<h3 id="org78bdaf6">Arguments</h3>
+<div class="outline-text-3" id="text-org78bdaf6">
+<dl class="org-dl">
+<dt>n</dt><dd>number of observations (per group)</dd>
+<dt>delta</dt><dd>true difference in means</dd>
+<dt>sd</dt><dd>standard deviation</dd>
+<dt>sig.level</dt><dd>significance level (Type I error probability)</dd>
+<dt>power</dt><dd>power of test (1 minus Type II error probability)</dd>
+<dt>type</dt><dd>string specifying the type of t test. Can be abbreviated.</dd>
+<dt>alternative</dt><dd>one- or two-sided test. Can be abbreviated.</dd>
+<dt>strict</dt><dd>use strict interpretation in two-sided case</dd>
+<dt>tol</dt><dd>numerical tolerance used in root finding, the default providing (at least) four significant digits.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org665a38d" class="outline-3">
+<h3 id="org665a38d">Details</h3>
+<div class="outline-text-3" id="text-org665a38d">
+<p>
+Exactly one of the parameters n, delta, power, sd, and sig.level must
+be passed as NULL, and that parameter is determined from the
+others. Notice that the last two have non-NULL defaults, so NULL must
+be explicitly passed if you want to compute them.
+</p>
+
+<p>
+If strict = TRUE is used, the power will include the probability of
+rejection in the opposite direction of the true effect, in the
+two-sided case. Without this the power will be half the significance
+level if the true difference is zero.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgee6e493" class="outline-3">
+<h3 id="orgee6e493">Value</h3>
+<div class="outline-text-3" id="text-orgee6e493">
+<p>
+Object of class "power.htest", a list of the arguments (including the computed one) augmented with method and note elements.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7edfd65" class="outline-3">
+<h3 id="org7edfd65">Note</h3>
+<div class="outline-text-3" id="text-org7edfd65">
+<p>
+uniroot is used to solve the power equation for unknowns, so you may see errors from it, notably about inability to bracket the root when invalid arguments are given.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b5a6a5" class="outline-3">
+<h3 id="org8b5a6a5">Author(s)</h3>
+<div class="outline-text-3" id="text-org8b5a6a5">
+<p>
+Peter Dalgaard. Based on previous work by Claus Ekstrøm
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1ec2e78" class="outline-3">
+<h3 id="org1ec2e78">See Also</h3>
+<div class="outline-text-3" id="text-org1ec2e78">
+<p>
+t.test, uniroot
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9552c4b" class="outline-3">
+<h3 id="org9552c4b">Examples</h3>
+<div class="outline-text-3" id="text-org9552c4b">
+<div class="org-src-container">
+<pre class="src src-R">
+ power.t.test(n = 20, delta = 1)
+
+</pre>
+</div>
+
+<pre class="example" id="org4712691">
+
+     Two-sample t test power calculation 
+
+              n = 20
+          delta = 1
+             sd = 1
+      sig.level = 0.05
+          power = 0.8689528
+    alternative = two.sided
+
+NOTE: n is number in *each* group
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">
+power.t.test(power = .90, delta = 1)
+
+</pre>
+</div>
+
+<pre class="example" id="org965b0f6">
+
+     Two-sample t test power calculation 
+
+              n = 22.0211
+          delta = 1
+             sd = 1
+      sig.level = 0.05
+          power = 0.9
+    alternative = two.sided
+
+NOTE: n is number in *each* group
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">
+power.t.test(power = .90, delta = 1, alternative = <span style="color: #95e454;">"one.sided"</span>)
+
+</pre>
+</div>
+
+<pre class="example" id="org4255647">
+
+     Two-sample t test power calculation 
+
+              n = 17.84713
+          delta = 1
+             sd = 1
+      sig.level = 0.05
+          power = 0.9
+    alternative = one.sided
+
+NOTE: n is number in *each* group
+</pre>
+
+<p>
+[Package stats version 4.0.3 Index]
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga9692f6" class="outline-2">
+<h2 id="orga9692f6">H0 と H1 の μ の差を大きくしていったとき、</h2>
+<div class="outline-text-2" id="text-orga9692f6">
+<p>
+検出力がどう変化するか R でプロットしてみます。今回サンプルサイズは 50、
+分散は 1 に固定します。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #99968b;"># </span><span style="color: #99968b;">&#24179;&#22343;&#12398;&#24046; 0 ~ 1</span>
+deltas <span style="color: #e5786d;">&lt;-</span> seq(0, 1, length=11) 
+<span style="color: #99968b;"># </span><span style="color: #99968b;">&#20998;&#25955; 1&#12289;&#12469;&#12531;&#12503;&#12523;&#12469;&#12452;&#12474; 50 &#12398;&#26908;&#20986;&#21147;</span>
+powers <span style="color: #e5786d;">&lt;-</span> power.t.test(n=50, delta=deltas, sd=1)$power
+
+plot(deltas, powers, type=<span style="color: #95e454;">"l"</span>, xlab = <span style="color: #95e454;">"&#24179;&#22343;&#12398;&#24046;"</span>, ylab = <span style="color: #95e454;">"&#26908;&#20986;&#21147;"</span>)
+
+</pre>
+</div>
+
+
+<div id="org82545e8" class="figure">
+<p><img src="./R-text/graph/power.png" alt="power.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org220216c" class="outline-2">
+<h2 id="org220216c"><a href="https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/">R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の計算</a></h2>
+<div class="outline-text-2" id="text-org220216c">
+<ul class="org-ul">
+<li>power.t.test の計算法と実行例</li>
+<li>power.prop.testの計算法と実行例</li>
+<li>power.anova の計算法と実行例</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
+<p class="date">Created: 2022-01-05 水 21:22</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

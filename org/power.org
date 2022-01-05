@@ -1,0 +1,300 @@
+#+OPTIONS: tex:t 
+#+include: R-text-common.org
+#+Title:   検出力
+#+property: header-args:R :session *rtext* :results output :exports both
+
+* 参考サイト
+
+- [[https://staff.aist.go.jp/t.ihara/confidence.html][信頼区間と検出力]]
+- [[https://note.com/hanaori/n/nc55ac8614799][統計学｜検出力とはなんぞや｜hanaori｜note]]
+- [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の計算]]  
+
+* 信頼区間 (confidencial interval)
+
+* 仮説と過誤
+
+** 丁半賭博を例にした統計的判断
+
+*** 設定
+
+- 甲と乙の二人が丁半賭博に参加し，
+- 二人ともなけなしのお金を勝負の度にいつ
+  も半に賭けたものと仮定します。
+
+*** 仮説
+
+- この賭博場の謳い文句はクリーンなイメージの「イカサマはいない」（仮説）
+  というものでした。
+
+*** 現実  
+
+- 最初の5回までの勝負ではイカサマは行われなかったが，たまたまその日は
+  最初の5回，丁ばかりの目が続いた
+  
+- 6回目以降はサイコロに細工をしていつも丁が出るようなイカサマをしてい
+  た
+
+とします。
+
+*** 甲と乙のとった行動
+
+統計的判断の考え方の基本となります。
+
+- 甲は生来アワテモノのせいか丁半勝負を始めてまだ2回しか丁が続かないのに、
+  この賭博はイカサマであると判断し席を蹴って退場しました。
+
+  これはイカサマをしていないという事実（仮説）が正しいのにイカサマをし
+  ているといった誤った判断をアワテテしてしまった過誤（error）であり、
+  これを「第一種の過誤」（アワテモノの誤り、 Type Ⅰ errorあるいは
+  error of the first kind）と言います。
+
+- それに対し、乙は生来ボンヤリモノのせいか、丁半勝負を始めてから10
+  回も丁の目が続いて出ているのに、博打だからまあそんなこともあるだろうと
+  ちっともイカサマに気付かない様子で、お金がすってんてんになるまで何度も
+  半を賭け続けていました。
+
+  もちろん乙の考え方は確立統計の理論からすれば10回続けて丁の目が出る確
+  率はだけはあり得るわけですから、謳い文句（仮説）通りイカサマが全く行
+  われていなかったなら、この乙の判断には間違いがなかったと言えますが、
+  現実には6回目以降の丁半勝負ではイカサマが行われており事実は仮説とは
+  違うのに、その仮説をいつまでも正しいと判断したボンヤリモノの乙の判断
+  にはやはり重大な過誤がります。
+
+  このような事実は間違っている（仮説は正しくない）のに仮説を正しいと判
+  断する過誤のことを「第二の過誤」（ボンヤリモノの誤り、Type Ⅱ error
+  あるいは error of the second kind）と言います。
+
+*** 危険率
+
+  そして、甲乙いずれもその犯した過誤の時点での確率のことを「危険率」
+  （critical rate）と統計学では呼んでいます。
+
+  すなわち、甲の危険率（甲が第一種の過誤を犯す危険率）は
+  \[
+  P = (1/2)^2 = 1/l4
+  \]
+
+  であり、
+
+
+  乙の危険率（乙が第二種の過誤を犯す確率）は
+
+  \[
+  P = (1/2)^10 =1/1024
+  \]
+  
+  ということです。
+
+
+* 検出力と期待値の差と標本サイズ
+
+** 片側検定
+
+危険率 0.05% として，標準正規分布の上側95%点のz値は，
+
+     #+begin_src R :session *rtext* :results output :exports both
+
+qnorm(0.95)
+
+     #+end_src
+
+     #+RESULTS:
+     : [1] 1.644854
+
+
+[[[[./Figs/power-oneside.jpg]]]]
+
+
+
+上図の\(N(\mu_0, \sigma^2)\) での a 点は，\( a = \mu_0 + 1.645 \sigma / \sqrt{n} \).
+
+\(N(\mu, \sigma^2)\)でのa点は，\( a = \mu + z_{\a} \sigma /
+\sqrt{n} \).
+
+\(z_{a} = \frac{a-\mu}{\sigma/\sqrt{n}} = 1.645 - (\mu -
+\mu_0)/\sigma/\sqrt{n} = 1.645 - \frac{\Delta\mu}{\sigma/\sqrt{n}}\)
+
+検出力 \(1-\beta\) は， 
+
+\( 1-\beta = P(z>=z_{a}) \) と計算できる。
+
+
+** 両側検定
+
+危険率 0.05% として，標準正規分布の上側97.5%点のz値は，
+
+     #+begin_src R :session *rtext* :results output :exports both
+
+qnorm(0.975)
+
+     #+end_src
+
+     #+RESULTS:
+     : [1] 1.959964
+
+
+[[[[./Figs/power-twoside.jpg]]]]
+
+
+上図の\(N(\mu_0, \sigma^2)\) での a 点は，\( a = \mu_0 + 1.96 \sigma /
+\sqrt{n} \),
+b 点は，\( b = \mu_0 - 1.96 \sigma / \sqrt{n} \).
+
+\(N(\mu, \sigma^2)\)でのa点は，\( a = \mu + z_{a} \sigma /
+\sqrt{n} \), b点は，\( b = \mu - z_b{} \sigma /
+\sqrt{n} \).
+
+\(z_{a} = \frac{a-\mu}{\sigma/\sqrt{n}} = 1.96 - (\mu -
+\mu_0)/\sigma/\sqrt{n} = 1.96 - \frac{\Delta\mu}{\sigma/\sqrt{n}}\)
+
+\(z_{b} = \frac{b-\mu}{\sigma/\sqrt{n}} = -1.96 - (\mu -
+\mu_0)/\sigma/\sqrt{n} = -1.96 - \frac{\Delta\mu}{\sigma/\sqrt{n}}\)
+
+検出力 \(1-\beta\) は， 
+
+\( 1-\beta = P(z>=z_{a}) + P(z <= z_b \) と計算できる。
+
+* power.t.test {stats}	R Documentation
+
+Power calculations for one and two sample t tests
+
+** Description
+
+Compute the power of the one- or two- sample t test, or determine
+parameters to obtain a target power.
+
+** Usage
+power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
+             power = NULL,
+             type = c("two.sample", "one.sample", "paired"),
+             alternative = c("two.sided", "one.sided"),
+             strict = FALSE, tol = .Machine$double.eps^0.25)
+
+** Arguments
+- n :: number of observations (per group)
+- delta	:: true difference in means
+- sd :: standard deviation
+- sig.level :: significance level (Type I error probability)
+- power	:: power of test (1 minus Type II error probability)
+- type	:: string specifying the type of t test. Can be abbreviated.
+- alternative :: one- or two-sided test. Can be abbreviated.
+- strict :: use strict interpretation in two-sided case
+- tol :: numerical tolerance used in root finding, the default providing (at least) four significant digits.
+
+** Details
+Exactly one of the parameters n, delta, power, sd, and sig.level must
+be passed as NULL, and that parameter is determined from the
+others. Notice that the last two have non-NULL defaults, so NULL must
+be explicitly passed if you want to compute them.
+
+If strict = TRUE is used, the power will include the probability of
+rejection in the opposite direction of the true effect, in the
+two-sided case. Without this the power will be half the significance
+level if the true difference is zero.
+
+** Value
+Object of class "power.htest", a list of the arguments (including the computed one) augmented with method and note elements.
+
+** Note
+uniroot is used to solve the power equation for unknowns, so you may see errors from it, notably about inability to bracket the root when invalid arguments are given.
+
+** Author(s)
+Peter Dalgaard. Based on previous work by Claus Ekstrøm
+
+** See Also
+t.test, uniroot
+
+** Examples
+#+begin_src R :session *rtext* :results output
+
+ power.t.test(n = 20, delta = 1)
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+     Two-sample t test power calculation 
+
+              n = 20
+          delta = 1
+             sd = 1
+      sig.level = 0.05
+          power = 0.8689528
+    alternative = two.sided
+
+NOTE: n is number in *each* group
+#+end_example
+
+#+begin_src R :session *rtext* :results output
+
+power.t.test(power = .90, delta = 1)
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+     Two-sample t test power calculation 
+
+              n = 22.0211
+          delta = 1
+             sd = 1
+      sig.level = 0.05
+          power = 0.9
+    alternative = two.sided
+
+NOTE: n is number in *each* group
+#+end_example
+
+#+begin_src R :session *rtext* :results output
+
+power.t.test(power = .90, delta = 1, alternative = "one.sided")
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+     Two-sample t test power calculation 
+
+              n = 17.84713
+          delta = 1
+             sd = 1
+      sig.level = 0.05
+          power = 0.9
+    alternative = one.sided
+
+NOTE: n is number in *each* group
+#+end_example
+
+#+RESULTS:
+
+[Package stats version 4.0.3 Index]
+
+
+* H0 と H1 の μ の差を大きくしていったとき、
+
+検出力がどう変化するか R でプロットしてみます。今回サンプルサイズは 50、
+分散は 1 に固定します。
+
+#+begin_src R :session *rtext* :results output graphics :file R-text/graph/power.png
+
+# 平均の差 0 ~ 1
+deltas <- seq(0, 1, length=11) 
+# 分散 1、サンプルサイズ 50 の検出力
+powers <- power.t.test(n=50, delta=deltas, sd=1)$power
+
+plot(deltas, powers, type="l", xlab = "平均の差", ylab = "検出力")
+
+#+end_src
+
+#+RESULTS:
+
+[[./R-text/graph/power.png]]
+
+* [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の計算]]
+
+- power.t.test の計算法と実行例
+- power.prop.testの計算法と実行例
+- power.anova の計算法と実行例
