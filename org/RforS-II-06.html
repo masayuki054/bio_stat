@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-06 木 09:18 -->
+<!-- 2022-01-06 木 09:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rによるやさしい統計学 入門統計学 6章 2つの平均値を比較する</title>
@@ -242,9 +242,9 @@
 <h1 class="title">Rによるやさしい統計学 入門統計学 6章 2つの平均値を比較する</h1>
 
 
-<div id="outline-container-org15ba6ce" class="outline-2">
-<h2 id="org15ba6ce">6.0 この章での検定</h2>
-<div class="outline-text-2" id="text-org15ba6ce">
+<div id="outline-container-orgcb54dbb" class="outline-2">
+<h2 id="orgcb54dbb">6.0 この章での検定</h2>
+<div class="outline-text-2" id="text-orgcb54dbb">
 <ol class="org-ol">
 <li>独立な2群の平均値の差の検定</li>
 
@@ -253,9 +253,9 @@
 </div>
 </div>
 
-<div id="outline-container-org51958f1" class="outline-2">
-<h2 id="org51958f1">6.1 2つの平均値を比較するケース</h2>
-<div class="outline-text-2" id="text-org51958f1">
+<div id="outline-container-org38f9a7f" class="outline-2">
+<h2 id="org38f9a7f">6.1 2つの平均値を比較するケース</h2>
+<div class="outline-text-2" id="text-org38f9a7f">
 <ul class="org-ul">
 <li>男女で心理学テストの平均値に差があるかを検討したい。</li>
 
@@ -267,13 +267,13 @@
 </div>
 
 
-<div id="outline-container-orgdf4d990" class="outline-2">
-<h2 id="orgdf4d990">6.2 独立な2群の検定</h2>
-<div class="outline-text-2" id="text-orgdf4d990">
+<div id="outline-container-org215f21c" class="outline-2">
+<h2 id="org215f21c">6.2 独立な2群の検定</h2>
+<div class="outline-text-2" id="text-org215f21c">
 </div>
-<div id="outline-container-org588b589" class="outline-3">
-<h3 id="org588b589">分散既知 あるいは 大標本の場合 (z-検定)</h3>
-<div class="outline-text-3" id="text-org588b589">
+<div id="outline-container-org260b61d" class="outline-3">
+<h3 id="org260b61d">分散既知 あるいは 大標本の場合 (z-検定)</h3>
+<div class="outline-text-3" id="text-org260b61d">
 <p>
 確率変数の和の平均と分散の期待値の公式より，標本平均の差の標本分
 布は，
@@ -298,9 +298,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6b8279f" class="outline-3">
-<h3 id="org6b8279f">分散未知の場合 (t-検定)</h3>
-<div class="outline-text-3" id="text-org6b8279f">
+<div id="outline-container-org4fac15e" class="outline-3">
+<h3 id="org4fac15e">分散未知の場合 (t-検定)</h3>
+<div class="outline-text-3" id="text-org4fac15e">
 <p>
 母分散を不偏分散で推定する。
 標本平均の不偏分散を \( \hat{\sigma_1} \), \( \hat{\sigma_2} \)
@@ -331,18 +331,18 @@
 </div>
 
 
-<div id="outline-container-orgb6351c3" class="outline-3">
-<h3 id="orgb6351c3">例題</h3>
-<div class="outline-text-3" id="text-orgb6351c3">
+<div id="outline-container-orgb43dbd7" class="outline-3">
+<h3 id="orgb43dbd7">例題</h3>
+<div class="outline-text-3" id="text-orgb43dbd7">
 <p>
 統計テスト1の得点の平均値に男女で有意な差があるでしょうか？
 有意水準5%，両側検定してください。
 </p>
 </div>
 
-<div id="outline-container-orgb461922" class="outline-4">
-<h4 id="orgb461922">データの準備</h4>
-<div class="outline-text-4" id="text-orgb461922">
+<div id="outline-container-org2bc2cf0" class="outline-4">
+<h4 id="org2bc2cf0">データの準備</h4>
+<div class="outline-text-4" id="text-org2bc2cf0">
 <div class="org-src-container">
 <pre class="src src-R">
      (&#25351;&#23566;&#27861;&#12487;&#12540;&#12479; <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"data/shidouhouU8.csv"</span>))
@@ -351,7 +351,7 @@
 </pre>
 </div>
 
-<pre class="example" id="orgbaedd84">
+<pre class="example" id="orgc00e263">
 	SID   name sex math stat psych_test stat_test1 stat_test2 method
      1    1   大村  男 嫌い 好き         13          6         10      C
      2    2   本多  男 嫌い 好き         14         10         13      B
@@ -377,9 +377,9 @@
 </pre>
 </div>
 
-<div id="outline-container-org10179f1" class="outline-5">
-<h5 id="org10179f1">男女別</h5>
-<div class="outline-text-5" id="text-org10179f1">
+<div id="outline-container-org58c8c5c" class="outline-5">
+<h5 id="org58c8c5c">男女別</h5>
+<div class="outline-text-5" id="text-org58c8c5c">
 <div class="org-src-container">
 <pre class="src src-R">
 (&#32113;&#35336;1&#30007; <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, sex==<span style="color: #95e454;">"&#30007;"</span>)$stat_test1)
@@ -398,9 +398,9 @@
 
 
 
-<div id="outline-container-org581afe9" class="outline-4">
-<h4 id="org581afe9">t-検定 (等母分散)</h4>
-<div class="outline-text-4" id="text-org581afe9">
+<div id="outline-container-orgf4592bf" class="outline-4">
+<h4 id="orgf4592bf">t-検定 (等母分散)</h4>
+<div class="outline-text-4" id="text-orgf4592bf">
 <p>
 母分散が等しいことを前提としているので，2群の分散が等しいことを
 示す var.equal=TRUE を指定する。
@@ -413,7 +413,7 @@
 </pre>
 </div>
 
-<pre class="example" id="orgc4ee881">
+<pre class="example" id="org7264a4a">
 
 	      Two Sample t-test
 
@@ -430,9 +430,9 @@
 </div>
 
 
-<div id="outline-container-orga0c9ffa" class="outline-4">
-<h4 id="orga0c9ffa">t-検定 (異なる母分散)</h4>
-<div class="outline-text-4" id="text-orga0c9ffa">
+<div id="outline-container-orgccc2d03" class="outline-4">
+<h4 id="orgccc2d03">t-検定 (異なる母分散)</h4>
+<div class="outline-text-4" id="text-orgccc2d03">
 <p>
 2群の分散が等しくないいことを
 示す var.equal=FALSE を指定する。
@@ -450,7 +450,7 @@
 </pre>
 </div>
 
-<pre class="example" id="org1a0ed38">
+<pre class="example" id="org0a6198d">
 
 	      Welch Two Sample t-test
 
@@ -468,9 +468,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgcc21a3c" class="outline-2">
-<h2 id="orgcc21a3c">6.3 t-検定の前提条件</h2>
-<div class="outline-text-2" id="text-orgcc21a3c">
+<div id="outline-container-org5a9c29a" class="outline-2">
+<h2 id="org5a9c29a">6.3 t-検定の前提条件</h2>
+<div class="outline-text-2" id="text-org5a9c29a">
 <ol class="org-ol">
 <li>標本抽出が無作為に行われていること</li>
 <li>母集団の分布が正規分布であること</li>
@@ -483,9 +483,9 @@
 </div>
 
 
-<div id="outline-container-orgcf32cf1" class="outline-3">
-<h3 id="orgcf32cf1">6.3.1 分散の等質性の検定</h3>
-<div class="outline-text-3" id="text-orgcf32cf1">
+<div id="outline-container-org8775bd2" class="outline-3">
+<h3 id="org8775bd2">6.3.1 分散の等質性の検定</h3>
+<div class="outline-text-3" id="text-org8775bd2">
 <ul class="org-ul">
 <li>2つの母集団の分散の等質性を，</li>
 <li>それぞれの母集団からの2つの標本を用いて，</li>
@@ -495,18 +495,18 @@
 </div>
 
 
-<div id="outline-container-org0250377" class="outline-4">
-<h4 id="org0250377">例題</h4>
-<div class="outline-text-4" id="text-org0250377">
+<div id="outline-container-org514a372" class="outline-4">
+<h4 id="org514a372">例題</h4>
+<div class="outline-text-4" id="text-org514a372">
 <p>
 クラスA,Bの統計学のテストの平均点に有意な差があるでしょうか？
 有意水準5%で検定を行ってください。
 </p>
 </div>
 
-<div id="outline-container-org14f3517" class="outline-5">
-<h5 id="org14f3517">データ</h5>
-<div class="outline-text-5" id="text-org14f3517">
+<div id="outline-container-orgd413f6b" class="outline-5">
+<h5 id="orgd413f6b">データ</h5>
+<div class="outline-text-5" id="text-orgd413f6b">
 <div class="org-src-container">
 <pre class="src src-R">
 (&#12463;&#12521;&#12473;A <span style="color: #e5786d;">&lt;-</span> c(54, 55, 52, 48, 50, 38, 41, 40, 53, 52))
@@ -516,7 +516,7 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </pre>
 </div>
 
-<pre class="example" id="org94edd62">
+<pre class="example" id="org5bc0c7d">
 	[1] 54 55 52 48 50 38 41 40 53 52
 	[1] 57 63 50 60 61 69 43 58 36 29
 
@@ -538,9 +538,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </div>
 
 
-<div id="outline-container-orgecaac9c" class="outline-2">
-<h2 id="orgecaac9c">6.4 対応のある (z,t)-検定</h2>
-<div class="outline-text-2" id="text-orgecaac9c">
+<div id="outline-container-org6707332" class="outline-2">
+<h2 id="org6707332">6.4 対応のある (z,t)-検定</h2>
+<div class="outline-text-2" id="text-org6707332">
 <dl class="org-dl">
 <dt>独立な2群 or 対応のない2群</dt><dd>例えば30人の被験者を，ランダムに2群に分た場合</dd>
 
@@ -548,9 +548,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </dl>
 </div>
 
-<div id="outline-container-org3930cb2" class="outline-3">
-<h3 id="org3930cb2">対応のあるデータの検定量</h3>
-<div class="outline-text-3" id="text-org3930cb2">
+<div id="outline-container-orgf65d576" class="outline-3">
+<h3 id="orgf65d576">対応のあるデータの検定量</h3>
+<div class="outline-text-3" id="text-orgf65d576">
 <p>
 統計テスト1の得点を \( X_1 \),
 統計テスト2の得点を \( X_2 \),
@@ -565,9 +565,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </p>
 </div>
 
-<div id="outline-container-orgca12e9c" class="outline-4">
-<h4 id="orgca12e9c">得点差の標本平均の計算</h4>
-<div class="outline-text-4" id="text-orgca12e9c">
+<div id="outline-container-org061e34d" class="outline-4">
+<h4 id="org061e34d">得点差の標本平均の計算</h4>
+<div class="outline-text-4" id="text-org061e34d">
 <div class="org-src-container">
 <pre class="src src-R">
      &#25351;&#23566;&#27861;&#12487;&#12540;&#12479; <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"data/shidouhouU8.csv"</span>)
@@ -593,9 +593,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 
 
 
-<div id="outline-container-orgf195518" class="outline-4">
-<h4 id="orgf195518">得点差の標本平均が従がう分布</h4>
-<div class="outline-text-4" id="text-orgf195518">
+<div id="outline-container-org042d5db" class="outline-4">
+<h4 id="org042d5db">得点差の標本平均が従がう分布</h4>
+<div class="outline-text-4" id="text-org042d5db">
 <ul class="org-ul">
 <li>\( X_i \sim N(\mu_{i}, \sigma^2_{i}) \) を仮定すれば，</li>
 <li>\( D \sim N(\mu_{D}, \sigma^2_{D}) \)  となり，</li>
@@ -610,9 +610,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </div>
 </div>
 
-<div id="outline-container-org2eb16e2" class="outline-4">
-<h4 id="org2eb16e2">例題：</h4>
-<div class="outline-text-4" id="text-org2eb16e2">
+<div id="outline-container-orgf51693a" class="outline-4">
+<h4 id="orgf51693a">例題：</h4>
+<div class="outline-text-4" id="text-orgf51693a">
 <p>
 「指導法データ」の統計テスト1と統計テスト2の得点について、指導
 の前後で統計テストの得点が変化したといえるでしょうか。有意水準
@@ -626,7 +626,7 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </pre>
 </div>
 
-<pre class="example" id="org3f2187d">
+<pre class="example" id="org24fb732">
 
 		One Sample t-test
 
@@ -646,7 +646,7 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師 suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2022-01-06 木 09:18</p>
+<p class="date">Created: 2022-01-06 木 09:20</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
