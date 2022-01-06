@@ -41,6 +41,7 @@
      - [ ] 検出力分析
        - [ ] [[./org/power.org]] を使って説明します
        
+
 **** [[./org/R-text-6.org]] 教科書のまとめ
     
 *** 入門統計学の7章
@@ -58,7 +59,11 @@
 
 * Todo RStudio 
 
+<<<<<<< HEAD
 ** [[./org/daizu.org]] に従って，Rmarkdown を使ってみましょう。
+=======
+[[./org/daizu.Rmd]] に従って，Rmarkdown を使ってみましょう。
+>>>>>>> 2d71b69dde269f44ecce9f2abc795068a2dd8696
 
 ** RStudio (1)
 講師も RStudio が使える環境を手に入れたので，気付いたことを書き留めよ
@@ -67,6 +72,7 @@
    - 生物統計用のプロジェクトを作ろう
    - 毎回のRのプログラムを，R-スクリプトとして残そう
 
+<<<<<<< HEAD
 ** RStudio の機能     
 - file
   - file
@@ -88,6 +94,26 @@
   - chunk
     
 - Knit
+=======
+**** file
+***** file
+****** R-script, R-notebook, R-markdown
+- chunk
+- knit
+
+***** project
+***** import data set
+**** session
+- new session
+
+***** project
+***** session
+***** working directory
+***** workspace
+
+**** view
+
+>>>>>>> 2d71b69dde269f44ecce9f2abc795068a2dd8696
 
 * R 入門
    [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
