@@ -50,40 +50,46 @@
       [[./org/RforS-II-06.org]]  別の本の内容で解説します。
       (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
       
-      - [ ] 指導法データの準備 [[./org/RforS-data.org]] 
+      - [ ] 指導法データの準備 [[./org/RforS-II-data.org]] 
       - [ ] 6.1 2つの平均値を比較するケース
       - [ ] 6.2 独立な2群の検定
       - [ ] 6.3 t-検定の前提条件
       - [ ] 6.4 対応のある (z,t)-検定
 
-** Todo RStudio (3) 
+* Todo RStudio 
 
-[[./org/daizu.org]] に従って，Rmarkdown を使ってみましょう。
+** [[./org/daizu.org]] に従って，Rmarkdown を使ってみましょう。
 
-**** RStudio (1)
+** RStudio (1)
 講師も RStudio が使える環境を手に入れたので，気付いたことを書き留めよ
 うと思います。
   
    - 生物統計用のプロジェクトを作ろう
    - 毎回のRのプログラムを，R-スクリプトとして残そう
 
-**** file
-***** file
-****** R-script, R-notebook, R-markdown
-***** project
-***** import data set
-**** session
+** RStudio の機能     
+- file
+  - file
+    - R-script
+    - R-notebook
+    - R-markdown
+  - project
+  - import data set
 
-***** project
+- session
+  - project
+  - session
+  - working directory
+  - workspace
 
-***** session
-***** working directory
-***** workspace
+- view
 
-**** view
+- Run
+  - chunk
+    
+- Knit
 
-
-*** R 入門
+* R 入門
    [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
 
    先生の演習ノート [4/6]
@@ -91,13 +97,12 @@
      - [X] [[./org/R-intro-2.org]] - データ処理
      - [X] [[./org/R-intro-3.org]]
        - [X] 89 ファイルの読み書き  12/02
-       - [X] 10 スクリプトの実行    12/02
+       - [X] 10 スクリプトの実行    12/02 RStudio で
        - [X] 11 関数を作る
      - [ ] [[./org/R-intro-4.org]] - 12グラフ
      - [X] [[./org/R-intro-5.org]] - 13構文
      - [ ] [[./org/R-intro-6.org]] - 14その他
    
-
 
 * 講義記録
 ** 10th 12/23 の講義
@@ -664,10 +669,43 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
   - http://github.com/masayuki054/bio_stat/
     講義保存場所
 
+* shidouhou.csv
+
+   [[http://www.cc.aoyama.ac.jp/~t41338/lecture/aoyama/stat2e/stat2e_top.html][社会統計演習]] (青山)   ここに指導法データの csv ファイルがあります。
+   windows用，mac用がありますので，選んでダウンロードしてください。
+
+   この講義用フォルダの下の data/shidouhou.csv にしましょう。
 
 * メモ
 
+** 統計
    -  講義メモ [[https://drive.google.com/drive/u/0/folders/1nGs6svr0actrLPmtz6onPuj2eUrHMQ8M][note - Google ドライブ]]
 
    - 中心極限定理
       http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf
+
+** 講師の講義作業フォルダ
+   [[./org]] の中に講義資料が入っています。
+   文字化けする場合は，表示ページをそのままファイルに保存してください。
+   
+** Rmd (Rmarkdown) ファイル
+
+    ダウンロードできない場合は，ブラウザで開いて，そのままページを同じ
+    名前のファイルに保存してくだだい。
+
+    - ダイズ [[./org/daizu.Rmd]]  ([[./org/daizu.html]])
+
+      
+    - [[./org/example-03.Rmd]]  ([[./org/example-03.html]])
+
+      頻度表と確率密度関数のグラフを重ねて，標本分布を実感する
+      
+    - [[./org/example-06.Rmd]]  ([[./org/example-06.html]])
+
+      検定
+      
+    - [[./org/RforS-II-06.Rmd]] ([[./org/RforS-II-06.html]])
+
+      二つの平均値の比較 (検定)，Rによるやさしい統計学6章のまとめ。
+      教科書7章にあたります。
+
