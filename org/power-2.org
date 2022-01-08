@@ -1,10 +1,14 @@
-#+begin_quote
+* 統計的仮説検定（信頼区間、信頼率、危険率、検出力、第一種および第二種の過誤)
 
-  *統計的仮説検定（信頼区間、信頼率、危険率、検出力、第一種および第二種の過誤）*
-
-   
-
-  　母平均が_{[[./confidence.files/image002.gif]]}で母分散が_{[[./confidence.files/image004.gif]]}の母集団から_{[[./confidence.files/image006.gif]]}の大きさの任意標本を抽出したとき、母集団がどんな分布であろうとも_{[[./confidence.files/image007.gif]]}が大きければ（_{[[./confidence.files/image009.gif]]}）中心極限定理により、その標本平均_{[[./confidence.files/image011.gif]]}は、下図のように、平均が_{[[./confidence.files/image012.gif]]}で分散が_{[[./confidence.files/image014.gif]]}の正規分布_{[[./confidence.files/image016.gif]]}に近似できることが知られています。
+  　母平均が_{[[./confidence.files/image002.gif]]}で母分散
+  が_{[[./confidence.files/image004.gif]]}の母集団か
+  ら_{[[./confidence.files/image006.gif]]}の大きさの任意標本を抽出したとき、
+  母集団がどんな分布であろうとも_{[[./confidence.files/image007.gif]]}が大
+  きければ（_{[[./confidence.files/image009.gif]]}）中心極限定理により、そ
+  の標本平均_{[[./confidence.files/image011.gif]]}は、下図のように、平均
+  が_{[[./confidence.files/image012.gif]]}で分散
+  が_{[[./confidence.files/image014.gif]]}の正規分
+  布_{[[./confidence.files/image016.gif]]}に近似できることが知られています。
 
    
 

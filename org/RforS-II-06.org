@@ -2,16 +2,9 @@
 #+setupfile: info/index-bigblow-header.setup
 #+include: info/common-header.org
 #+AUTHOR: 鈴木正幸，非常勤講師
-#+Title: Rによるやさしい統計学
-#+OPTIONS: tex:t 
-#+property: header-args:R :session *rtext* :results output :exports both
-
-
-#+include: R-text-common.org
 #+OPTIONS: tex:t
-#+title: 6章 2つの平均値を比較する
-#+property: header-arg:R :session t :results output :exports both
-
+#+title: Rによるやさしい統計学 6章 2つの平均値を比較する
+#+property: header-args:R :session *rtext* :results output :exports both
 
 * 6.0 この章での検定
 
