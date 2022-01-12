@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-12-23 木 13:59 -->
+<!-- 2022-01-13 木 08:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>生物統計学 アンケート</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -161,6 +162,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -178,7 +192,6 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
@@ -191,64 +204,95 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">生物統計学 アンケート</h1>
 
-<div id="outline-container-orgde7cd86" class="outline-2">
-<h2 id="orgde7cd86">12/16 9回目</h2>
-<div class="outline-text-2" id="text-orgde7cd86">
+<div id="outline-container-org64a81aa" class="outline-2">
+<h2 id="org64a81aa">01/06 11回目</h2>
+<div class="outline-text-2" id="text-org64a81aa">
 </div>
-<div id="outline-container-org45e9f83" class="outline-3">
-<h3 id="org45e9f83">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-org45e9f83">
+<div id="outline-container-org55746dc" class="outline-3">
+<h3 id="org55746dc">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org55746dc">
+<ul class="org-ul">
+<li>検出力、危険率など初めて聞く言葉の意味を学べた。</li>
+<li>検定力について</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org8627501" class="outline-3">
+<h3 id="org8627501">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org8627501">
+<ul class="org-ul">
+<li>危険率、信頼率、第二種の過誤を犯す確率、検出力の関係が理解が足りなかっ
+た。グラフを見ればなんとなく分かる気もするが、実際に数式で考えてみる
+と混乱してしまいました。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0ca05b3" class="outline-3">
+<h3 id="org0ca05b3">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org0ca05b3">
+<ul class="org-ul">
+<li>特にないです</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb418557" class="outline-2">
+<h2 id="orgb418557">12/23 10回目</h2>
+<div class="outline-text-2" id="text-orgb418557">
+</div>
+<div id="outline-container-orgcd740e6" class="outline-3">
+<h3 id="orgcd740e6">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-orgcd740e6">
+<ul class="org-ul">
+<li>母集団の分散が不明な時、不偏分散を使うことで求められなかったものを求められるようになること。</li>
+<li>検定について学んだ。Rでt検定を行う方法と、その結果の読み方が分かった。</li>
+<li>t検定など</li>
+<li>Rだと簡単に検定等ができ、統計をやるのにRが適しているわけが分かってきました。</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2d5abfe" class="outline-3">
+<h3 id="org2d5abfe">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org2d5abfe">
+<ul class="org-ul">
+<li>検定のところに入ってから、統計の勉強で自分の理解できていないところが
+わかってきたので復習しておきたいです。</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgb763c7b" class="outline-3">
+<h3 id="orgb763c7b">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-orgb763c7b">
+<ul class="org-ul">
+<li>まとめHPに上がっているRmdのファイルが文字化けしていたり、ファイルが
+ないと表示されたりしたので見れるようにしていただきたいです。</li>
+<li>テストは筆記よりレポート形式がいいと思います</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgac10be7" class="outline-2">
+<h2 id="orgac10be7">12/16 9回目</h2>
+<div class="outline-text-2" id="text-orgac10be7">
+</div>
+<div id="outline-container-org6ecf94b" class="outline-3">
+<h3 id="org6ecf94b">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org6ecf94b">
 <ul class="org-ul">
 <li>Rstudioの使い方</li>
 <li>対立仮説などについて理解することができた</li>
@@ -261,9 +305,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org0805bed" class="outline-3">
-<h3 id="org0805bed">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org0805bed">
+<div id="outline-container-org332994d" class="outline-3">
+<h3 id="org332994d">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org332994d">
 <ul class="org-ul">
 <li>大豆のデータのリンクをクリックしてもRstudioの方に反映されずにエラーが起きた。</li>
 
@@ -273,9 +317,7 @@ for the JavaScript code in this tag.
 
 <ul class="org-ul">
 <li>(:-s) <a href="./org/R-text-3.html">./org/R-text-3.html</a> で説明します。
-<ul class="org-ul">
-<li>Rmarkdown:  <a href="./org/example-03.Rmd">./org/example-03.Rmd</a>,</li>
-</ul></li>
+./org/example-03.Rmd,</li>
 
 <li>標本不偏分散がどんな分布になるのかを理解すればいいです。</li>
 </ul></li>
@@ -296,9 +338,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org07ec51e" class="outline-3">
-<h3 id="org07ec51e">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-org07ec51e">
+<div id="outline-container-org4d09dba" class="outline-3">
+<h3 id="org4d09dba">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org4d09dba">
 <ul class="org-ul">
 <li>先生の手書きでの復習・解説が分かりやすかったので今後も続けてもらいた
 いです。</li>
@@ -309,13 +351,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgd4110ae" class="outline-2">
-<h2 id="orgd4110ae">12/09 8回目</h2>
-<div class="outline-text-2" id="text-orgd4110ae">
+<div id="outline-container-org5ca3dd4" class="outline-2">
+<h2 id="org5ca3dd4">12/09 8回目</h2>
+<div class="outline-text-2" id="text-org5ca3dd4">
 </div>
-<div id="outline-container-org29ebb4a" class="outline-3">
-<h3 id="org29ebb4a">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-org29ebb4a">
+<div id="outline-container-orge4d31a5" class="outline-3">
+<h3 id="orge4d31a5">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-orge4d31a5">
 <ul class="org-ul">
 <li><p>
 ファイルの読み込みで、Rでtextファイルを作ることができるのを知らなかっ
@@ -336,9 +378,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgb5e58c6" class="outline-3">
-<h3 id="orgb5e58c6">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-orgb5e58c6">
+<div id="outline-container-org4270cd9" class="outline-3">
+<h3 id="org4270cd9">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org4270cd9">
 <ul class="org-ul">
 <li><p>
 母分散わからない時に標本普遍分散を用いる意味が教科書を読んでも、先生
@@ -370,9 +412,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org219c235" class="outline-3">
-<h3 id="org219c235">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-org219c235">
+<div id="outline-container-orgd08d3c4" class="outline-3">
+<h3 id="orgd08d3c4">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-orgd08d3c4">
 <ul class="org-ul">
 <li><p>
 理解が追いついていないだけだと思うのですが、私にとっては少し説明が早
@@ -417,13 +459,13 @@ org-mode というのです。
 </div>
 
 
-<div id="outline-container-org3dd3ec0" class="outline-2">
-<h2 id="org3dd3ec0">12/02 7回目</h2>
-<div class="outline-text-2" id="text-org3dd3ec0">
+<div id="outline-container-org0b9a59b" class="outline-2">
+<h2 id="org0b9a59b">12/02 7回目</h2>
+<div class="outline-text-2" id="text-org0b9a59b">
 </div>
-<div id="outline-container-orge09ed78" class="outline-3">
-<h3 id="orge09ed78">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-orge09ed78">
+<div id="outline-container-org41a2400" class="outline-3">
+<h3 id="org41a2400">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org41a2400">
 <ul class="org-ul">
 <li>標準正規分布の概要</li>
 
@@ -434,9 +476,9 @@ org-mode というのです。
 </div>
 </div>
 
-<div id="outline-container-org3a0fb1e" class="outline-3">
-<h3 id="org3a0fb1e">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org3a0fb1e">
+<div id="outline-container-org9e68011" class="outline-3">
+<h3 id="org9e68011">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org9e68011">
 <ul class="org-ul">
 <li>信頼区間がある程度確からしいという理由で95%なのは分かったのですが、
 その95という数字自体はどこから出てきたのかがいまいちつかめませんでし
@@ -471,9 +513,9 @@ org-mode というのです。
 
 
 
-<div id="outline-container-orga84d710" class="outline-3">
-<h3 id="orga84d710">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-orga84d710">
+<div id="outline-container-org6516a9f" class="outline-3">
+<h3 id="org6516a9f">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org6516a9f">
 <ul class="org-ul">
 <li><p>
 中心極限定理の説明がよくわかりませんでした。二項分布でもサンプルサイ
@@ -509,13 +551,13 @@ org-mode というのです。
 </div>
 
 
-<div id="outline-container-orgc15de12" class="outline-2">
-<h2 id="orgc15de12">11/25 6回目</h2>
-<div class="outline-text-2" id="text-orgc15de12">
+<div id="outline-container-org2907945" class="outline-2">
+<h2 id="org2907945">11/25 6回目</h2>
+<div class="outline-text-2" id="text-org2907945">
 </div>
-<div id="outline-container-orgc98eaa7" class="outline-3">
-<h3 id="orgc98eaa7">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-orgc98eaa7">
+<div id="outline-container-org8d519cb" class="outline-3">
+<h3 id="org8d519cb">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org8d519cb">
 <ul class="org-ul">
 <li>Rでのヒストグラムの書き方</li>
 <li>表の作成のコマンドを学べました</li>
@@ -527,9 +569,9 @@ org-mode というのです。
 </div>
 </div>
 
-<div id="outline-container-org9b3e0cb" class="outline-3">
-<h3 id="org9b3e0cb">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org9b3e0cb">
+<div id="outline-container-orga3cfa17" class="outline-3">
+<h3 id="orga3cfa17">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-orga3cfa17">
 <ul class="org-ul">
 <li>手動で入力するとほとんどエラーになってしまう</li>
 <li>標本分布を求めるコードの書き方とその原理</li>
@@ -538,9 +580,9 @@ org-mode というのです。
 </div>
 
 
-<div id="outline-container-org5cab162" class="outline-3">
-<h3 id="org5cab162">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-org5cab162">
+<div id="outline-container-orga65c638" class="outline-3">
+<h3 id="orga65c638">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-orga65c638">
 <ul class="org-ul">
 <li>先生のスクリプト中に良く入っている、コードの改行のやり方（for文書く
 時などの実行せずに改行する方法）が分かりません。</li>
@@ -559,13 +601,13 @@ org-mode というのです。
 
 
 
-<div id="outline-container-orgec16ca7" class="outline-2">
-<h2 id="orgec16ca7">11/11 5回目</h2>
-<div class="outline-text-2" id="text-orgec16ca7">
+<div id="outline-container-org500fdce" class="outline-2">
+<h2 id="org500fdce">11/11 5回目</h2>
+<div class="outline-text-2" id="text-org500fdce">
 </div>
-<div id="outline-container-org8240397" class="outline-3">
-<h3 id="org8240397">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-org8240397">
+<div id="outline-container-orgc79d8ab" class="outline-3">
+<h3 id="orgc79d8ab">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-orgc79d8ab">
 <ul class="org-ul">
 <li>確率分布</li>
 <li>今までよりも発展的な知識を学んだ</li>
@@ -588,9 +630,9 @@ org-mode というのです。
 </div>
 </div>
 
-<div id="outline-container-orgf37e56c" class="outline-3">
-<h3 id="orgf37e56c">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-orgf37e56c">
+<div id="outline-container-org223493e" class="outline-3">
+<h3 id="org223493e">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org223493e">
 <ul class="org-ul">
 <li>全体的に少し早くて所々分からなかった</li>
 <li>whileが難しかった</li>
@@ -608,9 +650,9 @@ org-mode というのです。
 </div>
 </div>
 
-<div id="outline-container-org1ea414c" class="outline-3">
-<h3 id="org1ea414c">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-org1ea414c">
+<div id="outline-container-org31e490b" class="outline-3">
+<h3 id="org31e490b">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org31e490b">
 <ul class="org-ul">
 <li>期末テストなどはありますか。</li>
 
@@ -632,13 +674,13 @@ org-mode というのです。
 </div>
 </div>
 
-<div id="outline-container-org91e3c1d" class="outline-2">
-<h2 id="org91e3c1d">11/04 4回目</h2>
-<div class="outline-text-2" id="text-org91e3c1d">
+<div id="outline-container-org49fb62f" class="outline-2">
+<h2 id="org49fb62f">11/04 4回目</h2>
+<div class="outline-text-2" id="text-org49fb62f">
 </div>
-<div id="outline-container-orgb22e77b" class="outline-3">
-<h3 id="orgb22e77b">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-orgb22e77b">
+<div id="outline-container-org5421525" class="outline-3">
+<h3 id="org5421525">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org5421525">
 <ul class="org-ul">
 <li>プロットの仕方、二項分布の意味</li>
 
@@ -766,9 +808,9 @@ org-mode というのです。
 
 
 
-<div id="outline-container-orgc6467e3" class="outline-3">
-<h3 id="orgc6467e3">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-orgc6467e3">
+<div id="outline-container-org9b60554" class="outline-3">
+<h3 id="org9b60554">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org9b60554">
 <ul class="org-ul">
 <li>Rに確率の計算させる方法(プログラムの組み方)</li>
 
@@ -885,9 +927,9 @@ org-mode というのです。
 
 
 
-<div id="outline-container-orgb1a3b83" class="outline-3">
-<h3 id="orgb1a3b83">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-orgb1a3b83">
+<div id="outline-container-org1986739" class="outline-3">
+<h3 id="org1986739">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org1986739">
 <ul class="org-ul">
 <li>どこのファイルやページを開いて説明しているのか分からないことが時々あり
 ます。できれば、その都度言っていただけると嬉しいです。</li>
@@ -1006,13 +1048,13 @@ org-mode というのです。
 
 
 
-<div id="outline-container-org6ee314a" class="outline-2">
-<h2 id="org6ee314a">10/28 3回目</h2>
-<div class="outline-text-2" id="text-org6ee314a">
+<div id="outline-container-org5f4be70" class="outline-2">
+<h2 id="org5f4be70">10/28 3回目</h2>
+<div class="outline-text-2" id="text-org5f4be70">
 </div>
-<div id="outline-container-org350b794" class="outline-3">
-<h3 id="org350b794">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-org350b794">
+<div id="outline-container-orge40fead" class="outline-3">
+<h3 id="orge40fead">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-orge40fead">
 <ul class="org-ul">
 <li>四則演算について</li>
 <li>Rの使い方</li>
@@ -1030,9 +1072,9 @@ org-mode というのです。
 </div>
 </div>
 
-<div id="outline-container-org87a3f7a" class="outline-3">
-<h3 id="org87a3f7a">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org87a3f7a">
+<div id="outline-container-org9c631ef" class="outline-3">
+<h3 id="org9c631ef">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org9c631ef">
 <ul class="org-ul">
 <li>最後のスライドについて</li>
 <li>統計学の最終的な使い方わからない</li>
@@ -1050,9 +1092,9 @@ org-mode というのです。
 </div>
 </div>
 
-<div id="outline-container-org623e76f" class="outline-3">
-<h3 id="org623e76f">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-org623e76f">
+<div id="outline-container-org01775fe" class="outline-3">
+<h3 id="org01775fe">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org01775fe">
 <ul class="org-ul">
 <li>授業の進行速度はちょうど良い。タイピングに自信がないが集中して取り組
 めばついて行けるので、このままで大丈夫だと思う。</li>
@@ -1384,13 +1426,13 @@ org-mode というのです。
 
 
 
-<div id="outline-container-orgadbce5c" class="outline-2">
-<h2 id="orgadbce5c">10/14 2回目</h2>
-<div class="outline-text-2" id="text-orgadbce5c">
+<div id="outline-container-org508d169" class="outline-2">
+<h2 id="org508d169">10/14 2回目</h2>
+<div class="outline-text-2" id="text-org508d169">
 </div>
-<div id="outline-container-orgbd838ad" class="outline-3">
-<h3 id="orgbd838ad">理解したこと、印象に残ったこと</h3>
-<div class="outline-text-3" id="text-orgbd838ad">
+<div id="outline-container-org9a7a403" class="outline-3">
+<h3 id="org9a7a403">理解したこと、印象に残ったこと</h3>
+<div class="outline-text-3" id="text-org9a7a403">
 <ul class="org-ul">
 <li>ここまで関数を丁寧に解説してもらえる授業は他になかったためとても分かりやすかった。</li>
 <li>特にwhich関数の使い方が参考になった。which()[]で抽出したデータの中から要素を取り出すことができると知り、便利だと思った。Rの関数は無数にあるため、分かりやすい解説とともに教えてもらえて良かった。</li>
@@ -1422,9 +1464,9 @@ org-mode というのです。
 </div>
 
 
-<div id="outline-container-org8f23120" class="outline-3">
-<h3 id="org8f23120">理解できなかったこと</h3>
-<div class="outline-text-3" id="text-org8f23120">
+<div id="outline-container-org41b7be5" class="outline-3">
+<h3 id="org41b7be5">理解できなかったこと</h3>
+<div class="outline-text-3" id="text-org41b7be5">
 <ul class="org-ul">
 <li>板書</li>
 <li>Rでエラーが出るタイミング</li>
@@ -1445,9 +1487,9 @@ org-mode というのです。
 </div>
 
 
-<div id="outline-container-org44dabc8" class="outline-3">
-<h3 id="org44dabc8">質問・要望・意見をお願いします．</h3>
-<div class="outline-text-3" id="text-org44dabc8">
+<div id="outline-container-org1d762a0" class="outline-3">
+<h3 id="org1d762a0">質問・要望・意見をお願いします．</h3>
+<div class="outline-text-3" id="text-org1d762a0">
 <ul class="org-ul">
 <li>ベイズ統計を勉強したいのですが、今後の授業で触れる機会はあるのでしょうか。</li>
 <li>Rに関してなのですが、基礎的な項目ということもあり、躓く人も少なそう
@@ -1472,8 +1514,8 @@ org-mode というのです。
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2021-12-23 木 13:59</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2022-01-13 木 08:47</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

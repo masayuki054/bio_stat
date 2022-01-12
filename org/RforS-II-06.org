@@ -145,35 +145,6 @@
      #+end_example
 
       
-*** t-検定 (異なる母分散)
-
-     2群の分散が等しくないいことを
-     示す var.equal=FALSE を指定する。
-
-     帰無分布は同じく t-分布であるが、自由度が異なる
-     (統計学入門，12.2.4)
-
-     #+begin_src R :session t :results output :exports both
-
-      t.test(統計1男, 統計1女, var.equal=FALSE)
-
-     #+end_src
-
-     #+RESULTS:
-     #+begin_example
-
-	      Welch Two Sample t-test
-
-      data:  統計1男 and 統計1女
-      t = -1.8429, df = 16.321, p-value = 0.08359
-      alternative hypothesis: true difference in means is not equal to 0
-      95 percent confidence interval:
-       -4.2969668  0.2969668
-      sample estimates:
-      mean of x mean of y 
-	      6         8
-     #+end_example
-
 * 6.3 t-検定の前提条件
 
    1. 標本抽出が無作為に行われていること
@@ -222,7 +193,38 @@ var.test(クラスA, クラスB)
 		0.2415677
       #+end_example
 
-       
+
+*** 6.3.2 t-検定 (異なる母分散)  Welchの検定
+
+var.test() で等質性が棄却された場合，Welch の検定を使います。
+
+2群の分散が等しくないいことを
+示す var.equal=FALSE を指定する。
+
+     帰無分布は同じく t-分布であるが、自由度が異なる
+     (統計学入門，12.2.4)
+
+     #+begin_src R :session t :results output :exports both
+
+      t.test(統計1男, 統計1女, var.equal=FALSE)
+
+     #+end_src
+
+     #+RESULTS:
+     #+begin_example
+
+	      Welch Two Sample t-test
+
+      data:  統計1男 and 統計1女
+      t = -1.8429, df = 16.321, p-value = 0.08359
+      alternative hypothesis: true difference in means is not equal to 0
+      95 percent confidence interval:
+       -4.2969668  0.2969668
+      sample estimates:
+      mean of x mean of y 
+	      6         8
+     #+end_example
+
 * 6.4 対応のある (z,t)-検定
 
      - 独立な2群 or 対応のない2群 ::

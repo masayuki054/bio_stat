@@ -9,8 +9,6 @@
 - [[https://note.com/hanaori/n/nc55ac8614799][統計学｜検出力とはなんぞや｜hanaori｜note]]
 - [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の計算]]  
 
-* 信頼区間 (confidencial interval)
-
 * 仮説と過誤
 
 ** 丁半賭博を例にした統計的判断

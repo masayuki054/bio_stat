@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-08 土 09:53 -->
+<!-- 2022-01-13 木 08:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rによるやさしい統計学 6章 2つの平均値を比較する</title>
@@ -230,9 +230,9 @@
 <div id="content" class="content">
 <h1 class="title">Rによるやさしい統計学 6章 2つの平均値を比較する</h1>
 
-<div id="outline-container-org912573a" class="outline-2">
-<h2 id="org912573a">6.0 この章での検定</h2>
-<div class="outline-text-2" id="text-org912573a">
+<div id="outline-container-org35cdc1f" class="outline-2">
+<h2 id="org35cdc1f">6.0 この章での検定</h2>
+<div class="outline-text-2" id="text-org35cdc1f">
 <ol class="org-ol">
 <li>独立な2群の平均値の差の検定</li>
 
@@ -241,9 +241,9 @@
 </div>
 </div>
 
-<div id="outline-container-org0ce6f94" class="outline-2">
-<h2 id="org0ce6f94">6.1 2つの平均値を比較するケース</h2>
-<div class="outline-text-2" id="text-org0ce6f94">
+<div id="outline-container-orgbf9650e" class="outline-2">
+<h2 id="orgbf9650e">6.1 2つの平均値を比較するケース</h2>
+<div class="outline-text-2" id="text-orgbf9650e">
 <ul class="org-ul">
 <li>男女で心理学テストの平均値に差があるかを検討したい。</li>
 
@@ -255,13 +255,13 @@
 </div>
 
 
-<div id="outline-container-orgafb665a" class="outline-2">
-<h2 id="orgafb665a">6.2 独立な2群の検定</h2>
-<div class="outline-text-2" id="text-orgafb665a">
+<div id="outline-container-org071bd23" class="outline-2">
+<h2 id="org071bd23">6.2 独立な2群の検定</h2>
+<div class="outline-text-2" id="text-org071bd23">
 </div>
-<div id="outline-container-orgb9cb2a5" class="outline-3">
-<h3 id="orgb9cb2a5">分散既知 あるいは 大標本の場合 (z-検定)</h3>
-<div class="outline-text-3" id="text-orgb9cb2a5">
+<div id="outline-container-orgc55435d" class="outline-3">
+<h3 id="orgc55435d">分散既知 あるいは 大標本の場合 (z-検定)</h3>
+<div class="outline-text-3" id="text-orgc55435d">
 <p>
 確率変数の和の平均と分散の期待値の公式より，標本平均の差の標本分
 布は，
@@ -286,9 +286,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9c5086a" class="outline-3">
-<h3 id="org9c5086a">分散未知の場合 (t-検定)</h3>
-<div class="outline-text-3" id="text-org9c5086a">
+<div id="outline-container-org1a78a52" class="outline-3">
+<h3 id="org1a78a52">分散未知の場合 (t-検定)</h3>
+<div class="outline-text-3" id="text-org1a78a52">
 <p>
 母分散を不偏分散で推定する。
 標本平均の不偏分散を \( \hat{\sigma_1} \), \( \hat{\sigma_2} \)
@@ -319,18 +319,18 @@
 </div>
 
 
-<div id="outline-container-org8d661f1" class="outline-3">
-<h3 id="org8d661f1">例題</h3>
-<div class="outline-text-3" id="text-org8d661f1">
+<div id="outline-container-orgef9b984" class="outline-3">
+<h3 id="orgef9b984">例題</h3>
+<div class="outline-text-3" id="text-orgef9b984">
 <p>
 統計テスト1の得点の平均値に男女で有意な差があるでしょうか？
 有意水準5%，両側検定してください。
 </p>
 </div>
 
-<div id="outline-container-orgc5d8a01" class="outline-4">
-<h4 id="orgc5d8a01">データの準備</h4>
-<div class="outline-text-4" id="text-orgc5d8a01">
+<div id="outline-container-org3d3e9d4" class="outline-4">
+<h4 id="org3d3e9d4">データの準備</h4>
+<div class="outline-text-4" id="text-org3d3e9d4">
 <div class="org-src-container">
 <pre class="src src-R">
      (&#25351;&#23566;&#27861;&#12487;&#12540;&#12479; <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"data/shidouhouU8.csv"</span>))
@@ -339,7 +339,7 @@
 </pre>
 </div>
 
-<pre class="example" id="orgf32fea7">
+<pre class="example" id="org9d5f099">
 	SID   name sex math stat psych_test stat_test1 stat_test2 method
      1    1   大村  男 嫌い 好き         13          6         10      C
      2    2   本多  男 嫌い 好き         14         10         13      B
@@ -365,9 +365,9 @@
 </pre>
 </div>
 
-<div id="outline-container-org3f0054a" class="outline-5">
-<h5 id="org3f0054a">男女別</h5>
-<div class="outline-text-5" id="text-org3f0054a">
+<div id="outline-container-orgf23da9d" class="outline-5">
+<h5 id="orgf23da9d">男女別</h5>
+<div class="outline-text-5" id="text-orgf23da9d">
 <div class="org-src-container">
 <pre class="src src-R">
 (&#32113;&#35336;1&#30007; <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, sex==<span style="color: #95e454;">"&#30007;"</span>)$stat_test1)
@@ -386,9 +386,9 @@
 
 
 
-<div id="outline-container-org102896b" class="outline-4">
-<h4 id="org102896b">t-検定 (等母分散)</h4>
-<div class="outline-text-4" id="text-org102896b">
+<div id="outline-container-orga2780cf" class="outline-4">
+<h4 id="orga2780cf">t-検定 (等母分散)</h4>
+<div class="outline-text-4" id="text-orga2780cf">
 <p>
 母分散が等しいことを前提としているので，2群の分散が等しいことを
 示す var.equal=TRUE を指定する。
@@ -401,7 +401,7 @@
 </pre>
 </div>
 
-<pre class="example" id="org5d25cf9">
+<pre class="example" id="org7d78cdc">
 
 	      Two Sample t-test
 
@@ -416,49 +416,13 @@
 </pre>
 </div>
 </div>
-
-
-<div id="outline-container-org9a813d6" class="outline-4">
-<h4 id="org9a813d6">t-検定 (異なる母分散)</h4>
-<div class="outline-text-4" id="text-org9a813d6">
-<p>
-2群の分散が等しくないいことを
-示す var.equal=FALSE を指定する。
-</p>
-
-<p>
-帰無分布は同じく t-分布であるが、自由度が異なる
-(統計学入門，12.2.4)
-</p>
-
-<div class="org-src-container">
-<pre class="src src-R">
-      t.test(&#32113;&#35336;1&#30007;, &#32113;&#35336;1&#22899;, var.equal=<span style="color: #92a65e; font-weight: bold;">FALSE</span>)
-
-</pre>
-</div>
-
-<pre class="example" id="org7ab35d2">
-
-	      Welch Two Sample t-test
-
-      data:  統計1男 and 統計1女
-      t = -1.8429, df = 16.321, p-value = 0.08359
-      alternative hypothesis: true difference in means is not equal to 0
-      95 percent confidence interval:
-       -4.2969668  0.2969668
-      sample estimates:
-      mean of x mean of y 
-	      6         8
-</pre>
-</div>
-</div>
 </div>
 </div>
 
-<div id="outline-container-org4c147b0" class="outline-2">
-<h2 id="org4c147b0">6.3 t-検定の前提条件</h2>
-<div class="outline-text-2" id="text-org4c147b0">
+
+<div id="outline-container-orgcd6b765" class="outline-2">
+<h2 id="orgcd6b765">6.3 t-検定の前提条件</h2>
+<div class="outline-text-2" id="text-orgcd6b765">
 <ol class="org-ol">
 <li>標本抽出が無作為に行われていること</li>
 <li>母集団の分布が正規分布であること</li>
@@ -471,9 +435,9 @@
 </div>
 
 
-<div id="outline-container-orgc5be6b2" class="outline-3">
-<h3 id="orgc5be6b2">6.3.1 分散の等質性の検定</h3>
-<div class="outline-text-3" id="text-orgc5be6b2">
+<div id="outline-container-orgb453279" class="outline-3">
+<h3 id="orgb453279">6.3.1 分散の等質性の検定</h3>
+<div class="outline-text-3" id="text-orgb453279">
 <ul class="org-ul">
 <li>2つの母集団の分散の等質性を，</li>
 <li>それぞれの母集団からの2つの標本を用いて，</li>
@@ -483,18 +447,18 @@
 </div>
 
 
-<div id="outline-container-orga6b18f6" class="outline-4">
-<h4 id="orga6b18f6">例題</h4>
-<div class="outline-text-4" id="text-orga6b18f6">
+<div id="outline-container-org6066e8d" class="outline-4">
+<h4 id="org6066e8d">例題</h4>
+<div class="outline-text-4" id="text-org6066e8d">
 <p>
 クラスA,Bの統計学のテストの平均点に有意な差があるでしょうか？
 有意水準5%で検定を行ってください。
 </p>
 </div>
 
-<div id="outline-container-org3ccae7c" class="outline-5">
-<h5 id="org3ccae7c">データ</h5>
-<div class="outline-text-5" id="text-org3ccae7c">
+<div id="outline-container-orgb600283" class="outline-5">
+<h5 id="orgb600283">データ</h5>
+<div class="outline-text-5" id="text-orgb600283">
 <div class="org-src-container">
 <pre class="src src-R">
 (&#12463;&#12521;&#12473;A <span style="color: #e5786d;">&lt;-</span> c(54, 55, 52, 48, 50, 38, 41, 40, 53, 52))
@@ -504,7 +468,7 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </pre>
 </div>
 
-<pre class="example" id="org6207b1d">
+<pre class="example" id="org3265610">
 	[1] 54 55 52 48 50 38 41 40 53 52
 	[1] 57 63 50 60 61 69 43 58 36 29
 
@@ -522,13 +486,53 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </div>
 </div>
 </div>
+
+
+<div id="outline-container-org0671527" class="outline-4">
+<h4 id="org0671527">6.3.2 t-検定 (異なる母分散)  Welchの検定</h4>
+<div class="outline-text-4" id="text-org0671527">
+<p>
+var.test() で等質性が棄却された場合，Welch の検定を使います。
+</p>
+
+<p>
+2群の分散が等しくないいことを
+示す var.equal=FALSE を指定する。
+</p>
+
+<p>
+帰無分布は同じく t-分布であるが、自由度が異なる
+(統計学入門，12.2.4)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+      t.test(&#32113;&#35336;1&#30007;, &#32113;&#35336;1&#22899;, var.equal=<span style="color: #92a65e; font-weight: bold;">FALSE</span>)
+
+</pre>
+</div>
+
+<pre class="example" id="org956a5c1">
+
+	      Welch Two Sample t-test
+
+      data:  統計1男 and 統計1女
+      t = -1.8429, df = 16.321, p-value = 0.08359
+      alternative hypothesis: true difference in means is not equal to 0
+      95 percent confidence interval:
+       -4.2969668  0.2969668
+      sample estimates:
+      mean of x mean of y 
+	      6         8
+</pre>
+</div>
+</div>
 </div>
 </div>
 
-
-<div id="outline-container-orgc7dbe4a" class="outline-2">
-<h2 id="orgc7dbe4a">6.4 対応のある (z,t)-検定</h2>
-<div class="outline-text-2" id="text-orgc7dbe4a">
+<div id="outline-container-orga3c1796" class="outline-2">
+<h2 id="orga3c1796">6.4 対応のある (z,t)-検定</h2>
+<div class="outline-text-2" id="text-orga3c1796">
 <dl class="org-dl">
 <dt>独立な2群 or 対応のない2群</dt><dd>例えば30人の被験者を，ランダムに2群に分た場合</dd>
 
@@ -536,9 +540,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </dl>
 </div>
 
-<div id="outline-container-org6cca3c8" class="outline-3">
-<h3 id="org6cca3c8">対応のあるデータの検定量</h3>
-<div class="outline-text-3" id="text-org6cca3c8">
+<div id="outline-container-org3a15bb1" class="outline-3">
+<h3 id="org3a15bb1">対応のあるデータの検定量</h3>
+<div class="outline-text-3" id="text-org3a15bb1">
 <p>
 統計テスト1の得点を \( X_1 \),
 統計テスト2の得点を \( X_2 \),
@@ -553,9 +557,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </p>
 </div>
 
-<div id="outline-container-org64ade07" class="outline-4">
-<h4 id="org64ade07">得点差の標本平均の計算</h4>
-<div class="outline-text-4" id="text-org64ade07">
+<div id="outline-container-orgd04fa8e" class="outline-4">
+<h4 id="orgd04fa8e">得点差の標本平均の計算</h4>
+<div class="outline-text-4" id="text-orgd04fa8e">
 <div class="org-src-container">
 <pre class="src src-R">
      &#25351;&#23566;&#27861;&#12487;&#12540;&#12479; <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"data/shidouhouU8.csv"</span>)
@@ -581,9 +585,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 
 
 
-<div id="outline-container-orgd72a0d1" class="outline-4">
-<h4 id="orgd72a0d1">得点差の標本平均が従がう分布</h4>
-<div class="outline-text-4" id="text-orgd72a0d1">
+<div id="outline-container-org628702d" class="outline-4">
+<h4 id="org628702d">得点差の標本平均が従がう分布</h4>
+<div class="outline-text-4" id="text-org628702d">
 <ul class="org-ul">
 <li>\( X_i \sim N(\mu_{i}, \sigma^2_{i}) \) を仮定すれば，</li>
 <li>\( D \sim N(\mu_{D}, \sigma^2_{D}) \)  となり，</li>
@@ -598,9 +602,9 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </div>
 </div>
 
-<div id="outline-container-org5589cac" class="outline-4">
-<h4 id="org5589cac">例題：</h4>
-<div class="outline-text-4" id="text-org5589cac">
+<div id="outline-container-orgad2ba12" class="outline-4">
+<h4 id="orgad2ba12">例題：</h4>
+<div class="outline-text-4" id="text-orgad2ba12">
 <p>
 「指導法データ」の統計テスト1と統計テスト2の得点について、指導
 の前後で統計テストの得点が変化したといえるでしょうか。有意水準
@@ -614,7 +618,7 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </pre>
 </div>
 
-<pre class="example" id="org02cd3b3">
+<pre class="example" id="orge44ac78">
 
 		One Sample t-test
 
@@ -634,7 +638,7 @@ var.test(&#12463;&#12521;&#12473;A, &#12463;&#12521;&#12473;B)
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2022-01-08 土 09:53</p>
+<p class="date">Created: 2022-01-13 木 08:48</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

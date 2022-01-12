@@ -5,6 +5,9 @@
 
 * お知らせ
 *** 毎回のアンケート
+
+     [[https://forms.gle/hCMpTPbHt3q2fCRF7][12回目のアンケート]]
+
    [[./enq.org]]
 
 *** 3 回目のレポートを出題しました
@@ -29,41 +32,66 @@
 
 
 
-* Todo 今日(1/6) の講義
+* Todo 今日 (1/13) の講義 12th
 
 ** Rによる入門統計学
    - スライドまたは PDF を手元に準備
    - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org
 
-*** 入門統計学の6章
-
-**** Todo 検定力
-     - [ ] 検出力分析
-       - [ ] [[./org/power.org]] を使って説明します
-       
-
-**** [[./org/R-text-6.org]] 教科書のまとめ
-    
 *** 入門統計学の7章
 
-**** Todo 二群の平均の差の検定 [0/5]
+**** Todo 二群の平均の差の検定 [1/5]
 
-      [[./org/RforS-II-06.org]]  別の本の内容で解説します。
+
+      [[./org/RforS-II-06.org]]  別の本の内容で解説・演習します。
       (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
       
-      - [ ] 指導法データの準備 [[./org/RforS-II-data.org]] 
+      - [X] 指導法データの準備 [[./org/RforS-II-data.org]] 
       - [ ] 6.1 2つの平均値を比較するケース
       - [ ] 6.2 独立な2群の検定
       - [ ] 6.3 t-検定の前提条件
       - [ ] 6.4 対応のある (z,t)-検定
 
+	
+**** 分散分析
+
+      - [ ] 教科書とスライドによる内容説明 [0/4]
+	- [ ] 8.1 3群以上の平均の差の検定
+	- [ ] 8.2 対応のない一元配置分散分析
+	- [ ] 8.3 F検定
+	- [ ] 8.4 対応のある一元配置分散分析
+
+      - [[./org/RforS-II-07.org]]  [/]
+	別の本の内容でRによる演習を行ないます。
+        (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
+
+        - [ ] 7.1 一元配置分散分析 (対応なし)
+        - [ ] 7.2 一元配置分散分析 (対応あり)
+
+      - 参考サイト: 分散分析 数式による説明
+        https://www.ouj.ac.jp/mijika/tokei/xml/k3_06023.xml
+
+      - 検出力
+        - [X] [[./org/power.org]] の中の
+	   [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の 計算]] 
+	  の中の power.anova.test
+
+	
 * Todo RStudio 
 
-<<<<<<< HEAD
+** Rnotebook から pdf を作成するために
+
+[[https://syunsuke.github.io/r_prepare_for_repoco/index.html][repocoを使うための準備について]] を参考に，
+
+1. RStudio で，tinytex パッケージのインストール
+2. tinytexパッケージに機能で， TeXLive の tiny 版をインストール
+3. ghostscript をインストール
+4. RStudio の に_knit_to_PDF の中から，ghostscript を呼びだせるように
+   設定する
+
 ** [[./org/daizu.org]] に従って，Rmarkdown を使ってみましょう。
-=======
+
 [[./org/daizu.Rmd]] に従って，Rmarkdown を使ってみましょう。
->>>>>>> 2d71b69dde269f44ecce9f2abc795068a2dd8696
 
 ** RStudio (1)
 講師も RStudio が使える環境を手に入れたので，気付いたことを書き留めよ
@@ -72,7 +100,6 @@
    - 生物統計用のプロジェクトを作ろう
    - 毎回のRのプログラムを，R-スクリプトとして残そう
 
-<<<<<<< HEAD
 ** RStudio の機能     
 - file
   - file
@@ -94,12 +121,8 @@
   - chunk
     
 - Knit
-=======
-**** file
-***** file
-****** R-script, R-notebook, R-markdown
+
 - chunk
-- knit
 
 ***** project
 ***** import data set
@@ -113,7 +136,6 @@
 
 **** view
 
->>>>>>> 2d71b69dde269f44ecce9f2abc795068a2dd8696
 
 * R 入門
    [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]] の8，9，10，11章
@@ -131,6 +153,34 @@
    
 
 * 講義記録
+** 11th 1/6 の講義
+
+*** Rによる入門統計学
+   - スライドまたは PDF を手元に準備
+   - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org
+
+**** 入門統計学の6章
+
+***** Todo 検定力
+     - [X] 検出力分析
+       - [X] [[./org/power.org]] を使って説明します
+       
+
+***** [[./org/R-text-6.org]] 教科書のまとめ
+    
+**** 入門統計学の7章
+
+***** Todo 二群の平均の差の検定 [1/5]
+
+      [[./org/RforS-II-06.org]]  別の本の内容で解説します。
+      (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
+      
+      - [X] 指導法データの準備 [[./org/RforS-II-data.org]] 
+      - [ ] 6.1 2つの平均値を比較するケース
+      - [ ] 6.2 独立な2群の検定
+      - [ ] 6.3 t-検定の前提条件
+      - [ ] 6.4 対応のある (z,t)-検定
+
 ** 10th 12/23 の講義
 
 *** Rによる入門統計学
@@ -722,15 +772,15 @@ RStudioを使ってない人は，RStudio をインストールしましょう�
     - ダイズ [[./org/daizu.Rmd]]  ([[./org/daizu.html]])
 
       
-    - [[./org/example-03.Rmd]]  ([[./org/example-03.html]])
+    - [[./org/example-03m.Rmd]]  ([[./org/example-03.html]])
 
       頻度表と確率密度関数のグラフを重ねて，標本分布を実感する
       
-    - [[./org/example-06.Rmd]]  ([[./org/example-06.html]])
+    - [[./org/example-06m.Rmd]]  ([[./org/example-06.html]])
 
       検定
       
-    - [[./org/RforS-II-06.Rmd]] ([[./org/RforS-II-06.html]])
+    - [[./org/RforS-II-06m.Rmd]] ([[./org/RforS-II-06.html]])
 
       二つの平均値の比較 (検定)，Rによるやさしい統計学6章のまとめ。
       教科書7章にあたります。
