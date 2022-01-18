@@ -20,7 +20,7 @@
 
      #+begin_src R :session t :results output :exports both :tangle babel/r-05-03.r
 
-     (指導法データ <- read.csv("data/shidouhou.csv"))
+     (指導法データ <- read.csv("data/shidouhouU8.csv"))
      class(指導法データ)
      str(指導法データ)
 
