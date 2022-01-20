@@ -4,6 +4,34 @@
 #+title: 生物統計学
 
 * お知らせ
+
+*** 12/20 はオンライン講義の予定です。
+
+1月20日(木) 15時~から、zoom によるオンライン講義を行ないます。
+
+リアルタイム配信で行ないます。
+参加できない人は、録画を視聴してください。
+
+参加、視聴した人は、Googleのアンケートに回答してください。
+
+
+URL : https://zoom.us/j/5280602571?pwd=WFNlRmYxcHVaRXV3eW10dkswVVFWdz09
+ミーティングID: 528 060 2571
+パスコード: 0yzsb1
+
+*** 12/13 はオンライン講義をおこないました。
+
+12回目の講義を録画しました。
+
+https://drive.google.com/file/d/1ja0WjrCd9exeifwuJ-ROGFJBJFNEONGk/view?usp=sharing
+
+講義開始後10分位、録画されてませんので注意してください。
+レポートの説明をしたのですが、録画されていません。
+講義の終りに再度度説明しました。
+
+視聴後は、Googleドライブの12回目の講義のアンケートに回答してください。
+
+
 *** 毎回のアンケート
 
      [[https://forms.gle/hCMpTPbHt3q2fCRF7][12回目のアンケート]]
@@ -32,51 +60,53 @@
 
 
 
-* Todo 今日 (1/13) の講義 12th
+* Todo 今日 (1/20) の講義 13th
 
 ** Rによる入門統計学
    - スライドまたは PDF を手元に準備
    - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org
 
-*** 入門統計学の7章
+*** 入門統計学の8章
 
-**** Todo 二群の平均の差の検定 [5/5]
-
-
-      [[./org/RforS-II-06.org]]  別の本の内容で解説・演習します。
-      (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
-      
-      - [X] 指導法データの準備 [[./org/RforS-II-data.org]] 
-      - [X] 6.1 2つの平均値を比較するケース
-      - [X] 6.2 独立な2群の検定
-      - [X] 6.3 t-検定の前提条件
-      - [X] 6.4 対応のある (z,t)-検定
-
-	
 **** 分散分析
 
-      - [-] 教科書とスライドによる内容説明 [3/4]
-	- [X] 8.1 3群以上の平均の差の検定
-	- [X] 8.2 対応のない一元配置分散分析
-	- [X] 8.3 F検定
-	- [ ] 8.4 対応のある一元配置分散分析
+***** 一元配置
+      解説: [[https://www.stats-guild.com/analytics/15634][1元配置分散分析（One-way ANOVA）]]
+       - [-] 教科書とスライドによる内容説明 [3/4]
+	 - [X] 8.1 3群以上の平均の差の検定
+	 - [X] 8.2 対応のない一元配置分散分析
+	 - [X] 8.3 F検定
+	 - [ ] 8.4 対応のある一元配置分散分析
 
-      - [[./org/RforS-II-07.org]]  [0/2]
-	別の本の内容でRによる演習を行ないます。
-        (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
+       - [[./org/RforS-II-07.org]]  [0/2]
+	 別の本の内容でRによる演習を行ないます。
+         (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
 
-        - [ ] 7.1 一元配置分散分析 (対応なし)
-        - [ ] 7.2 一元配置分散分析 (対応あり)
+	 - [ ] 7.1 一元配置分散分析 (対応なし)
+	 - [ ] 7.2 一元配置分散分析 (対応あり)
 
-      - 参考サイト: 分散分析 数式による説明
-        https://www.ouj.ac.jp/mijika/tokei/xml/k3_06023.xml
+       - 参考サイト: 分散分析 数式による説明
+         https://www.ouj.ac.jp/mijika/tokei/xml/k3_06023.xml
 
-      - 検出力
-        - [X] [[./org/power.org]] の中の
+***** 二元配置 [/]
+      - [ ] [[https://www.stats-guild.com/analytics/15657][2元配置分散分析（Two-way ANOVA）]]概説，stats-guild
+      - [ ] [[https://multivariate-statistics.com/2021/10/24/statistics-two-way-anova/][【統計学】分散分析 一元配置分散分析・二元配置分散分析]]   - 完璧
+      - [ ] 演習 [[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]]
+   
+***** 検出力 [/]
+        - [ ] [[./org/power.org]] の中の
 	   [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の 計算]] 
 	  の中の power.anova.test
 
-	
+***** 多重比較法 [/]
+
+       - [[https://www.stats-guild.com/analytics/15650][多重比較法（Multiple Comparison Procedure）]]- よくまとまっている
+
+**** 次週の演習
+      [[https://multivariate-statistics.com/2020/10/16/r-programming-one-way-anova/#i-2][R言語 分散分析ANOVAで多群の比較を行う【初心者向け】]]
+      - 次週，各自このページを読み理解し演習し，pdf/HTMLページにまとめ
+        ましょう。
+     
 * Todo RStudio 
 
 ** Rnotebook から pdf を作成するために
@@ -153,6 +183,50 @@
    
 
 * 講義記録
+** 12th 1/13 の講義 
+
+*** Rによる入門統計学
+   - スライドまたは PDF を手元に準備
+   - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org
+
+**** 入門統計学の7章
+
+***** Todo 二群の平均の差の検定 [5/5]
+
+
+      [[./org/RforS-II-06.org]]  別の本の内容で解説・演習します。
+      (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
+      
+      - [X] 指導法データの準備 [[./org/RforS-II-data.org]] 
+      - [X] 6.1 2つの平均値を比較するケース
+      - [X] 6.2 独立な2群の検定
+      - [X] 6.3 t-検定の前提条件
+      - [X] 6.4 対応のある (z,t)-検定
+
+	
+***** 分散分析
+
+      - [-] 教科書とスライドによる内容説明 [3/4]
+	- [X] 8.1 3群以上の平均の差の検定
+	- [X] 8.2 対応のない一元配置分散分析
+	- [X] 8.3 F検定
+	- [ ] 8.4 対応のある一元配置分散分析
+
+      - [[./org/RforS-II-07.org]]  [0/2]
+	別の本の内容でRによる演習を行ないます。
+        (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
+
+        - [ ] 7.1 一元配置分散分析 (対応なし)
+        - [ ] 7.2 一元配置分散分析 (対応あり)
+
+      - 参考サイト: 分散分析 数式による説明
+        https://www.ouj.ac.jp/mijika/tokei/xml/k3_06023.xml
+
+      - 検出力
+        - [ ] [[./org/power.org]] の中の
+	   [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の 計算]] 
+	  の中の power.anova.test
+
 ** 11th 1/6 の講義
 
 *** Rによる入門統計学

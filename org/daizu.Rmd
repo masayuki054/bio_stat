@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 
@@ -68,6 +68,8 @@ NA部分を除く(remove)という命令、na.rm=Tを付け加える必要があ
     boxplot(daizu)
     title(main="ダイズデータの箱ひげ図")
 ```
+
+
 
 ### ダイズデータを頻度表
 ```{r}

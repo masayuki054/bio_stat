@@ -1,0 +1,80 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+title: 7章 分散分析
+#+OPTIONS: tex:t
+#+property: header-arg:R :session t :results output :exports both
+
+#+begin_src R :session *rfors* :results output :exports both :tangle RforS/code/07.R
+
+#+end_src
+
+#+begin_src R :session *rfors* :results output :exports both :tangle RforS/code/07.R
+ 味 <- c(6,4,5,3,2,10,8,10,8,9,11,12,12,10,10,5,4,2,2,2,7,6,5,4,3,12,8,5,6,4)
+ 温度 <- factor(c(rep("冷蔵庫",15),rep("常温",15)))
+ 銘柄 <- factor(rep(c(rep("イカアン",5),rep("ボスビック",5),rep("ビビッテル",5)),2))
+ summary(aov(味~温度*銘柄))
+#+end_src
+
+#+RESULTS:
+:             Df Sum Sq Mean Sq F value   Pr(>F)    
+: 温度         1   67.5   67.50  21.316  0.00011 ***
+: 銘柄         2  155.0   77.50  24.474 1.61e-06 ***
+: 温度:銘柄    2   15.0    7.50   2.368  0.11515    
+: Residuals   24   76.0    3.17                     
+: ---
+: Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+#+begin_src R :session *rfors* :results output graphics :file RforS/graph/07-2-1.png :exports both :tangle RforS/code/07.R
+interaction.plot(温度, 銘柄, 味)
+#+end_src
+
+#+RESULTS:
+
+[[./file:RforS/graph/07-2-1.png]]
+
+#+begin_src R :session *rfors* :results output graphics :file RforS/graph/07-2-2.png :exports both :tangle RforS/code/07.R
+interaction.plot(銘柄, 温度, 味)
+#+end_src
+
+#+RESULTS:
+
+
+
+
+#+begin_src R :session *rfors* :results output :exports both :tangle RforS/code/07.R
+# 変数「味」, 「温度」, 「銘柄」 は前の例題のものを使う
+ 人1 <- factor(rep(c("村松","川崎","井口","松中","城島"),6))		# 評定車の情報
+ 数字ID1 <- factor(rep(1:5,6))		# 評定者名の代わりに数字を使う場合
+ summary(aov(味 ~ 温度*銘柄   
+                 +Error(人１+人１:温度+人１:銘柄+人１:温度:銘柄)))	# 個人差によるデータの分析
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+Error: 人１
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals  4     45   11.25               
+
+Error: 人１:温度
+          Df Sum Sq Mean Sq F value Pr(>F)  
+温度       1   67.5   67.50      18 0.0132 *
+Residuals  4   15.0    3.75                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: 人１:銘柄
+          Df Sum Sq Mean Sq F value   Pr(>F)    
+銘柄       2    155    77.5     155 4.01e-07 ***
+Residuals  8      4     0.5                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: 人１:温度:銘柄
+          Df Sum Sq Mean Sq F value Pr(>F)  
+温度:銘柄  2     15     7.5       5  0.039 *
+Residuals  8     12     1.5                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+#+end_example
