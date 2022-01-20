@@ -3,11 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-13 木 08:53 -->
+<!-- 2022-01-20 木 14:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>7章 分散分析</title>
-<meta name="author" content="鈴木正幸，非常勤講師" />
+<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -204,16 +204,1042 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">7章 分散分析</h1>
+
+
+
+<div id="outline-container-org4f23b8c" class="outline-2">
+<h2 id="org4f23b8c">7.0 分散分析 (anova, Analysis Of Variance)</h2>
+<div class="outline-text-2" id="text-org4f23b8c">
 <p>
-Sum of Squares      184       138</p>
+3つ以上の <b>平均値を比較する</b> ために，分散分析を紹介する
+</p>
+
+<ul class="org-ul">
+<li>分散分析の考え方の基礎，「平方和の分解」
+<ul class="org-ul">
+<li>要因の数の違い，</li>
+<li>標本の対応の有無による違い，がある</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgeb60964" class="outline-4">
+<h4 id="orgeb60964">変動の区別</h4>
+<div class="outline-text-4" id="text-orgeb60964">
+</div>
+<div id="outline-container-org1a66e8b" class="outline-5">
+<h5 id="org1a66e8b">全体の変動</h5>
+<div class="outline-text-5" id="text-org1a66e8b">
+<ul class="org-ul">
+<li>全データをまとめて扱う</li>
+<li>全平均 と 個々のデータの偏差，分散</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org95d79dd" class="outline-5">
+<h5 id="org95d79dd">方法 (要因) の違いによる変動</h5>
+<div class="outline-text-5" id="text-org95d79dd">
+<ul class="org-ul">
+<li>方法ごとにグループを作成</li>
+<li>全平均 と グループ内平均との偏差，分散</li>
+<li id="水準">同じ方法で処方レベルの違い</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org894f903" class="outline-5">
+<h5 id="org894f903">個の違いによる変動 (誤差)</h5>
+<div class="outline-text-5" id="text-org894f903">
+<ul class="org-ul">
+<li>同じ方法グループ内のデータの変動は，個々の違いが原因。</li>
+<li>方法の効果を見るためには，雑音と考える。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfab2a5f" class="outline-5">
+<h5 id="orgfab2a5f">分散分析</h5>
+<div class="outline-text-5" id="text-orgfab2a5f">
+<p>
+全体の変動 = 方法 (要因)による変動 + 個の違いによる変動 となる。
+</p>
+
+
+
+<p>
+要因毎にわけ，誤差に較べて大きな影響を与えている要因を探す。
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1c404cf" class="outline-2">
+<h2 id="org1c404cf">7.1 一元配置分散分析</h2>
+<div class="outline-text-2" id="text-org1c404cf">
+<p>
+一つの要因の分析を行なう。
+</p>
+</div>
+
+<div id="outline-container-orgf1c91ba" class="outline-4">
+<h4 id="orgf1c91ba"><a href="RforS-II-07-data.html">指導法データの準備</a></h4>
+<div class="outline-text-4" id="text-orgf1c91ba">
+<div class="org-src-container">
+<pre class="src src-R">
+(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479; <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"data/shidouhouU8.csv"</span>))
+class(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;)
+str(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;)
+
+</pre>
+</div>
+
+<pre class="example" id="org0b5abaf">
+   SID   name sex math stat psych_test stat_test1 stat_test2 method
+1    1   大村  男 嫌い 好き         13          6         10      C
+2    2   本多  男 嫌い 好き         14         10         13      B
+3    3   川崎  男 好き 好き          7          6          8      B
+4    4   多村  男 好き 好き         12         10         15      A
+5    5   松中  男 嫌い 嫌い         10          5          8      B
+6    6 小久保  男 嫌い 嫌い          6          3          6      C
+7    7   柴原  男 嫌い 嫌い          8          5          9      A
+8    8   井手  男 嫌い 嫌い         15          9         10      D
+9    9   田上  男 嫌い 嫌い          4          3          7      D
+10  10   松田  男 好き 嫌い         14          3          3      D
+11  11   高谷  女 好き 好き          9         11         18      A
+12  12   杉内  女 嫌い 好き          6          6         14      A
+13  13   和田  女 好き 好き         10         11         18      A
+14  14   新垣  女 嫌い 嫌い         12          9         11      C
+15  15   大隣  女 嫌い 好き          5          7         12      B
+16  16   水田  女 好き 嫌い         12          5          5      D
+17  17   斉藤  女 嫌い 嫌い          8          8          7      C
+18  18   柳瀬  女 嫌い 嫌い          8          7         12      C
+19  19   佐藤  女 嫌い 嫌い         12          7          7      B
+20  20   馬原  女 嫌い 嫌い         15          9          7      D
+[1] "data.frame"
+'data.frame':	20 obs. of  9 variables:
+ $ SID       : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ name      : Factor w/ 20 levels "井手","高谷",..: 14 18 12 13 6 5 4 1 16 7 ...
+ $ sex       : Factor w/ 2 levels "女","男": 2 2 2 2 2 2 2 2 2 2 ...
+ $ math      : Factor w/ 2 levels "嫌い","好き": 1 1 2 2 1 1 1 1 1 2 ...
+ $ stat      : Factor w/ 2 levels "嫌い","好き": 2 2 2 2 1 1 1 1 1 1 ...
+ $ psych_test: int  13 14 7 12 10 6 8 15 4 14 ...
+ $ stat_test1: int  6 10 6 10 5 3 5 9 3 3 ...
+ $ stat_test2: int  10 13 8 15 8 6 9 10 7 3 ...
+ $ method    : Factor w/ 4 levels "A","B","C","D": 3 2 2 1 2 3 1 4 4 4 ...
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(As <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, method==<span style="color: #95e454;">"A"</span>)$stat_test2)
+(Bs <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, method==<span style="color: #95e454;">"B"</span>)$stat_test2)
+(Cs <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, method==<span style="color: #95e454;">"C"</span>)$stat_test2)
+(Ds <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, method==<span style="color: #95e454;">"D"</span>)$stat_test2)
+
+(&#32113;&#35336;&#12486;&#12473;&#12488;2 <span style="color: #e5786d;">&lt;-</span> c(As, Bs, Cs, Ds))
+
+(&#25351;&#23566;&#27861; <span style="color: #e5786d;">&lt;-</span> c(rep(<span style="color: #95e454;">"A"</span>,5),rep(<span style="color: #95e454;">"B"</span>,5),rep(<span style="color: #95e454;">"C"</span>,5),rep(<span style="color: #95e454;">"D"</span>,5)))
+(&#25351;&#23566;&#27861;2 <span style="color: #e5786d;">&lt;-</span> factor(&#25351;&#23566;&#27861;))                <span style="color: #99968b;"># </span><span style="color: #99968b;">&#35201;&#22240;&#22411;&#12505;&#12463;&#12488;&#12523;&#12395;&#22793;&#25563;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 15  9 18 14 18
+[1] 13  8  8 12  7
+[1] 10  6 11  7 12
+[1] 10  7  3  5  7
+ [1] 15  9 18 14 18 13  8  8 12  7 10  6 11  7 12 10  7  3  5  7
+ [1] "A" "A" "A" "A" "A" "B" "B" "B" "B" "B" "C" "C" "C" "C" "C" "D" "D" "D" "D"
+[20] "D"
+ [1] A A A A A B B B B B C C C C C D D D D D
+Levels: A B C D
+</pre>
+
+
+
+<p>
+指導法を受けている全ての人を母集団とし，その母集団において，指導法ごと
+に求めたテスト得点の平均値に違いがあるかを知りたい。
+</p>
+
+<p>
+この20人のデータは，母集団からの無作為抽出標本です。
+</p>
+
+<p>
+この標本が，母平均の等しい4群 (A,B,C,Dの指導法ごとの) から抽出された可
+能性が高いかを検討する。
+</p>
+
+<p>
+そのための検定が，*分散分析* です。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org86f9ac3" class="outline-4">
+<h4 id="org86f9ac3">検定の流れ</h4>
+<div class="outline-text-4" id="text-org86f9ac3">
+</div>
+<div id="outline-container-org48be28b" class="outline-5">
+<h5 id="org48be28b">帰無仮説と対立仮説の設定</h5>
+<div class="outline-text-5" id="text-org48be28b">
+<dl class="org-dl">
+<dt>帰無仮説 \(H_0\)</dt><dd>4群の母平均は等しい</dd>
+
+<dt>対立仮説 \(H_2\)</dt><dd>4群の母平均は等しくない</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org9b98856" class="outline-5">
+<h5 id="org9b98856">検定統計量</h5>
+<div class="outline-text-5" id="text-org9b98856">
+<p>
+\(
+	 F = \frac { \mbox{群間平方和} / \mbox{群間の自由度} }
+  	           { \mbox{群内平方和} / \mbox{群内の自由度} }
+	 \)
+</p>
+
+<p>
+\( F \) は，全ての群の母平均が等しいときに，* F分布 * に従う
+</p>
+
+<dl class="org-dl">
+<dt>群間平方和</dt><dd>全体平均値と群間平均値の差の2乗和, 自由度 (4ー1)</dd>
+<dt>群内平方和</dt><dd>群内平均値との差の2乗和， 自由度 4*(5ー1)</dd>
+</dl>
+</div>
+
+<div id="outline-container-orgd863e22" class="outline-6">
+<h6 id="orgd863e22">F-分布の確率密度関数</h6>
+<div class="outline-text-6" id="text-orgd863e22">
+<div class="org-src-container">
+<pre class="src src-R">curve(df(x, 3, 16),0, 5)
+</pre>
+</div>
+
+
+<div id="org992e95f" class="figure">
+<p><img src="./RforS/graph/f.png" alt="f.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c90268" class="outline-5">
+<h5 id="org6c90268">有意水準 \(\alpha\) の決定</h5>
+<div class="outline-text-5" id="text-org6c90268">
+<p>
+\( \alpha=0.05 \) の片側検定， F値は正値。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org82b9685" class="outline-5">
+<h5 id="org82b9685">統計検定量の実現値の計算</h5>
+<div class="outline-text-5" id="text-org82b9685">
+<dl class="org-dl">
+<dt>oneway.test 関数</dt><dd><p>
+一元配置分散分析のみ実行可能
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #99968b;"># </span><span style="color: #99968b;">var.equal=TRUE&#12395;&#12424;&#12426;&#27597;&#20998;&#25955;&#12398;&#31561;&#36074;&#24615;&#12434;&#20206;&#23450;</span>
+oneway.test(&#32113;&#35336;&#12486;&#12473;&#12488;2 ~ &#25351;&#23566;&#27861;2, var.equal=<span style="color: #92a65e; font-weight: bold;">TRUE</span> )
+
+</pre>
+</div>
+
+<pre class="example">
+
+	One-way analysis of means
+
+data:  統計テスト2 and 指導法2
+F = 7.1111, num df = 3, denom df = 16, p-value = 0.002988
+</pre>
+
+
+<p>
+p-値が，0.002988 であるので，帰無仮説を棄却。  
+</p></dd>
+
+<dt>aov 関数</dt><dd><p>
+最も一般的
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+ aov(&#32113;&#35336;&#12486;&#12473;&#12488;2 ~ &#25351;&#23566;&#27861;2)
+
+</pre>
+</div>
+
+<pre class="example" id="orge8ad34c">
+  Call:
+     aov(formula = 統計テスト2 ~ 指導法2)
+
+  Terms:
+		  指導法2 Residuals
+  Sum of Squares      184       138
+  Deg. of Freedom       3        16
+
+  Residual standard error: 2.936835
+  Estimated effects may be unbalanced
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">
+summary(aov(&#32113;&#35336;&#12486;&#12473;&#12488;2 ~ &#25351;&#23566;&#27861;2))
+
+</pre>
+</div>
+
+<pre class="example">
+
+	One-way analysis of means
+
+data:  統計テスト2 and 指導法2
+F = 7.1111, num df = 3, denom df = 16, p-value = 0.002988
+</pre>
+
+
+<p>
+p-値が，0.002988 であるので，帰無仮説を棄却。  
+</p></dd>
+
+<dt>anova関数</dt><dd><p>
+複数のモデルの比較など，高度な分析に対応
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+anova(lm(&#32113;&#35336;&#12486;&#12473;&#12488;2 ~ &#25351;&#23566;&#27861;2))
+
+</pre>
+</div>
+
+<pre class="example">
+Analysis of Variance Table
+
+Response: 統計テスト2
+          Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+指導法2    3    184  61.333  7.1111 0.002988 **
+Residuals 16    138   8.625                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+</pre>
+
+
+<p>
+p-値が，0.002988 であるので，帰無仮説を棄却。
+</p></dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2615091" class="outline-4">
+<h4 id="org2615091">Rによる変動と検定値の計算</h4>
+<div class="outline-text-4" id="text-org2615091">
+<div class="org-src-container">
+<pre class="src src-R">
+
+&#20840;&#12487;&#12540;&#12479; <span style="color: #e5786d;">&lt;-</span> cbind(As, Bs, Cs, Ds)       
+&#32676;&#24179;&#22343; <span style="color: #e5786d;">&lt;-</span> colMeans(&#20840;&#12487;&#12540;&#12479;)        <span style="color: #99968b;"># </span><span style="color: #99968b;">&#27700;&#28310;&#12372;&#12392;&#12398;&#24179;&#22343;&#12398;&#12505;&#12463;&#12488;&#12523;</span>
+
+<span style="color: #99968b;"># </span><span style="color: #99968b;">&#27700;&#28310;&#12372;&#12392;&#12398;&#24179;&#22343;&#12398;&#12505;&#12463;&#12488;&#12523;&#12434;&#34892;&#25968;&#12384;&#12369;&#20006;&#12409;&#12383;&#34892;&#21015;&#12434;&#20316;&#12427;</span>
+&#32676;&#24179;&#22343;&#34892;&#21015; <span style="color: #e5786d;">&lt;-</span> matrix(rep(&#32676;&#24179;&#22343;, nrow(&#20840;&#12487;&#12540;&#12479;)), nrow=nrow(&#20840;&#12487;&#12540;&#12479;), 
+                     ncol=ncol(&#20840;&#12487;&#12540;&#12479;),byrow=<span style="color: #92a65e; font-weight: bold;">TRUE</span>)
+
+&#32676;&#20869; <span style="color: #e5786d;">&lt;-</span> &#20840;&#12487;&#12540;&#12479; - &#32676;&#24179;&#22343;&#34892;&#21015;    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#21508;&#12487;&#12540;&#12479;&#12392;&#12289;&#12381;&#12398;&#32676;&#20869;&#12398;&#24179;&#22343;&#12392;&#12398;&#24046;</span>
+&#32676;&#20869;&#24179;&#26041;&#21644; <span style="color: #e5786d;">&lt;-</span> sum(&#32676;&#20869;^2)         <span style="color: #99968b;"># </span><span style="color: #99968b;">&#12288;&#32676;&#20869;&#24179;&#26041;&#21644;</span>
+
+&#20998;&#27597; <span style="color: #e5786d;">&lt;-</span> &#32676;&#20869;&#24179;&#26041;&#21644; / ( (nrow(&#20840;&#12487;&#12540;&#12479;)-1)*ncol(&#20840;&#12487;&#12540;&#12479;) )
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge25c6ca" class="outline-5">
+<h5 id="orge25c6ca">全体差</h5>
+<div class="outline-text-5" id="text-orge25c6ca">
+<div class="org-src-container">
+<pre class="src src-R">
+(&#20840;&#20307;&#24046; <span style="color: #e5786d;">&lt;-</span> &#20840;&#12487;&#12540;&#12479; - &#20840;&#24179;&#22343;) <span style="color: #99968b;"># </span><span style="color: #99968b;">&#34892;&#21015; - &#12473;&#12459;&#12521;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+     As Bs Cs Ds
+[1,]  5  3  0  0
+[2,] -1 -2 -4 -3
+[3,]  8 -2  1 -7
+[4,]  4  2 -3 -5
+[5,]  8 -3  2 -3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2616e16" class="outline-5">
+<h5 id="org2616e16">群間差</h5>
+<div class="outline-text-5" id="text-org2616e16">
+<p>
+群平均行列 から 全平均を引く
+</p>
+<div class="org-src-container">
+<pre class="src src-R">
+(&#32676;&#38291;&#24046; <span style="color: #e5786d;">&lt;-</span> &#32676;&#24179;&#22343;&#34892;&#21015; - &#20840;&#24179;&#22343;)
+</pre>
+</div>
+
+<pre class="example">
+     [,1] [,2] [,3] [,4]
+[1,]  4.8 -0.4 -0.8 -3.6
+[2,]  4.8 -0.4 -0.8 -3.6
+[3,]  4.8 -0.4 -0.8 -3.6
+[4,]  4.8 -0.4 -0.8 -3.6
+[5,]  4.8 -0.4 -0.8 -3.6
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga6843e1" class="outline-5">
+<h5 id="orga6843e1">群内差</h5>
+<div class="outline-text-5" id="text-orga6843e1">
+<p>
+全データから各群内平均を引く
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+(&#32676;&#20869;&#24046; <span style="color: #e5786d;">&lt;-</span> &#20840;&#12487;&#12540;&#12479; - &#32676;&#24179;&#22343;&#34892;&#21015;)
+
+</pre>
+</div>
+
+<pre class="example">
+       As   Bs   Cs   Ds
+[1,]  0.2  3.4  0.8  3.6
+[2,] -5.8 -1.6 -3.2  0.6
+[3,]  3.2 -1.6  1.8 -3.4
+[4,] -0.8  2.4 -2.2 -1.4
+[5,]  3.2 -2.6  2.8  0.6
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgae1e86a" class="outline-5">
+<h5 id="orgae1e86a">平方</h5>
+<div class="outline-text-5" id="text-orgae1e86a">
+<div class="org-src-container">
+<pre class="src src-R">
+&#20840;&#20307;&#24046;^2
+&#32676;&#38291;&#24046;^2
+&#32676;&#20869;&#24046;^2
+
+</pre>
+</div>
+
+<pre class="example" id="orgef907b8">
+     As Bs Cs Ds
+[1,] 25  9  0  0
+[2,]  1  4 16  9
+[3,] 64  4  1 49
+[4,] 16  4  9 25
+[5,] 64  9  4  9
+      [,1] [,2] [,3]  [,4]
+[1,] 23.04 0.16 0.64 12.96
+[2,] 23.04 0.16 0.64 12.96
+[3,] 23.04 0.16 0.64 12.96
+[4,] 23.04 0.16 0.64 12.96
+[5,] 23.04 0.16 0.64 12.96
+        As    Bs    Cs    Ds
+[1,]  0.04 11.56  0.64 12.96
+[2,] 33.64  2.56 10.24  0.36
+[3,] 10.24  2.56  3.24 11.56
+[4,]  0.64  5.76  4.84  1.96
+[5,] 10.24  6.76  7.84  0.36
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd59e014" class="outline-5">
+<h5 id="orgd59e014">平方和と自由度とF-値</h5>
+<div class="outline-text-5" id="text-orgd59e014">
+<div class="org-src-container">
+<pre class="src src-R">
+&#32676;&#38291;&#24179;&#26041;&#21644; <span style="color: #e5786d;">&lt;-</span> sum(&#32676;&#38291;&#24046;^2)
+&#32676;&#20869;&#24179;&#26041;&#21644; <span style="color: #e5786d;">&lt;-</span> sum(&#32676;&#20869;&#24046;^2)
+&#20840;&#20307;&#24179;&#26041;&#21644; <span style="color: #e5786d;">&lt;-</span> &#32676;&#38291;&#24179;&#26041;&#21644; + &#32676;&#20869;&#24179;&#26041;&#21644;
+
+(&#32676;&#38291;&#33258;&#30001;&#24230; <span style="color: #e5786d;">&lt;-</span> ncol(&#20840;&#12487;&#12540;&#12479;)-1)
+(&#32676;&#20869;&#33258;&#30001;&#24230; <span style="color: #e5786d;">&lt;-</span> (nrow(&#20840;&#12487;&#12540;&#12479;)-1) * ncol(&#20840;&#12487;&#12540;&#12479;))
+(&#20840;&#20307;&#33258;&#30001;&#24230; <span style="color: #e5786d;">&lt;-</span> length(&#20840;&#12487;&#12540;&#12479;)-1 )
+
+&#20840;&#20307;&#33258;&#30001;&#24230; - &#32676;&#38291;&#33258;&#30001;&#24230; - &#32676;&#20869;&#33258;&#30001;&#24230;
+
+(&#32676;&#38291;&#24179;&#22343;&#24179;&#26041; <span style="color: #e5786d;">&lt;-</span> &#32676;&#38291;&#24179;&#26041;&#21644;/&#32676;&#38291;&#33258;&#30001;&#24230;)
+(&#32676;&#20869;&#24179;&#22343;&#24179;&#26041; <span style="color: #e5786d;">&lt;-</span> &#32676;&#20869;&#24179;&#26041;&#21644;/&#32676;&#20869;&#33258;&#30001;&#24230;)
+(&#20840;&#20307;&#24179;&#22343;&#24179;&#26041; <span style="color: #e5786d;">&lt;-</span> &#20840;&#20307;&#24179;&#26041;&#21644;/&#20840;&#20307;&#33258;&#30001;&#24230;)
+
+(F <span style="color: #e5786d;">&lt;-</span> &#32676;&#38291;&#24179;&#22343;&#24179;&#26041; / &#32676;&#20869;&#24179;&#22343;&#24179;&#26041;)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 3
+[1] 16
+[1] 19
+[1] 0
+[1] 61.33333
+[1] 8.625
+[1] 16.94737
+[1] 7.111111
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org81b82ee" class="outline-3">
+<h3 id="org81b82ee">7.1.3 多重比較 (Tukey の方法)</h3>
+<div class="outline-text-3" id="text-org81b82ee">
+<p>
+7.1.1項の帰無仮説の棄却では，4つの群の母平均が等しくないことは分
+るが，どの群に間に差があるのかは分らない。
+</p>
+
+<p>
+どの群に間に差があるのかを調べるために，* 多重比較 * とよばれる方
+法を使う。
+</p>
+
+<p>
+ここでは，Tukeyの方法について説明する。
+</p>
+</div>
+
+<div id="outline-container-org4c1b7e5" class="outline-4">
+<h4 id="org4c1b7e5">検定統計量 q</h4>
+<div class="outline-text-4" id="text-org4c1b7e5">
+<p>
+各群のデータ数と分散が等しいと仮定します。
+</p>
+
+<p>
+\[
+      q = \frac { | \textrm{比較する群の平均値差} | } {
+      \sqrt{\textrm{群内の平均平方} / \textrm{各群のデータ数} }}
+      \]
+</p>
+
+<p>
+((s-:)) q は t-検定(分散が同じ2群の平均値の差の検定)に似ている
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4523171" class="outline-4">
+<h4 id="org4523171">データの準備</h4>
+<div class="outline-text-4" id="text-org4523171">
+<div class="org-src-container">
+<pre class="src src-R">
+     &#25351;&#23566;&#27861;&#12487;&#12540;&#12479; <span style="color: #e5786d;">&lt;-</span> read.csv(<span style="color: #95e454;">"data/shidouhouU8.csv"</span>)
+
+(As <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, method==<span style="color: #95e454;">"A"</span>)$stat_test2)
+(Bs <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, method==<span style="color: #95e454;">"B"</span>)$stat_test2)
+(Cs <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, method==<span style="color: #95e454;">"C"</span>)$stat_test2)
+(Ds <span style="color: #e5786d;">&lt;-</span> subset(&#25351;&#23566;&#27861;&#12487;&#12540;&#12479;, method==<span style="color: #95e454;">"D"</span>)$stat_test2)
+(&#20840;&#12487;&#12540;&#12479; <span style="color: #e5786d;">&lt;-</span> cbind(As, Bs, Cs, Ds))
+
+     (&#25351;&#23566;&#27861; <span style="color: #e5786d;">&lt;-</span> &#25351;&#23566;&#27861;&#12487;&#12540;&#12479;$method)
+     <span style="color: #99968b;"># </span><span style="color: #99968b;">(&#25351;&#23566;&#27861;2 &lt;- factor(&#25351;&#23566;&#27861;))  # &#35201;&#22240;&#12505;&#12463;&#12488;&#12523;&#12395;&#22793;&#25563;&#65292;&#36949;&#12356;&#12364;&#12394;&#12356;&#12424;&#12358;&#12394;&#12290;&#12290;&#12290;</span>
+     (&#32113;&#35336;&#12486;&#12473;&#12488;2 <span style="color: #e5786d;">&lt;-</span> &#25351;&#23566;&#27861;&#12487;&#12540;&#12479;$stat_test2)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3262a4a" class="outline-4">
+<h4 id="org3262a4a">統計検定値 q の実現値値</h4>
+<div class="outline-text-4" id="text-org3262a4a">
+<div class="org-src-container">
+<pre class="src src-R">      
+      (q <span style="color: #e5786d;">&lt;-</span> abs(mean(As)-mean(Ds)) / sqrt(&#32676;&#20869;&#24179;&#22343;&#24179;&#26041;/nrow(&#20840;&#12487;&#12540;&#12479;)))
+      
+</pre>
+</div>
+
+<pre class="example">
+[1] 6.395651
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga6d7135" class="outline-4">
+<h4 id="orga6d7135">棄却域の決定</h4>
+<div class="outline-text-4" id="text-orga6d7135">
+<p>
+有意水準 5%, 平均値の数 4, 群内自由度 16，を指定します。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+qtukey(0.95, 4, 16)
+qtukey(0.05, 4, 16, lower.tail=<span style="color: #92a65e; font-weight: bold;">FALSE</span>)
+
+
+</pre>
+</div>
+
+<pre class="example">
+[1] 4.046093
+[1] 4.046093
+</pre>
+
+
+<p>
+どちらも4.046093となり，棄却域は \( q > 4.046093 \) となります。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org25e4727" class="outline-4">
+<h4 id="org25e4727">TukeyHSD (Honest Significant Difference)</h4>
+<div class="outline-text-4" id="text-org25e4727">
+<div class="org-src-container">
+<pre class="src src-R">
+TukeyHSD(aov(&#32113;&#35336;&#12486;&#12473;&#12488;2 ~ &#25351;&#23566;&#27861;))
+
+</pre>
+</div>
+
+<pre class="example" id="org17f7bfb">
+	Tukey multiple comparisons of means
+	  95% family-wise confidence level
+
+      Fit: aov(formula = 統計テスト2 ~ 指導法)
+
+      $指導法
+	  diff        lwr        upr     p adj
+      B-A -5.2 -10.514108  0.1141085 0.0562227
+      C-A -5.6 -10.914108 -0.2858915 0.0371222
+      D-A -8.4 -13.714108 -3.0858915 0.0017736
+      C-B -0.4  -5.714108  4.9141085 0.9963241
+      D-B -3.2  -8.514108  2.1141085 0.3446966
+      D-C -2.8  -8.114108  2.5141085 0.4561325
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org0810a92" class="outline-2">
+<h2 id="org0810a92">7.2 一元配置分散分析 (対応あり)</h2>
+<div class="outline-text-2" id="text-org0810a92">
+<p>
+一元配置分散分析 (対応あり)では、
+</p>
+
+<ul class="org-ul">
+<li>同じ被験者が</li>
+<li>複数の条件を経験する</li>
+</ul>
+
+<p>
+などの対応のあるデータを対象とする。
+</p>
+</div>
+
+<div id="outline-container-org8977c6a" class="outline-4">
+<h4 id="org8977c6a">例題</h4>
+<div class="outline-text-4" id="text-org8977c6a">
+<p>
+以下の表は5名の学生に、線形代数、微分積分、確率統計に対する好意度
+の評定データである。 これら3つの科目に対する好意度に差があるだろ
+うか？（念のため：これは１要因３水準)
+</p>
+
+<table id="orgad41fdb" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">学生</th>
+<th scope="col" class="org-right">線形代数</th>
+<th scope="col" class="org-right">微分積分</th>
+<th scope="col" class="org-right">確率統計</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">田中</td>
+<td class="org-right">7</td>
+<td class="org-right">5</td>
+<td class="org-right">8</td>
+</tr>
+
+<tr>
+<td class="org-left">岸</td>
+<td class="org-right">8</td>
+<td class="org-right">4</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-left">大引</td>
+<td class="org-right">9</td>
+<td class="org-right">7</td>
+<td class="org-right">7</td>
+</tr>
+
+<tr>
+<td class="org-left">吉川</td>
+<td class="org-right">5</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">荻野</td>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-right">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org22308d2" class="outline-5">
+<h5 id="org22308d2">対応がないものとして分散分析してみる</h5>
+<div class="outline-text-5" id="text-org22308d2">
+</div>
+<div id="outline-container-org56e808c" class="outline-6">
+<h6 id="org56e808c">仮説</h6>
+<div class="outline-text-6" id="text-org56e808c">
+<dl class="org-dl">
+<dt>帰無仮説 H_0</dt><dd>3科目の好感度の母平均は等しい</dd>
+<dt>対立仮説 H_1</dt><dd>3科目の好感度の母平均は等しくない</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org9602a73" class="outline-6">
+<h6 id="org9602a73">検定統計量 F ::</h6>
+<div class="outline-text-6" id="text-org9602a73">
+<p>
+\[
+	 F = \frac { \mbox{群間平方和} / \mbox{群間の自由度} }
+	           { \mbox{群内平方和} / \mbox{群内の自由度} }
+	 \]
+(mboxが出力されていませんので，教科書を参照)
+</p>
+
+<p>
+\( F \) は，全ての群の母平均が等しいときに，* F分布 * に従う
+</p>
+
+<dl class="org-dl">
+<dt>群間平方和</dt><dd>全体平均値と群間平均値の差の2乗和</dd>
+<dt>群内平方和</dt><dd>群内平均値との差の2乗和</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgda70cb9" class="outline-6">
+<h6 id="orgda70cb9">対応がないものとして実行</h6>
+<div class="outline-text-6" id="text-orgda70cb9">
+<div class="org-src-container">
+<pre class="src src-R">
+&#22909;&#24847;&#24230; <span style="color: #e5786d;">&lt;-</span> c(7,8,9,5,6,5,4,7,1,3,8,6,7,2,5)
+&#31185;&#30446; <span style="color: #e5786d;">&lt;-</span> factor(c(rep(<span style="color: #95e454;">"&#32218;&#24418;&#20195;&#25968;"</span>,5),rep(<span style="color: #95e454;">"&#24494;&#20998;&#31309;&#20998;"</span>,5),rep(<span style="color: #95e454;">"&#30906;&#29575;&#32113;&#35336;"</span>,5)))
+summary(aov(&#22909;&#24847;&#24230;~&#31185;&#30446;))                    <span style="color: #99968b;"># </span><span style="color: #99968b;">&#22909;&#24847;&#24230;&#12434;&#31185;&#30446;&#12398;&#35251;&#28857;&#12363;&#12425;&#20998;&#26512;&#12377;&#12427;</span>
+
+</pre>
+</div>
+
+<pre class="example">
+            Df Sum Sq Mean Sq F value Pr(&gt;F)
+科目         2  22.53  11.267   2.641  0.112
+Residuals   12  51.20   4.267
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3993642" class="outline-4">
+<h4 id="org3993642">結果</h4>
+<div class="outline-text-4" id="text-org3993642">
+<dl class="org-dl">
+<dt>F値</dt><dd>2.641</dd>
+<dt>p値</dt><dd>0.1121 &gt; 0.05</dd>
+</dl>
+
+<p>
+p値か 5%水準より大きいため, 有意な差は認められない。
+帰無仮説を採択。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org355d34d" class="outline-4">
+<h4 id="org355d34d">7.2.2 一元配置分散分析 (対応あり)の実行</h4>
+<div class="outline-text-4" id="text-org355d34d">
+</div>
+<div id="outline-container-org4ec4f46" class="outline-5">
+<h5 id="org4ec4f46">仮説</h5>
+<div class="outline-text-5" id="text-org4ec4f46">
+<dl class="org-dl">
+<dt>帰無仮説 H_0</dt><dd>3科目の好感度の母平均は等しい</dd>
+<dt>対立仮説 H_1</dt><dd>3科目の好感度の母平均は等しくない</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgd33a3cf" class="outline-5">
+<h5 id="orgd33a3cf">検定統計量 F</h5>
+<div class="outline-text-5" id="text-orgd33a3cf">
+<p>
+\[
+	 F = \frac { \mbox{条件平方和} / \mbox{条件の自由度} }
+	           { \mbox{残差平方和} / \mbox{残差の自由度} }
+	 \]
+</p>
+
+<p>
+\( F \) は，全ての群の母平均が等しいときに，* F分布 * に従う
+</p>
+
+<dl class="org-dl">
+<dt>残差平方和</dt><dd>全体平均値と群間平均値の差の2乗和</dd>
+<dt>条件平方和</dt><dd>群間平方和と同じ</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org76f0f91" class="outline-5">
+<h5 id="org76f0f91">検定統計量の実現値</h5>
+<div class="outline-text-5" id="text-org76f0f91">
+<div class="org-src-container">
+<pre class="src src-R">
+aov(&#22909;&#24847;&#24230; ~ &#31185;&#30446; + &#20154;)
+summary(aov(&#22909;&#24847;&#24230; ~ &#31185;&#30446; + &#20154;))
+
+</pre>
+</div>
+
+<pre class="example" id="org7a3275c">
+Call:
+   aov(formula = 好意度 ~ 科目 + 人)
+
+Terms:
+                    科目       人 Residuals
+Sum of Squares  22.53333 45.06667   6.13333
+Deg. of Freedom        2        4         8
+
+Residual standard error: 0.875595
+Estimated effects may be unbalanced
+            Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+科目         2  22.53  11.267    14.7 0.002095 ** 
+人           4  45.07  11.267    14.7 0.000931 ***
+Residuals    8   6.13   0.767                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+</pre>
+</div>
+
+<div id="outline-container-org8a8ce3c" class="outline-6">
+<h6 id="org8a8ce3c">結果</h6>
+<div class="outline-text-6" id="text-org8a8ce3c">
+<p>
+科目の違いによる平均値差の検定をおこないたかったので，
+科目の行を見ます。F-値が14.7， p-値が\( 0.002 < 0.05 \) で，
+帰無仮説は棄却されます。
+</p>
+
+<p>
+人の行では，人による好感度の差が有意であると示されています。
+</p>
+
+<p>
+Fは，分子の自由度が2, 分母の自由度が8のF-分布に従います。
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgfd82d49" class="outline-5">
+<h5 id="orgfd82d49">Error 項を指定した分散分析</h5>
+<div class="outline-text-5" id="text-orgfd82d49">
+<p>
+Error 項を指定して分散分析を実行しても同じ結果になります:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+summary(aov(&#22909;&#24847;&#24230; ~ &#31185;&#30446; + Error(&#20154;/&#31185;&#30446;)))
+
+</pre>
+</div>
+
+<pre class="example" id="orgf2a85a4">
+
+Error: 人
+          Df Sum Sq Mean Sq F value Pr(&gt;F)
+Residuals  4  45.07   11.27               
+
+Error: 人:科目
+          Df Sum Sq Mean Sq F value Pr(&gt;F)   
+科目       2 22.533  11.267    14.7 0.0021 **
+Residuals  8  6.133   0.767                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf57b7ae" class="outline-4">
+<h4 id="orgf57b7ae"></h4>
+</div>
+<div id="outline-container-org6874320" class="outline-3">
+<h3 id="org6874320"># Tukey の多重比較</h3>
+<div class="outline-text-3" id="text-org6874320">
+<div class="org-src-container">
+<pre class="src src-R">
+TukeyHSD(aov(&#22909;&#24847;&#24230; ~ &#31185;&#30446; + &#20154;))
+
+</pre>
+</div>
+
+<pre class="example" id="org2d74855">
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = 好意度 ~ 科目 + 人)
+
+$科目
+                  diff       lwr       upr     p adj
+線形代数-確率統計  1.4 -0.182381  2.982381 0.0811694
+微分積分-確率統計 -1.6 -3.182381 -0.017619 0.0477167
+微分積分-線形代数 -3.0 -4.582381 -1.417619 0.0016141
+
+$人
+                diff        lwr        upr     p adj
+岸-荻野    1.3333333 -1.1365377  3.8032044 0.4036928
+吉川-荻野 -2.0000000 -4.4698711  0.4698711 0.1226987
+大引-荻野  3.0000000  0.5301289  5.4698711 0.0186089
+田中-荻野  2.0000000 -0.4698711  4.4698711 0.1226987
+吉川-岸   -3.3333333 -5.8032044 -0.8634623 0.0102769
+大引-岸    1.6666667 -0.8032044  4.1365377 0.2282769
+田中-岸    0.6666667 -1.8032044  3.1365377 0.8766404
+大引-吉川  5.0000000  2.5301289  7.4698711 0.0007714
+田中-吉川  4.0000000  1.5301289  6.4698711 0.0033834
+田中-大引 -1.0000000 -3.4698711  1.4698711 0.6448878
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org4edffba" class="outline-3">
+<h3 id="org4edffba"># 個人の比較には興味がないので，科目についてのみ多重比較</h3>
+<div class="outline-text-3" id="text-org4edffba">
+<div class="org-src-container">
+<pre class="src src-R">
+TukeyHSD(aov(&#22909;&#24847;&#24230; ~ &#31185;&#30446; + &#20154;), <span style="color: #95e454;">"&#31185;&#30446;"</span>)
+
+</pre>
+</div>
+
+<pre class="example" id="org8597fd0">
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = 好意度 ~ 科目 + 人)
+
+$科目
+                  diff       lwr       upr     p adj
+線形代数-確率統計  1.4 -0.182381  2.982381 0.0811694
+微分積分-確率統計 -1.6 -3.182381 -0.017619 0.0477167
+微分積分-線形代数 -3.0 -4.582381 -1.417619 0.0016141
+</pre>
+</div>
+</div>
+
+
+
+<div id="outline-container-org38b0ac2" class="outline-3">
+<h3 id="org38b0ac2">参考: 3群以上を比較するとき、2群間の検定（T検定）を使ってはいけない理由</h3>
+<div class="outline-text-3" id="text-org38b0ac2">
+<p>
+いま、A,B, Cという3つの群があったとします。そこで、2群間の検定を A-B間、
+B-C間、C-AC間で有意水準5%で行ったとします。
+</p>
+
+<p>
+ここで、「この組み合わせの少なくとも１つは有意差がある」 となる確率を
+</p>
+
+<p>
+計算すると(実際にその間に有意差があるなしに拘らず)、 　
+1-(1-0.05)*(1-0.05)*(1-0.05) = 0.14 となります。つまり、 有意水準 5%
+(=0.05)で検定したつもりが、 この方法では実質的に 14 %で検定している、
+つまり 検定力が低下してしまう、というのが理由です。
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2022-01-13 木 08:53</p>
+<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
+<p class="date">Created: 2022-01-20 木 14:26</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
