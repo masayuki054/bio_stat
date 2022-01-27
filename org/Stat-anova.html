@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-01-27 木 14:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Masayuki Suzuki" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7ae3471">1. R言語 分散分析ANOVAで多群の比較を行う【初心者向け】</a>
+<ul>
+<li><a href="#org8d58b95">1.1. 分散分析（ANOVA）の手順</a></li>
+<li><a href="#org52593ae">1.2. anova関連パッケージのインストール</a></li>
+<li><a href="#org94e0278">1.3. iris データセット</a></li>
+<li><a href="#orgb74a293">1.4. 正規性の検定</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7ae3471" class="outline-2">
+<h2 id="org7ae3471"><span class="section-number-2">1.</span> <a href="https://multivariate-statistics.com/2020/10/16/r-programming-one-way-anova/#i-2">R言語 分散分析ANOVAで多群の比較を行う【初心者向け】</a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://multivariate-statistics.com/2020/10/16/r-programming-one-way-anova/#i-2">R言語 分散分析ANOVAで多群の比較を行う【初心者向け】</a>
+</p>
+</div>
+
+
+<div id="outline-container-org8d58b95" class="outline-3">
+<h3 id="org8d58b95"><span class="section-number-3">1.1.</span> 分散分析（ANOVA）の手順</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+分散分析には、データの正規性や群間の分散の等質性が前提条件にあったり、分散分析後の事後テストがあったりなど、統計学に詳しくない人にとって、検定が正しく行われているのか判断が難しいことが多いです。
+</p>
+
+<p>
+分散分析の実行方法では、それぞれの手順の具体例を与えて、プロットを交えながら、それぞれの検定の役割をみていきます。
+</p>
+
+<p>
+分散分析の流れを次の図とステップに示します。
+</p>
+
+<p>
+anova概要
+</p>
+
+<ul class="org-ul">
+<li><p>
+分散分析は正規性の検定から始まります。
+</p>
+
+<p>
+正規性がない場合はノンパラメトリック手法で行います（ノンパラメト
+リック手法はこの記事では触れない）。
+</p></li>
+
+<li><p>
+次に群間（グループ間）の分散等質性の検定を行う。
+</p>
+
+<p>
+比較したいグループ間の分散が同等であることを検定します。この条件
+を満たしていれば次の分散分析が適用できます。分散の等質性が満たさ
+れない場合は、Welchの分散分析を適用します（分散が異なる場合はこ
+こでは触れない）。
+</p></li>
+
+<li>分散分析（ANOVA）を行い、群間に差があるかを検定します。ここで、
+有意な因子（グループを構成するもの、例：品種）が存在するならば、
+次の事後テストを行います。有意な因子がない場合は、ここで検定を終
+了し、グループ間に差異はないという結論を得ます。</li>
+
+<li>最後に、有意であった因子に対して事後テストを行います。事後テスト
+を行うことでどの群間に差異があるのかを詳しく見ていきます。例えば、
+品種A、B、Cに分散分析を行ったとき、分散分析では「品種のどれかの
+間には違いがある」ということしか分かりません。事後テストでは品種
+A、B、Cのうちどのペア（例AとB間、AとC間）に違いがあるのかを検証
+することができます。</li>
+</ul>
+
+<p>
+分散分析の流れは以上になります。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org52593ae" class="outline-3">
+<h3 id="org52593ae"><span class="section-number-3">1.2.</span> anova関連パッケージのインストール</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+分散分析（ANOVA）やその検定のプロットを行う前提として各種パッケージをインストールする必要があります。
+</p>
+
+<p>
+次を実行しパッケージのインストールを行い、ライブラリへの追加を行います。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">install.packages(<span style="color: #95e454;">"ggpubr"</span>)
+install.packages(<span style="color: #95e454;">"rstatix"</span>)
+ 
+install.packages(<span style="color: #95e454;">"ggplot2"</span>)
+install.packages(<span style="color: #95e454;">"gridExtra"</span>)
+ 
+<span style="color: #e5786d;">library</span>(ggpubr)
+<span style="color: #e5786d;">library</span>(rstatix)
+ 
+<span style="color: #e5786d;">library</span>(ggplot2)
+<span style="color: #e5786d;">library</span>(gridExtra)
+</pre>
+</div>
+
+<p>
+ggpubrは分散分析のプロットに用います。
+</p>
+
+<p>
+rstatixは分散分析や事後テストの検定を行うため、またその検定結果をプロット上に表示させるために用います。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org94e0278" class="outline-3">
+<h3 id="org94e0278"><span class="section-number-3">1.3.</span> iris データセット</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+これらのパッケージを用いて、次のirisのデータセットを例に分散分析を行っていきます。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+class(iris)
+head(iris)
+
+</pre>
+</div>
+
+<pre class="example">
+[1] "data.frame"
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orgb74a293" class="outline-3">
+<h3 id="orgb74a293"><span class="section-number-3">1.4.</span> 正規性の検定</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+まず分散分析の前提として、正規性の検定を行います。
+</p>
+
+<p>
+今回irisのSepal.WidthのデータをSpeciesという因子に関して分散分析をします。
+</p>
+
+<p>
+Sepal.Widthが正規性を持たない（母集団が正規分布でない）場合、分散分析を適用することができません。
+</p>
+
+<p>
+そこでここで紹介する正規性の検定が必須となります。
+</p>
+
+<p>
+<a href="https://toukeier.hatenablog.com/entry/%3Fp%3D816">統計ソフトRで正規分布の確認のため正規確率プロットを描くには？ - 統計ER</a>
+</p>
+<ul class="org-ul">
+<li>図で正規分布のチェック
+<ul class="org-ul">
+<li>qqnorm()を使う。</li>
+<li>正規確率プロットを描く。x軸が正規分布の論理的な分位数、y軸が実測値の分位数。</li>
+<li>対角線上にまっすぐに、プロットがならべば、正規分布していると判断できる。</li>
+</ul></li>
+</ul>
+
+
+
+
+<p>
+次のコードを実行することで、正規性に関するプロット及び正規性の検定を行
+うことができます。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #99968b;">#</span><span style="color: #99968b;">&#27491;&#35215;&#24615;&#12398;&#30906;&#35469;</span>
+qqnorm(iris$Sepal.Width ,ylab = <span style="color: #95e454;">"wid"</span>)
+qqline(iris$Sepal.Width)
+ 
+shapiro_test <span style="color: #e5786d;">&lt;-</span> shapiro.test(t(iris$Sepal.Width))
+
+</pre>
+</div>
+
+
+<div id="orgb1e6782" class="figure">
+<p><img src="stat-anova-qqplot.png" alt="stat-anova-qqplot.png" />
+</p>
+</div>
+
+
+<ul class="org-ul">
+<li>y=xの対角線上にデータのプロットが集中しているほど、データが正規性を持つことがいえます。</li>
+
+<li>上の場合、Sepal.Widthは正規性をもっていることがうかがえます。</li>
+
+<li><p>
+プロットだけでは判断できない場合も、5行目を実行することで、正規性の
+検定であるシャピロ・ウィルク検定を行うことができます。
+</p>
+
+<p>
+p値が0.05より大きい場合は正規性をもつことがいえて、次のステップに進
+むことができます。
+</p>
+
+<p>
+ここで、p値が0.05以下の場合は、クリスカルウォリス検定などの分散分析
+のノンパラメトリック手法を検討する必要があります。
+</p></li>
+</ul>
+
+<p>
+実際に次を実行すると、Sepal.Widthに関するシャピロ・ウィルク検定のp値は0.1012&gt;0.05であり、正規性があることが分かりました。 a
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Masayuki Suzuki</p>
+<p class="date">Created: 2022-01-27 木 14:49</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

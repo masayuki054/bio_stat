@@ -107,8 +107,7 @@ https://drive.google.com/file/d/1ja0WjrCd9exeifwuJ-ROGFJBJFNEONGk/view?usp=shari
 
 	 複数の平均値の比較を，図的に理解してください。
 	 
-
-       - [[org/Stat-variance-analysis.org]]
+       - [[file:org/Stat-variance-analysis.org][file:~/COMM/Lects/biostat/2021/org/Stat-variance-analysis.org]] 
 	 - 二元配置についてもまとめました
 	 - 群間と群内の変動で統一しました。
 	   - 交互効果についてまだ確証がないのですが。。。

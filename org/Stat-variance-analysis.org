@@ -1,0 +1,434 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+AUTHOR: 鈴木正幸，非常勤講師
+#+OPTIONS: tex:t
+#+title: 分散分析
+#+property: header-args:R :session *rtext* :results output :exports both
+
+* 出展
+
+  [[http://lbm.ab.a.u-tokyo.ac.jp/~omori/noko/linearmodel.html][生物統計学３]] の分散分析
+  - 最も詳しい式による説明
+  
+** 参考
+
+  https://www.ouj.ac.jp/mijika/tokei/xml/k3_06023.xml
+  - 良い説明
+
+
+  [[https://sigma-eye.com/2019/04/11/what-nigenhaichi-bunsanbunseki/][二元配置分散分析って何？【交互作用が分かります】 | シグマアイ-仕事で使える統計を-]]
+  - 簡単な実例あり
+
+* 分散分析（Analysis of Variance）
+
+分散分析は，ANOVA (Analysis of Variance)
+と略記されることもある．
+
+分散分析は，複数の処理を同時に
+行ったときに，処理効果を推定するための最も基本的な手法である．
+
+データ全体の持つ情報は，
+
+- 総平方和にまとめられているが，これを，
+
+  - 処理の分散成分（処理平均平方）と
+
+  - 誤差の分散成分（誤差平均平方）とに分離して，
+
+- その大きさを比較することにより，処理の効果を見積もるものである．
+
+* 因子と水準
+
+経済学では価格や成長率，工学では作業時間や故障率，農学では収量や抵抗性
+など，調査研究したい特性を形質(character)という．着目した形質に影響を
+与えると考えられるもの，例えば，収量では品種，温度，施肥量などを要因ま
+たは因子(factor)という．要因の影響を調べるためいくつかの品種を用いたり，
+施肥量に段階を設けたりするが，それを水準(level)という．
+
+* 一元配置（one-way layout）
+** 構造モデル
+t 検定では，2つの処理平均の比較を行ったが，この節ではこれを拡張して，
+複数の処理平均の比較を行う手法を考える．
+
+いま，
+
+- \( a \) 水準の処理（treatment）:: \(A_{1}\)，...，\(A_{a}\)，があり
+
+- 処理 \(A_{i}\)を行った \(n_{i}\) 個の標本 ::
+  \(X_{i1}，\cdots ，X_{i n_{i}}\)，が得られたとする．
+
+- 処理 \(A_{i}\) からの標本:: 平均 \(mu_{i} = \mu + \alpha_{i}\)，
+  分散 \(\sigma^{2}\) の正規分布に従うと仮定する．
+
+- 総平均（grand mean） :: \(\mu\) 
+
+- 処理効果 （treatment effect） ::  \( \alpha_{i} \) , 処理効果もしくは，主効果（main effect）と言い，
+
+- \(\sum_{i}{\alpha_{i}} = 0\)，である．
+
+- 誤差項（error term）:: \( e_{ij} \sim N(0，\sigma^{2}) \)
+
+  
+標本の構造モデル，
+
+\begin{eqnarray}
+X_{ij} &=&  \mu_i + e_{ij}, _{i=1:a, j=1:n_i} \\
+& = & \mu + \alpha_i + e_{ij}
+\end{eqnarray}
+
+として表現すると，データの持つ構造が理解しやすくなる．
+
+* 平方和分解
+
+いま，処理 \( A_{i} \) の標本平均を \( \overline{X}_{i.} \)， 標本総平
+均を\( \overline{X}_{..} \) とすると，これらは，
+
+\begin{eqnarray}
+
+\overline{X}_{i.} & = & \frac{1}{n_i} \sum_{j=1}^{n_i} X_{ij} \\
+\overline{X}_{..} & = & \frac{\sum_i \sum_j X_{ij}} {\sum_{i} n_i} \\
+ n & = & \sum_{i=1}^{a} n_i \\
+\end{eqnarray}
+標本全体の持つ情報は，総平方和 \( S_{T} \)（Total Sum of Squares）で表
+現される．これは，
+
+\begin{eqnarray}
+
+S_T & = & \sum_i \sum_j (X_{ij} - \overline{X}_{..})^2 \\
+ & = & \sum_i \sum_j \{ (X_{ij} - \overline{X}_{i.}) + (\overline{X}_{i.} - \overline{X}_{..})\}^2 \\
+ & = & \sum_i \sum_j (X_{ij} - \overline{X}_{i.})^2 
+       + \sum_i \sum_j (\overline{X}_{i.} - \overline{X}_{..})^2 \\
+ & = & \sum_i \sum_j (X_{ij} - \overline{X}_{i.})^2 
+       + \sum_i n_i (\overline{X}_{i.} - \overline{X}_{..})^2 \\
+ & = & S_e + S_A
+\end{eqnarray}
+
+
+のように誤差平方和 \( S_{e} \)（Error Sum of Squares）と
+処理平方和 \(S_{A} \)（Treatment Sum of Squares）とに分解される．
+
+これは，積の項が
+
+\begin{eqnarray}
+
+& & \sum_i \sum_j (X_{ij} - \overline{X}_{i.}) (\overline{X}_{i.} - \overline{X}_{..}) \\
+
+& = & \sum_i (\overline{X}_{i.} - \overline{X}_{..})\sum_j (X_{ij} - \overline{X}_{i.}) \\
+
+& = & \sum_i (\overline{X}_{i.} - \overline{X}_{..})( n_i \overline{X}_{i.
+} - n_i\overline{X}_{i.}) \\
+
+& = & 0
+\end{eqnarray}
+
+
+のように 0 となるから．
+
+なお，誤差平方和を群内平方和（within groups sum ofsquares），処理平方
+和を群間平方和（between groups sum of squares）と呼ぶことも多い．
+
+* 平方和の期待値
+
+個々の標本 \( X_{ij} \) と処理 \( A_{i} \) の標本平均 \( \overline{X}_{i.}\)，
+標本総平均 \( \overline{X}_{..} \) の構造モデルがそれぞれ，
+
+\begin{eqnarray}
+X_{ij}  & = &   \mu + \alpha_i + e_{ij},  \\
+&  &   e_{ij} \sim N(0, \sigma^2), \\
+&  &  E[e_{ij}^2]  =  \sigma^2 
+\end{eqnarray}
+
+\begin{eqnarray}
+ \overline{X}_{i.} &=&  \mu + \alpha_i + e_{i.}, \\
+& &     e_{i.} \sim N(0, \sigma^2/n_i),\\
+& &  E[e_{i.}^2]  =  \sigma^2/n_i 
+\end{eqnarray}
+
+    \begin{eqnarray}
+\overline{X}_{..} &=&  \mu + e_{..},  \\
+ & & e_{..} \sim N(0, \sigma^2/n), \\
+ & & E[e_{..}^2]  =  \sigma^2/n \\
+\end{eqnarray}
+
+のようになるので，誤差平方和 \( S_{e} \) と処理平方和 \( S_{A} \)の期
+待値は，それぞれ，
+
+
+\begin{eqnarray}
+E[S_e] & = & E [\sum_i \sum_j (X_{ij} - \overline{X}_{i.})^2 ] \\
+& = & E [\sum_i \sum_j (e_{ij} - \overline{e}_{i.})^2 ] \\
+& = & \sum_i E [ \sum_j (e_{ij}^2 - 2 e_{ij} \overline{e}_{i.} + \overline{e}_{i.})^2 ] \\
+& = & \sum_i E [ \sum_j e_{ij}^2 - 2 \sum_j e_{ij} \overline{e}_{i.} + n_i \overline{e}_{i.}^2 ] \\
+& = & \sum_i E [ \sum_j e_{ij}^2 - n_i \overline{e}_{i.}^2 ] \\
+& = & \sum_i \sum_j \sigma^2 - \sum_i n_i \frac{\sigma ^2}{n_i}  \\
+& = & n\sigma^2 - a \sigma^2 \\
+& = & (n-a)\sigma^2
+
+\end{eqnarray}
+
+\begin{eqnarray}
+E[S_A] & = & E[ \sum_i n_i (\overline{X}_{i.}-\overline{X}_{..})^2] \\
+       & = & E[ \sum_i n_i (\alpha_i + \overline{e}_{i.}-\overline{e}_{..})^2] \\
+       & = & E[ \sum_i n_i \{\alpha_i^2 + (\overline{e}_{i.}-\overline{e}_{..})^2] \\
+       & = &  \sum_i n_i \alpha_i^2 + \sum_i n_i E[(\overline{e}_{i.}-\overline{e}_{..})^2] \\
+       & = &  \sum_i n_i \alpha_i^2 + \sum_i n_i \{ E[\overline{e}_{i.}^2]- E[\overline{e}_{..}^2]\} \\
+       & = &  \sum_i n_i \alpha_i^2 + \sum_i n_i \frac{\sigma^2}{n_i} - \sum_i n_i \frac{\sigma^2}{n}\\
+       & = &  \sum_i n_i \alpha_i^2 + a\sigma^2 - \sigma^2\\
+       & = &  \sum_i n_i \alpha_i^2 + (a-1) \sigma^2\\
+
+\end{eqnarray}
+
+のように計算できる．
+
+* 帰無仮説のもとでの平方和の比の分布
+
+一元配置モデルにおける帰無仮説は，すべての処理効果がない，つまり，
+
+\( H_{0}: \alpha_{i=1:a} = 0 \)
+
+である．
+
+前節の平方和の期待値から，帰無仮説のもとで，\( S_{e} / \sigma^{2} \)
+は自由度 \(n - a \) の カイ二乗分布に従い，\( S_{A}/\sigma^{2}\) は自
+由度 \(a - 1 \)のカイ二乗分布に従うことがわかる．
+
+これらのカイ二乗分布をその自由度で割った比の \(F\) 値は，
+
+\( F = \frac{(S_A/\sigma^2)/(a-1)}{(S_e/\sigma^2)/(n-a)} = \frac{S_A^2/(a-1)}{(S_e/(n-a)}\frac{}{} = \frac{M_A}{M_e} \sim F(a-1, n-a)
+\)
+
+自由度\( a-1 \), \(n -a\)の F分布に従う。
+
+
+ここで，\(M_{A} \) は，処理平方和 \( S_{A} \) を その自由度 \(a - 1\)
+で割ったもので，処理平均平方（treatment mean
+square）と呼ばれ，処理平均から求めた 誤差分散 \(\sigma^{2}\)
+の推定値である．
+
+一方，\( M_{e} \) は，誤差平方和 \( S_{e} \) を その自由度 \(n -a \)
+で割ったもので，誤差平均平方（error mean square）と呼ばれ，誤差分散の
+推定値である．
+
+
+帰無仮説のもとでは \(M_{A} \) と \(M_{e} \)はほぼ等しいことが期待され
+るので，その比 F値は 1に近いことが期待される．よって，F値が大きな値を
+とるときは帰無仮説が正しくないと考え，帰無仮説を棄却する．F値が大きい
+か小さいかの判断基準が対応する自由度の F分布で決められる．
+
+* 分散分析表と /F/ 検定
+一元配置モデルの解析結果は，以下の分散分析表（ANOVA table）にまとめら
+れる．
+
+| 変動因         | 自由度（df） | 平方和（S.S.） | 平均平方（M.S.）            |  F値          |
+|----------------+--------------+----------------+-----------------------------+---------------|
+| 主効果         | \(a - 1\)    | \( S_{A} \)        | \(M_{A} = S_{A}/ (a - 1)\)      | \(M_{A} / M_{e} \) |
+| 誤　差         | \(n - a\)    | \( S_{e} \)        | \(M_{e} = \( S_{e} /(n - a)\)      |               |
+| 全　体         | \(n - 1\)    | \( S_{T} \)        |                             |               |
+
+　この表から検定統計量 /F/ 値が求められる．そして， 自由度 \(a - 1\)，
+\(n -a\) の F分布の \(1 - \gamma\) 点（例えば 95 ％点） \(F(a - 1, n -a)_{1 - \gamma}\) より F値が大きい，すなわち，
+
+\(F > F(a - 1, n - a)_{1 - \gamma} \)
+
+であるとき，帰無仮説を棄却すると，有意水準 \(\gamma\) （例えば 5
+％）の検定が行える．これを，F検定（F-test） という．
+
+
+* 2元配置実験の分散分析 (two-way analysis of variance, two-way anova)
+
+原著: [[https://www.ouj.ac.jp/mijika/tokei/xml/k3_06023.xml][分散分析*]]
+   
+ここでは，ふたつの因子A (l-水準), B (m-水準）をとりあげ，各水準組み合
+わせの繰り返しの計回の実験を無作為化して行った実験データの分散分析につ
+いて考える．
+
+この場合の実験データは，表3のように表すことができる．
+
+- 測定値 は \( x_{ijk}, i=1:l, j=1:m, k=1:r \)
+
+- 添字 \(i\)は因子Aの水準を，\(j\)は因子の水準を，\(k\)は繰り返しの番号
+  を示す．
+
+- \(\overline{x}_{i..} = \frac{1}{m r}{\Sigma_{j}\Sigma_{k} x_{ijk}}\),
+  は\(A_i\) 水準の群平均，
+
+- \(\overline{x}_{.j.} = \frac{1}{l r}{\Sigma_{i}\Sigma_{j} x_{ijk}}\),
+  は\(B_j\) 水準の群平均，
+
+- \(\overline{x}_{..r} = \frac{1}{l m}{\Sigma_{i}\Sigma_{j} x_{ijk}}\),
+  は，(A_i, B_j) 交互作用の平均)
+
+#+caption: 2因子要因実験のデータ
+#+abel: tbl:twoway-table
+|------------+------------------------+--------------+------------------------+------------------------|
+| A \ B      | \(B_1\)                | \( \cdots \) | \(B_m\)                | mean_i                 |
+|------------+------------------------+--------------+------------------------+------------------------|
+|------------+------------------------+--------------+------------------------+------------------------|
+|            | \(x_{111}\)            | \( \cdots \) | \(x_{1m1}\)            |                        |
+| \(A_1\)    | \(\vdots\)             | \(\vdots\)   | \(\vdots\)             | \(\overline{x}_{1..}\) |
+|            | \(x_{11r}\)            | \( \cdots \) | \(x_{1mr}\)            |                        |
+|------------+------------------------+--------------+------------------------+------------------------|
+|            |                        |              |                        |                        |
+| \(\vdots\) |                        |              |                        |                        |
+|            |                        |              |                        |                        |
+|------------+------------------------+--------------+------------------------+------------------------|
+|            | \(x_{l11}\)            | \( \cdots \) | \(x_{lm1}\)            |                        |
+| \(A_l\)    | \(\vdots\)             | \(\vdots\)   | \(\vdots\)             | \(\overline{x}_{l..}\) |
+|            | \(x_{l1r}\)            | \( \cdots \) | \(x_{lmr}\)            |                        |
+|------------+------------------------+--------------+------------------------+------------------------|
+|------------+------------------------+--------------+------------------------+------------------------|
+| mean_j     | \(\overline{x}_{.1.}\) | \( \cdots \) | \(\overline{x}_{.m.}\) | \(\overline{x}_{...}\) |
+|------------+------------------------+--------------+------------------------+------------------------|
+
+
+
+** データの構造模型
+
+- \((A_i,B_j)\)条件化での真値 + 誤差
+
+  \( x_{ijk}  = \mu_{ij} + e_{ijk} \)
+
+- 全平均 + (\(A_i\)水準の効果) +  (\(B_j\)水準の効果) + (\((A_i,B_j)\)
+  交互作用の効果) 
+
+   \(\mu_{ij} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} \),
+
+- \( x_{ijk}  = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} +
+  e_{ijk} \) ::
+
+
+- 水準の効果の関係
+
+  - \(\Sigma_{i=1}^{l} \alpha_i = 0\),
+
+  - \(\Sigma_{j=1}^{m} \beta_j = 0\),
+
+  水準間平均の和は0になる。
+
+- 交互作用の平均値の和は，下記の\((l+m)\)個の関係が成り立つ:
+
+  | \( \sum_{j=1}^{m}\alpha\beta)_{1j} =  0 \)      |
+  | \(\cdots\)                                      |
+  | \( \sum_{j=1}^{m}(\alpha\beta)_{lj} = 0 \)      |
+  | \( \cdots \)                                    |
+  | \(\sum_{i=1}^{l}(\alpha\beta)_{i1} = 0 \)       |
+  | \( \cdots \)                                    |
+  | \( \sum_{i=1}^{l}(\alpha\beta)_{i} = 0 \)       |
+
+   つまり，交互作用は，A，B，どちらか一方の添字について和をとれば 0 になる．
+
+- 誤差の分布 :: -\(e_{ijk} \sim N(0, \sigma^2)\) の正規分布にしたがうものとする．
+
+  
+** 仮説検定
+
+この場合の仮説検定は次の３つになる:
+
+1. Aの主効果は存在するかどうか．
+2. Bの主効果は存在するかどうか．
+3. AとBの交互作用 A×B は存在するかどうか．
+
+** 統計検定量の計算
+
+- 総変動 \(S_T\) ::
+
+  \(S_{T} = \sum\sum\sum(x_{ijk}-\overline{x})^2\)
+
+  = \( S_{AB}\) (AB間平方和) + \(S_E\) (誤差平方和)
+
+  自由度 \(Df_T = lmr-1\)
+
+- AB間平方和 \(S_{AB}\) ::
+  \(\overline{x}_{ij.}\) は，同じ\(A_i\)と\(B_j\)の条件下の\(x_{ijk}\)の平均値。
+
+  \(S_{AB} = \sum\sum\sum(\overline{x}_{ij.}-\overline{x}_{...})^2\)
+
+  自由度 \(Df_{AB} = l\times m -1 \)
+
+  この後は，繰り返しのない二元配置問題になる。
+
+- \(S_{AB}\)の分解 ::
+  
+   \( S_{AB} = S_A + S_B + S_{A\times B}\)
+
+- Aによる変動 \(S_A\) ::
+
+  \( S_A =  \sum\sum\sum(\overline{x}_{i..}-\overline{x}_{...})^2\)
+
+  自由度 \(Df_A = l-1 \)
+
+  不偏分散 \(V_{A} = S_{A} / Df_{A}\)  
+
+- Bによる変動 \(S_B\) ::
+
+  \( S_B =   \sum\sum\sum(\overline{x}_{.j.}-\overline{x}_{...})^2\)
+
+  自由度\(Df_B = m-1 \)
+
+  不偏分散 \(V_{B} = S_{B} / Df_{B}\)
+
+- 交互作用による変動 \(S_{A\times B}\) を求める ::
+
+  \( S_{A\times B} = S_{AB} - S_A - S_B \) と計算できる。
+
+  自由度 \(Df_{A\times B}  = Df_{AB}-Df_{A}-Df_{B} \)  と計算できる。
+
+  \(Df_{A\times B} = (lm-1) - (l-1) -(m-1)\)
+  
+  不偏分散 \(V_{A\times B} = S_{A\times B} / Df_{A\times B}\)
+
+  = \( (l-1)\times(m-1) \)  = \( l\times m -1 \)
+ 
+- 誤差変動 \(S_E\) を求める ::
+
+  \( S_E = S_T - S_{AB}\)
+
+  自由度 \(Df_E = l \times m \times (r-1) \)
+
+  不偏分散 \(V_E = S_E / Df_{E}\)
+  
+** 不偏分散比と検定
+
+それぞれの不偏分散比をF検定する
+
+-  \(V_A / V_E > F^{Df_A}_{Df_E}(\alpha)  \longrightarrow \) Aは有意
+
+-  \(V_B / V_E > F^{Df_B}_{Df_E}(\alpha) \longrightarrow\) Bは有意
+
+- \(V_{A\times B} / V_E > F^{Df_{A\times B}}_{Df_E}(\alpha)
+  \longrightarrow \) 交互作用\(A\times B\)は有意    
+
+
+** 要因間変動と要因内変動への分解 (再び)
+
+一元分散分析と同じ分解できないか検討する：
+
+ \(S_{T} = \sum\sum\sum(x_{ijk}-\overline{x})^2\) は以下の3つの変動に
+  分解できる:
+
+1.   \( S'_A =  \sum\sum\sum\{(\overline{x}_{i..}-\overline{x}_{...}) + 
+               (\overline{x}_{ij.}-\overline{x}_{i..})\}^2 \)
+
+    (繰り返しを平均した，要因Aの群間偏差)+(繰り返しを平均した，要因Aの群内偏差)
+	       
+2.  \( S'_B =  \sum\sum\sum\{(\overline{x}_{.j.}-\overline{x}_{...}) + 
+               (\overline{x}_{ij.}-\overline{x}_{.j.})\}^2 \)
+
+  (繰り返しを平均した，要因Bの群間偏差)+(繰り返しを平均した，要因Bの群内偏差)
+
+3. \( S'_{AB} =  \sum\sum\sum\{(\overline{x}_{...} - \overline{x}_{ij.}) + 
+               ({x}_{ijk}-\overline{x}_{ij.})\}^2 \)
+	      
+
+  (繰り返し要因による群間偏差)+(繰り返し要因の群内偏差)
+
+何故なら，
+
+\( (x_{ijk}-\overline{x}) \) は，\( = (\overline{x}_{i..}-\overline{x}_{...}) + 
+               (\overline{x}_{ij.}-\overline{x}_{i..}) \)\( + (\overline{x}_{.j.}-\overline{x}_{...}) + 
+               (\overline{x}_{ij.}-\overline{x}_{.j.}) \)\( + (\overline{x}_{...} - \overline{x}_{ij.}) + 
+               ({x}_{ijk}-\overline{x}_{ij.}) \)
+
+となり，上式の左辺の2乗和は，異なる括弧式の積の3重和は0になり，
+括弧で囲まれた式の二乗和だけが残るため。
+
