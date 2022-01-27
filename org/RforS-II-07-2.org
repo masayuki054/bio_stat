@@ -9,6 +9,8 @@
 
 #+end_src
 
+
+
 #+begin_src R :session *rfors* :results output :exports both :tangle RforS/code/07.R
  味 <- c(6,4,5,3,2,10,8,10,8,9,11,12,12,10,10,5,4,2,2,2,7,6,5,4,3,12,8,5,6,4)
  温度 <- factor(c(rep("冷蔵庫",15),rep("常温",15)))
@@ -38,7 +40,6 @@ interaction.plot(銘柄, 温度, 味)
 #+end_src
 
 #+RESULTS:
-
 
 
 

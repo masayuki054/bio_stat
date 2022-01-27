@@ -293,6 +293,274 @@ plot(deltas, powers, type="l", xlab = "平均の差", ylab = "検出力")
 
 * [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の計算]]
 
+  [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の計算]]
+
 - power.t.test の計算法と実行例
 - power.prop.testの計算法と実行例
 - power.anova の計算法と実行例
+
+** examples
+
+*** power.t.test
+
+関数power.t.testを用いて検出力とサンプルサイズの計算を行っていきます。
+
+**** 検出力
+
+次を実行することで、観測数n=10、母平均の差δ=0.1、標準偏差σ=0.05、第一の過誤α=0.05のときのt検定の検出力を計算することができます。
+
+
+#+begin_src R :session *rfors*
+n <- 10  # サンプルサイズ
+alpha <- 0.05 # 危険率
+delta <- 0.1  # 平均値の差
+sd <- 0.05    # 標準偏差
+ 
+(power <- power.t.test(n = n, delta = delta, sd = sd, sig.level = alpha))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+     Two-sample t test power calculation 
+
+              n = 10
+          delta = 0.1
+             sd = 0.05
+      sig.level = 0.05
+          power = 0.988179
+    alternative = two.sided
+
+NOTE: n is number in *each* group
+#+end_example
+
+powerを参照すると検出力=0.988179であることが分かります。
+
+**** 結果の利用
+  
+power.t.testの返り値はリスト型となっており、観測数n=20や検出力1−βの値がリストの要素として格納されています。
+
+次のようにして検出力やそのほかのパラメータを取得することが可能です。
+
+#+begin_src R :session *rfors*
+power$n         #観測数:n
+power$delta     #仮説検定の2群間の差:δ
+power$sd        #標準偏差
+power$sig.level #有意水準:α
+power$power     #検出力:1-β
+
+#+end_src
+
+#+RESULTS:
+: [1] 10
+: [1] 0.1
+: [1] 0.05
+: [1] 0.05
+: [1] 0.988179
+
+次のように、power.t.testによって計算された値をデータフレームに格納すると、csvなどに表として出力するとき便利です。
+
+#+begin_src R :session *rfors*
+
+(powerResult <- data.frame(n = power$n, delta = power$delta, sd = power$sd,
+                           alpha = power$sig.level, power = power$power))
+
+#+end_src
+
+#+RESULTS:
+:    n delta   sd alpha    power
+: 1 10   0.1 0.05  0.05 0.988179
+
+
+write.csvを使ってpowerResultを出力すると次の画像のcsvファイルが保存されているのが確認できます。
+
+#+begin_src R :session *rfors*
+ 
+write.csv("power.t.test.csv", powerResult)
+
+#+end_src
+
+#+RESULTS:
+:  isOpen(file, "w") でエラー:  コネクションが不正です 
+:  追加情報:  警告メッセージ: 
+:  if (file == "") file <- stdout() else if (is.character(file)) { で: 
+:    条件が長さが 2 以上なので、最初の 1 つだけが使われます
+
+
+**** サンプルサイズの計算法
+
+
+検出力が与えられたときのサンプルサイズは power.t.test のn以外のパラメー
+タを与えることで計算できます。
+
+次を実行することで、母平均の差δ=0.1、標準偏差σ=0.05、第一の過誤α=0.05のとき検出力が0.9を超えるようなサンプルサイズを計算することができます。
+
+#+begin_src R :session *rfors*
+beta <- 0.1
+power <- power.t.test(delta = delta, sd = sd, sig.level = alpha, power = 1 - beta)
+power$n #サンプルサイズ
+#+end_src
+
+#+RESULTS:
+: [1] 6.386756
+
+powerを参照するとサンプルサイズは6.386756であることが分かりました。
+
+#+begin_src R :session *rfors*
+
+power
+ 
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+     Two-sample t test power calculation 
+
+              n = 6.386756
+          delta = 0.1
+             sd = 0.05
+      sig.level = 0.05
+          power = 0.9
+    alternative = two.sided
+
+NOTE: n is number in *each* group
+#+end_example
+
+
+**** グラフによる確認
+
+実際に検出力と観測数についてのグラフを描くと上で計算したサンプルサイズ
+が正しいことが確認できます。
+
+#+begin_src R :session *rfors* :results output graphics :file power-t-test-plot.png
+
+powers <-
+  sapply(seq_len(50),
+         function(x) {
+           power <- power.t.test(n = x, delta = delta, sd = sd, sig.level = alpha)
+           power$power
+         })
+ 
+plot(powers, type = "l", xlab = "n", ylab= "Power")
+
+#+end_src
+
+#+RESULTS:
+
+[[file:power-t-test-plot.png]]
+
+*** power.anova.test
+
+**** 検出力
+
+引数に検定で用いるパラメータや第一の過誤を設定することで実行できます。
+
+次を実行すると、群の数k=4、観測数n=10、群間の分散σ2B=0.01、群内の分散
+σ2W=0.025、第一の過誤α=0.05のときの母比率の差の検定の検出力を計算す
+ることができます。
+
+#+begin_src R :session *rfors*
+
+n <- 10
+alpha <- 0.05
+numberOfGroups <- 4
+sigmaB <- 0.01 #群間の分散
+sigmaW <- 0.025 #群内の分散
+ 
+power <- power.anova.test(groups = numberOfGroups, n = n, between.var = sigmaB,
+                          within.var = sigmaW, sig.level = alpha)
+#+end_src
+
+#+RESULTS:
+
+powerを参照すると検出力=0.7942482であることが確認できます。
+
+#+begin_src R :session *rfors*
+ 
+power
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+     Balanced one-way analysis of variance power calculation 
+
+         groups = 4
+              n = 10
+    between.var = 0.01
+     within.var = 0.025
+      sig.level = 0.05
+          power = 0.7942482
+
+NOTE: n is number in each group
+#+end_example
+
+他の関数と同様に検出力などの値はリストの要素として格納されている多め、powerのうしろに$を付けることで各値を取得することが可能です。
+
+#+begin_src R :session *rfors*
+class(power)
+power$groups      #群の数
+power$n           #観測数
+power$between.var #群間の分散
+power$within.var  #群内の分散
+power$sig.level   #有意水準:α
+power$power       #検出力:1-β
+#+end_src
+
+#+RESULTS:
+: [1] "power.htest"
+: [1] 4
+: [1] 10
+: [1] 0.01
+: [1] 0.025
+: [1] 0.05
+: [1] 0.7942482
+
+#+begin_src R :session *rfors*
+
+powerResult <- data.frame(No.groups = power$groups, n = power$n, sigmaB = power$between.var,
+                           sigmaW = power$within.var, alpha = power$sig.level, power = power$power)
+powerResult
+#+end_src
+
+**** サンプルサイズ
+
+サンプルサイズも他の関数と同様に観測数以外の引数を与えてあげることで計算することができます。
+
+以下、群の数k=4、群間の分散σ2B=0.01、群内の分散σ2W=0.025、第一の過誤
+α=0.05のとき検出力が0.9を超えるようなサンプルサイズを計算する例です。
+
+#+begin_src R :session *rfors*
+
+power <- power.anova.test(groups = numberOfGroups, between.var = sigmaB,
+                          within.var = sigmaW, sig.level = alpha, power = 1 - beta)
+power$n #サンプルサイズ
+#+end_src
+
+#+RESULTS:
+: [1] 12.83399
+
+#+begin_src R :session *rfors*
+ 
+power
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+     Balanced one-way analysis of variance power calculation 
+
+         groups = 4
+              n = 12.83399
+    between.var = 0.01
+     within.var = 0.025
+      sig.level = 0.05
+          power = 0.9
+
+NOTE: n is number in each group
+#+end_example
+
+サンプルサイズ=12.83399であり、観測数n=10のときと比較すると検出力が0.9
+を超えるためにはあと3標本足りないことがわかりました。

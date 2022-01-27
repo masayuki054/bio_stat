@@ -5,9 +5,9 @@
 
 * お知らせ
 
-*** 12/20 はオンライン講義の予定です。
+** 1/20,27 はオンライン講義の予定です。[2022-01-26 水]
 
-1月20日(木) 15時~から、zoom によるオンライン講義を行ないます。
+15時~から、zoom によるオンライン講義を行ないます。
 
 リアルタイム配信で行ないます。
 参加できない人は、録画を視聴してください。
@@ -19,7 +19,13 @@ URL : https://zoom.us/j/5280602571?pwd=WFNlRmYxcHVaRXV3eW10dkswVVFWdz09
 ミーティングID: 528 060 2571
 パスコード: 0yzsb1
 
-*** 12/13 はオンライン講義をおこないました。
+*** 12/13,20  はオンライン講義をおこないました。
+
+13回目の講義を録画しました。
+
+https://drive.google.com/file/d/1i7sbOa9XrBiiZ8g4LRKqcbjH9_zsPMiN/view?usp=sharing
+
+視聴後は、Googleドライブの12回目の講義のアンケートに回答してください。
 
 12回目の講義を録画しました。
 
@@ -32,13 +38,11 @@ https://drive.google.com/file/d/1ja0WjrCd9exeifwuJ-ROGFJBJFNEONGk/view?usp=shari
 視聴後は、Googleドライブの12回目の講義のアンケートに回答してください。
 
 
-*** 毎回のアンケート
+*** 毎回のアンケート [2022-01-26 水]
 
-     [[https://forms.gle/hCMpTPbHt3q2fCRF7][12回目のアンケート]]
+   [[./enq.org]] 
 
-   [[./enq.org]]
-
-*** 3 回目のレポートを出題しました
+*** 3,4,5 回目のレポートを出題しました [2022-01-20 木]
 
 [[./report.org]]
 
@@ -60,7 +64,7 @@ https://drive.google.com/file/d/1ja0WjrCd9exeifwuJ-ROGFJBJFNEONGk/view?usp=shari
 
 
 
-* Todo 今日 (1/20) の講義 13th
+* Todo 今日 (1/27) の講義 13th
 
 ** Rによる入門統計学
    - スライドまたは PDF を手元に準備
@@ -71,41 +75,61 @@ https://drive.google.com/file/d/1ja0WjrCd9exeifwuJ-ROGFJBJFNEONGk/view?usp=shari
 **** 分散分析
 
 ***** 一元配置
+
       解説: [[https://www.stats-guild.com/analytics/15634][1元配置分散分析（One-way ANOVA）]]
-       - [-] 教科書とスライドによる内容説明 [3/4]
+       - [X] 教科書とスライドによる内容説明 [4/4]
 	 - [X] 8.1 3群以上の平均の差の検定
 	 - [X] 8.2 対応のない一元配置分散分析
 	 - [X] 8.3 F検定
-	 - [ ] 8.4 対応のある一元配置分散分析
+	 - [X] 8.4 対応のある一元配置分散分析
 
-       - [[./org/RforS-II-07.org]]  [0/2]
+       - [[./org/RforS-II-07.org]]  [2/2]
 	 別の本の内容でRによる演習を行ないます。
          (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
 
-	 - [ ] 7.1 一元配置分散分析 (対応なし)
-	 - [ ] 7.2 一元配置分散分析 (対応あり)
+	 - [X] 7.1 一元配置分散分析 (対応なし)
+	 - [X] 7.2 一元配置分散分析 (対応あり)
 
        - 参考サイト: 分散分析 数式による説明
          https://www.ouj.ac.jp/mijika/tokei/xml/k3_06023.xml
 
-***** 二元配置 [/]
-      - [ ] [[https://www.stats-guild.com/analytics/15657][2元配置分散分析（Two-way ANOVA）]]概説，stats-guild
-      - [ ] [[https://multivariate-statistics.com/2021/10/24/statistics-two-way-anova/][【統計学】分散分析 一元配置分散分析・二元配置分散分析]]   - 完璧
-      - [ ] 演習 [[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]]
-   
+***** 二元配置 [3/3]
+      - [X] [[https://www.stats-guild.com/analytics/15657][2元配置分散分析（Two-way ANOVA）]]概説，stats-guild
+      - [X] [[https://multivariate-statistics.com/2021/10/24/statistics-two-way-anova/][【統計学】分散分析 一元配置分散分析・二元配置分散分析]]
+	   - 完璧ですが，
+	   - 二元配置には繰り返しがない場合だけ
+      - [X] 演習 [[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]]
+
+***** 分散分析のまとめ [/]
+
+       - [[https://sigma-eye.com/2019/04/08/what-bunsanbunseki/][分散分析とは何ですか？【分散で要因を特定します】 | シグマアイ-仕
+         事で 使える統計を-]]
+
+	 複数の平均値の比較を，図的に理解してください。
+	 
+
+       - [[org/Stat-variance-analysis.org]]
+	 - 二元配置についてもまとめました
+	 - 群間と群内の変動で統一しました。
+	   - 交互効果についてまだ確証がないのですが。。。
+ 
 ***** 検出力 [/]
         - [ ] [[./org/power.org]] の中の
 	   [[https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/][R言語 検出力・サンプルサイズ t検定や母比率の検定の検出力の 計算]] 
-	  の中の power.anova.test
+ 	  の中の下記項目について演習
+	   - [ ] power.t.test,
+	   - [ ] power.anova.test
 
 ***** 多重比較法 [/]
-
+       下記ページで簡単にふれます:
        - [[https://www.stats-guild.com/analytics/15650][多重比較法（Multiple Comparison Procedure）]]- よくまとまっている
 
-**** 次週の演習
+**** 実践演習
       [[https://multivariate-statistics.com/2020/10/16/r-programming-one-way-anova/#i-2][R言語 分散分析ANOVAで多群の比較を行う【初心者向け】]]
-      - 次週，各自このページを読み理解し演習し，pdf/HTMLページにまとめ
-        ましょう。
+      - 各自このページを読み
+      - RStudio をつかってまとめ・理解・演習し
+      - Rstudio で文書化しましょう。
+
      
 * Todo RStudio 
 
@@ -183,6 +207,39 @@ https://drive.google.com/file/d/1ja0WjrCd9exeifwuJ-ROGFJBJFNEONGk/view?usp=shari
    
 
 * 講義記録
+** 1/20 の講義 13th
+
+*** Rによる入門統計学
+   - スライドまたは PDF を手元に準備
+   - http://wiki.cis.iwate-u.ac.jp/~suzuki/bio_stat/org
+
+**** 入門統計学の8章
+
+***** 分散分析
+
+****** 一元配置
+      解説: [[https://www.stats-guild.com/analytics/15634][1元配置分散分析（One-way ANOVA）]]
+       - [X] 教科書とスライドによる内容説明 [4/4]
+	 - [X] 8.1 3群以上の平均の差の検定
+	 - [X] 8.2 対応のない一元配置分散分析
+	 - [X] 8.3 F検定
+	 - [X] 8.4 対応のある一元配置分散分析
+
+       - [[./org/RforS-II-07.org]]  [2/2]
+	 別の本の内容でRによる演習を行ないます。
+         (講師の担当講義([[http://wiki.cis.iwate-u.ac.jp/~suzuki/stat2][データ解析]])で使用しています)。
+
+	 - [X] 7.1 一元配置分散分析 (対応なし)
+	 - [X] 7.2 一元配置分散分析 (対応あり)
+
+       - 参考サイト: 分散分析 数式による説明
+         https://www.ouj.ac.jp/mijika/tokei/xml/k3_06023.xml
+
+****** 二元配置 [3/3]
+      - [X] [[https://www.stats-guild.com/analytics/15657][2元配置分散分析（Two-way ANOVA）]]概説，stats-guild
+      - [X] [[https://multivariate-statistics.com/2021/10/24/statistics-two-way-anova/][【統計学】分散分析 一元配置分散分析・二元配置分散分析]]   - 完璧
+      - [X] 演習 [[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]]
+
 ** 12th 1/13 の講義 
 
 *** Rによる入門統計学
